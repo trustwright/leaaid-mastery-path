@@ -4,16 +4,16 @@
     {
       "id": "m1-q01",
       "moduleId": 1,
-      "prompt": "Which choice best matches Module 1 guidance on the workflow-agent dividing line?",
+      "prompt": "Which decision best addresses the workflow-agent dividing line?",
       "options": [
-        "Maximize autonomy before defining the task",
+        "The organization defines the boundary; the agent has discretion only inside it.",
         "A workflow has a predetermined path; an agent chooses part of the next-step path.",
-        "Treat a longer prompt as the architecture",
-        "Let the model define its authority"
+        "The task is not ready until permitted and forbidden actions are explicit.",
+        "It buys continuity but adds privacy, governance, and stale-belief risk."
       ],
       "correct": 1,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 1 guidance: A workflow has a predetermined path; an agent chooses part of the next-step path.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "A workflow has a predetermined path; an agent chooses part of the next-step path.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -27,16 +27,16 @@
     {
       "id": "m1-q02",
       "moduleId": 1,
-      "prompt": "Which choice best matches Module 1 guidance on closing an LLM knowledge gap?",
+      "prompt": "Which decision best addresses closing an LLM knowledge gap?",
       "options": [
-        "Maximize autonomy before defining the task",
-        "Treat a longer prompt as the architecture",
         "Add retrieval and memory to provide grounding.",
-        "Let the model define its authority"
+        "Narrow and clarify the task before building.",
+        "A person or the organization always sets the goal.",
+        "Name the failure mode, test, owner, and boundary first."
       ],
-      "correct": 2,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 1 guidance: Add retrieval and memory to provide grounding.",
+      "correct": 0,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Add retrieval and memory to provide grounding.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -50,16 +50,16 @@
     {
       "id": "m1-q03",
       "moduleId": 1,
-      "prompt": "Which choice best matches Module 1 guidance on the agent control loop?",
+      "prompt": "Which decision best addresses the agent control loop?",
       "options": [
-        "Maximize autonomy before defining the task",
-        "Treat a longer prompt as the architecture",
-        "Let the model define its authority",
+        "Use rule-based automation.",
+        "Narrow and clarify the task before building.",
+        "Add retrieval and memory to provide grounding.",
         "Perceive, think, act, and reflect."
       ],
       "correct": 3,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 1 guidance: Perceive, think, act, and reflect.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Perceive, think, act, and reflect.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -73,16 +73,16 @@
     {
       "id": "m1-q04",
       "moduleId": 1,
-      "prompt": "Which choice best matches Module 1 guidance on a task solvable entirely by fixed rules?",
+      "prompt": "Which decision best addresses a task solvable entirely by fixed rules?",
       "options": [
+        "Perceive, think, act, and reflect.",
+        "Narrow and clarify the task before building.",
         "Use rule-based automation.",
-        "Maximize autonomy before defining the task",
-        "Treat a longer prompt as the architecture",
-        "Let the model define its authority"
+        "Add retrieval and memory to provide grounding."
       ],
-      "correct": 0,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 1 guidance: Use rule-based automation.",
+      "correct": 2,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Use rule-based automation.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -96,16 +96,16 @@
     {
       "id": "m1-q05",
       "moduleId": 1,
-      "prompt": "Which choice best matches Module 1 guidance on a vague, untestable goal?",
+      "prompt": "Which decision best addresses a vague, untestable goal?",
       "options": [
-        "Maximize autonomy before defining the task",
+        "Add retrieval and memory to provide grounding.",
         "Narrow and clarify the task before building.",
-        "Treat a longer prompt as the architecture",
-        "Let the model define its authority"
+        "A person or the organization always sets the goal.",
+        "Perceive, think, act, and reflect."
       ],
       "correct": 1,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 1 guidance: Narrow and clarify the task before building.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Narrow and clarify the task before building.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -119,16 +119,16 @@
     {
       "id": "m1-q06",
       "moduleId": 1,
-      "prompt": "Which choice best matches Module 1 guidance on approval for an irreversible action?",
+      "prompt": "Which decision best addresses approval for an irreversible action?",
       "options": [
-        "Maximize autonomy before defining the task",
-        "Treat a longer prompt as the architecture",
         "Place approval before the consequence at the policy-envelope boundary.",
-        "Let the model define its authority"
+        "It buys continuity but adds privacy, governance, and stale-belief risk.",
+        "Grounded answers add latency and a pipeline that must be maintained.",
+        "The task is not ready until permitted and forbidden actions are explicit."
       ],
-      "correct": 2,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 1 guidance: Place approval before the consequence at the policy-envelope boundary.",
+      "correct": 0,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Place approval before the consequence at the policy-envelope boundary.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -142,16 +142,16 @@
     {
       "id": "m1-q07",
       "moduleId": 1,
-      "prompt": "Which choice best matches Module 1 guidance on authority when nobody is watching?",
+      "prompt": "Which decision best addresses authority when nobody is watching?",
       "options": [
-        "Maximize autonomy before defining the task",
-        "Treat a longer prompt as the architecture",
-        "Let the model define its authority",
+        "Tie claims to evidence and define what low confidence triggers.",
+        "Separation of duties gives it a distinct control responsibility.",
+        "Use one agent and avoid unnecessary coordination overhead.",
         "Specify tools, permissions, checkpoints, and operating rules."
       ],
       "correct": 3,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 1 guidance: Specify tools, permissions, checkpoints, and operating rules.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Specify tools, permissions, checkpoints, and operating rules.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -165,16 +165,16 @@
     {
       "id": "m1-q08",
       "moduleId": 1,
-      "prompt": "Which choice best matches Module 1 guidance on adding an architecture pattern?",
+      "prompt": "Which decision best addresses adding an architecture pattern?",
       "options": [
+        "Use one agent and avoid unnecessary coordination overhead.",
+        "A person or the organization always sets the goal.",
         "Name the failure mode, test, owner, and boundary first.",
-        "Maximize autonomy before defining the task",
-        "Treat a longer prompt as the architecture",
-        "Let the model define its authority"
+        "Specify tools, permissions, checkpoints, and operating rules."
       ],
-      "correct": 0,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 1 guidance: Name the failure mode, test, owner, and boundary first.",
+      "correct": 2,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Name the failure mode, test, owner, and boundary first.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -188,16 +188,16 @@
     {
       "id": "m1-q09",
       "moduleId": 1,
-      "prompt": "Which choice best matches Module 1 guidance on persistent memory?",
+      "prompt": "Which decision best addresses persistent memory?",
       "options": [
-        "Maximize autonomy before defining the task",
+        "Place approval before the consequence at the policy-envelope boundary.",
         "It buys continuity but adds privacy, governance, and stale-belief risk.",
-        "Treat a longer prompt as the architecture",
-        "Let the model define its authority"
+        "The task is not ready until permitted and forbidden actions are explicit.",
+        "Grounded answers add latency and a pipeline that must be maintained."
       ],
       "correct": 1,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 1 guidance: It buys continuity but adds privacy, governance, and stale-belief risk.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "It buys continuity but adds privacy, governance, and stale-belief risk.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -211,16 +211,16 @@
     {
       "id": "m1-q10",
       "moduleId": 1,
-      "prompt": "Which choice best matches Module 1 guidance on justifying multiple agents?",
+      "prompt": "Which decision best addresses justifying multiple agents?",
       "options": [
-        "Maximize autonomy before defining the task",
-        "Treat a longer prompt as the architecture",
         "Use them for enforced separation, independent review, true parallel work, or valuable specialization.",
-        "Let the model define its authority"
+        "Goals, context, tools, permissions, feedback, and stopping rules create agency around the model.",
+        "A workflow has a predetermined path; an agent chooses part of the next-step path.",
+        "The organization defines the boundary; the agent has discretion only inside it."
       ],
-      "correct": 2,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 1 guidance: Use them for enforced separation, independent review, true parallel work, or valuable specialization.",
+      "correct": 0,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Use them for enforced separation, independent review, true parallel work, or valuable specialization.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -234,16 +234,16 @@
     {
       "id": "m1-q11",
       "moduleId": 1,
-      "prompt": "Which choice best matches Module 1 guidance on who sets the goal?",
+      "prompt": "Which decision best addresses who sets the goal?",
       "options": [
-        "Maximize autonomy before defining the task",
-        "Treat a longer prompt as the architecture",
-        "Let the model define its authority",
+        "Add retrieval and memory to provide grounding.",
+        "Name the failure mode, test, owner, and boundary first.",
+        "Narrow and clarify the task before building.",
         "A person or the organization always sets the goal."
       ],
       "correct": 3,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 1 guidance: A person or the organization always sets the goal.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "A person or the organization always sets the goal.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -257,16 +257,16 @@
     {
       "id": "m1-q12",
       "moduleId": 1,
-      "prompt": "Which choice best matches Module 1 guidance on agency as a system property?",
+      "prompt": "Which decision best addresses agency as a system property?",
       "options": [
+        "Use them for enforced separation, independent review, true parallel work, or valuable specialization.",
+        "A workflow has a predetermined path; an agent chooses part of the next-step path.",
         "Goals, context, tools, permissions, feedback, and stopping rules create agency around the model.",
-        "Maximize autonomy before defining the task",
-        "Treat a longer prompt as the architecture",
-        "Let the model define its authority"
+        "The organization defines the boundary; the agent has discretion only inside it."
       ],
-      "correct": 0,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 1 guidance: Goals, context, tools, permissions, feedback, and stopping rules create agency around the model.",
+      "correct": 2,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Goals, context, tools, permissions, feedback, and stopping rules create agency around the model.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -280,16 +280,16 @@
     {
       "id": "m1-q13",
       "moduleId": 1,
-      "prompt": "Which choice best matches Module 1 guidance on the policy envelope?",
+      "prompt": "Which decision best addresses the policy envelope?",
       "options": [
-        "Maximize autonomy before defining the task",
+        "A workflow has a predetermined path; an agent chooses part of the next-step path.",
         "The organization defines the boundary; the agent has discretion only inside it.",
-        "Treat a longer prompt as the architecture",
-        "Let the model define its authority"
+        "The task is not ready until permitted and forbidden actions are explicit.",
+        "It buys continuity but adds privacy, governance, and stale-belief risk."
       ],
       "correct": 1,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 1 guidance: The organization defines the boundary; the agent has discretion only inside it.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "The organization defines the boundary; the agent has discretion only inside it.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -303,16 +303,16 @@
     {
       "id": "m1-q14",
       "moduleId": 1,
-      "prompt": "Which choice best matches Module 1 guidance on verification in an architecture?",
+      "prompt": "Which decision best addresses verification in an architecture?",
       "options": [
-        "Maximize autonomy before defining the task",
-        "Treat a longer prompt as the architecture",
         "Tie claims to evidence and define what low confidence triggers.",
-        "Let the model define its authority"
+        "Separation of duties gives it a distinct control responsibility.",
+        "Ask who decides, who acts, and what happens next without a human.",
+        "Specify tools, permissions, checkpoints, and operating rules."
       ],
-      "correct": 2,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 1 guidance: Tie claims to evidence and define what low confidence triggers.",
+      "correct": 0,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Tie claims to evidence and define what low confidence triggers.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -326,16 +326,16 @@
     {
       "id": "m1-q15",
       "moduleId": 1,
-      "prompt": "Which choice best matches Module 1 guidance on the cost of retrieval?",
+      "prompt": "Which decision best addresses the cost of retrieval?",
       "options": [
-        "Maximize autonomy before defining the task",
-        "Treat a longer prompt as the architecture",
-        "Let the model define its authority",
+        "Stop, wait for approval, or escalate according to the written rule.",
+        "Place approval before the consequence at the policy-envelope boundary.",
+        "Ask who decides, who acts, and what happens next without a human.",
         "Grounded answers add latency and a pipeline that must be maintained."
       ],
       "correct": 3,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 1 guidance: Grounded answers add latency and a pipeline that must be maintained.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Grounded answers add latency and a pipeline that must be maintained.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -349,16 +349,16 @@
     {
       "id": "m1-q16",
       "moduleId": 1,
-      "prompt": "Which choice best matches Module 1 guidance on undefined actions?",
+      "prompt": "Which decision best addresses undefined actions?",
       "options": [
+        "It buys continuity but adds privacy, governance, and stale-belief risk.",
+        "Place approval before the consequence at the policy-envelope boundary.",
         "The task is not ready until permitted and forbidden actions are explicit.",
-        "Maximize autonomy before defining the task",
-        "Treat a longer prompt as the architecture",
-        "Let the model define its authority"
+        "Grounded answers add latency and a pipeline that must be maintained."
       ],
-      "correct": 0,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 1 guidance: The task is not ready until permitted and forbidden actions are explicit.",
+      "correct": 2,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "The task is not ready until permitted and forbidden actions are explicit.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -372,16 +372,16 @@
     {
       "id": "m1-q17",
       "moduleId": 1,
-      "prompt": "Which choice best matches Module 1 guidance on reaching an authority boundary?",
+      "prompt": "Which decision best addresses reaching an authority boundary?",
       "options": [
-        "Maximize autonomy before defining the task",
+        "Grounded answers add latency and a pipeline that must be maintained.",
         "Stop, wait for approval, or escalate according to the written rule.",
-        "Treat a longer prompt as the architecture",
-        "Let the model define its authority"
+        "Ask who decides, who acts, and what happens next without a human.",
+        "Separation of duties gives it a distinct control responsibility."
       ],
       "correct": 1,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 1 guidance: Stop, wait for approval, or escalate according to the written rule.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Stop, wait for approval, or escalate according to the written rule.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -395,16 +395,16 @@
     {
       "id": "m1-q18",
       "moduleId": 1,
-      "prompt": "Which choice best matches Module 1 guidance on an independent reviewer agent?",
+      "prompt": "Which decision best addresses an independent reviewer agent?",
       "options": [
-        "Maximize autonomy before defining the task",
-        "Treat a longer prompt as the architecture",
         "Separation of duties gives it a distinct control responsibility.",
-        "Let the model define its authority"
+        "Ask who decides, who acts, and what happens next without a human.",
+        "Tie claims to evidence and define what low confidence triggers.",
+        "Stop, wait for approval, or escalate according to the written rule."
       ],
-      "correct": 2,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 1 guidance: Separation of duties gives it a distinct control responsibility.",
+      "correct": 0,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Separation of duties gives it a distinct control responsibility.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -418,16 +418,16 @@
     {
       "id": "m1-q19",
       "moduleId": 1,
-      "prompt": "Which choice best matches Module 1 guidance on the leadership authority test?",
+      "prompt": "Which decision best addresses the leadership authority test?",
       "options": [
-        "Maximize autonomy before defining the task",
-        "Treat a longer prompt as the architecture",
-        "Let the model define its authority",
+        "Separation of duties gives it a distinct control responsibility.",
+        "Stop, wait for approval, or escalate according to the written rule.",
+        "Tie claims to evidence and define what low confidence triggers.",
         "Ask who decides, who acts, and what happens next without a human."
       ],
       "correct": 3,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 1 guidance: Ask who decides, who acts, and what happens next without a human.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Ask who decides, who acts, and what happens next without a human.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -441,16 +441,16 @@
     {
       "id": "m1-q20",
       "moduleId": 1,
-      "prompt": "Which choice best matches Module 1 guidance on one agent completing work within limits?",
+      "prompt": "Which decision best addresses one agent completing work within limits?",
       "options": [
+        "Name the failure mode, test, owner, and boundary first.",
+        "Specify tools, permissions, checkpoints, and operating rules.",
         "Use one agent and avoid unnecessary coordination overhead.",
-        "Maximize autonomy before defining the task",
-        "Treat a longer prompt as the architecture",
-        "Let the model define its authority"
+        "Tie claims to evidence and define what low confidence triggers."
       ],
-      "correct": 0,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 1 guidance: Use one agent and avoid unnecessary coordination overhead.",
+      "correct": 2,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Use one agent and avoid unnecessary coordination overhead.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -464,16 +464,16 @@
     {
       "id": "m2-q01",
       "moduleId": 2,
-      "prompt": "Which choice best matches Module 2 guidance on why trusted data matters more for agents?",
+      "prompt": "Which decision best addresses why trusted data matters more for agents?",
       "options": [
-        "Rely on the model to repair source data",
-        "Evaluate only the final response",
+        "It standardizes how AI applications access tools and data.",
+        "Version, test, control, monitor, and make it reversible.",
         "Data errors can propagate into actions, not only reports.",
-        "Treat observability as post-launch reporting"
+        "It is the trusted knowledge layer for agent decisions."
       ],
       "correct": 2,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 2 guidance: Data errors can propagate into actions, not only reports.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Data errors can propagate into actions, not only reports.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -487,16 +487,16 @@
     {
       "id": "m2-q02",
       "moduleId": 2,
-      "prompt": "Which choice best matches Module 2 guidance on the data foundation?",
+      "prompt": "Which decision best addresses the data foundation?",
       "options": [
-        "Rely on the model to repair source data",
-        "Evaluate only the final response",
-        "Treat observability as post-launch reporting",
-        "It is the trusted knowledge layer for agent decisions."
+        "Version, test, control, monitor, and make it reversible.",
+        "It is the trusted knowledge layer for agent decisions.",
+        "Data errors can propagate into actions, not only reports.",
+        "They define what enterprise data means in context."
       ],
-      "correct": 3,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 2 guidance: It is the trusted knowledge layer for agent decisions.",
+      "correct": 1,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "It is the trusted knowledge layer for agent decisions.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -510,16 +510,16 @@
     {
       "id": "m2-q03",
       "moduleId": 2,
-      "prompt": "Which choice best matches Module 2 guidance on LLM work versus deterministic code?",
+      "prompt": "Which decision best addresses LLM work versus deterministic code?",
       "options": [
         "Use AI for judgment and code for rules, calculation, and repeatability.",
-        "Rely on the model to repair source data",
-        "Evaluate only the final response",
-        "Treat observability as post-launch reporting"
+        "Translate policy into explicit checks at the relevant execution step.",
+        "Bound retries, provide safe fallback, and escalate before harm compounds.",
+        "Prevent inaccurate or incomplete data from driving decisions and actions."
       ],
       "correct": 0,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 2 guidance: Use AI for judgment and code for rules, calculation, and repeatability.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Use AI for judgment and code for rules, calculation, and repeatability.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -533,16 +533,16 @@
     {
       "id": "m2-q04",
       "moduleId": 2,
-      "prompt": "Which choice best matches Module 2 guidance on retrieval at runtime?",
+      "prompt": "Which decision best addresses retrieval at runtime?",
       "options": [
-        "Rely on the model to repair source data",
-        "Retrieve only the enterprise context relevant to the current task.",
-        "Evaluate only the final response",
-        "Treat observability as post-launch reporting"
+        "Tools bridge model reasoning to external capabilities and actions.",
+        "Use it only when specialization benefits exceed coordination cost.",
+        "Every model call, retrieval, tool call, and retry adds consumption.",
+        "Retrieve only the enterprise context relevant to the current task."
       ],
-      "correct": 1,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 2 guidance: Retrieve only the enterprise context relevant to the current task.",
+      "correct": 3,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Retrieve only the enterprise context relevant to the current task.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -556,16 +556,16 @@
     {
       "id": "m2-q05",
       "moduleId": 2,
-      "prompt": "Which choice best matches Module 2 guidance on agent memory?",
+      "prompt": "Which decision best addresses agent memory?",
       "options": [
-        "Rely on the model to repair source data",
-        "Evaluate only the final response",
+        "It is the control-plane discipline for safe, reliable, efficient autonomy.",
+        "They reveal retrievals, reasoning steps, and tool calls behind an outcome.",
         "Retain task state and relevant prior information across steps or sessions.",
-        "Treat observability as post-launch reporting"
+        "Bound retries, provide safe fallback, and escalate before harm compounds."
       ],
       "correct": 2,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 2 guidance: Retain task state and relevant prior information across steps or sessions.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Retain task state and relevant prior information across steps or sessions.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -579,16 +579,16 @@
     {
       "id": "m2-q06",
       "moduleId": 2,
-      "prompt": "Which choice best matches Module 2 guidance on the ReAct loop?",
+      "prompt": "Which decision best addresses the ReAct loop?",
       "options": [
-        "Rely on the model to repair source data",
-        "Evaluate only the final response",
-        "Treat observability as post-launch reporting",
-        "Reason, act, observe, and adjust iteratively."
+        "Assess both the outcome and the execution path.",
+        "Reason, act, observe, and adjust iteratively.",
+        "Measure the full workflow across repeated runs.",
+        "They define what enterprise data means in context."
       ],
-      "correct": 3,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 2 guidance: Reason, act, observe, and adjust iteratively.",
+      "correct": 1,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Reason, act, observe, and adjust iteratively.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -602,16 +602,16 @@
     {
       "id": "m2-q07",
       "moduleId": 2,
-      "prompt": "Which choice best matches Module 2 guidance on tools?",
+      "prompt": "Which decision best addresses tools?",
       "options": [
         "Tools bridge model reasoning to external capabilities and actions.",
-        "Rely on the model to repair source data",
-        "Evaluate only the final response",
-        "Treat observability as post-launch reporting"
+        "Use it only when specialization benefits exceed coordination cost.",
+        "Retrieve only the enterprise context relevant to the current task.",
+        "Every model call, retrieval, tool call, and retry adds consumption."
       ],
       "correct": 0,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 2 guidance: Tools bridge model reasoning to external capabilities and actions.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Tools bridge model reasoning to external capabilities and actions.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -625,16 +625,16 @@
     {
       "id": "m2-q08",
       "moduleId": 2,
-      "prompt": "Which choice best matches Module 2 guidance on multi-agent architecture?",
+      "prompt": "Which decision best addresses multi-agent architecture?",
       "options": [
-        "Rely on the model to repair source data",
-        "Use it only when specialization benefits exceed coordination cost.",
-        "Evaluate only the final response",
-        "Treat observability as post-launch reporting"
+        "Tools bridge model reasoning to external capabilities and actions.",
+        "Retrieve only the enterprise context relevant to the current task.",
+        "Every model call, retrieval, tool call, and retry adds consumption.",
+        "Use it only when specialization benefits exceed coordination cost."
       ],
-      "correct": 1,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 2 guidance: Use it only when specialization benefits exceed coordination cost.",
+      "correct": 3,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Use it only when specialization benefits exceed coordination cost.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -648,16 +648,16 @@
     {
       "id": "m2-q09",
       "moduleId": 2,
-      "prompt": "Which choice best matches Module 2 guidance on AgenticOps?",
+      "prompt": "Which decision best addresses AgenticOps?",
       "options": [
-        "Rely on the model to repair source data",
-        "Evaluate only the final response",
+        "They reveal retrievals, reasoning steps, and tool calls behind an outcome.",
+        "Retain task state and relevant prior information across steps or sessions.",
         "It is the control-plane discipline for safe, reliable, efficient autonomy.",
-        "Treat observability as post-launch reporting"
+        "Bound retries, provide safe fallback, and escalate before harm compounds."
       ],
       "correct": 2,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 2 guidance: It is the control-plane discipline for safe, reliable, efficient autonomy.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "It is the control-plane discipline for safe, reliable, efficient autonomy.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -671,16 +671,16 @@
     {
       "id": "m2-q10",
       "moduleId": 2,
-      "prompt": "Which choice best matches Module 2 guidance on observability traces?",
+      "prompt": "Which decision best addresses observability traces?",
       "options": [
-        "Rely on the model to repair source data",
-        "Evaluate only the final response",
-        "Treat observability as post-launch reporting",
-        "They reveal retrievals, reasoning steps, and tool calls behind an outcome."
+        "It is the control-plane discipline for safe, reliable, efficient autonomy.",
+        "They reveal retrievals, reasoning steps, and tool calls behind an outcome.",
+        "Retain task state and relevant prior information across steps or sessions.",
+        "Bound retries, provide safe fallback, and escalate before harm compounds."
       ],
-      "correct": 3,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 2 guidance: They reveal retrievals, reasoning steps, and tool calls behind an outcome.",
+      "correct": 1,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "They reveal retrievals, reasoning steps, and tool calls behind an outcome.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -694,16 +694,16 @@
     {
       "id": "m2-q11",
       "moduleId": 2,
-      "prompt": "Which choice best matches Module 2 guidance on agent evaluation?",
+      "prompt": "Which decision best addresses agent evaluation?",
       "options": [
         "Assess both the outcome and the execution path.",
-        "Rely on the model to repair source data",
-        "Evaluate only the final response",
-        "Treat observability as post-launch reporting"
+        "Measure the full workflow across repeated runs.",
+        "Reason, act, observe, and adjust iteratively.",
+        "They define what enterprise data means in context."
       ],
       "correct": 0,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 2 guidance: Assess both the outcome and the execution path.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Assess both the outcome and the execution path.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -717,16 +717,16 @@
     {
       "id": "m2-q12",
       "moduleId": 2,
-      "prompt": "Which choice best matches Module 2 guidance on enforceable guardrails?",
+      "prompt": "Which decision best addresses enforceable guardrails?",
       "options": [
-        "Rely on the model to repair source data",
-        "Translate policy into explicit checks at the relevant execution step.",
-        "Evaluate only the final response",
-        "Treat observability as post-launch reporting"
+        "Every model call, retrieval, tool call, and retry adds consumption.",
+        "Use AI for judgment and code for rules, calculation, and repeatability.",
+        "Use it only when specialization benefits exceed coordination cost.",
+        "Translate policy into explicit checks at the relevant execution step."
       ],
-      "correct": 1,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 2 guidance: Translate policy into explicit checks at the relevant execution step.",
+      "correct": 3,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Translate policy into explicit checks at the relevant execution step.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -740,16 +740,16 @@
     {
       "id": "m2-q13",
       "moduleId": 2,
-      "prompt": "Which choice best matches Module 2 guidance on fail-safe design?",
+      "prompt": "Which decision best addresses fail-safe design?",
       "options": [
-        "Rely on the model to repair source data",
-        "Evaluate only the final response",
+        "Prevent inaccurate or incomplete data from driving decisions and actions.",
+        "They reveal retrievals, reasoning steps, and tool calls behind an outcome.",
         "Bound retries, provide safe fallback, and escalate before harm compounds.",
-        "Treat observability as post-launch reporting"
+        "It is the control-plane discipline for safe, reliable, efficient autonomy."
       ],
       "correct": 2,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 2 guidance: Bound retries, provide safe fallback, and escalate before harm compounds.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Bound retries, provide safe fallback, and escalate before harm compounds.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -763,16 +763,16 @@
     {
       "id": "m2-q14",
       "moduleId": 2,
-      "prompt": "Which choice best matches Module 2 guidance on reliability evidence?",
+      "prompt": "Which decision best addresses reliability evidence?",
       "options": [
-        "Rely on the model to repair source data",
-        "Evaluate only the final response",
-        "Treat observability as post-launch reporting",
-        "Measure the full workflow across repeated runs."
+        "Assess both the outcome and the execution path.",
+        "Measure the full workflow across repeated runs.",
+        "Reason, act, observe, and adjust iteratively.",
+        "They define what enterprise data means in context."
       ],
-      "correct": 3,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 2 guidance: Measure the full workflow across repeated runs.",
+      "correct": 1,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Measure the full workflow across repeated runs.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -786,16 +786,16 @@
     {
       "id": "m2-q15",
       "moduleId": 2,
-      "prompt": "Which choice best matches Module 2 guidance on agent cost growth?",
+      "prompt": "Which decision best addresses agent cost growth?",
       "options": [
         "Every model call, retrieval, tool call, and retry adds consumption.",
-        "Rely on the model to repair source data",
-        "Evaluate only the final response",
-        "Treat observability as post-launch reporting"
+        "Use it only when specialization benefits exceed coordination cost.",
+        "Tools bridge model reasoning to external capabilities and actions.",
+        "Retrieve only the enterprise context relevant to the current task."
       ],
       "correct": 0,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 2 guidance: Every model call, retrieval, tool call, and retry adds consumption.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Every model call, retrieval, tool call, and retry adds consumption.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -809,16 +809,16 @@
     {
       "id": "m2-q16",
       "moduleId": 2,
-      "prompt": "Which choice best matches Module 2 guidance on latency?",
+      "prompt": "Which decision best addresses latency?",
       "options": [
-        "Rely on the model to repair source data",
-        "It accumulates across serial reasoning, retrieval, tools, handoffs, and retries.",
-        "Evaluate only the final response",
-        "Treat observability as post-launch reporting"
+        "They reveal retrievals, reasoning steps, and tool calls behind an outcome.",
+        "It is the control-plane discipline for safe, reliable, efficient autonomy.",
+        "Retain task state and relevant prior information across steps or sessions.",
+        "It accumulates across serial reasoning, retrieval, tools, handoffs, and retries."
       ],
-      "correct": 1,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 2 guidance: It accumulates across serial reasoning, retrieval, tools, handoffs, and retries.",
+      "correct": 3,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "It accumulates across serial reasoning, retrieval, tools, handoffs, and retries.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -832,16 +832,16 @@
     {
       "id": "m2-q17",
       "moduleId": 2,
-      "prompt": "Which choice best matches Module 2 guidance on data quality validation?",
+      "prompt": "Which decision best addresses data quality validation?",
       "options": [
-        "Rely on the model to repair source data",
-        "Evaluate only the final response",
+        "Bound retries, provide safe fallback, and escalate before harm compounds.",
+        "They reveal retrievals, reasoning steps, and tool calls behind an outcome.",
         "Prevent inaccurate or incomplete data from driving decisions and actions.",
-        "Treat observability as post-launch reporting"
+        "It is the control-plane discipline for safe, reliable, efficient autonomy."
       ],
       "correct": 2,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 2 guidance: Prevent inaccurate or incomplete data from driving decisions and actions.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Prevent inaccurate or incomplete data from driving decisions and actions.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -855,16 +855,16 @@
     {
       "id": "m2-q18",
       "moduleId": 2,
-      "prompt": "Which choice best matches Module 2 guidance on business semantics?",
+      "prompt": "Which decision best addresses business semantics?",
       "options": [
-        "Rely on the model to repair source data",
-        "Evaluate only the final response",
-        "Treat observability as post-launch reporting",
-        "They define what enterprise data means in context."
+        "Measure the full workflow across repeated runs.",
+        "They define what enterprise data means in context.",
+        "Assess both the outcome and the execution path.",
+        "It is the trusted knowledge layer for agent decisions."
       ],
-      "correct": 3,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 2 guidance: They define what enterprise data means in context.",
+      "correct": 1,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "They define what enterprise data means in context.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -878,16 +878,16 @@
     {
       "id": "m2-q19",
       "moduleId": 2,
-      "prompt": "Which choice best matches Module 2 guidance on MCP?",
+      "prompt": "Which decision best addresses MCP?",
       "options": [
         "It standardizes how AI applications access tools and data.",
-        "Rely on the model to repair source data",
-        "Evaluate only the final response",
-        "Treat observability as post-launch reporting"
+        "Data errors can propagate into actions, not only reports.",
+        "Version, test, control, monitor, and make it reversible.",
+        "It is the trusted knowledge layer for agent decisions."
       ],
       "correct": 0,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 2 guidance: It standardizes how AI applications access tools and data.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "It standardizes how AI applications access tools and data.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -901,16 +901,16 @@
     {
       "id": "m2-q20",
       "moduleId": 2,
-      "prompt": "Which choice best matches Module 2 guidance on a deployed-agent change?",
+      "prompt": "Which decision best addresses a deployed-agent change?",
       "options": [
-        "Rely on the model to repair source data",
-        "Version, test, control, monitor, and make it reversible.",
-        "Evaluate only the final response",
-        "Treat observability as post-launch reporting"
+        "Data errors can propagate into actions, not only reports.",
+        "It standardizes how AI applications access tools and data.",
+        "It is the trusted knowledge layer for agent decisions.",
+        "Version, test, control, monitor, and make it reversible."
       ],
-      "correct": 1,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 2 guidance: Version, test, control, monitor, and make it reversible.",
+      "correct": 3,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Version, test, control, monitor, and make it reversible.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -924,16 +924,16 @@
     {
       "id": "m3-q01",
       "moduleId": 3,
-      "prompt": "Which choice best matches Module 3 guidance on security controls under agentic coding?",
+      "prompt": "Which decision best addresses security controls under agentic coding?",
       "options": [
-        "Use a prompt as the enforcement boundary",
-        "Share a human administrator credential",
-        "Assume containment works without testing",
+        "Give the agent scoped permissions, auditability, and revocation.",
+        "A hard guardrail is structurally enforced outside model choice.",
+        "Place it at the hook or enforcement point where the agent acts.",
         "Machine-speed code volume can outpace human review and remediation."
       ],
       "correct": 3,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 3 guidance: Machine-speed code volume can outpace human review and remediation.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Machine-speed code volume can outpace human review and remediation.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -947,16 +947,16 @@
     {
       "id": "m3-q02",
       "moduleId": 3,
-      "prompt": "Which choice best matches Module 3 guidance on the lethal trifecta?",
+      "prompt": "Which decision best addresses the lethal trifecta?",
       "options": [
+        "A hard guardrail is structurally enforced outside model choice.",
+        "Place it at the hook or enforcement point where the agent acts.",
         "Private data, untrusted content, and a path to send data out.",
-        "Use a prompt as the enforcement boundary",
-        "Share a human administrator credential",
-        "Assume containment works without testing"
+        "Give the agent scoped permissions, auditability, and revocation."
       ],
-      "correct": 0,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 3 guidance: Private data, untrusted content, and a path to send data out.",
+      "correct": 2,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Private data, untrusted content, and a path to send data out.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -970,16 +970,16 @@
     {
       "id": "m3-q03",
       "moduleId": 3,
-      "prompt": "Which choice best matches Module 3 guidance on hard versus soft guardrails?",
+      "prompt": "Which decision best addresses hard versus soft guardrails?",
       "options": [
-        "Use a prompt as the enforcement boundary",
+        "Place it at the hook or enforcement point where the agent acts.",
         "A hard guardrail is structurally enforced outside model choice.",
-        "Share a human administrator credential",
-        "Assume containment works without testing"
+        "Give the agent scoped permissions, auditability, and revocation.",
+        "Private data, untrusted content, and a path to send data out."
       ],
       "correct": 1,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 3 guidance: A hard guardrail is structurally enforced outside model choice.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "A hard guardrail is structurally enforced outside model choice.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -993,16 +993,16 @@
     {
       "id": "m3-q04",
       "moduleId": 3,
-      "prompt": "Which choice best matches Module 3 guidance on deterministic policy?",
+      "prompt": "Which decision best addresses deterministic policy?",
       "options": [
-        "Use a prompt as the enforcement boundary",
-        "Share a human administrator credential",
         "Place it at the hook or enforcement point where the agent acts.",
-        "Assume containment works without testing"
+        "A hard guardrail is structurally enforced outside model choice.",
+        "Give the agent scoped permissions, auditability, and revocation.",
+        "Private data, untrusted content, and a path to send data out."
       ],
-      "correct": 2,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 3 guidance: Place it at the hook or enforcement point where the agent acts.",
+      "correct": 0,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Place it at the hook or enforcement point where the agent acts.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1016,16 +1016,16 @@
     {
       "id": "m3-q05",
       "moduleId": 3,
-      "prompt": "Which choice best matches Module 3 guidance on agent identity?",
+      "prompt": "Which decision best addresses agent identity?",
       "options": [
-        "Use a prompt as the enforcement boundary",
-        "Share a human administrator credential",
-        "Assume containment works without testing",
+        "Place it at the hook or enforcement point where the agent acts.",
+        "A hard guardrail is structurally enforced outside model choice.",
+        "Private data, untrusted content, and a path to send data out.",
         "Give the agent scoped permissions, auditability, and revocation."
       ],
       "correct": 3,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 3 guidance: Give the agent scoped permissions, auditability, and revocation.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Give the agent scoped permissions, auditability, and revocation.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1039,16 +1039,16 @@
     {
       "id": "m3-q06",
       "moduleId": 3,
-      "prompt": "Which choice best matches Module 3 guidance on ASI01?",
+      "prompt": "Which decision best addresses ASI01?",
       "options": [
+        "Cascading failures.",
+        "Rogue agents.",
         "Agent goal hijack.",
-        "Use a prompt as the enforcement boundary",
-        "Share a human administrator credential",
-        "Assume containment works without testing"
+        "Unexpected code execution."
       ],
-      "correct": 0,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 3 guidance: Agent goal hijack.",
+      "correct": 2,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Agent goal hijack.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1062,16 +1062,16 @@
     {
       "id": "m3-q07",
       "moduleId": 3,
-      "prompt": "Which choice best matches Module 3 guidance on ASI02?",
+      "prompt": "Which decision best addresses ASI02?",
       "options": [
-        "Use a prompt as the enforcement boundary",
+        "Identity and privilege abuse.",
         "Tool misuse and exploitation.",
-        "Share a human administrator credential",
-        "Assume containment works without testing"
+        "Memory and context poisoning.",
+        "Human-agent trust exploitation."
       ],
       "correct": 1,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 3 guidance: Tool misuse and exploitation.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Tool misuse and exploitation.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1085,16 +1085,16 @@
     {
       "id": "m3-q08",
       "moduleId": 3,
-      "prompt": "Which choice best matches Module 3 guidance on ASI03?",
+      "prompt": "Which decision best addresses ASI03?",
       "options": [
-        "Use a prompt as the enforcement boundary",
-        "Share a human administrator credential",
         "Identity and privilege abuse.",
-        "Assume containment works without testing"
+        "Tool misuse and exploitation.",
+        "Memory and context poisoning.",
+        "Human-agent trust exploitation."
       ],
-      "correct": 2,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 3 guidance: Identity and privilege abuse.",
+      "correct": 0,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Identity and privilege abuse.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1108,16 +1108,16 @@
     {
       "id": "m3-q09",
       "moduleId": 3,
-      "prompt": "Which choice best matches Module 3 guidance on ASI04?",
+      "prompt": "Which decision best addresses ASI04?",
       "options": [
-        "Use a prompt as the enforcement boundary",
-        "Share a human administrator credential",
-        "Assume containment works without testing",
+        "Insecure inter-agent communication.",
+        "Human-agent trust exploitation.",
+        "Identity and privilege abuse.",
         "Agentic supply-chain vulnerabilities."
       ],
       "correct": 3,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 3 guidance: Agentic supply-chain vulnerabilities.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Agentic supply-chain vulnerabilities.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1131,16 +1131,16 @@
     {
       "id": "m3-q10",
       "moduleId": 3,
-      "prompt": "Which choice best matches Module 3 guidance on ASI05?",
+      "prompt": "Which decision best addresses ASI05?",
       "options": [
+        "Memory and context poisoning.",
+        "Identity and privilege abuse.",
         "Unexpected code execution.",
-        "Use a prompt as the enforcement boundary",
-        "Share a human administrator credential",
-        "Assume containment works without testing"
+        "Tool misuse and exploitation."
       ],
-      "correct": 0,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 3 guidance: Unexpected code execution.",
+      "correct": 2,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Unexpected code execution.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1154,16 +1154,16 @@
     {
       "id": "m3-q11",
       "moduleId": 3,
-      "prompt": "Which choice best matches Module 3 guidance on ASI06?",
+      "prompt": "Which decision best addresses ASI06?",
       "options": [
-        "Use a prompt as the enforcement boundary",
+        "Identity and privilege abuse.",
         "Memory and context poisoning.",
-        "Share a human administrator credential",
-        "Assume containment works without testing"
+        "Tool misuse and exploitation.",
+        "Human-agent trust exploitation."
       ],
       "correct": 1,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 3 guidance: Memory and context poisoning.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Memory and context poisoning.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1177,16 +1177,16 @@
     {
       "id": "m3-q12",
       "moduleId": 3,
-      "prompt": "Which choice best matches Module 3 guidance on ASI07?",
+      "prompt": "Which decision best addresses ASI07?",
       "options": [
-        "Use a prompt as the enforcement boundary",
-        "Share a human administrator credential",
         "Insecure inter-agent communication.",
-        "Assume containment works without testing"
+        "Agentic supply-chain vulnerabilities.",
+        "Human-agent trust exploitation.",
+        "Memory and context poisoning."
       ],
-      "correct": 2,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 3 guidance: Insecure inter-agent communication.",
+      "correct": 0,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Insecure inter-agent communication.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1200,16 +1200,16 @@
     {
       "id": "m3-q13",
       "moduleId": 3,
-      "prompt": "Which choice best matches Module 3 guidance on ASI08?",
+      "prompt": "Which decision best addresses ASI08?",
       "options": [
-        "Use a prompt as the enforcement boundary",
-        "Share a human administrator credential",
-        "Assume containment works without testing",
+        "Agent goal hijack.",
+        "Rogue agents.",
+        "Unexpected code execution.",
         "Cascading failures."
       ],
       "correct": 3,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 3 guidance: Cascading failures.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Cascading failures.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1223,16 +1223,16 @@
     {
       "id": "m3-q14",
       "moduleId": 3,
-      "prompt": "Which choice best matches Module 3 guidance on ASI09?",
+      "prompt": "Which decision best addresses ASI09?",
       "options": [
+        "Memory and context poisoning.",
+        "Identity and privilege abuse.",
         "Human-agent trust exploitation.",
-        "Use a prompt as the enforcement boundary",
-        "Share a human administrator credential",
-        "Assume containment works without testing"
+        "Tool misuse and exploitation."
       ],
-      "correct": 0,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 3 guidance: Human-agent trust exploitation.",
+      "correct": 2,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Human-agent trust exploitation.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1246,16 +1246,16 @@
     {
       "id": "m3-q15",
       "moduleId": 3,
-      "prompt": "Which choice best matches Module 3 guidance on ASI10?",
+      "prompt": "Which decision best addresses ASI10?",
       "options": [
-        "Use a prompt as the enforcement boundary",
+        "Agent goal hijack.",
         "Rogue agents.",
-        "Share a human administrator credential",
-        "Assume containment works without testing"
+        "Cascading failures.",
+        "Unexpected code execution."
       ],
       "correct": 1,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 3 guidance: Rogue agents.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Rogue agents.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1269,16 +1269,16 @@
     {
       "id": "m3-q16",
       "moduleId": 3,
-      "prompt": "Which choice best matches Module 3 guidance on a valid mitigation claim?",
+      "prompt": "Which decision best addresses a valid mitigation claim?",
       "options": [
-        "Use a prompt as the enforcement boundary",
-        "Share a human administrator credential",
         "Support it with adversarial testing evidence.",
-        "Assume containment works without testing"
+        "Classify by consequence, authority, and autonomy.",
+        "Agentic supply-chain vulnerabilities.",
+        "Insecure inter-agent communication."
       ],
-      "correct": 2,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 3 guidance: Support it with adversarial testing evidence.",
+      "correct": 0,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Support it with adversarial testing evidence.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1292,16 +1292,16 @@
     {
       "id": "m3-q17",
       "moduleId": 3,
-      "prompt": "Which choice best matches Module 3 guidance on rogue-agent response?",
+      "prompt": "Which decision best addresses rogue-agent response?",
       "options": [
-        "Use a prompt as the enforcement boundary",
-        "Share a human administrator credential",
-        "Assume containment works without testing",
+        "Revoke identity, tools, execution, and delegated paths at enforced points.",
+        "Most agent security failures are ordinary security failures at machine speed.",
+        "Machine-speed code volume can outpace human review and remediation.",
         "Contain access and actions, preserve evidence, investigate, and recover."
       ],
       "correct": 3,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 3 guidance: Contain access and actions, preserve evidence, investigate, and recover.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Contain access and actions, preserve evidence, investigate, and recover.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1315,16 +1315,16 @@
     {
       "id": "m3-q18",
       "moduleId": 3,
-      "prompt": "Which choice best matches Module 3 guidance on an effective kill switch?",
+      "prompt": "Which decision best addresses an effective kill switch?",
       "options": [
+        "Contain access and actions, preserve evidence, investigate, and recover.",
+        "Most agent security failures are ordinary security failures at machine speed.",
         "Revoke identity, tools, execution, and delegated paths at enforced points.",
-        "Use a prompt as the enforcement boundary",
-        "Share a human administrator credential",
-        "Assume containment works without testing"
+        "Machine-speed code volume can outpace human review and remediation."
       ],
-      "correct": 0,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 3 guidance: Revoke identity, tools, execution, and delegated paths at enforced points.",
+      "correct": 2,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Revoke identity, tools, execution, and delegated paths at enforced points.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1338,16 +1338,16 @@
     {
       "id": "m3-q19",
       "moduleId": 3,
-      "prompt": "Which choice best matches Module 3 guidance on agent classification?",
+      "prompt": "Which decision best addresses agent classification?",
       "options": [
-        "Use a prompt as the enforcement boundary",
+        "Support it with adversarial testing evidence.",
         "Classify by consequence, authority, and autonomy.",
-        "Share a human administrator credential",
-        "Assume containment works without testing"
+        "Agentic supply-chain vulnerabilities.",
+        "Private data, untrusted content, and a path to send data out."
       ],
       "correct": 1,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 3 guidance: Classify by consequence, authority, and autonomy.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Classify by consequence, authority, and autonomy.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1361,16 +1361,16 @@
     {
       "id": "m3-q20",
       "moduleId": 3,
-      "prompt": "Which choice best matches Module 3 guidance on the module security summary?",
+      "prompt": "Which decision best addresses the module security summary?",
       "options": [
-        "Use a prompt as the enforcement boundary",
-        "Share a human administrator credential",
         "Most agent security failures are ordinary security failures at machine speed.",
-        "Assume containment works without testing"
+        "Revoke identity, tools, execution, and delegated paths at enforced points.",
+        "Contain access and actions, preserve evidence, investigate, and recover.",
+        "Machine-speed code volume can outpace human review and remediation."
       ],
-      "correct": 2,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 3 guidance: Most agent security failures are ordinary security failures at machine speed.",
+      "correct": 0,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Most agent security failures are ordinary security failures at machine speed.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1384,16 +1384,16 @@
     {
       "id": "m4-q01",
       "moduleId": 4,
-      "prompt": "Which choice best matches Module 4 guidance on where strategy begins?",
+      "prompt": "Which decision best addresses where strategy begins?",
       "options": [
         "Start with business outcomes and strategic priorities, not agents.",
-        "Count pilots as the business outcome",
-        "Use the same governance for every risk",
-        "Treat adoption as an IT-only program"
+        "Require ownership, classification, quality standards, and lineage.",
+        "Give every agent a defined job, human owner, and escalation path.",
+        "Track business outcomes, adoption, agent performance, and economics."
       ],
       "correct": 0,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 4 guidance: Start with business outcomes and strategic priorities, not agents.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Start with business outcomes and strategic priorities, not agents.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1407,16 +1407,16 @@
     {
       "id": "m4-q02",
       "moduleId": 4,
-      "prompt": "Which choice best matches Module 4 guidance on golden use cases?",
+      "prompt": "Which decision best addresses golden use cases?",
       "options": [
-        "Count pilots as the business outcome",
-        "Screen value, decision density, data readiness, bounded action, friction, and risk.",
-        "Use the same governance for every risk",
-        "Treat adoption as an IT-only program"
+        "Provide common identity, registry, authority, policy, observability, and lifecycle.",
+        "Decide from proprietary data, domain expertise, integration, and strategic advantage.",
+        "Govern planning, persistence, connections, identity, and action at machine speed.",
+        "Screen value, decision density, data readiness, bounded action, friction, and risk."
       ],
-      "correct": 1,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 4 guidance: Screen value, decision density, data readiness, bounded action, friction, and risk.",
+      "correct": 3,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Screen value, decision density, data readiness, bounded action, friction, and risk.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1430,16 +1430,16 @@
     {
       "id": "m4-q03",
       "moduleId": 4,
-      "prompt": "Which choice best matches Module 4 guidance on choosing agency?",
+      "prompt": "Which decision best addresses choosing agency?",
       "options": [
-        "Count pilots as the business outcome",
-        "Use the same governance for every risk",
+        "Track cost and value per workflow with budgets and limits.",
+        "Advance, reshape, pause, or stop based on evidence.",
         "Use the least sufficient agency that captures the value.",
-        "Treat adoption as an IT-only program"
+        "Match authority to consequence, reversibility, and confidence."
       ],
       "correct": 2,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 4 guidance: Use the least sufficient agency that captures the value.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Use the least sufficient agency that captures the value.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1453,16 +1453,16 @@
     {
       "id": "m4-q04",
       "moduleId": 4,
-      "prompt": "Which choice best matches Module 4 guidance on buy, boost, or build?",
+      "prompt": "Which decision best addresses buy, boost, or build?",
       "options": [
-        "Count pilots as the business outcome",
-        "Use the same governance for every risk",
-        "Treat adoption as an IT-only program",
-        "Decide from proprietary data, domain expertise, integration, and strategic advantage."
+        "Inventory agents, assign owners, risk-tier them, and block unregistered write access.",
+        "Decide from proprietary data, domain expertise, integration, and strategic advantage.",
+        "Screen value, decision density, data readiness, bounded action, friction, and risk.",
+        "Provide common identity, registry, authority, policy, observability, and lifecycle."
       ],
-      "correct": 3,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 4 guidance: Decide from proprietary data, domain expertise, integration, and strategic advantage.",
+      "correct": 1,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Decide from proprietary data, domain expertise, integration, and strategic advantage.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1476,16 +1476,16 @@
     {
       "id": "m4-q05",
       "moduleId": 4,
-      "prompt": "Which choice best matches Module 4 guidance on portfolio stage gates?",
+      "prompt": "Which decision best addresses portfolio stage gates?",
       "options": [
         "Advance, reshape, pause, or stop based on evidence.",
-        "Count pilots as the business outcome",
-        "Use the same governance for every risk",
-        "Treat adoption as an IT-only program"
+        "Use the least sufficient agency that captures the value.",
+        "Track cost and value per workflow with budgets and limits.",
+        "Match authority to consequence, reversibility, and confidence."
       ],
       "correct": 0,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 4 guidance: Advance, reshape, pause, or stop based on evidence.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Advance, reshape, pause, or stop based on evidence.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1499,16 +1499,16 @@
     {
       "id": "m4-q06",
       "moduleId": 4,
-      "prompt": "Which choice best matches Module 4 guidance on executive measures?",
+      "prompt": "Which decision best addresses executive measures?",
       "options": [
-        "Count pilots as the business outcome",
-        "Track business outcomes, adoption, agent performance, and economics.",
-        "Use the same governance for every risk",
-        "Treat adoption as an IT-only program"
+        "Start with business outcomes and strategic priorities, not agents.",
+        "Require ownership, classification, quality standards, and lineage.",
+        "Give every agent a defined job, human owner, and escalation path.",
+        "Track business outcomes, adoption, agent performance, and economics."
       ],
-      "correct": 1,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 4 guidance: Track business outcomes, adoption, agent performance, and economics.",
+      "correct": 3,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Track business outcomes, adoption, agent performance, and economics.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1522,16 +1522,16 @@
     {
       "id": "m4-q07",
       "moduleId": 4,
-      "prompt": "Which choice best matches Module 4 guidance on decision rights?",
+      "prompt": "Which decision best addresses decision rights?",
       "options": [
-        "Count pilots as the business outcome",
-        "Use the same governance for every risk",
+        "Use unique, scoped, revocable credentials with least privilege.",
+        "Give every agent a defined job, human owner, and escalation path.",
         "Match authority to consequence, reversibility, and confidence.",
-        "Treat adoption as an IT-only program"
+        "Start with business outcomes and strategic priorities, not agents."
       ],
       "correct": 2,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 4 guidance: Match authority to consequence, reversibility, and confidence.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Match authority to consequence, reversibility, and confidence.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1545,16 +1545,16 @@
     {
       "id": "m4-q08",
       "moduleId": 4,
-      "prompt": "Which choice best matches Module 4 guidance on production-agent accountability?",
+      "prompt": "Which decision best addresses production-agent accountability?",
       "options": [
-        "Count pilots as the business outcome",
-        "Use the same governance for every risk",
-        "Treat adoption as an IT-only program",
-        "Give every agent a defined job, human owner, and escalation path."
+        "Require ownership, classification, quality standards, and lineage.",
+        "Give every agent a defined job, human owner, and escalation path.",
+        "Start with business outcomes and strategic priorities, not agents.",
+        "Use unique, scoped, revocable credentials with least privilege."
       ],
-      "correct": 3,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 4 guidance: Give every agent a defined job, human owner, and escalation path.",
+      "correct": 1,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Give every agent a defined job, human owner, and escalation path.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1568,16 +1568,16 @@
     {
       "id": "m4-q09",
       "moduleId": 4,
-      "prompt": "Which choice best matches Module 4 guidance on workforce uncertainty?",
+      "prompt": "Which decision best addresses workforce uncertainty?",
       "options": [
         "Communicate honestly, build fluency, redesign work, and keep choices reversible.",
-        "Count pilots as the business outcome",
-        "Use the same governance for every risk",
-        "Treat adoption as an IT-only program"
+        "Govern planning, persistence, connections, identity, and action at machine speed.",
+        "Increase assurance, approval, monitoring, and oversight with impact and autonomy.",
+        "Produce logs, observability, kill-switch tests, red teams, and board reporting."
       ],
       "correct": 0,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 4 guidance: Communicate honestly, build fluency, redesign work, and keep choices reversible.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Communicate honestly, build fluency, redesign work, and keep choices reversible.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1591,16 +1591,16 @@
     {
       "id": "m4-q10",
       "moduleId": 4,
-      "prompt": "Which choice best matches Module 4 guidance on the governance shift?",
+      "prompt": "Which decision best addresses the governance shift?",
       "options": [
-        "Count pilots as the business outcome",
-        "Govern planning, persistence, connections, identity, and action at machine speed.",
-        "Use the same governance for every risk",
-        "Treat adoption as an IT-only program"
+        "Increase assurance, approval, monitoring, and oversight with impact and autonomy.",
+        "Communicate honestly, build fluency, redesign work, and keep choices reversible.",
+        "Provide common identity, registry, authority, policy, observability, and lifecycle.",
+        "Govern planning, persistence, connections, identity, and action at machine speed."
       ],
-      "correct": 1,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 4 guidance: Govern planning, persistence, connections, identity, and action at machine speed.",
+      "correct": 3,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Govern planning, persistence, connections, identity, and action at machine speed.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1614,16 +1614,16 @@
     {
       "id": "m4-q11",
       "moduleId": 4,
-      "prompt": "Which choice best matches Module 4 guidance on proportional governance?",
+      "prompt": "Which decision best addresses proportional governance?",
       "options": [
-        "Count pilots as the business outcome",
-        "Use the same governance for every risk",
+        "Govern planning, persistence, connections, identity, and action at machine speed.",
+        "Communicate honestly, build fluency, redesign work, and keep choices reversible.",
         "Increase assurance, approval, monitoring, and oversight with impact and autonomy.",
-        "Treat adoption as an IT-only program"
+        "Provide common identity, registry, authority, policy, observability, and lifecycle."
       ],
       "correct": 2,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 4 guidance: Increase assurance, approval, monitoring, and oversight with impact and autonomy.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Increase assurance, approval, monitoring, and oversight with impact and autonomy.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1637,16 +1637,16 @@
     {
       "id": "m4-q12",
       "moduleId": 4,
-      "prompt": "Which choice best matches Module 4 guidance on layered governance?",
+      "prompt": "Which decision best addresses layered governance?",
       "options": [
-        "Count pilots as the business outcome",
-        "Use the same governance for every risk",
-        "Treat adoption as an IT-only program",
-        "Combine senior accountability, process ownership, standards, data governance, and technical controls."
+        "Strategy chooses value, the operating model defines work, and governance enables scale.",
+        "Combine senior accountability, process ownership, standards, data governance, and technical controls.",
+        "Inventory agents, assign owners, risk-tier them, and block unregistered write access.",
+        "Decide from proprietary data, domain expertise, integration, and strategic advantage."
       ],
-      "correct": 3,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 4 guidance: Combine senior accountability, process ownership, standards, data governance, and technical controls.",
+      "correct": 1,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Combine senior accountability, process ownership, standards, data governance, and technical controls.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1660,16 +1660,16 @@
     {
       "id": "m4-q13",
       "moduleId": 4,
-      "prompt": "Which choice best matches Module 4 guidance on agent-ready data governance?",
+      "prompt": "Which decision best addresses agent-ready data governance?",
       "options": [
         "Require ownership, classification, quality standards, and lineage.",
-        "Count pilots as the business outcome",
-        "Use the same governance for every risk",
-        "Treat adoption as an IT-only program"
+        "Start with business outcomes and strategic priorities, not agents.",
+        "Give every agent a defined job, human owner, and escalation path.",
+        "Track business outcomes, adoption, agent performance, and economics."
       ],
       "correct": 0,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 4 guidance: Require ownership, classification, quality standards, and lineage.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Require ownership, classification, quality standards, and lineage.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1683,16 +1683,16 @@
     {
       "id": "m4-q14",
       "moduleId": 4,
-      "prompt": "Which choice best matches Module 4 guidance on ecosystem-scale governance?",
+      "prompt": "Which decision best addresses ecosystem-scale governance?",
       "options": [
-        "Count pilots as the business outcome",
-        "Move from individual approvals to automated portfolio and ecosystem controls.",
-        "Use the same governance for every risk",
-        "Treat adoption as an IT-only program"
+        "Produce logs, observability, kill-switch tests, red teams, and board reporting.",
+        "Communicate honestly, build fluency, redesign work, and keep choices reversible.",
+        "Increase assurance, approval, monitoring, and oversight with impact and autonomy.",
+        "Move from individual approvals to automated portfolio and ecosystem controls."
       ],
-      "correct": 1,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 4 guidance: Move from individual approvals to automated portfolio and ecosystem controls.",
+      "correct": 3,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Move from individual approvals to automated portfolio and ecosystem controls.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1706,16 +1706,16 @@
     {
       "id": "m4-q15",
       "moduleId": 4,
-      "prompt": "Which choice best matches Module 4 guidance on the enterprise agent control plane?",
+      "prompt": "Which decision best addresses the enterprise agent control plane?",
       "options": [
-        "Count pilots as the business outcome",
-        "Use the same governance for every risk",
+        "Screen value, decision density, data readiness, bounded action, friction, and risk.",
+        "Inventory agents, assign owners, risk-tier them, and block unregistered write access.",
         "Provide common identity, registry, authority, policy, observability, and lifecycle.",
-        "Treat adoption as an IT-only program"
+        "Increase assurance, approval, monitoring, and oversight with impact and autonomy."
       ],
       "correct": 2,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 4 guidance: Provide common identity, registry, authority, policy, observability, and lifecycle.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Provide common identity, registry, authority, policy, observability, and lifecycle.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1729,16 +1729,16 @@
     {
       "id": "m4-q16",
       "moduleId": 4,
-      "prompt": "Which choice best matches Module 4 guidance on financial management?",
+      "prompt": "Which decision best addresses financial management?",
       "options": [
-        "Count pilots as the business outcome",
-        "Use the same governance for every risk",
-        "Treat adoption as an IT-only program",
-        "Track cost and value per workflow with budgets and limits."
+        "Use the least sufficient agency that captures the value.",
+        "Track cost and value per workflow with budgets and limits.",
+        "Match authority to consequence, reversibility, and confidence.",
+        "Use unique, scoped, revocable credentials with least privilege."
       ],
-      "correct": 3,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 4 guidance: Track cost and value per workflow with budgets and limits.",
+      "correct": 1,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Track cost and value per workflow with budgets and limits.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1752,16 +1752,16 @@
     {
       "id": "m4-q17",
       "moduleId": 4,
-      "prompt": "Which choice best matches Module 4 guidance on days 0-30 of governance?",
+      "prompt": "Which decision best addresses days 0-30 of governance?",
       "options": [
         "Inventory agents, assign owners, risk-tier them, and block unregistered write access.",
-        "Count pilots as the business outcome",
-        "Use the same governance for every risk",
-        "Treat adoption as an IT-only program"
+        "Decide from proprietary data, domain expertise, integration, and strategic advantage.",
+        "Provide common identity, registry, authority, policy, observability, and lifecycle.",
+        "Strategy chooses value, the operating model defines work, and governance enables scale."
       ],
       "correct": 0,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 4 guidance: Inventory agents, assign owners, risk-tier them, and block unregistered write access.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Inventory agents, assign owners, risk-tier them, and block unregistered write access.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1775,16 +1775,16 @@
     {
       "id": "m4-q18",
       "moduleId": 4,
-      "prompt": "Which choice best matches Module 4 guidance on days 61-90 of governance?",
+      "prompt": "Which decision best addresses days 61-90 of governance?",
       "options": [
-        "Count pilots as the business outcome",
-        "Produce logs, observability, kill-switch tests, red teams, and board reporting.",
-        "Use the same governance for every risk",
-        "Treat adoption as an IT-only program"
+        "Communicate honestly, build fluency, redesign work, and keep choices reversible.",
+        "Move from individual approvals to automated portfolio and ecosystem controls.",
+        "Increase assurance, approval, monitoring, and oversight with impact and autonomy.",
+        "Produce logs, observability, kill-switch tests, red teams, and board reporting."
       ],
-      "correct": 1,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 4 guidance: Produce logs, observability, kill-switch tests, red teams, and board reporting.",
+      "correct": 3,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Produce logs, observability, kill-switch tests, red teams, and board reporting.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1798,16 +1798,16 @@
     {
       "id": "m4-q19",
       "moduleId": 4,
-      "prompt": "Which choice best matches Module 4 guidance on trusted agent identity?",
+      "prompt": "Which decision best addresses trusted agent identity?",
       "options": [
-        "Count pilots as the business outcome",
-        "Use the same governance for every risk",
+        "Match authority to consequence, reversibility, and confidence.",
+        "Give every agent a defined job, human owner, and escalation path.",
         "Use unique, scoped, revocable credentials with least privilege.",
-        "Treat adoption as an IT-only program"
+        "Require ownership, classification, quality standards, and lineage."
       ],
       "correct": 2,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 4 guidance: Use unique, scoped, revocable credentials with least privilege.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Use unique, scoped, revocable credentials with least privilege.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1821,16 +1821,16 @@
     {
       "id": "m4-q20",
       "moduleId": 4,
-      "prompt": "Which choice best matches Module 4 guidance on strategy, operating model, and governance?",
+      "prompt": "Which decision best addresses strategy, operating model, and governance?",
       "options": [
-        "Count pilots as the business outcome",
-        "Use the same governance for every risk",
-        "Treat adoption as an IT-only program",
-        "Strategy chooses value, the operating model defines work, and governance enables scale."
+        "Inventory agents, assign owners, risk-tier them, and block unregistered write access.",
+        "Strategy chooses value, the operating model defines work, and governance enables scale.",
+        "Decide from proprietary data, domain expertise, integration, and strategic advantage.",
+        "Provide common identity, registry, authority, policy, observability, and lifecycle."
       ],
-      "correct": 3,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 4 guidance: Strategy chooses value, the operating model defines work, and governance enables scale.",
+      "correct": 1,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Strategy chooses value, the operating model defines work, and governance enables scale.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1844,16 +1844,16 @@
     {
       "id": "m5-q01",
       "moduleId": 5,
-      "prompt": "Which choice best matches Module 5 guidance on what creates an agentic workflow?",
+      "prompt": "Which decision best addresses what creates an agentic workflow?",
       "options": [
-        "Add agents whenever a prompt is long",
+        "Require a distinct task, data, tools, permissions, evaluation, or owner.",
         "Data and tool use, orchestration, bounded action, and human checkpoints.",
-        "Change several variables before retesting",
-        "Judge quality from one polished output"
+        "It adds latency, coordination, cost, governance, and a failure surface.",
+        "Estimate critical-path latency, cost, complexity, and operating burden."
       ],
       "correct": 1,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 5 guidance: Data and tool use, orchestration, bounded action, and human checkpoints.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Data and tool use, orchestration, bounded action, and human checkpoints.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -1867,16 +1867,16 @@
     {
       "id": "m5-q02",
       "moduleId": 5,
-      "prompt": "Which choice best matches Module 5 guidance on the first lab baseline?",
+      "prompt": "Which decision best addresses the first lab baseline?",
       "options": [
-        "Add agents whenever a prompt is long",
-        "Change several variables before retesting",
         "Keep it unchanged for a valid comparison.",
-        "Judge quality from one polished output"
+        "Usefulness does not establish correctness.",
+        "Update Knowledge and replace the stale uploaded file.",
+        "Change one variable and rerun the same case and prompt."
       ],
-      "correct": 2,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 5 guidance: Keep it unchanged for a valid comparison.",
+      "correct": 0,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Keep it unchanged for a valid comparison.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -1890,16 +1890,16 @@
     {
       "id": "m5-q03",
       "moduleId": 5,
-      "prompt": "Which choice best matches Module 5 guidance on changed policy facts?",
+      "prompt": "Which decision best addresses changed policy facts?",
       "options": [
-        "Add agents whenever a prompt is long",
-        "Change several variables before retesting",
-        "Judge quality from one polished output",
+        "Change one variable and rerun the same case and prompt.",
+        "Usefulness does not establish correctness.",
+        "Coordinate steps, tools, state, and agents toward a larger goal.",
         "Update Knowledge and replace the stale uploaded file."
       ],
       "correct": 3,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 5 guidance: Update Knowledge and replace the stale uploaded file.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Update Knowledge and replace the stale uploaded file.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -1913,16 +1913,16 @@
     {
       "id": "m5-q04",
       "moduleId": 5,
-      "prompt": "Which choice best matches Module 5 guidance on the Lab 1 limitation?",
+      "prompt": "Which decision best addresses the Lab 1 limitation?",
       "options": [
+        "Keep it unchanged for a valid comparison.",
+        "Update Knowledge and replace the stale uploaded file.",
         "Usefulness does not establish correctness.",
-        "Add agents whenever a prompt is long",
-        "Change several variables before retesting",
-        "Judge quality from one polished output"
+        "Change one variable and rerun the same case and prompt."
       ],
-      "correct": 0,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 5 guidance: Usefulness does not establish correctness.",
+      "correct": 2,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Usefulness does not establish correctness.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -1936,16 +1936,16 @@
     {
       "id": "m5-q05",
       "moduleId": 5,
-      "prompt": "Which choice best matches Module 5 guidance on Lab 2 evaluation?",
+      "prompt": "Which decision best addresses Lab 2 evaluation?",
       "options": [
-        "Add agents whenever a prompt is long",
+        "It is conversationally instructed, not a deterministic approval node.",
         "Test whether both the decision and supporting evidence are grounded.",
-        "Change several variables before retesting",
-        "Judge quality from one polished output"
+        "Choose where to build, run, integrate, govern, and observe agents.",
+        "Credentials, permissions, and audit history assigned to the agent."
       ],
       "correct": 1,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 5 guidance: Test whether both the decision and supporting evidence are grounded.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Test whether both the decision and supporting evidence are grounded.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -1959,16 +1959,16 @@
     {
       "id": "m5-q06",
       "moduleId": 5,
-      "prompt": "Which choice best matches Module 5 guidance on a controlled retest?",
+      "prompt": "Which decision best addresses a controlled retest?",
       "options": [
-        "Add agents whenever a prompt is long",
-        "Change several variables before retesting",
         "Change one variable and rerun the same case and prompt.",
-        "Judge quality from one polished output"
+        "Update Knowledge and replace the stale uploaded file.",
+        "Coordinate steps, tools, state, and agents toward a larger goal.",
+        "Choose where to build, run, integrate, govern, and observe agents."
       ],
-      "correct": 2,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 5 guidance: Change one variable and rerun the same case and prompt.",
+      "correct": 0,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Change one variable and rerun the same case and prompt.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -1982,16 +1982,16 @@
     {
       "id": "m5-q07",
       "moduleId": 5,
-      "prompt": "Which choice best matches Module 5 guidance on prompt improvement?",
+      "prompt": "Which decision best addresses prompt improvement?",
       "options": [
-        "Add agents whenever a prompt is long",
-        "Change several variables before retesting",
-        "Judge quality from one polished output",
+        "Inspect data, calculations, tools, orchestration, human decisions, and traces.",
+        "Repeat a test to detect whether a later change breaks acceptable behavior.",
+        "Agentic systems are more than prompts, and more agents are not automatically better.",
         "It is one lever among data, tools, orchestration, instructions, and evaluation."
       ],
       "correct": 3,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 5 guidance: It is one lever among data, tools, orchestration, instructions, and evaluation.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "It is one lever among data, tools, orchestration, instructions, and evaluation.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2005,16 +2005,16 @@
     {
       "id": "m5-q08",
       "moduleId": 5,
-      "prompt": "Which choice best matches Module 5 guidance on the regional workflow?",
+      "prompt": "Which decision best addresses the regional workflow?",
       "options": [
+        "Build, runtime, identity, policy, evaluation, registry, and observability are converging.",
+        "Agentic systems are more than prompts, and more agents are not automatically better.",
         "Decomposition, tools, orchestration, and a human decision point created agentic behavior.",
-        "Add agents whenever a prompt is long",
-        "Change several variables before retesting",
-        "Judge quality from one polished output"
+        "It is one lever among data, tools, orchestration, instructions, and evaluation."
       ],
-      "correct": 0,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 5 guidance: Decomposition, tools, orchestration, and a human decision point created agentic behavior.",
+      "correct": 2,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Decomposition, tools, orchestration, and a human decision point created agentic behavior.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2028,16 +2028,16 @@
     {
       "id": "m5-q09",
       "moduleId": 5,
-      "prompt": "Which choice best matches Module 5 guidance on the demo checkpoint caveat?",
+      "prompt": "Which decision best addresses the demo checkpoint caveat?",
       "options": [
-        "Add agents whenever a prompt is long",
+        "Test whether both the decision and supporting evidence are grounded.",
         "It is conversationally instructed, not a deterministic approval node.",
-        "Change several variables before retesting",
-        "Judge quality from one polished output"
+        "It adds latency, coordination, cost, governance, and a failure surface.",
+        "Estimate critical-path latency, cost, complexity, and operating burden."
       ],
       "correct": 1,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 5 guidance: It is conversationally instructed, not a deterministic approval node.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "It is conversationally instructed, not a deterministic approval node.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2051,16 +2051,16 @@
     {
       "id": "m5-q10",
       "moduleId": 5,
-      "prompt": "Which choice best matches Module 5 guidance on production evaluation?",
+      "prompt": "Which decision best addresses production evaluation?",
       "options": [
-        "Add agents whenever a prompt is long",
-        "Change several variables before retesting",
         "Inspect data, calculations, tools, orchestration, human decisions, and traces.",
-        "Judge quality from one polished output"
+        "It is one lever among data, tools, orchestration, instructions, and evaluation.",
+        "Repeat a test to detect whether a later change breaks acceptable behavior.",
+        "Use a tool or workflow step when it can do the job without another agent."
       ],
-      "correct": 2,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 5 guidance: Inspect data, calculations, tools, orchestration, human decisions, and traces.",
+      "correct": 0,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Inspect data, calculations, tools, orchestration, human decisions, and traces.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2074,16 +2074,16 @@
     {
       "id": "m5-q11",
       "moduleId": 5,
-      "prompt": "Which choice best matches Module 5 guidance on a justified specialist agent?",
+      "prompt": "Which decision best addresses a justified specialist agent?",
       "options": [
-        "Add agents whenever a prompt is long",
-        "Change several variables before retesting",
-        "Judge quality from one polished output",
+        "Data and tool use, orchestration, bounded action, and human checkpoints.",
+        "It adds latency, coordination, cost, governance, and a failure surface.",
+        "Estimate critical-path latency, cost, complexity, and operating burden.",
         "Require a distinct task, data, tools, permissions, evaluation, or owner."
       ],
       "correct": 3,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 5 guidance: Require a distinct task, data, tools, permissions, evaluation, or owner.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Require a distinct task, data, tools, permissions, evaluation, or owner.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2097,16 +2097,16 @@
     {
       "id": "m5-q12",
       "moduleId": 5,
-      "prompt": "Which choice best matches Module 5 guidance on the cost of another agent?",
+      "prompt": "Which decision best addresses the cost of another agent?",
       "options": [
+        "Estimate critical-path latency, cost, complexity, and operating burden.",
+        "Require a distinct task, data, tools, permissions, evaluation, or owner.",
         "It adds latency, coordination, cost, governance, and a failure surface.",
-        "Add agents whenever a prompt is long",
-        "Change several variables before retesting",
-        "Judge quality from one polished output"
+        "Data and tool use, orchestration, bounded action, and human checkpoints."
       ],
-      "correct": 0,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 5 guidance: It adds latency, coordination, cost, governance, and a failure surface.",
+      "correct": 2,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "It adds latency, coordination, cost, governance, and a failure surface.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2120,16 +2120,16 @@
     {
       "id": "m5-q13",
       "moduleId": 5,
-      "prompt": "Which choice best matches Module 5 guidance on pre-build multi-agent estimates?",
+      "prompt": "Which decision best addresses pre-build multi-agent estimates?",
       "options": [
-        "Add agents whenever a prompt is long",
+        "It adds latency, coordination, cost, governance, and a failure surface.",
         "Estimate critical-path latency, cost, complexity, and operating burden.",
-        "Change several variables before retesting",
-        "Judge quality from one polished output"
+        "Require a distinct task, data, tools, permissions, evaluation, or owner.",
+        "Data and tool use, orchestration, bounded action, and human checkpoints."
       ],
       "correct": 1,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 5 guidance: Estimate critical-path latency, cost, complexity, and operating burden.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Estimate critical-path latency, cost, complexity, and operating burden.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2143,16 +2143,16 @@
     {
       "id": "m5-q14",
       "moduleId": 5,
-      "prompt": "Which choice best matches Module 5 guidance on platform selection?",
+      "prompt": "Which decision best addresses platform selection?",
       "options": [
-        "Add agents whenever a prompt is long",
-        "Change several variables before retesting",
         "Choose where to build, run, integrate, govern, and observe agents.",
-        "Judge quality from one polished output"
+        "Credentials, permissions, and audit history assigned to the agent.",
+        "Coordinate steps, tools, state, and agents toward a larger goal.",
+        "Test whether both the decision and supporting evidence are grounded."
       ],
-      "correct": 2,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 5 guidance: Choose where to build, run, integrate, govern, and observe agents.",
+      "correct": 0,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Choose where to build, run, integrate, govern, and observe agents.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2166,16 +2166,16 @@
     {
       "id": "m5-q15",
       "moduleId": 5,
-      "prompt": "Which choice best matches Module 5 guidance on platform direction?",
+      "prompt": "Which decision best addresses platform direction?",
       "options": [
-        "Add agents whenever a prompt is long",
-        "Change several variables before retesting",
-        "Judge quality from one polished output",
+        "Decomposition, tools, orchestration, and a human decision point created agentic behavior.",
+        "Agentic systems are more than prompts, and more agents are not automatically better.",
+        "It is one lever among data, tools, orchestration, instructions, and evaluation.",
         "Build, runtime, identity, policy, evaluation, registry, and observability are converging."
       ],
       "correct": 3,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 5 guidance: Build, runtime, identity, policy, evaluation, registry, and observability are converging.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Build, runtime, identity, policy, evaluation, registry, and observability are converging.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2189,16 +2189,16 @@
     {
       "id": "m5-q16",
       "moduleId": 5,
-      "prompt": "Which choice best matches Module 5 guidance on agent identity?",
+      "prompt": "Which decision best addresses agent identity?",
       "options": [
+        "Choose where to build, run, integrate, govern, and observe agents.",
+        "Coordinate steps, tools, state, and agents toward a larger goal.",
         "Credentials, permissions, and audit history assigned to the agent.",
-        "Add agents whenever a prompt is long",
-        "Change several variables before retesting",
-        "Judge quality from one polished output"
+        "Test whether both the decision and supporting evidence are grounded."
       ],
-      "correct": 0,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 5 guidance: Credentials, permissions, and audit history assigned to the agent.",
+      "correct": 2,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Credentials, permissions, and audit history assigned to the agent.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2212,16 +2212,16 @@
     {
       "id": "m5-q17",
       "moduleId": 5,
-      "prompt": "Which choice best matches Module 5 guidance on orchestration?",
+      "prompt": "Which decision best addresses orchestration?",
       "options": [
-        "Add agents whenever a prompt is long",
+        "Credentials, permissions, and audit history assigned to the agent.",
         "Coordinate steps, tools, state, and agents toward a larger goal.",
-        "Change several variables before retesting",
-        "Judge quality from one polished output"
+        "Choose where to build, run, integrate, govern, and observe agents.",
+        "Test whether both the decision and supporting evidence are grounded."
       ],
       "correct": 1,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 5 guidance: Coordinate steps, tools, state, and agents toward a larger goal.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Coordinate steps, tools, state, and agents toward a larger goal.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2235,16 +2235,16 @@
     {
       "id": "m5-q18",
       "moduleId": 5,
-      "prompt": "Which choice best matches Module 5 guidance on regression testing?",
+      "prompt": "Which decision best addresses regression testing?",
       "options": [
-        "Add agents whenever a prompt is long",
-        "Change several variables before retesting",
         "Repeat a test to detect whether a later change breaks acceptable behavior.",
-        "Judge quality from one polished output"
+        "Use a tool or workflow step when it can do the job without another agent.",
+        "Require a distinct task, data, tools, permissions, evaluation, or owner.",
+        "Data and tool use, orchestration, bounded action, and human checkpoints."
       ],
-      "correct": 2,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 5 guidance: Repeat a test to detect whether a later change breaks acceptable behavior.",
+      "correct": 0,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Repeat a test to detect whether a later change breaks acceptable behavior.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2258,16 +2258,16 @@
     {
       "id": "m5-q19",
       "moduleId": 5,
-      "prompt": "Which choice best matches Module 5 guidance on an unnecessary specialist?",
+      "prompt": "Which decision best addresses an unnecessary specialist?",
       "options": [
-        "Add agents whenever a prompt is long",
-        "Change several variables before retesting",
-        "Judge quality from one polished output",
+        "Repeat a test to detect whether a later change breaks acceptable behavior.",
+        "Require a distinct task, data, tools, permissions, evaluation, or owner.",
+        "Data and tool use, orchestration, bounded action, and human checkpoints.",
         "Use a tool or workflow step when it can do the job without another agent."
       ],
       "correct": 3,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 5 guidance: Use a tool or workflow step when it can do the job without another agent.",
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Use a tool or workflow step when it can do the job without another agent.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2281,16 +2281,16 @@
     {
       "id": "m5-q20",
       "moduleId": 5,
-      "prompt": "Which choice best matches Module 5 guidance on the module design message?",
+      "prompt": "Which decision best addresses the module design message?",
       "options": [
+        "Build, runtime, identity, policy, evaluation, registry, and observability are converging.",
+        "Decomposition, tools, orchestration, and a human decision point created agentic behavior.",
         "Agentic systems are more than prompts, and more agents are not automatically better.",
-        "Add agents whenever a prompt is long",
-        "Change several variables before retesting",
-        "Judge quality from one polished output"
+        "It is one lever among data, tools, orchestration, instructions, and evaluation."
       ],
-      "correct": 0,
-      "hint": "Favor bounded authority, explicit evidence, and an enforceable operating rule.",
-      "rationale": "Module 5 guidance: Agentic systems are more than prompts, and more agents are not automatically better.",
+      "correct": 2,
+      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
+      "rationale": "Agentic systems are more than prompts, and more agents are not automatically better.",
       "sourceRefs": [
         {
           "sourceId": "module-5",

@@ -113,6 +113,31 @@ const S:Record<ModuleId,Seed[]>={
  ['an unnecessary specialist','Use a tool or workflow step when it can do the job without another agent.','slide 58, Justifying Agents'],
  ['the module design message','Agentic systems are more than prompts, and more agents are not automatically better.','slide 65, Module Takeaways'],
 ]};
-const D:Record<ModuleId,string[]>={1:['Maximize autonomy before defining the task','Treat a longer prompt as the architecture','Let the model define its authority'],2:['Rely on the model to repair source data','Evaluate only the final response','Treat observability as post-launch reporting'],3:['Use a prompt as the enforcement boundary','Share a human administrator credential','Assume containment works without testing'],4:['Count pilots as the business outcome','Use the same governance for every risk','Treat adoption as an IT-only program'],5:['Add agents whenever a prompt is long','Change several variables before retesting','Judge quality from one polished output']};
-export const QUESTIONS:Question[]=([1,2,3,4,5] as ModuleId[]).flatMap(moduleId=>S[moduleId].map(([topic,answer,locator],i)=>{const correct=(i+moduleId)%4;const options=[...D[moduleId]];options.splice(correct,0,answer);return{id:`m${moduleId}-q${String(i+1).padStart(2,'0')}`,moduleId,prompt:`Which choice best matches Module ${moduleId} guidance on ${topic}?`,options,correct,hint:'Favor bounded authority, explicit evidence, and an enforceable operating rule.',rationale:`Module ${moduleId} guidance: ${answer}`,sourceRefs:[{sourceId:`module-${moduleId}`,locator,claim:answer}],semanticKey:`m${moduleId}|${i+1}|${topic}`,difficulty:(i<7?1:i<14?2:3) as 1|2|3}}));
+const distractors=(moduleId:ModuleId,index:number,answer:string)=>S[moduleId]
+ .map((seed,i)=>({i,text:seed[1],distance:Math.abs(seed[1].length-answer.length)}))
+ .filter(item=>item.i!==index)
+ .sort((a,b)=>a.distance-b.distance||Math.abs(a.i-index)-Math.abs(b.i-index)||a.i-b.i)
+ .slice(0,3)
+ .map(item=>item.text);
+
+export const QUESTIONS:Question[]=([1,2,3,4,5] as ModuleId[]).flatMap(moduleId=>S[moduleId].map(([topic,answer,locator],i)=>{
+ const correct=(i*3+moduleId)%4;const options=distractors(moduleId,i,answer);options.splice(correct,0,answer);
+ return{id:`m${moduleId}-q${String(i+1).padStart(2,'0')}`,moduleId,prompt:`Which decision best addresses ${topic}?`,options,correct,hint:'Look for the choice that defines a boundary, evidence requirement, or accountable operating action.',rationale:answer,sourceRefs:[{sourceId:`module-${moduleId}`,locator,claim:answer}],semanticKey:`m${moduleId}|${i+1}|${topic}`,difficulty:(i<7?1:i<14?2:3) as 1|2|3};
+}));
+
+export type RuntimeQuestion=Question&{baseId:string;variant:number};
+const hash=(value:string)=>{let h=2166136261;for(const ch of value){h^=ch.charCodeAt(0);h=Math.imul(h,16777619)}return h>>>0};
+const rotate=<T,>(items:T[],amount:number)=>items.map((_,i)=>items[(i+amount)%items.length]);
+export function materializeQuestion(question:Question,nonce=0):RuntimeQuestion{
+ const topic=question.semanticKey.split('|').slice(2).join('|');
+ const stems=[`Which decision best addresses ${topic}?`,`A team is reviewing ${topic}. Which action is most consistent with the program guidance?`,`Which approach provides the strongest response to ${topic}?`];
+ const variant=(hash(question.id)+nonce)%stems.length;const shift=(hash(`${question.id}:${nonce}`)%3)+1;
+ const paired=question.options.map((text,i)=>({text,correct:i===question.correct}));const options=rotate(paired,shift);
+ return{...question,id:`${question.id}-v${variant}-${nonce%97}`,baseId:question.id,variant,prompt:stems[variant],options:options.map(item=>item.text),correct:options.findIndex(item=>item.correct)};
+}
 export const questionsFor=(moduleId:ModuleId)=>QUESTIONS.filter(q=>q.moduleId===moduleId);
+export function selectQuestionSet(moduleId:ModuleId,history:string[]=[],count=10,nonce=Date.now()){
+ const pool=questionsFor(moduleId);const recent=new Set(history.slice(-count));const unseen=pool.filter(q=>!recent.has(q.id));const seen=pool.filter(q=>recent.has(q.id));
+ const ordered=[...rotate(unseen,hash(`${moduleId}:${nonce}`)%Math.max(1,unseen.length)),...seen];
+ return ordered.slice(0,count).map((q,i)=>materializeQuestion(q,nonce+i));
+}
