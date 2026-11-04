@@ -1,0 +1,26 @@
+CREATE TABLE IF NOT EXISTS round_aggregates (
+  day TEXT NOT NULL,
+  domain INTEGER NOT NULL,
+  rounds INTEGER NOT NULL DEFAULT 0,
+  answered INTEGER NOT NULL DEFAULT 0,
+  correct INTEGER NOT NULL DEFAULT 0,
+  duration_ms INTEGER NOT NULL DEFAULT 0,
+  PRIMARY KEY (day, domain)
+);
+
+CREATE TABLE IF NOT EXISTS daily_pulse (
+  day TEXT PRIMARY KEY,
+  rounds INTEGER NOT NULL DEFAULT 0,
+  perfect_rounds INTEGER NOT NULL DEFAULT 0,
+  developing INTEGER NOT NULL DEFAULT 0,
+  bronze INTEGER NOT NULL DEFAULT 0,
+  silver INTEGER NOT NULL DEFAULT 0,
+  gold INTEGER NOT NULL DEFAULT 0,
+  premier INTEGER NOT NULL DEFAULT 0,
+  duration_ms INTEGER NOT NULL DEFAULT 0
+);
+
+CREATE INDEX IF NOT EXISTS idx_round_aggregates_day
+ON round_aggregates(day);
+
+PRAGMA optimize;
