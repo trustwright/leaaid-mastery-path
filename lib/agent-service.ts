@@ -1,0 +1,100 @@
+import {agentChannelsSchema,agentSessionsExpiryIndexSchema,agentSessionsSchema} from '../db/schema';
+import {COACH,CoachGoal,coachChain} from './coach';
+import {MODULES,ModuleId,RuntimeQuestion,selectQuestionSet} from './questions';
+
+type StoredSession={id:string;goal:CoachGoal;current_module:number;question_index:number;premier:number;completed_json:string;history_json:string;queue_json:string;created_at:string;updated_at:string;expires_at:string};
+type History=Partial<Record<ModuleId,string[]>>;
+export type AgentAction='describe_program'|'create_session'|'coach'|'launch_training_challenge'|'launch_premier_challenge'|'submit_answer'|'get_session';
+
+export class AgentError extends Error{constructor(public status:number,message:string){super(message)}}
+let agentReady:Promise<void>|undefined;
+
+const parse=<T,>(value:string,fallback:T):T=>{try{return JSON.parse(value) as T}catch{return fallback}};
+const validModule=(value:unknown):ModuleId=>{const n=Number(value);if(!Number.isInteger(n)||n<1||n>5)throw new AgentError(400,'module_id must be an integer from 1 to 5');return n as ModuleId};
+const validGoal=(value:unknown):CoachGoal=>value==='apply'||value==='prepare'?value:'understand';
+
+export async function ensureAgentTables(db:D1Database){
+ if(agentReady)return agentReady;
+ agentReady=(async()=>{await db.batch([db.prepare(agentSessionsSchema),db.prepare(agentSessionsExpiryIndexSchema),db.prepare(agentChannelsSchema),db.prepare("DELETE FROM agent_sessions WHERE expires_at < datetime('now')")]);try{await db.prepare('ALTER TABLE agent_sessions ADD COLUMN premier INTEGER NOT NULL DEFAULT 0').run()}catch{}})().catch(error=>{agentReady=undefined;throw error});
+ return agentReady;
+}
+
+export function describeProgram(){return{
+ name:'LEAAID Mastery Path Agent',version:'1.0.0',source_grounding:'Five supplied LEAAID foundation modules',
+ session_model:'Anonymous, expiring server session; no name, email, prompt transcript, or profile is requested.',
+ mastery_rule:'Answer all 10 decisions correctly in a module round. Missed concepts remain in recovery until mastered.',
+ modules:MODULES.map(m=>({id:m.id,code:m.code,title:m.title,source:m.source})),
+ actions:['create_session','coach','launch_training_challenge','launch_premier_challenge','submit_answer','get_session'],
+ suggested_prompt:'Launch training challenge for Module 1.',
+};}
+
+export async function createSession(db:D1Database){
+ await ensureAgentTables(db);const id=crypto.randomUUID();
+ await db.prepare("INSERT INTO agent_sessions (id,expires_at) VALUES (?,datetime('now','+7 days'))").bind(id).run();
+ return{session_id:id,expires_in:'7 days',next_actions:['coach','launch_training_challenge'],suggested_prompt:'Launch training challenge for Module 1.'};
+}
+
+async function session(db:D1Database,id:unknown){
+ if(typeof id!=='string'||id.length<20)throw new AgentError(400,'A valid session_id is required.');
+ await ensureAgentTables(db);const row=await db.prepare("SELECT * FROM agent_sessions WHERE id=? AND expires_at >= datetime('now')").bind(id).first<StoredSession>();
+ if(!row)throw new AgentError(404,'Training session not found or expired. Create a new session.');return row;
+}
+
+function publicQuestion(question:RuntimeQuestion,index:number,total:number){return{
+ id:question.id,index:index+1,total,prompt:question.prompt,options:question.options,
+ difficulty:question.difficulty,module_id:question.moduleId,module_code:MODULES[question.moduleId-1].code,
+ response_format:'Submit the zero-based option_index, or map A/B/C/D to 0/1/2/3.',
+};}
+
+export async function coach(db:D1Database,input:Record<string,unknown>){
+ const moduleId=validModule(input.module_id);const goal=validGoal(input.goal);const guide=COACH[moduleId];
+ if(input.session_id){const row=await session(db,input.session_id);await db.prepare("UPDATE agent_sessions SET goal=?,updated_at=CURRENT_TIMESTAMP,expires_at=datetime('now','+7 days') WHERE id=?").bind(goal,row.id).run()}
+ return{module_id:moduleId,module:MODULES[moduleId-1].title,goal,reasoning_chain:coachChain(moduleId,goal).map((content,index)=>({step:index+1,stage:['orient','reason','check'][index],content})),source_refs:guide.refs,next_action:{action:'launch_training_challenge',module_id:moduleId}};
+}
+
+export async function launchChallenge(db:D1Database,input:Record<string,unknown>){
+ const row=await session(db,input.session_id);const moduleId=validModule(input.module_id);const completed=parse<ModuleId[]>(row.completed_json,[]);
+ if(moduleId>1&&!completed.includes((moduleId-1) as ModuleId))throw new AgentError(409,`Complete Module ${moduleId-1} before launching Module ${moduleId}.`);
+ const history=parse<History>(row.history_json,{});const queue=selectQuestionSet(moduleId,history[moduleId]||[],10,Date.now());
+ history[moduleId]=[...(history[moduleId]||[]),...queue.map(q=>q.baseId)].slice(-20);
+ await db.prepare("UPDATE agent_sessions SET current_module=?,question_index=0,queue_json=?,history_json=?,updated_at=CURRENT_TIMESTAMP,expires_at=datetime('now','+7 days') WHERE id=?").bind(moduleId,JSON.stringify(queue),JSON.stringify(history),row.id).run();
+ return{session_id:row.id,state:'challenge_active',module_id:moduleId,module:MODULES[moduleId-1].title,mastery_target:'10 of 10 correct',question:publicQuestion(queue[0],0,queue.length)};
+}
+
+export async function launchPremierChallenge(db:D1Database,input:Record<string,unknown>){
+ const row=await session(db,input.session_id);const completed=parse<ModuleId[]>(row.completed_json,[]);if(completed.length<5)throw new AgentError(409,'Complete all five module rounds before launching the Premier challenge.');
+ const history=parse<History>(row.history_json,{});const nonce=Date.now();const queue=MODULES.flatMap((m,index)=>selectQuestionSet(m.id,history[m.id]||[],2,nonce+index*11));
+ for(const m of MODULES)history[m.id]=[...(history[m.id]||[]),...queue.filter(q=>q.moduleId===m.id).map(q=>q.baseId)].slice(-20);
+ await db.prepare("UPDATE agent_sessions SET current_module=5,question_index=0,queue_json=?,history_json=?,updated_at=CURRENT_TIMESTAMP,expires_at=datetime('now','+7 days') WHERE id=?").bind(JSON.stringify(queue),JSON.stringify(history),row.id).run();
+ return{session_id:row.id,state:'premier_challenge_active',module:'Premier LEAAID Knowledge',mastery_target:'10 of 10 cross-module decisions correct',question:publicQuestion(queue[0],0,queue.length)};
+}
+
+export async function submitAnswer(db:D1Database,input:Record<string,unknown>){
+ const row=await session(db,input.session_id);const queue=parse<RuntimeQuestion[]>(row.queue_json,[]);const index=row.question_index;
+ if(!queue.length||!queue[index])throw new AgentError(409,'No active question. Launch a training challenge first.');
+ const selected=Number(input.option_index);if(!Number.isInteger(selected)||selected<0||selected>3)throw new AgentError(400,'option_index must be 0, 1, 2, or 3.');
+ const current=queue[index];const correct=selected===current.correct;
+ if(!correct)return{session_id:row.id,correct:false,state:'focused_recovery',message:'That concept is not mastered yet. Use the source coaching cue, then answer this decision again.',source_coaching:{context:current.tipContext,cue:current.hint,source:MODULES[current.moduleId-1].source,locator:current.sourceRefs[0].locator},question:publicQuestion(current,index,queue.length)};
+ const nextIndex=index+1;
+ if(nextIndex<queue.length){await db.prepare("UPDATE agent_sessions SET question_index=?,updated_at=CURRENT_TIMESTAMP,expires_at=datetime('now','+7 days') WHERE id=?").bind(nextIndex,row.id).run();return{session_id:row.id,correct:true,state:'challenge_active',feedback:current.rationale,progress:{mastered:nextIndex,total:queue.length},question:publicQuestion(queue[nextIndex],nextIndex,queue.length)}}
+ const completed=parse<ModuleId[]>(row.completed_json,[]);const moduleId=current.moduleId;const premier=new Set(queue.map(q=>q.moduleId)).size>1;
+ if(!premier&&!completed.includes(moduleId))completed.push(moduleId);
+ await db.prepare("UPDATE agent_sessions SET question_index=?,completed_json=?,premier=?,queue_json='[]',updated_at=CURRENT_TIMESTAMP,expires_at=datetime('now','+7 days') WHERE id=?").bind(nextIndex,JSON.stringify(completed),premier?1:row.premier,row.id).run();
+ if(premier)return{session_id:row.id,correct:true,state:'premier_mastered',feedback:current.rationale,badge:{type:'premier',title:'Premier LEAAID Knowledge'},completed_modules:completed};
+ return{session_id:row.id,correct:true,state:'module_mastered',feedback:current.rationale,badge:{type:'module_round',module_id:moduleId,title:`${MODULES[moduleId-1].title} Mastery`},completed_modules:completed,next_action:moduleId<5?{action:'launch_training_challenge',module_id:moduleId+1}:{action:'launch_premier_challenge'}};
+}
+
+export async function getSession(db:D1Database,input:Record<string,unknown>){
+ const row=await session(db,input.session_id);const queue=parse<RuntimeQuestion[]>(row.queue_json,[]);const completed=parse<ModuleId[]>(row.completed_json,[]);const current=queue[row.question_index];
+ return{session_id:row.id,state:current?'challenge_active':'ready',current_module:row.current_module,completed_modules:completed,premier_mastered:Boolean(row.premier),progress:current?{mastered:row.question_index,total:queue.length}:null,question:current?publicQuestion(current,row.question_index,queue.length):null,expires_at:row.expires_at};
+}
+
+export async function dispatchAgentAction(db:D1Database,input:Record<string,unknown>){
+ switch(input.action as AgentAction){case'describe_program':return describeProgram();case'create_session':return createSession(db);case'coach':return coach(db,input);case'launch_training_challenge':return launchChallenge(db,input);case'launch_premier_challenge':return launchPremierChallenge(db,input);case'submit_answer':return submitAnswer(db,input);case'get_session':return getSession(db,input);default:throw new AgentError(400,'Unknown action. Use describe_program, create_session, coach, launch_training_challenge, launch_premier_challenge, submit_answer, or get_session.');}
+}
+
+export async function channelSession(db:D1Database,channelHash:string){
+ await ensureAgentTables(db);const mapped=await db.prepare('SELECT session_id FROM agent_channel_sessions WHERE channel_hash=?').bind(channelHash).first<{session_id:string}>();
+ if(mapped){try{await session(db,mapped.session_id);return mapped.session_id}catch{}}
+ const created=await createSession(db);await db.prepare('INSERT OR REPLACE INTO agent_channel_sessions (channel_hash,session_id,updated_at) VALUES (?,?,CURRENT_TIMESTAMP)').bind(channelHash,created.session_id).run();return created.session_id;
+}

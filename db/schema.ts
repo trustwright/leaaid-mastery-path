@@ -69,3 +69,30 @@ export const activityBucketsIndexSchema = `
 CREATE INDEX IF NOT EXISTS idx_activity_buckets_minute
 ON activity_buckets(minute)
 `;
+
+export const agentSessionsSchema = `
+CREATE TABLE IF NOT EXISTS agent_sessions (
+  id TEXT PRIMARY KEY,
+  goal TEXT NOT NULL DEFAULT 'understand',
+  current_module INTEGER NOT NULL DEFAULT 1,
+  question_index INTEGER NOT NULL DEFAULT 0,
+  premier INTEGER NOT NULL DEFAULT 0,
+  completed_json TEXT NOT NULL DEFAULT '[]',
+  history_json TEXT NOT NULL DEFAULT '{}',
+  queue_json TEXT NOT NULL DEFAULT '[]',
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  expires_at TEXT NOT NULL
+)`;
+
+export const agentSessionsExpiryIndexSchema = `
+CREATE INDEX IF NOT EXISTS idx_agent_sessions_expiry
+ON agent_sessions(expires_at)
+`;
+
+export const agentChannelsSchema = `
+CREATE TABLE IF NOT EXISTS agent_channel_sessions (
+  channel_hash TEXT PRIMARY KEY,
+  session_id TEXT NOT NULL,
+  updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+)`;

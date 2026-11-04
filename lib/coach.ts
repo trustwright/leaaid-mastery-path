@@ -1,0 +1,19 @@
+import type {ModuleId} from './questions';
+
+export type CoachGoal='understand'|'apply'|'prepare';
+export type CoachGuide={focus:string;distinction:string;application:string;check:string;refs:string[]};
+
+export const COACH:Record<ModuleId,CoachGuide>={
+ 1:{focus:'Agency comes from the system around the model: goals, context, tools, permissions, feedback, and stopping rules.',distinction:'A workflow follows a path defined in advance. An agent chooses part of the path within an authority boundary set by the organization.',application:'Define the task and permitted actions first. Then choose the least sufficient level of agency and place approval before irreversible consequences.',check:'Can you identify who chooses the next step, what the system may change, and what happens at the boundary?',refs:['pp. 13–20 · Workflow, control loop, agency','pp. 24–29 · Readiness, policy envelope, architecture']},
+ 2:{focus:'Enterprise agents depend on three connected layers: trusted data, intelligence and action, and AgenticOps controls.',distinction:'Models handle judgment under uncertainty. Deterministic code remains the better choice for repeatable rules, calculations, and checks.',application:'Ground each decision in relevant enterprise context, expose tools through controlled interfaces, and evaluate both the outcome and execution path.',check:'Can you trace a decision from source data through retrieval, reasoning, tool use, guardrails, and observability?',refs:['pp. 18–45 · Trusted knowledge layer','pp. 54–100 · Engineering and AgenticOps']},
+ 3:{focus:'Most agent security failures arise in the harness: tools, memory, identity, boundaries, and runtime connections.',distinction:'A prompt can guide behavior. A hard control enforces policy outside model choice at the point where the system acts.',application:'Classify the agent by consequence and autonomy, scope its identity, enforce action boundaries, and test containment before deployment.',check:'For a failure scenario, can you name the attack surface, the enforcement point, the owner, and the evidence that the mitigation works?',refs:['pp. 18–22 · Boundaries, hooks, identity','pp. 28–59 · ASI risks, testing, incident response']},
+ 4:{focus:'Strategy starts with business outcomes. The operating model defines the work, and governance makes that work safe to scale.',distinction:'More autonomy can create value, but decision rights and assurance must increase with consequence, irreversibility, and uncertainty.',application:'Select use cases through evidence, assign a human owner, tier risk, and operate agents through common identity, policy, observability, and lifecycle controls.',check:'Can you connect a proposed agent to a measurable outcome, named owner, authority limit, economic measure, and governance tier?',refs:['pp. 8–22 · Strategy and portfolio','pp. 31–63 · Operating model and governance']},
+ 5:{focus:'Agentic systems combine data, tools, orchestration, bounded action, human decisions, and evaluation. A longer prompt alone does not create the system.',distinction:'A specialist agent needs a distinct responsibility, data, tools, permissions, evaluation, or owner. Otherwise a tool or workflow step may be enough.',application:'Keep a baseline, change one variable during a retest, inspect the trace, and estimate coordination cost before adding specialists.',check:'Can you explain what changed, what remained controlled, what evidence supports the result, and whether another agent adds enough value?',refs:['slides 4–33 · Labs and controlled evaluation','slides 50–70 · Orchestration, specialization, platforms']},
+};
+
+export function coachChain(moduleId:ModuleId,goal:CoachGoal){
+ const guide=COACH[moduleId];
+ if(goal==='apply')return[guide.application,guide.distinction,guide.check];
+ if(goal==='prepare')return[`Assessment focus: ${guide.focus}`,`Reasoning standard: ${guide.application}`,guide.check];
+ return[guide.focus,guide.distinction,guide.check];
+}

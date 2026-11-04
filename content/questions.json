@@ -4,7 +4,7 @@
     {
       "id": "m1-q01",
       "moduleId": 1,
-      "prompt": "Which decision best addresses the workflow-agent dividing line?",
+      "prompt": "Which statement best explains the workflow-agent dividing line?",
       "options": [
         "The organization defines the boundary; the agent has discretion only inside it.",
         "A workflow has a predetermined path; an agent chooses part of the next-step path.",
@@ -12,8 +12,9 @@
         "It buys continuity but adds privacy, governance, and stale-belief risk."
       ],
       "correct": 1,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "A workflow has a predetermined path; an agent chooses part of the next-step path.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Workflow vs. Agent” material frames the workflow-agent dividing line through whether added agency has a distinct responsibility.",
+      "rationale": "In p. 13, Workflow vs. Agent, the course treats this as the definition or operating principle for the workflow-agent dividing line: A workflow has a predetermined path; an agent chooses part of the next-step path. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -27,7 +28,7 @@
     {
       "id": "m1-q02",
       "moduleId": 1,
-      "prompt": "Which decision best addresses closing an LLM knowledge gap?",
+      "prompt": "How should a system close an LLM knowledge gap?",
       "options": [
         "Add retrieval and memory to provide grounding.",
         "Narrow and clarify the task before building.",
@@ -35,8 +36,9 @@
         "Name the failure mode, test, owner, and boundary first."
       ],
       "correct": 0,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Add retrieval and memory to provide grounding.",
+      "hint": "Identify the missing system capability before selecting an option.",
+      "tipContext": "The “Model vs. System” material frames closing an LLM knowledge gap through evidence quality and grounding.",
+      "rationale": "In pp. 10-11, Model vs. System, the course treats this as the recommended action or control for closing an LLM knowledge gap: Add retrieval and memory to provide grounding. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -50,7 +52,7 @@
     {
       "id": "m1-q03",
       "moduleId": 1,
-      "prompt": "Which decision best addresses the agent control loop?",
+      "prompt": "Which statement best explains the agent control loop?",
       "options": [
         "Use rule-based automation.",
         "Narrow and clarify the task before building.",
@@ -58,8 +60,9 @@
         "Perceive, think, act, and reflect."
       ],
       "correct": 3,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Perceive, think, act, and reflect.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Agent Cycle” material frames the agent control loop through the specific role this concept plays in the system.",
+      "rationale": "In p. 15, Agent Cycle, the course treats this as the definition or operating principle for the agent control loop: Perceive, think, act, and reflect. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -73,7 +76,7 @@
     {
       "id": "m1-q04",
       "moduleId": 1,
-      "prompt": "Which decision best addresses a task solvable entirely by fixed rules?",
+      "prompt": "Which statement best explains a task solvable entirely by fixed rules?",
       "options": [
         "Perceive, think, act, and reflect.",
         "Narrow and clarify the task before building.",
@@ -81,8 +84,9 @@
         "Add retrieval and memory to provide grounding."
       ],
       "correct": 2,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Use rule-based automation.",
+      "hint": "Test the conditions under which the source recommends this choice.",
+      "tipContext": "The “Least Sufficient Agency Test” material frames a task solvable entirely by fixed rules through the specific role this concept plays in the system.",
+      "rationale": "In p. 17, Least Sufficient Agency Test, the course treats this as the recommended action or control for a task solvable entirely by fixed rules: Use rule-based automation. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -96,7 +100,7 @@
     {
       "id": "m1-q05",
       "moduleId": 1,
-      "prompt": "Which decision best addresses a vague, untestable goal?",
+      "prompt": "Which statement best explains a vague, untestable goal?",
       "options": [
         "Add retrieval and memory to provide grounding.",
         "Narrow and clarify the task before building.",
@@ -104,8 +108,9 @@
         "Perceive, think, act, and reflect."
       ],
       "correct": 1,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Narrow and clarify the task before building.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Task Readiness” material frames a vague, untestable goal through the specific role this concept plays in the system.",
+      "rationale": "In p. 24, Task Readiness, the course treats this as the recommended action or control for a vague, untestable goal: Narrow and clarify the task before building. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -119,7 +124,7 @@
     {
       "id": "m1-q06",
       "moduleId": 1,
-      "prompt": "Which decision best addresses approval for an irreversible action?",
+      "prompt": "Which statement most accurately describes approval for an irreversible action?",
       "options": [
         "Place approval before the consequence at the policy-envelope boundary.",
         "It buys continuity but adds privacy, governance, and stale-belief risk.",
@@ -127,8 +132,9 @@
         "The task is not ready until permitted and forbidden actions are explicit."
       ],
       "correct": 0,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Place approval before the consequence at the policy-envelope boundary.",
+      "hint": "Focus on where the control sits relative to the consequence.",
+      "tipContext": "The “Policy Envelope” material frames approval for an irreversible action through authority and enforceable limits.",
+      "rationale": "In p. 25, Policy Envelope, the course treats this as the recommended action or control for approval for an irreversible action: Place approval before the consequence at the policy-envelope boundary. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -142,7 +148,7 @@
     {
       "id": "m1-q07",
       "moduleId": 1,
-      "prompt": "Which decision best addresses authority when nobody is watching?",
+      "prompt": "How does the course characterize authority when nobody is watching?",
       "options": [
         "Tie claims to evidence and define what low confidence triggers.",
         "Separation of duties gives it a distinct control responsibility.",
@@ -150,8 +156,9 @@
         "Specify tools, permissions, checkpoints, and operating rules."
       ],
       "correct": 3,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Specify tools, permissions, checkpoints, and operating rules.",
+      "hint": "Look for the option that turns intent into an explicit operating rule.",
+      "tipContext": "The “Specification Canvas” material frames authority when nobody is watching through authority and enforceable limits.",
+      "rationale": "In p. 26, Specification Canvas, the course treats this as the recommended action or control for authority when nobody is watching: Specify tools, permissions, checkpoints, and operating rules. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -165,7 +172,7 @@
     {
       "id": "m1-q08",
       "moduleId": 1,
-      "prompt": "Which decision best addresses adding an architecture pattern?",
+      "prompt": "What should a team define before adding an architecture pattern?",
       "options": [
         "Use one agent and avoid unnecessary coordination overhead.",
         "A person or the organization always sets the goal.",
@@ -173,8 +180,9 @@
         "Specify tools, permissions, checkpoints, and operating rules."
       ],
       "correct": 2,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Name the failure mode, test, owner, and boundary first.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Architecture Canvas” material frames adding an architecture pattern through authority and enforceable limits.",
+      "rationale": "In p. 27, Architecture Canvas, the course treats this as the recommended action or control for adding an architecture pattern: Name the failure mode, test, owner, and boundary first. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -188,7 +196,7 @@
     {
       "id": "m1-q09",
       "moduleId": 1,
-      "prompt": "Which decision best addresses persistent memory?",
+      "prompt": "Which statement most accurately describes persistent memory?",
       "options": [
         "Place approval before the consequence at the policy-envelope boundary.",
         "It buys continuity but adds privacy, governance, and stale-belief risk.",
@@ -196,8 +204,9 @@
         "Grounded answers add latency and a pipeline that must be maintained."
       ],
       "correct": 1,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "It buys continuity but adds privacy, governance, and stale-belief risk.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Design Trade-offs” material frames persistent memory through the specific role this concept plays in the system.",
+      "rationale": "In p. 28, Design Trade-offs, the course treats this as the definition or operating principle for persistent memory: It buys continuity but adds privacy, governance, and stale-belief risk. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -211,7 +220,7 @@
     {
       "id": "m1-q10",
       "moduleId": 1,
-      "prompt": "Which decision best addresses justifying multiple agents?",
+      "prompt": "What justifies using multiple agents?",
       "options": [
         "Use them for enforced separation, independent review, true parallel work, or valuable specialization.",
         "Goals, context, tools, permissions, feedback, and stopping rules create agency around the model.",
@@ -219,8 +228,9 @@
         "The organization defines the boundary; the agent has discretion only inside it."
       ],
       "correct": 0,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Use them for enforced separation, independent review, true parallel work, or valuable specialization.",
+      "hint": "Test the conditions under which the source recommends this choice.",
+      "tipContext": "The “One Agent to a Team” material frames justifying multiple agents through whether added agency has a distinct responsibility.",
+      "rationale": "In p. 29, One Agent to a Team, the course treats this as the recommended action or control for justifying multiple agents: Use them for enforced separation, independent review, true parallel work, or valuable specialization. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -234,7 +244,7 @@
     {
       "id": "m1-q11",
       "moduleId": 1,
-      "prompt": "Which decision best addresses who sets the goal?",
+      "prompt": "Who should set an agent’s goal?",
       "options": [
         "Add retrieval and memory to provide grounding.",
         "Name the failure mode, test, owner, and boundary first.",
@@ -242,8 +252,9 @@
         "A person or the organization always sets the goal."
       ],
       "correct": 3,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "A person or the organization always sets the goal.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Specification Questions” material frames who sets the goal through the specific role this concept plays in the system.",
+      "rationale": "In p. 23, Specification Questions, the course treats this as the definition or operating principle for who sets the goal: A person or the organization always sets the goal. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -257,7 +268,7 @@
     {
       "id": "m1-q12",
       "moduleId": 1,
-      "prompt": "Which decision best addresses agency as a system property?",
+      "prompt": "How does the course characterize agency as a system property?",
       "options": [
         "Use them for enforced separation, independent review, true parallel work, or valuable specialization.",
         "A workflow has a predetermined path; an agent chooses part of the next-step path.",
@@ -265,8 +276,9 @@
         "The organization defines the boundary; the agent has discretion only inside it."
       ],
       "correct": 2,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Goals, context, tools, permissions, feedback, and stopping rules create agency around the model.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Leadership Takeaways” material frames agency as a system property through authority and enforceable limits.",
+      "rationale": "In p. 20, Leadership Takeaways, the course treats this as the definition or operating principle for agency as a system property: Goals, context, tools, permissions, feedback, and stopping rules create agency around the model. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -280,7 +292,7 @@
     {
       "id": "m1-q13",
       "moduleId": 1,
-      "prompt": "Which decision best addresses the policy envelope?",
+      "prompt": "Which statement best explains the policy envelope?",
       "options": [
         "A workflow has a predetermined path; an agent chooses part of the next-step path.",
         "The organization defines the boundary; the agent has discretion only inside it.",
@@ -288,8 +300,9 @@
         "It buys continuity but adds privacy, governance, and stale-belief risk."
       ],
       "correct": 1,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "The organization defines the boundary; the agent has discretion only inside it.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Policy Envelope” material frames the policy envelope through authority and enforceable limits.",
+      "rationale": "In p. 25, Policy Envelope, the course treats this as the definition or operating principle for the policy envelope: The organization defines the boundary; the agent has discretion only inside it. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -303,7 +316,7 @@
     {
       "id": "m1-q14",
       "moduleId": 1,
-      "prompt": "Which decision best addresses verification in an architecture?",
+      "prompt": "Which option best represents verification in an architecture in practice?",
       "options": [
         "Tie claims to evidence and define what low confidence triggers.",
         "Separation of duties gives it a distinct control responsibility.",
@@ -311,8 +324,9 @@
         "Specify tools, permissions, checkpoints, and operating rules."
       ],
       "correct": 0,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Tie claims to evidence and define what low confidence triggers.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Architecture Canvas” material frames verification in an architecture through evidence quality and grounding.",
+      "rationale": "In p. 27, Architecture Canvas, the course treats this as the recommended action or control for verification in an architecture: Tie claims to evidence and define what low confidence triggers. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -326,7 +340,7 @@
     {
       "id": "m1-q15",
       "moduleId": 1,
-      "prompt": "Which decision best addresses the cost of retrieval?",
+      "prompt": "Which statement best explains the cost of retrieval?",
       "options": [
         "Stop, wait for approval, or escalate according to the written rule.",
         "Place approval before the consequence at the policy-envelope boundary.",
@@ -334,8 +348,9 @@
         "Grounded answers add latency and a pipeline that must be maintained."
       ],
       "correct": 3,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Grounded answers add latency and a pipeline that must be maintained.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Design Trade-offs” material frames the cost of retrieval through evidence quality and grounding.",
+      "rationale": "In p. 28, Design Trade-offs, the course treats this as the definition or operating principle for the cost of retrieval: Grounded answers add latency and a pipeline that must be maintained. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -349,7 +364,7 @@
     {
       "id": "m1-q16",
       "moduleId": 1,
-      "prompt": "Which decision best addresses undefined actions?",
+      "prompt": "Which option best represents undefined actions in practice?",
       "options": [
         "It buys continuity but adds privacy, governance, and stale-belief risk.",
         "Place approval before the consequence at the policy-envelope boundary.",
@@ -357,8 +372,9 @@
         "Grounded answers add latency and a pipeline that must be maintained."
       ],
       "correct": 2,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "The task is not ready until permitted and forbidden actions are explicit.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Task Readiness” material frames undefined actions through the specific role this concept plays in the system.",
+      "rationale": "In p. 24, Task Readiness, the course treats this as the definition or operating principle for undefined actions: The task is not ready until permitted and forbidden actions are explicit. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -372,7 +388,7 @@
     {
       "id": "m1-q17",
       "moduleId": 1,
-      "prompt": "Which decision best addresses reaching an authority boundary?",
+      "prompt": "What should happen when an agent reaches an authority boundary?",
       "options": [
         "Grounded answers add latency and a pipeline that must be maintained.",
         "Stop, wait for approval, or escalate according to the written rule.",
@@ -380,8 +396,9 @@
         "Separation of duties gives it a distinct control responsibility."
       ],
       "correct": 1,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Stop, wait for approval, or escalate according to the written rule.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Policy Envelope” material frames reaching an authority boundary through decision rights at the point of consequence.",
+      "rationale": "In p. 25, Policy Envelope, the course treats this as the recommended action or control for reaching an authority boundary: Stop, wait for approval, or escalate according to the written rule. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -395,7 +412,7 @@
     {
       "id": "m1-q18",
       "moduleId": 1,
-      "prompt": "Which decision best addresses an independent reviewer agent?",
+      "prompt": "Which statement best explains an independent reviewer agent?",
       "options": [
         "Separation of duties gives it a distinct control responsibility.",
         "Ask who decides, who acts, and what happens next without a human.",
@@ -403,8 +420,9 @@
         "Stop, wait for approval, or escalate according to the written rule."
       ],
       "correct": 0,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Separation of duties gives it a distinct control responsibility.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “One Agent to a Team” material frames an independent reviewer agent through the specific role this concept plays in the system.",
+      "rationale": "In p. 29, One Agent to a Team, the course treats this as the definition or operating principle for an independent reviewer agent: Separation of duties gives it a distinct control responsibility. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -418,7 +436,7 @@
     {
       "id": "m1-q19",
       "moduleId": 1,
-      "prompt": "Which decision best addresses the leadership authority test?",
+      "prompt": "Which statement best explains the leadership authority test?",
       "options": [
         "Separation of duties gives it a distinct control responsibility.",
         "Stop, wait for approval, or escalate according to the written rule.",
@@ -426,8 +444,9 @@
         "Ask who decides, who acts, and what happens next without a human."
       ],
       "correct": 3,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Ask who decides, who acts, and what happens next without a human.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Leadership Takeaways” material frames the leadership authority test through decision rights at the point of consequence.",
+      "rationale": "In p. 20, Leadership Takeaways, the course treats this as the recommended action or control for the leadership authority test: Ask who decides, who acts, and what happens next without a human. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -441,7 +460,7 @@
     {
       "id": "m1-q20",
       "moduleId": 1,
-      "prompt": "Which decision best addresses one agent completing work within limits?",
+      "prompt": "Which statement most accurately describes one agent completing work within limits?",
       "options": [
         "Name the failure mode, test, owner, and boundary first.",
         "Specify tools, permissions, checkpoints, and operating rules.",
@@ -449,8 +468,9 @@
         "Tie claims to evidence and define what low confidence triggers."
       ],
       "correct": 2,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Use one agent and avoid unnecessary coordination overhead.",
+      "hint": "Test the conditions under which the source recommends this choice.",
+      "tipContext": "The “One Agent to a Team” material frames one agent completing work within limits through operational trade-offs.",
+      "rationale": "In p. 29, One Agent to a Team, the course treats this as the recommended action or control for one agent completing work within limits: Use one agent and avoid unnecessary coordination overhead. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -464,7 +484,7 @@
     {
       "id": "m2-q01",
       "moduleId": 2,
-      "prompt": "Which decision best addresses why trusted data matters more for agents?",
+      "prompt": "Why does trusted data matter more for agents?",
       "options": [
         "It standardizes how AI applications access tools and data.",
         "Version, test, control, monitor, and make it reversible.",
@@ -472,8 +492,9 @@
         "It is the trusted knowledge layer for agent decisions."
       ],
       "correct": 2,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Data errors can propagate into actions, not only reports.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Agentic AI Raises the Bar” material frames why trusted data matters more for agents through evidence quality and grounding.",
+      "rationale": "In p. 19, Agentic AI Raises the Bar, the course treats this as the definition or operating principle for why trusted data matters more for agents: Data errors can propagate into actions, not only reports. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -487,7 +508,7 @@
     {
       "id": "m2-q02",
       "moduleId": 2,
-      "prompt": "Which decision best addresses the data foundation?",
+      "prompt": "Which statement best explains the data foundation?",
       "options": [
         "Version, test, control, monitor, and make it reversible.",
         "It is the trusted knowledge layer for agent decisions.",
@@ -495,8 +516,9 @@
         "They define what enterprise data means in context."
       ],
       "correct": 1,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "It is the trusted knowledge layer for agent decisions.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Trusted Knowledge” material frames the data foundation through whether added agency has a distinct responsibility.",
+      "rationale": "In pp. 18-20, Trusted Knowledge, the course treats this as the definition or operating principle for the data foundation: It is the trusted knowledge layer for agent decisions. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -510,7 +532,7 @@
     {
       "id": "m2-q03",
       "moduleId": 2,
-      "prompt": "Which decision best addresses LLM work versus deterministic code?",
+      "prompt": "Which option best represents LLM work versus deterministic code in practice?",
       "options": [
         "Use AI for judgment and code for rules, calculation, and repeatability.",
         "Translate policy into explicit checks at the relevant execution step.",
@@ -518,8 +540,9 @@
         "Prevent inaccurate or incomplete data from driving decisions and actions."
       ],
       "correct": 0,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Use AI for judgment and code for rules, calculation, and repeatability.",
+      "hint": "Test the conditions under which the source recommends this choice.",
+      "tipContext": "The “LLM vs. Code” material frames LLM work versus deterministic code through the specific role this concept plays in the system.",
+      "rationale": "In p. 54, LLM vs. Code, the course treats this as the recommended action or control for LLM work versus deterministic code: Use AI for judgment and code for rules, calculation, and repeatability. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -533,7 +556,7 @@
     {
       "id": "m2-q04",
       "moduleId": 2,
-      "prompt": "Which decision best addresses retrieval at runtime?",
+      "prompt": "Which option best represents retrieval at runtime in practice?",
       "options": [
         "Tools bridge model reasoning to external capabilities and actions.",
         "Use it only when specialization benefits exceed coordination cost.",
@@ -541,8 +564,9 @@
         "Retrieve only the enterprise context relevant to the current task."
       ],
       "correct": 3,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Retrieve only the enterprise context relevant to the current task.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Retrieval Context” material frames retrieval at runtime through evidence quality and grounding.",
+      "rationale": "In p. 59, Retrieval Context, the course treats this as the recommended action or control for retrieval at runtime: Retrieve only the enterprise context relevant to the current task. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -556,7 +580,7 @@
     {
       "id": "m2-q05",
       "moduleId": 2,
-      "prompt": "Which decision best addresses agent memory?",
+      "prompt": "How does the course characterize agent memory?",
       "options": [
         "It is the control-plane discipline for safe, reliable, efficient autonomy.",
         "They reveal retrievals, reasoning steps, and tool calls behind an outcome.",
@@ -564,8 +588,9 @@
         "Bound retries, provide safe fallback, and escalate before harm compounds."
       ],
       "correct": 2,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Retain task state and relevant prior information across steps or sessions.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Memory” material frames agent memory through the specific role this concept plays in the system.",
+      "rationale": "In p. 60, Memory, the course treats this as the recommended action or control for agent memory: Retain task state and relevant prior information across steps or sessions. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -579,7 +604,7 @@
     {
       "id": "m2-q06",
       "moduleId": 2,
-      "prompt": "Which decision best addresses the ReAct loop?",
+      "prompt": "Which statement best explains the ReAct loop?",
       "options": [
         "Assess both the outcome and the execution path.",
         "Reason, act, observe, and adjust iteratively.",
@@ -587,8 +612,9 @@
         "They define what enterprise data means in context."
       ],
       "correct": 1,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Reason, act, observe, and adjust iteratively.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “ReAct Loop” material frames the ReAct loop through observable evidence rather than appearance.",
+      "rationale": "In p. 61, ReAct Loop, the course treats this as the definition or operating principle for the ReAct loop: Reason, act, observe, and adjust iteratively. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -602,7 +628,7 @@
     {
       "id": "m2-q07",
       "moduleId": 2,
-      "prompt": "Which decision best addresses tools?",
+      "prompt": "How does the course characterize tools?",
       "options": [
         "Tools bridge model reasoning to external capabilities and actions.",
         "Use it only when specialization benefits exceed coordination cost.",
@@ -610,8 +636,9 @@
         "Every model call, retrieval, tool call, and retry adds consumption."
       ],
       "correct": 0,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Tools bridge model reasoning to external capabilities and actions.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Tools” material frames tools through the specific role this concept plays in the system.",
+      "rationale": "In pp. 62-63, Tools, the course treats this as the definition or operating principle for tools: Tools bridge model reasoning to external capabilities and actions. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -625,7 +652,7 @@
     {
       "id": "m2-q08",
       "moduleId": 2,
-      "prompt": "Which decision best addresses multi-agent architecture?",
+      "prompt": "How does the course characterize multi-agent architecture?",
       "options": [
         "Tools bridge model reasoning to external capabilities and actions.",
         "Retrieve only the enterprise context relevant to the current task.",
@@ -633,8 +660,9 @@
         "Use it only when specialization benefits exceed coordination cost."
       ],
       "correct": 3,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Use it only when specialization benefits exceed coordination cost.",
+      "hint": "Test the conditions under which the source recommends this choice.",
+      "tipContext": "The “Multi-agent Systems” material frames multi-agent architecture through operational trade-offs.",
+      "rationale": "In pp. 66-69, Multi-agent Systems, the course treats this as the recommended action or control for multi-agent architecture: Use it only when specialization benefits exceed coordination cost. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -648,7 +676,7 @@
     {
       "id": "m2-q09",
       "moduleId": 2,
-      "prompt": "Which decision best addresses AgenticOps?",
+      "prompt": "Which statement most accurately describes AgenticOps?",
       "options": [
         "They reveal retrievals, reasoning steps, and tool calls behind an outcome.",
         "Retain task state and relevant prior information across steps or sessions.",
@@ -656,8 +684,9 @@
         "Bound retries, provide safe fallback, and escalate before harm compounds."
       ],
       "correct": 2,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "It is the control-plane discipline for safe, reliable, efficient autonomy.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “AgenticOps” material frames AgenticOps through the specific role this concept plays in the system.",
+      "rationale": "In pp. 74-76, AgenticOps, the course treats this as the definition or operating principle for AgenticOps: It is the control-plane discipline for safe, reliable, efficient autonomy. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -671,7 +700,7 @@
     {
       "id": "m2-q10",
       "moduleId": 2,
-      "prompt": "Which decision best addresses observability traces?",
+      "prompt": "Which option best represents observability traces in practice?",
       "options": [
         "It is the control-plane discipline for safe, reliable, efficient autonomy.",
         "They reveal retrievals, reasoning steps, and tool calls behind an outcome.",
@@ -679,8 +708,9 @@
         "Bound retries, provide safe fallback, and escalate before harm compounds."
       ],
       "correct": 1,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "They reveal retrievals, reasoning steps, and tool calls behind an outcome.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Observability” material frames observability traces through evidence quality and grounding.",
+      "rationale": "In pp. 77-78, Observability, the course treats this as the definition or operating principle for observability traces: They reveal retrievals, reasoning steps, and tool calls behind an outcome. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -694,7 +724,7 @@
     {
       "id": "m2-q11",
       "moduleId": 2,
-      "prompt": "Which decision best addresses agent evaluation?",
+      "prompt": "Which option best represents agent evaluation in practice?",
       "options": [
         "Assess both the outcome and the execution path.",
         "Measure the full workflow across repeated runs.",
@@ -702,8 +732,9 @@
         "They define what enterprise data means in context."
       ],
       "correct": 0,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Assess both the outcome and the execution path.",
+      "hint": "Choose the option that produces evidence across the full workflow.",
+      "tipContext": "The “Evaluation” material frames agent evaluation through the specific role this concept plays in the system.",
+      "rationale": "In pp. 79-81, Evaluation, the course treats this as the recommended action or control for agent evaluation: Assess both the outcome and the execution path. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -717,7 +748,7 @@
     {
       "id": "m2-q12",
       "moduleId": 2,
-      "prompt": "Which decision best addresses enforceable guardrails?",
+      "prompt": "Which statement most accurately describes enforceable guardrails?",
       "options": [
         "Every model call, retrieval, tool call, and retry adds consumption.",
         "Use AI for judgment and code for rules, calculation, and repeatability.",
@@ -725,8 +756,9 @@
         "Translate policy into explicit checks at the relevant execution step."
       ],
       "correct": 3,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Translate policy into explicit checks at the relevant execution step.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Guardrails” material frames enforceable guardrails through control placement and containment.",
+      "rationale": "In pp. 87-89, Guardrails, the course treats this as the recommended action or control for enforceable guardrails: Translate policy into explicit checks at the relevant execution step. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -740,7 +772,7 @@
     {
       "id": "m2-q13",
       "moduleId": 2,
-      "prompt": "Which decision best addresses fail-safe design?",
+      "prompt": "How does the course characterize fail-safe design?",
       "options": [
         "Prevent inaccurate or incomplete data from driving decisions and actions.",
         "They reveal retrievals, reasoning steps, and tool calls behind an outcome.",
@@ -748,8 +780,9 @@
         "It is the control-plane discipline for safe, reliable, efficient autonomy."
       ],
       "correct": 2,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Bound retries, provide safe fallback, and escalate before harm compounds.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Fail Safely” material frames fail-safe design through the specific role this concept plays in the system.",
+      "rationale": "In p. 92, Fail Safely, the course treats this as the recommended action or control for fail-safe design: Bound retries, provide safe fallback, and escalate before harm compounds. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -763,7 +796,7 @@
     {
       "id": "m2-q14",
       "moduleId": 2,
-      "prompt": "Which decision best addresses reliability evidence?",
+      "prompt": "Which option best represents reliability evidence in practice?",
       "options": [
         "Assess both the outcome and the execution path.",
         "Measure the full workflow across repeated runs.",
@@ -771,8 +804,9 @@
         "They define what enterprise data means in context."
       ],
       "correct": 1,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Measure the full workflow across repeated runs.",
+      "hint": "Choose the option that produces evidence across the full workflow.",
+      "tipContext": "The “Reliability” material frames reliability evidence through observable evidence rather than appearance.",
+      "rationale": "In p. 93, Reliability, the course treats this as the recommended action or control for reliability evidence: Measure the full workflow across repeated runs. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -786,7 +820,7 @@
     {
       "id": "m2-q15",
       "moduleId": 2,
-      "prompt": "Which decision best addresses agent cost growth?",
+      "prompt": "Which statement most accurately describes agent cost growth?",
       "options": [
         "Every model call, retrieval, tool call, and retry adds consumption.",
         "Use it only when specialization benefits exceed coordination cost.",
@@ -794,8 +828,9 @@
         "Retrieve only the enterprise context relevant to the current task."
       ],
       "correct": 0,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Every model call, retrieval, tool call, and retry adds consumption.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Cost” material frames agent cost growth through evidence quality and grounding.",
+      "rationale": "In pp. 94-96, Cost, the course treats this as the definition or operating principle for agent cost growth: Every model call, retrieval, tool call, and retry adds consumption. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -809,7 +844,7 @@
     {
       "id": "m2-q16",
       "moduleId": 2,
-      "prompt": "Which decision best addresses latency?",
+      "prompt": "How does the course characterize latency?",
       "options": [
         "They reveal retrievals, reasoning steps, and tool calls behind an outcome.",
         "It is the control-plane discipline for safe, reliable, efficient autonomy.",
@@ -817,8 +852,9 @@
         "It accumulates across serial reasoning, retrieval, tools, handoffs, and retries."
       ],
       "correct": 3,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "It accumulates across serial reasoning, retrieval, tools, handoffs, and retries.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Latency” material frames latency through evidence quality and grounding.",
+      "rationale": "In pp. 97-99, Latency, the course treats this as the definition or operating principle for latency: It accumulates across serial reasoning, retrieval, tools, handoffs, and retries. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -832,7 +868,7 @@
     {
       "id": "m2-q17",
       "moduleId": 2,
-      "prompt": "Which decision best addresses data quality validation?",
+      "prompt": "Which statement most accurately describes data quality validation?",
       "options": [
         "Bound retries, provide safe fallback, and escalate before harm compounds.",
         "They reveal retrievals, reasoning steps, and tool calls behind an outcome.",
@@ -840,8 +876,9 @@
         "It is the control-plane discipline for safe, reliable, efficient autonomy."
       ],
       "correct": 2,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Prevent inaccurate or incomplete data from driving decisions and actions.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Data Quality Control” material frames data quality validation through evidence quality and grounding.",
+      "rationale": "In p. 38, Data Quality Control, the course treats this as the recommended action or control for data quality validation: Prevent inaccurate or incomplete data from driving decisions and actions. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -855,7 +892,7 @@
     {
       "id": "m2-q18",
       "moduleId": 2,
-      "prompt": "Which decision best addresses business semantics?",
+      "prompt": "Which option best represents business semantics in practice?",
       "options": [
         "Measure the full workflow across repeated runs.",
         "They define what enterprise data means in context.",
@@ -863,8 +900,9 @@
         "It is the trusted knowledge layer for agent decisions."
       ],
       "correct": 1,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "They define what enterprise data means in context.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Semantics and Catalog” material frames business semantics through evidence quality and grounding.",
+      "rationale": "In pp. 39-42, Semantics and Catalog, the course treats this as the definition or operating principle for business semantics: They define what enterprise data means in context. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -878,7 +916,7 @@
     {
       "id": "m2-q19",
       "moduleId": 2,
-      "prompt": "Which decision best addresses MCP?",
+      "prompt": "Which option best represents MCP in practice?",
       "options": [
         "It standardizes how AI applications access tools and data.",
         "Data errors can propagate into actions, not only reports.",
@@ -886,8 +924,9 @@
         "It is the trusted knowledge layer for agent decisions."
       ],
       "correct": 0,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "It standardizes how AI applications access tools and data.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Standardizing Agent Access” material frames MCP through evidence quality and grounding.",
+      "rationale": "In p. 64, Standardizing Agent Access, the course treats this as the definition or operating principle for MCP: It standardizes how AI applications access tools and data. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -901,7 +940,7 @@
     {
       "id": "m2-q20",
       "moduleId": 2,
-      "prompt": "Which decision best addresses a deployed-agent change?",
+      "prompt": "Which statement best explains a deployed-agent change?",
       "options": [
         "Data errors can propagate into actions, not only reports.",
         "It standardizes how AI applications access tools and data.",
@@ -909,8 +948,9 @@
         "Version, test, control, monitor, and make it reversible."
       ],
       "correct": 3,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Version, test, control, monitor, and make it reversible.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Deployment Lifecycle” material frames a deployed-agent change through observable evidence rather than appearance.",
+      "rationale": "In p. 100, Deployment Lifecycle, the course treats this as the definition or operating principle for a deployed-agent change: Version, test, control, monitor, and make it reversible. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -924,7 +964,7 @@
     {
       "id": "m3-q01",
       "moduleId": 3,
-      "prompt": "Which decision best addresses security controls under agentic coding?",
+      "prompt": "Which statement most accurately describes security controls under agentic coding?",
       "options": [
         "Give the agent scoped permissions, auditability, and revocation.",
         "A hard guardrail is structurally enforced outside model choice.",
@@ -932,8 +972,9 @@
         "Machine-speed code volume can outpace human review and remediation."
       ],
       "correct": 3,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Machine-speed code volume can outpace human review and remediation.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Security Landscape” material frames security controls under agentic coding through decision rights at the point of consequence.",
+      "rationale": "In pp. 8-14, Security Landscape, the course treats this as the definition or operating principle for security controls under agentic coding: Machine-speed code volume can outpace human review and remediation. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -947,7 +988,7 @@
     {
       "id": "m3-q02",
       "moduleId": 3,
-      "prompt": "Which decision best addresses the lethal trifecta?",
+      "prompt": "Which statement best explains the lethal trifecta?",
       "options": [
         "A hard guardrail is structurally enforced outside model choice.",
         "Place it at the hook or enforcement point where the agent acts.",
@@ -955,8 +996,9 @@
         "Give the agent scoped permissions, auditability, and revocation."
       ],
       "correct": 2,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Private data, untrusted content, and a path to send data out.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Lethal Trifecta” material frames the lethal trifecta through evidence quality and grounding.",
+      "rationale": "In p. 18, Lethal Trifecta, the course treats this as the definition or operating principle for the lethal trifecta: Private data, untrusted content, and a path to send data out. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -970,7 +1012,7 @@
     {
       "id": "m3-q03",
       "moduleId": 3,
-      "prompt": "Which decision best addresses hard versus soft guardrails?",
+      "prompt": "Which option best represents hard versus soft guardrails in practice?",
       "options": [
         "Place it at the hook or enforcement point where the agent acts.",
         "A hard guardrail is structurally enforced outside model choice.",
@@ -978,8 +1020,9 @@
         "Private data, untrusted content, and a path to send data out."
       ],
       "correct": 1,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "A hard guardrail is structurally enforced outside model choice.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Soft vs. Hard” material frames hard versus soft guardrails through control placement and containment.",
+      "rationale": "In p. 19, Soft vs. Hard, the course treats this as the definition or operating principle for hard versus soft guardrails: A hard guardrail is structurally enforced outside model choice. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -993,7 +1036,7 @@
     {
       "id": "m3-q04",
       "moduleId": 3,
-      "prompt": "Which decision best addresses deterministic policy?",
+      "prompt": "Which statement most accurately describes deterministic policy?",
       "options": [
         "Place it at the hook or enforcement point where the agent acts.",
         "A hard guardrail is structurally enforced outside model choice.",
@@ -1001,8 +1044,9 @@
         "Private data, untrusted content, and a path to send data out."
       ],
       "correct": 0,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Place it at the hook or enforcement point where the agent acts.",
+      "hint": "Focus on where the control sits relative to the consequence.",
+      "tipContext": "The “Hooks” material frames deterministic policy through whether added agency has a distinct responsibility.",
+      "rationale": "In p. 20, Hooks, the course treats this as the recommended action or control for deterministic policy: Place it at the hook or enforcement point where the agent acts. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1016,7 +1060,7 @@
     {
       "id": "m3-q05",
       "moduleId": 3,
-      "prompt": "Which decision best addresses agent identity?",
+      "prompt": "Which statement most accurately describes agent identity?",
       "options": [
         "Place it at the hook or enforcement point where the agent acts.",
         "A hard guardrail is structurally enforced outside model choice.",
@@ -1024,8 +1068,9 @@
         "Give the agent scoped permissions, auditability, and revocation."
       ],
       "correct": 3,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Give the agent scoped permissions, auditability, and revocation.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Identity and Protocols” material frames agent identity through authority and enforceable limits.",
+      "rationale": "In p. 22, Identity and Protocols, the course treats this as the recommended action or control for agent identity: Give the agent scoped permissions, auditability, and revocation. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1039,7 +1084,7 @@
     {
       "id": "m3-q06",
       "moduleId": 3,
-      "prompt": "Which decision best addresses ASI01?",
+      "prompt": "Which risk name corresponds to ASI01?",
       "options": [
         "Cascading failures.",
         "Rogue agents.",
@@ -1047,8 +1092,9 @@
         "Unexpected code execution."
       ],
       "correct": 2,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Agent goal hijack.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “ASI01” material frames ASI01 through whether added agency has a distinct responsibility.",
+      "rationale": "In p. 28, ASI01, the course treats this as the definition or operating principle for ASI01: Agent goal hijack. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1062,7 +1108,7 @@
     {
       "id": "m3-q07",
       "moduleId": 3,
-      "prompt": "Which decision best addresses ASI02?",
+      "prompt": "Which risk name corresponds to ASI02?",
       "options": [
         "Identity and privilege abuse.",
         "Tool misuse and exploitation.",
@@ -1070,8 +1116,9 @@
         "Human-agent trust exploitation."
       ],
       "correct": 1,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Tool misuse and exploitation.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “ASI02” material frames ASI02 through the specific role this concept plays in the system.",
+      "rationale": "In p. 29, ASI02, the course treats this as the definition or operating principle for ASI02: Tool misuse and exploitation. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1085,7 +1132,7 @@
     {
       "id": "m3-q08",
       "moduleId": 3,
-      "prompt": "Which decision best addresses ASI03?",
+      "prompt": "Which risk name corresponds to ASI03?",
       "options": [
         "Identity and privilege abuse.",
         "Tool misuse and exploitation.",
@@ -1093,8 +1140,9 @@
         "Human-agent trust exploitation."
       ],
       "correct": 0,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Identity and privilege abuse.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “ASI03” material frames ASI03 through control placement and containment.",
+      "rationale": "In p. 30, ASI03, the course treats this as the definition or operating principle for ASI03: Identity and privilege abuse. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1108,7 +1156,7 @@
     {
       "id": "m3-q09",
       "moduleId": 3,
-      "prompt": "Which decision best addresses ASI04?",
+      "prompt": "Which risk name corresponds to ASI04?",
       "options": [
         "Insecure inter-agent communication.",
         "Human-agent trust exploitation.",
@@ -1116,8 +1164,9 @@
         "Agentic supply-chain vulnerabilities."
       ],
       "correct": 3,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Agentic supply-chain vulnerabilities.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “ASI04” material frames ASI04 through whether added agency has a distinct responsibility.",
+      "rationale": "In p. 31, ASI04, the course treats this as the definition or operating principle for ASI04: Agentic supply-chain vulnerabilities. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1131,7 +1180,7 @@
     {
       "id": "m3-q10",
       "moduleId": 3,
-      "prompt": "Which decision best addresses ASI05?",
+      "prompt": "Which risk name corresponds to ASI05?",
       "options": [
         "Memory and context poisoning.",
         "Identity and privilege abuse.",
@@ -1139,8 +1188,9 @@
         "Tool misuse and exploitation."
       ],
       "correct": 2,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Unexpected code execution.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “ASI05” material frames ASI05 through the specific role this concept plays in the system.",
+      "rationale": "In p. 32, ASI05, the course treats this as the definition or operating principle for ASI05: Unexpected code execution. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1154,7 +1204,7 @@
     {
       "id": "m3-q11",
       "moduleId": 3,
-      "prompt": "Which decision best addresses ASI06?",
+      "prompt": "Which risk name corresponds to ASI06?",
       "options": [
         "Identity and privilege abuse.",
         "Memory and context poisoning.",
@@ -1162,8 +1212,9 @@
         "Human-agent trust exploitation."
       ],
       "correct": 1,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Memory and context poisoning.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “ASI06” material frames ASI06 through evidence quality and grounding.",
+      "rationale": "In p. 33, ASI06, the course treats this as the definition or operating principle for ASI06: Memory and context poisoning. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1177,7 +1228,7 @@
     {
       "id": "m3-q12",
       "moduleId": 3,
-      "prompt": "Which decision best addresses ASI07?",
+      "prompt": "Which risk name corresponds to ASI07?",
       "options": [
         "Insecure inter-agent communication.",
         "Agentic supply-chain vulnerabilities.",
@@ -1185,8 +1236,9 @@
         "Memory and context poisoning."
       ],
       "correct": 0,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Insecure inter-agent communication.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “ASI07” material frames ASI07 through whether added agency has a distinct responsibility.",
+      "rationale": "In p. 34, ASI07, the course treats this as the definition or operating principle for ASI07: Insecure inter-agent communication. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1200,7 +1252,7 @@
     {
       "id": "m3-q13",
       "moduleId": 3,
-      "prompt": "Which decision best addresses ASI08?",
+      "prompt": "Which risk name corresponds to ASI08?",
       "options": [
         "Agent goal hijack.",
         "Rogue agents.",
@@ -1208,8 +1260,9 @@
         "Cascading failures."
       ],
       "correct": 3,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Cascading failures.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “ASI08” material frames ASI08 through the specific role this concept plays in the system.",
+      "rationale": "In p. 35, ASI08, the course treats this as the definition or operating principle for ASI08: Cascading failures. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1223,7 +1276,7 @@
     {
       "id": "m3-q14",
       "moduleId": 3,
-      "prompt": "Which decision best addresses ASI09?",
+      "prompt": "Which risk name corresponds to ASI09?",
       "options": [
         "Memory and context poisoning.",
         "Identity and privilege abuse.",
@@ -1231,8 +1284,9 @@
         "Tool misuse and exploitation."
       ],
       "correct": 2,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Human-agent trust exploitation.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “ASI09” material frames ASI09 through decision rights at the point of consequence.",
+      "rationale": "In p. 36, ASI09, the course treats this as the definition or operating principle for ASI09: Human-agent trust exploitation. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1246,7 +1300,7 @@
     {
       "id": "m3-q15",
       "moduleId": 3,
-      "prompt": "Which decision best addresses ASI10?",
+      "prompt": "Which risk name corresponds to ASI10?",
       "options": [
         "Agent goal hijack.",
         "Rogue agents.",
@@ -1254,8 +1308,9 @@
         "Unexpected code execution."
       ],
       "correct": 1,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Rogue agents.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “ASI10” material frames ASI10 through whether added agency has a distinct responsibility.",
+      "rationale": "In p. 37, ASI10, the course treats this as the definition or operating principle for ASI10: Rogue agents. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1269,7 +1324,7 @@
     {
       "id": "m3-q16",
       "moduleId": 3,
-      "prompt": "Which decision best addresses a valid mitigation claim?",
+      "prompt": "Which statement best explains a valid mitigation claim?",
       "options": [
         "Support it with adversarial testing evidence.",
         "Classify by consequence, authority, and autonomy.",
@@ -1277,8 +1332,9 @@
         "Insecure inter-agent communication."
       ],
       "correct": 0,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Support it with adversarial testing evidence.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Red Teaming” material frames a valid mitigation claim through evidence quality and grounding.",
+      "rationale": "In p. 38, Red Teaming, the course treats this as the recommended action or control for a valid mitigation claim: Support it with adversarial testing evidence. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1292,7 +1348,7 @@
     {
       "id": "m3-q17",
       "moduleId": 3,
-      "prompt": "Which decision best addresses rogue-agent response?",
+      "prompt": "Which option best represents rogue-agent response in practice?",
       "options": [
         "Revoke identity, tools, execution, and delegated paths at enforced points.",
         "Most agent security failures are ordinary security failures at machine speed.",
@@ -1300,8 +1356,9 @@
         "Contain access and actions, preserve evidence, investigate, and recover."
       ],
       "correct": 3,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Contain access and actions, preserve evidence, investigate, and recover.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Incident Response” material frames rogue-agent response through evidence quality and grounding.",
+      "rationale": "In p. 47, Incident Response, the course treats this as the recommended action or control for rogue-agent response: Contain access and actions, preserve evidence, investigate, and recover. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1315,7 +1372,7 @@
     {
       "id": "m3-q18",
       "moduleId": 3,
-      "prompt": "Which decision best addresses an effective kill switch?",
+      "prompt": "Which statement best explains an effective kill switch?",
       "options": [
         "Contain access and actions, preserve evidence, investigate, and recover.",
         "Most agent security failures are ordinary security failures at machine speed.",
@@ -1323,8 +1380,9 @@
         "Machine-speed code volume can outpace human review and remediation."
       ],
       "correct": 2,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Revoke identity, tools, execution, and delegated paths at enforced points.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Kill Switch” material frames an effective kill switch through control placement and containment.",
+      "rationale": "In p. 48, Kill Switch, the course treats this as the recommended action or control for an effective kill switch: Revoke identity, tools, execution, and delegated paths at enforced points. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1338,7 +1396,7 @@
     {
       "id": "m3-q19",
       "moduleId": 3,
-      "prompt": "Which decision best addresses agent classification?",
+      "prompt": "Which statement most accurately describes agent classification?",
       "options": [
         "Support it with adversarial testing evidence.",
         "Classify by consequence, authority, and autonomy.",
@@ -1346,8 +1404,9 @@
         "Private data, untrusted content, and a path to send data out."
       ],
       "correct": 1,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Classify by consequence, authority, and autonomy.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Classification Levels” material frames agent classification through authority and enforceable limits.",
+      "rationale": "In p. 51, Classification Levels, the course treats this as the recommended action or control for agent classification: Classify by consequence, authority, and autonomy. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1361,7 +1420,7 @@
     {
       "id": "m3-q20",
       "moduleId": 3,
-      "prompt": "Which decision best addresses the module security summary?",
+      "prompt": "Which statement best explains the module security summary?",
       "options": [
         "Most agent security failures are ordinary security failures at machine speed.",
         "Revoke identity, tools, execution, and delegated paths at enforced points.",
@@ -1369,8 +1428,9 @@
         "Machine-speed code volume can outpace human review and remediation."
       ],
       "correct": 0,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Most agent security failures are ordinary security failures at machine speed.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Module Close” material frames the module security summary through control placement and containment.",
+      "rationale": "In p. 59, Module Close, the course treats this as the definition or operating principle for the module security summary: Most agent security failures are ordinary security failures at machine speed. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1384,7 +1444,7 @@
     {
       "id": "m4-q01",
       "moduleId": 4,
-      "prompt": "Which decision best addresses where strategy begins?",
+      "prompt": "Where should an enterprise AI strategy begin?",
       "options": [
         "Start with business outcomes and strategic priorities, not agents.",
         "Require ownership, classification, quality standards, and lineage.",
@@ -1392,8 +1452,9 @@
         "Track business outcomes, adoption, agent performance, and economics."
       ],
       "correct": 0,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Start with business outcomes and strategic priorities, not agents.",
+      "hint": "Find the required starting point before considering implementation.",
+      "tipContext": "The “Business Strategy” material frames where strategy begins through whether added agency has a distinct responsibility.",
+      "rationale": "In pp. 12-13, Business Strategy, the course treats this as the recommended action or control for where strategy begins: Start with business outcomes and strategic priorities, not agents. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1407,7 +1468,7 @@
     {
       "id": "m4-q02",
       "moduleId": 4,
-      "prompt": "Which decision best addresses golden use cases?",
+      "prompt": "Which option best represents golden use cases in practice?",
       "options": [
         "Provide common identity, registry, authority, policy, observability, and lifecycle.",
         "Decide from proprietary data, domain expertise, integration, and strategic advantage.",
@@ -1415,8 +1476,9 @@
         "Screen value, decision density, data readiness, bounded action, friction, and risk."
       ],
       "correct": 3,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Screen value, decision density, data readiness, bounded action, friction, and risk.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Golden Use Cases” material frames golden use cases through evidence quality and grounding.",
+      "rationale": "In p. 14, Golden Use Cases, the course treats this as the recommended action or control for golden use cases: Screen value, decision density, data readiness, bounded action, friction, and risk. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1430,7 +1492,7 @@
     {
       "id": "m4-q03",
       "moduleId": 4,
-      "prompt": "Which decision best addresses choosing agency?",
+      "prompt": "How should a team choose the appropriate level of agency?",
       "options": [
         "Track cost and value per workflow with budgets and limits.",
         "Advance, reshape, pause, or stop based on evidence.",
@@ -1438,8 +1500,9 @@
         "Match authority to consequence, reversibility, and confidence."
       ],
       "correct": 2,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Use the least sufficient agency that captures the value.",
+      "hint": "Test the conditions under which the source recommends this choice.",
+      "tipContext": "The “Agency Level” material frames choosing agency through the specific role this concept plays in the system.",
+      "rationale": "In p. 8, Agency Level, the course treats this as the recommended action or control for choosing agency: Use the least sufficient agency that captures the value. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1453,7 +1516,7 @@
     {
       "id": "m4-q04",
       "moduleId": 4,
-      "prompt": "Which decision best addresses buy, boost, or build?",
+      "prompt": "How does the course characterize buy, boost, or build?",
       "options": [
         "Inventory agents, assign owners, risk-tier them, and block unregistered write access.",
         "Decide from proprietary data, domain expertise, integration, and strategic advantage.",
@@ -1461,8 +1524,9 @@
         "Provide common identity, registry, authority, policy, observability, and lifecycle."
       ],
       "correct": 1,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Decide from proprietary data, domain expertise, integration, and strategic advantage.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Buy Boost Build” material frames buy, boost, or build through evidence quality and grounding.",
+      "rationale": "In p. 16, Buy Boost Build, the course treats this as the recommended action or control for buy, boost, or build: Decide from proprietary data, domain expertise, integration, and strategic advantage. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1476,7 +1540,7 @@
     {
       "id": "m4-q05",
       "moduleId": 4,
-      "prompt": "Which decision best addresses portfolio stage gates?",
+      "prompt": "How does the course characterize portfolio stage gates?",
       "options": [
         "Advance, reshape, pause, or stop based on evidence.",
         "Use the least sufficient agency that captures the value.",
@@ -1484,8 +1548,9 @@
         "Match authority to consequence, reversibility, and confidence."
       ],
       "correct": 0,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Advance, reshape, pause, or stop based on evidence.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Portfolio Gates” material frames portfolio stage gates through evidence quality and grounding.",
+      "rationale": "In p. 17, Portfolio Gates, the course treats this as the recommended action or control for portfolio stage gates: Advance, reshape, pause, or stop based on evidence. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1499,7 +1564,7 @@
     {
       "id": "m4-q06",
       "moduleId": 4,
-      "prompt": "Which decision best addresses executive measures?",
+      "prompt": "Which option best represents executive measures in practice?",
       "options": [
         "Start with business outcomes and strategic priorities, not agents.",
         "Require ownership, classification, quality standards, and lineage.",
@@ -1507,8 +1572,9 @@
         "Track business outcomes, adoption, agent performance, and economics."
       ],
       "correct": 3,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Track business outcomes, adoption, agent performance, and economics.",
+      "hint": "Choose the option that produces evidence across the full workflow.",
+      "tipContext": "The “Executive Measures” material frames executive measures through whether added agency has a distinct responsibility.",
+      "rationale": "In p. 22, Executive Measures, the course treats this as the recommended action or control for executive measures: Track business outcomes, adoption, agent performance, and economics. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1522,7 +1588,7 @@
     {
       "id": "m4-q07",
       "moduleId": 4,
-      "prompt": "Which decision best addresses decision rights?",
+      "prompt": "How does the course characterize decision rights?",
       "options": [
         "Use unique, scoped, revocable credentials with least privilege.",
         "Give every agent a defined job, human owner, and escalation path.",
@@ -1530,8 +1596,9 @@
         "Start with business outcomes and strategic priorities, not agents."
       ],
       "correct": 2,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Match authority to consequence, reversibility, and confidence.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Decision Rights” material frames decision rights through authority and enforceable limits.",
+      "rationale": "In p. 31, Decision Rights, the course treats this as the recommended action or control for decision rights: Match authority to consequence, reversibility, and confidence. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1545,7 +1612,7 @@
     {
       "id": "m4-q08",
       "moduleId": 4,
-      "prompt": "Which decision best addresses production-agent accountability?",
+      "prompt": "Which option best represents production-agent accountability in practice?",
       "options": [
         "Require ownership, classification, quality standards, and lineage.",
         "Give every agent a defined job, human owner, and escalation path.",
@@ -1553,8 +1620,9 @@
         "Use unique, scoped, revocable credentials with least privilege."
       ],
       "correct": 1,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Give every agent a defined job, human owner, and escalation path.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Managing Digital Employees” material frames production-agent accountability through decision rights at the point of consequence.",
+      "rationale": "In p. 32, Managing Digital Employees, the course treats this as the recommended action or control for production-agent accountability: Give every agent a defined job, human owner, and escalation path. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1568,7 +1636,7 @@
     {
       "id": "m4-q09",
       "moduleId": 4,
-      "prompt": "Which decision best addresses workforce uncertainty?",
+      "prompt": "Which option best represents workforce uncertainty in practice?",
       "options": [
         "Communicate honestly, build fluency, redesign work, and keep choices reversible.",
         "Govern planning, persistence, connections, identity, and action at machine speed.",
@@ -1576,8 +1644,9 @@
         "Produce logs, observability, kill-switch tests, red teams, and board reporting."
       ],
       "correct": 0,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Communicate honestly, build fluency, redesign work, and keep choices reversible.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Workforce Actions” material frames workforce uncertainty through the specific role this concept plays in the system.",
+      "rationale": "In pp. 37-45, Workforce Actions, the course treats this as the recommended action or control for workforce uncertainty: Communicate honestly, build fluency, redesign work, and keep choices reversible. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1591,7 +1660,7 @@
     {
       "id": "m4-q10",
       "moduleId": 4,
-      "prompt": "Which decision best addresses the governance shift?",
+      "prompt": "Which statement best explains the governance shift?",
       "options": [
         "Increase assurance, approval, monitoring, and oversight with impact and autonomy.",
         "Communicate honestly, build fluency, redesign work, and keep choices reversible.",
@@ -1599,8 +1668,9 @@
         "Govern planning, persistence, connections, identity, and action at machine speed."
       ],
       "correct": 3,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Govern planning, persistence, connections, identity, and action at machine speed.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Governance Equation” material frames the governance shift through control placement and containment.",
+      "rationale": "In p. 47, Governance Equation, the course treats this as the recommended action or control for the governance shift: Govern planning, persistence, connections, identity, and action at machine speed. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1614,7 +1684,7 @@
     {
       "id": "m4-q11",
       "moduleId": 4,
-      "prompt": "Which decision best addresses proportional governance?",
+      "prompt": "Which statement most accurately describes proportional governance?",
       "options": [
         "Govern planning, persistence, connections, identity, and action at machine speed.",
         "Communicate honestly, build fluency, redesign work, and keep choices reversible.",
@@ -1622,8 +1692,9 @@
         "Provide common identity, registry, authority, policy, observability, and lifecycle."
       ],
       "correct": 2,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Increase assurance, approval, monitoring, and oversight with impact and autonomy.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Proportional Governance” material frames proportional governance through decision rights at the point of consequence.",
+      "rationale": "In p. 52, Proportional Governance, the course treats this as the recommended action or control for proportional governance: Increase assurance, approval, monitoring, and oversight with impact and autonomy. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1637,7 +1708,7 @@
     {
       "id": "m4-q12",
       "moduleId": 4,
-      "prompt": "Which decision best addresses layered governance?",
+      "prompt": "Which statement most accurately describes layered governance?",
       "options": [
         "Strategy chooses value, the operating model defines work, and governance enables scale.",
         "Combine senior accountability, process ownership, standards, data governance, and technical controls.",
@@ -1645,8 +1716,9 @@
         "Decide from proprietary data, domain expertise, integration, and strategic advantage."
       ],
       "correct": 1,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Combine senior accountability, process ownership, standards, data governance, and technical controls.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Layered Governance” material frames layered governance through evidence quality and grounding.",
+      "rationale": "In p. 53, Layered Governance, the course treats this as the recommended action or control for layered governance: Combine senior accountability, process ownership, standards, data governance, and technical controls. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1660,7 +1732,7 @@
     {
       "id": "m4-q13",
       "moduleId": 4,
-      "prompt": "Which decision best addresses agent-ready data governance?",
+      "prompt": "How does the course characterize agent-ready data governance?",
       "options": [
         "Require ownership, classification, quality standards, and lineage.",
         "Start with business outcomes and strategic priorities, not agents.",
@@ -1668,8 +1740,9 @@
         "Track business outcomes, adoption, agent performance, and economics."
       ],
       "correct": 0,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Require ownership, classification, quality standards, and lineage.",
+      "hint": "Look for the condition the source treats as necessary, not merely helpful.",
+      "tipContext": "The “Data Governance” material frames agent-ready data governance through decision rights at the point of consequence.",
+      "rationale": "In p. 54, Data Governance, the course treats this as the recommended action or control for agent-ready data governance: Require ownership, classification, quality standards, and lineage. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1683,7 +1756,7 @@
     {
       "id": "m4-q14",
       "moduleId": 4,
-      "prompt": "Which decision best addresses ecosystem-scale governance?",
+      "prompt": "How does the course characterize ecosystem-scale governance?",
       "options": [
         "Produce logs, observability, kill-switch tests, red teams, and board reporting.",
         "Communicate honestly, build fluency, redesign work, and keep choices reversible.",
@@ -1691,8 +1764,9 @@
         "Move from individual approvals to automated portfolio and ecosystem controls."
       ],
       "correct": 3,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Move from individual approvals to automated portfolio and ecosystem controls.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Agent Ecosystem” material frames ecosystem-scale governance through decision rights at the point of consequence.",
+      "rationale": "In p. 55, Agent Ecosystem, the course treats this as the recommended action or control for ecosystem-scale governance: Move from individual approvals to automated portfolio and ecosystem controls. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1706,7 +1780,7 @@
     {
       "id": "m4-q15",
       "moduleId": 4,
-      "prompt": "Which decision best addresses the enterprise agent control plane?",
+      "prompt": "Which statement best explains the enterprise agent control plane?",
       "options": [
         "Screen value, decision density, data readiness, bounded action, friction, and risk.",
         "Inventory agents, assign owners, risk-tier them, and block unregistered write access.",
@@ -1714,8 +1788,9 @@
         "Increase assurance, approval, monitoring, and oversight with impact and autonomy."
       ],
       "correct": 2,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Provide common identity, registry, authority, policy, observability, and lifecycle.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Control Plane” material frames the enterprise agent control plane through authority and enforceable limits.",
+      "rationale": "In p. 56, Control Plane, the course treats this as the recommended action or control for the enterprise agent control plane: Provide common identity, registry, authority, policy, observability, and lifecycle. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1729,7 +1804,7 @@
     {
       "id": "m4-q16",
       "moduleId": 4,
-      "prompt": "Which decision best addresses financial management?",
+      "prompt": "Which option best represents financial management in practice?",
       "options": [
         "Use the least sufficient agency that captures the value.",
         "Track cost and value per workflow with budgets and limits.",
@@ -1737,8 +1812,9 @@
         "Use unique, scoped, revocable credentials with least privilege."
       ],
       "correct": 1,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Track cost and value per workflow with budgets and limits.",
+      "hint": "Choose the option that produces evidence across the full workflow.",
+      "tipContext": "The “Financial Management” material frames financial management through operational trade-offs.",
+      "rationale": "In p. 58, Financial Management, the course treats this as the recommended action or control for financial management: Track cost and value per workflow with budgets and limits. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1752,7 +1828,7 @@
     {
       "id": "m4-q17",
       "moduleId": 4,
-      "prompt": "Which decision best addresses days 0-30 of governance?",
+      "prompt": "Which statement most accurately describes days 0-30 of governance?",
       "options": [
         "Inventory agents, assign owners, risk-tier them, and block unregistered write access.",
         "Decide from proprietary data, domain expertise, integration, and strategic advantage.",
@@ -1760,8 +1836,9 @@
         "Strategy chooses value, the operating model defines work, and governance enables scale."
       ],
       "correct": 0,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Inventory agents, assign owners, risk-tier them, and block unregistered write access.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “90-Day Playbook” material frames days 0-30 of governance through decision rights at the point of consequence.",
+      "rationale": "In p. 60, 90-Day Playbook, the course treats this as the recommended action or control for days 0-30 of governance: Inventory agents, assign owners, risk-tier them, and block unregistered write access. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1775,7 +1852,7 @@
     {
       "id": "m4-q18",
       "moduleId": 4,
-      "prompt": "Which decision best addresses days 61-90 of governance?",
+      "prompt": "How does the course characterize days 61-90 of governance?",
       "options": [
         "Communicate honestly, build fluency, redesign work, and keep choices reversible.",
         "Move from individual approvals to automated portfolio and ecosystem controls.",
@@ -1783,8 +1860,9 @@
         "Produce logs, observability, kill-switch tests, red teams, and board reporting."
       ],
       "correct": 3,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Produce logs, observability, kill-switch tests, red teams, and board reporting.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “90-Day Playbook” material frames days 61-90 of governance through control placement and containment.",
+      "rationale": "In p. 60, 90-Day Playbook, the course treats this as the recommended action or control for days 61-90 of governance: Produce logs, observability, kill-switch tests, red teams, and board reporting. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1798,7 +1876,7 @@
     {
       "id": "m4-q19",
       "moduleId": 4,
-      "prompt": "Which decision best addresses trusted agent identity?",
+      "prompt": "Which statement most accurately describes trusted agent identity?",
       "options": [
         "Match authority to consequence, reversibility, and confidence.",
         "Give every agent a defined job, human owner, and escalation path.",
@@ -1806,8 +1884,9 @@
         "Require ownership, classification, quality standards, and lineage."
       ],
       "correct": 2,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Use unique, scoped, revocable credentials with least privilege.",
+      "hint": "Test the conditions under which the source recommends this choice.",
+      "tipContext": "The “Scale With Control” material frames trusted agent identity through authority and enforceable limits.",
+      "rationale": "In p. 62, Scale With Control, the course treats this as the recommended action or control for trusted agent identity: Use unique, scoped, revocable credentials with least privilege. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1821,7 +1900,7 @@
     {
       "id": "m4-q20",
       "moduleId": 4,
-      "prompt": "Which decision best addresses strategy, operating model, and governance?",
+      "prompt": "Which statement most accurately describes strategy, operating model, and governance?",
       "options": [
         "Inventory agents, assign owners, risk-tier them, and block unregistered write access.",
         "Strategy chooses value, the operating model defines work, and governance enables scale.",
@@ -1829,8 +1908,9 @@
         "Provide common identity, registry, authority, policy, observability, and lifecycle."
       ],
       "correct": 1,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Strategy chooses value, the operating model defines work, and governance enables scale.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Key Takeaways” material frames strategy, operating model, and governance through the specific role this concept plays in the system.",
+      "rationale": "In p. 63, Key Takeaways, the course treats this as the definition or operating principle for strategy, operating model, and governance: Strategy chooses value, the operating model defines work, and governance enables scale. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1844,7 +1924,7 @@
     {
       "id": "m5-q01",
       "moduleId": 5,
-      "prompt": "Which decision best addresses what creates an agentic workflow?",
+      "prompt": "What creates an agentic workflow?",
       "options": [
         "Require a distinct task, data, tools, permissions, evaluation, or owner.",
         "Data and tool use, orchestration, bounded action, and human checkpoints.",
@@ -1852,8 +1932,9 @@
         "Estimate critical-path latency, cost, complexity, and operating burden."
       ],
       "correct": 1,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Data and tool use, orchestration, bounded action, and human checkpoints.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Learning Progression” material frames what creates an agentic workflow through evidence quality and grounding.",
+      "rationale": "In slides 4-7, Learning Progression, the course treats this as the definition or operating principle for what creates an agentic workflow: Data and tool use, orchestration, bounded action, and human checkpoints. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -1867,7 +1948,7 @@
     {
       "id": "m5-q02",
       "moduleId": 5,
-      "prompt": "Which decision best addresses the first lab baseline?",
+      "prompt": "Which statement best explains the first lab baseline?",
       "options": [
         "Keep it unchanged for a valid comparison.",
         "Usefulness does not establish correctness.",
@@ -1875,8 +1956,9 @@
         "Change one variable and rerun the same case and prompt."
       ],
       "correct": 0,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Keep it unchanged for a valid comparison.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Lab 1 Baseline” material frames the first lab baseline through the specific role this concept plays in the system.",
+      "rationale": "In slides 10 and 19, Lab 1 Baseline, the course treats this as the recommended action or control for the first lab baseline: Keep it unchanged for a valid comparison. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -1890,7 +1972,7 @@
     {
       "id": "m5-q03",
       "moduleId": 5,
-      "prompt": "Which decision best addresses changed policy facts?",
+      "prompt": "Which option best represents changed policy facts in practice?",
       "options": [
         "Change one variable and rerun the same case and prompt.",
         "Usefulness does not establish correctness.",
@@ -1898,8 +1980,9 @@
         "Update Knowledge and replace the stale uploaded file."
       ],
       "correct": 3,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Update Knowledge and replace the stale uploaded file.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Maintenance Test” material frames changed policy facts through the specific role this concept plays in the system.",
+      "rationale": "In slide 17, Maintenance Test, the course treats this as the recommended action or control for changed policy facts: Update Knowledge and replace the stale uploaded file. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -1913,7 +1996,7 @@
     {
       "id": "m5-q04",
       "moduleId": 5,
-      "prompt": "Which decision best addresses the Lab 1 limitation?",
+      "prompt": "Which statement best explains the Lab 1 limitation?",
       "options": [
         "Keep it unchanged for a valid comparison.",
         "Update Knowledge and replace the stale uploaded file.",
@@ -1921,8 +2004,9 @@
         "Change one variable and rerun the same case and prompt."
       ],
       "correct": 2,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Usefulness does not establish correctness.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Lab 1 Debrief” material frames the Lab 1 limitation through the specific role this concept plays in the system.",
+      "rationale": "In slide 23, Lab 1 Debrief, the course treats this as the definition or operating principle for the Lab 1 limitation: Usefulness does not establish correctness. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -1936,7 +2020,7 @@
     {
       "id": "m5-q05",
       "moduleId": 5,
-      "prompt": "Which decision best addresses Lab 2 evaluation?",
+      "prompt": "Which option best represents Lab 2 evaluation in practice?",
       "options": [
         "It is conversationally instructed, not a deterministic approval node.",
         "Test whether both the decision and supporting evidence are grounded.",
@@ -1944,8 +2028,9 @@
         "Credentials, permissions, and audit history assigned to the agent."
       ],
       "correct": 1,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Test whether both the decision and supporting evidence are grounded.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Lab 2” material frames Lab 2 evaluation through evidence quality and grounding.",
+      "rationale": "In slides 25-32, Lab 2, the course treats this as the recommended action or control for Lab 2 evaluation: Test whether both the decision and supporting evidence are grounded. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -1959,7 +2044,7 @@
     {
       "id": "m5-q06",
       "moduleId": 5,
-      "prompt": "Which decision best addresses a controlled retest?",
+      "prompt": "Which statement best explains a controlled retest?",
       "options": [
         "Change one variable and rerun the same case and prompt.",
         "Update Knowledge and replace the stale uploaded file.",
@@ -1967,8 +2052,9 @@
         "Choose where to build, run, integrate, govern, and observe agents."
       ],
       "correct": 0,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Change one variable and rerun the same case and prompt.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Controlled Retest” material frames a controlled retest through the specific role this concept plays in the system.",
+      "rationale": "In slides 26 and 31, Controlled Retest, the course treats this as the recommended action or control for a controlled retest: Change one variable and rerun the same case and prompt. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -1982,7 +2068,7 @@
     {
       "id": "m5-q07",
       "moduleId": 5,
-      "prompt": "Which decision best addresses prompt improvement?",
+      "prompt": "How does the course characterize prompt improvement?",
       "options": [
         "Inspect data, calculations, tools, orchestration, human decisions, and traces.",
         "Repeat a test to detect whether a later change breaks acceptable behavior.",
@@ -1990,8 +2076,9 @@
         "It is one lever among data, tools, orchestration, instructions, and evaluation."
       ],
       "correct": 3,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "It is one lever among data, tools, orchestration, instructions, and evaluation.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Failure Surfaces” material frames prompt improvement through evidence quality and grounding.",
+      "rationale": "In slide 33, Failure Surfaces, the course treats this as the definition or operating principle for prompt improvement: It is one lever among data, tools, orchestration, instructions, and evaluation. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2005,7 +2092,7 @@
     {
       "id": "m5-q08",
       "moduleId": 5,
-      "prompt": "Which decision best addresses the regional workflow?",
+      "prompt": "Which statement best explains the regional workflow?",
       "options": [
         "Build, runtime, identity, policy, evaluation, registry, and observability are converging.",
         "Agentic systems are more than prompts, and more agents are not automatically better.",
@@ -2013,8 +2100,9 @@
         "It is one lever among data, tools, orchestration, instructions, and evaluation."
       ],
       "correct": 2,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Decomposition, tools, orchestration, and a human decision point created agentic behavior.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Workflow Debrief” material frames the regional workflow through decision rights at the point of consequence.",
+      "rationale": "In slide 50, Workflow Debrief, the course treats this as the definition or operating principle for the regional workflow: Decomposition, tools, orchestration, and a human decision point created agentic behavior. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2028,7 +2116,7 @@
     {
       "id": "m5-q09",
       "moduleId": 5,
-      "prompt": "Which decision best addresses the demo checkpoint caveat?",
+      "prompt": "Which statement best explains the demo checkpoint caveat?",
       "options": [
         "Test whether both the decision and supporting evidence are grounded.",
         "It is conversationally instructed, not a deterministic approval node.",
@@ -2036,8 +2124,9 @@
         "Estimate critical-path latency, cost, complexity, and operating burden."
       ],
       "correct": 1,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "It is conversationally instructed, not a deterministic approval node.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Implementation Caveat” material frames the demo checkpoint caveat through decision rights at the point of consequence.",
+      "rationale": "In slide 50, Implementation Caveat, the course treats this as the definition or operating principle for the demo checkpoint caveat: It is conversationally instructed, not a deterministic approval node. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2051,7 +2140,7 @@
     {
       "id": "m5-q10",
       "moduleId": 5,
-      "prompt": "Which decision best addresses production evaluation?",
+      "prompt": "How does the course characterize production evaluation?",
       "options": [
         "Inspect data, calculations, tools, orchestration, human decisions, and traces.",
         "It is one lever among data, tools, orchestration, instructions, and evaluation.",
@@ -2059,8 +2148,9 @@
         "Use a tool or workflow step when it can do the job without another agent."
       ],
       "correct": 0,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Inspect data, calculations, tools, orchestration, human decisions, and traces.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Evaluation Surfaces” material frames production evaluation through evidence quality and grounding.",
+      "rationale": "In slide 51, Evaluation Surfaces, the course treats this as the recommended action or control for production evaluation: Inspect data, calculations, tools, orchestration, human decisions, and traces. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2074,7 +2164,7 @@
     {
       "id": "m5-q11",
       "moduleId": 5,
-      "prompt": "Which decision best addresses a justified specialist agent?",
+      "prompt": "Which statement best explains a justified specialist agent?",
       "options": [
         "Data and tool use, orchestration, bounded action, and human checkpoints.",
         "It adds latency, coordination, cost, governance, and a failure surface.",
@@ -2082,8 +2172,9 @@
         "Require a distinct task, data, tools, permissions, evaluation, or owner."
       ],
       "correct": 3,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Require a distinct task, data, tools, permissions, evaluation, or owner.",
+      "hint": "Look for the condition the source treats as necessary, not merely helpful.",
+      "tipContext": "The “Specialization” material frames a justified specialist agent through authority and enforceable limits.",
+      "rationale": "In slides 54-58, Specialization, the course treats this as the recommended action or control for a justified specialist agent: Require a distinct task, data, tools, permissions, evaluation, or owner. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2097,7 +2188,7 @@
     {
       "id": "m5-q12",
       "moduleId": 5,
-      "prompt": "Which decision best addresses the cost of another agent?",
+      "prompt": "Which statement best explains the cost of another agent?",
       "options": [
         "Estimate critical-path latency, cost, complexity, and operating burden.",
         "Require a distinct task, data, tools, permissions, evaluation, or owner.",
@@ -2105,8 +2196,9 @@
         "Data and tool use, orchestration, bounded action, and human checkpoints."
       ],
       "correct": 2,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "It adds latency, coordination, cost, governance, and a failure surface.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Coordination Cost” material frames the cost of another agent through operational trade-offs.",
+      "rationale": "In slides 58-60, Coordination Cost, the course treats this as the definition or operating principle for the cost of another agent: It adds latency, coordination, cost, governance, and a failure surface. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2120,7 +2212,7 @@
     {
       "id": "m5-q13",
       "moduleId": 5,
-      "prompt": "Which decision best addresses pre-build multi-agent estimates?",
+      "prompt": "Which option best represents pre-build multi-agent estimates in practice?",
       "options": [
         "It adds latency, coordination, cost, governance, and a failure surface.",
         "Estimate critical-path latency, cost, complexity, and operating burden.",
@@ -2128,8 +2220,9 @@
         "Data and tool use, orchestration, bounded action, and human checkpoints."
       ],
       "correct": 1,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Estimate critical-path latency, cost, complexity, and operating burden.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Coordination Cost” material frames pre-build multi-agent estimates through operational trade-offs.",
+      "rationale": "In slide 60, Coordination Cost, the course treats this as the recommended action or control for pre-build multi-agent estimates: Estimate critical-path latency, cost, complexity, and operating burden. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2143,7 +2236,7 @@
     {
       "id": "m5-q14",
       "moduleId": 5,
-      "prompt": "Which decision best addresses platform selection?",
+      "prompt": "How does the course characterize platform selection?",
       "options": [
         "Choose where to build, run, integrate, govern, and observe agents.",
         "Credentials, permissions, and audit history assigned to the agent.",
@@ -2151,8 +2244,9 @@
         "Test whether both the decision and supporting evidence are grounded."
       ],
       "correct": 0,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Choose where to build, run, integrate, govern, and observe agents.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Agent Platforms” material frames platform selection through observable evidence rather than appearance.",
+      "rationale": "In slide 62, Agent Platforms, the course treats this as the recommended action or control for platform selection: Choose where to build, run, integrate, govern, and observe agents. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2166,7 +2260,7 @@
     {
       "id": "m5-q15",
       "moduleId": 5,
-      "prompt": "Which decision best addresses platform direction?",
+      "prompt": "How does the course characterize platform direction?",
       "options": [
         "Decomposition, tools, orchestration, and a human decision point created agentic behavior.",
         "Agentic systems are more than prompts, and more agents are not automatically better.",
@@ -2174,8 +2268,9 @@
         "Build, runtime, identity, policy, evaluation, registry, and observability are converging."
       ],
       "correct": 3,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Build, runtime, identity, policy, evaluation, registry, and observability are converging.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Platform Direction” material frames platform direction through control placement and containment.",
+      "rationale": "In slide 63, Platform Direction, the course treats this as the recommended action or control for platform direction: Build, runtime, identity, policy, evaluation, registry, and observability are converging. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2189,7 +2284,7 @@
     {
       "id": "m5-q16",
       "moduleId": 5,
-      "prompt": "Which decision best addresses agent identity?",
+      "prompt": "Which statement most accurately describes agent identity?",
       "options": [
         "Choose where to build, run, integrate, govern, and observe agents.",
         "Coordinate steps, tools, state, and agents toward a larger goal.",
@@ -2197,8 +2292,9 @@
         "Test whether both the decision and supporting evidence are grounded."
       ],
       "correct": 2,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Credentials, permissions, and audit history assigned to the agent.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Glossary” material frames agent identity through authority and enforceable limits.",
+      "rationale": "In slide 67, Glossary, the course treats this as the definition or operating principle for agent identity: Credentials, permissions, and audit history assigned to the agent. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2212,7 +2308,7 @@
     {
       "id": "m5-q17",
       "moduleId": 5,
-      "prompt": "Which decision best addresses orchestration?",
+      "prompt": "How does the course characterize orchestration?",
       "options": [
         "Credentials, permissions, and audit history assigned to the agent.",
         "Coordinate steps, tools, state, and agents toward a larger goal.",
@@ -2220,8 +2316,9 @@
         "Test whether both the decision and supporting evidence are grounded."
       ],
       "correct": 1,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Coordinate steps, tools, state, and agents toward a larger goal.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Glossary” material frames orchestration through whether added agency has a distinct responsibility.",
+      "rationale": "In slide 69, Glossary, the course treats this as the recommended action or control for orchestration: Coordinate steps, tools, state, and agents toward a larger goal. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2235,7 +2332,7 @@
     {
       "id": "m5-q18",
       "moduleId": 5,
-      "prompt": "Which decision best addresses regression testing?",
+      "prompt": "Which statement most accurately describes regression testing?",
       "options": [
         "Repeat a test to detect whether a later change breaks acceptable behavior.",
         "Use a tool or workflow step when it can do the job without another agent.",
@@ -2243,8 +2340,9 @@
         "Data and tool use, orchestration, bounded action, and human checkpoints."
       ],
       "correct": 0,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Repeat a test to detect whether a later change breaks acceptable behavior.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Glossary” material frames regression testing through observable evidence rather than appearance.",
+      "rationale": "In slide 70, Glossary, the course treats this as the recommended action or control for regression testing: Repeat a test to detect whether a later change breaks acceptable behavior. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2258,7 +2356,7 @@
     {
       "id": "m5-q19",
       "moduleId": 5,
-      "prompt": "Which decision best addresses an unnecessary specialist?",
+      "prompt": "Which statement best explains an unnecessary specialist?",
       "options": [
         "Repeat a test to detect whether a later change breaks acceptable behavior.",
         "Require a distinct task, data, tools, permissions, evaluation, or owner.",
@@ -2266,8 +2364,9 @@
         "Use a tool or workflow step when it can do the job without another agent."
       ],
       "correct": 3,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Use a tool or workflow step when it can do the job without another agent.",
+      "hint": "Test the conditions under which the source recommends this choice.",
+      "tipContext": "The “Justifying Agents” material frames an unnecessary specialist through whether added agency has a distinct responsibility.",
+      "rationale": "In slide 58, Justifying Agents, the course treats this as the recommended action or control for an unnecessary specialist: Use a tool or workflow step when it can do the job without another agent. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2281,7 +2380,7 @@
     {
       "id": "m5-q20",
       "moduleId": 5,
-      "prompt": "Which decision best addresses the module design message?",
+      "prompt": "Which statement best explains the module design message?",
       "options": [
         "Build, runtime, identity, policy, evaluation, registry, and observability are converging.",
         "Decomposition, tools, orchestration, and a human decision point created agentic behavior.",
@@ -2289,8 +2388,9 @@
         "It is one lever among data, tools, orchestration, instructions, and evaluation."
       ],
       "correct": 2,
-      "hint": "Look for the choice that defines a boundary, evidence requirement, or accountable operating action.",
-      "rationale": "Agentic systems are more than prompts, and more agents are not automatically better.",
+      "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
+      "tipContext": "The “Module Takeaways” material frames the module design message through whether added agency has a distinct responsibility.",
+      "rationale": "In slide 65, Module Takeaways, the course treats this as the definition or operating principle for the module design message: Agentic systems are more than prompts, and more agents are not automatically better. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
       "sourceRefs": [
         {
           "sourceId": "module-5",

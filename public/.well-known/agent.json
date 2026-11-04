@@ -1,0 +1,11 @@
+{
+  "name": "LEAAID Mastery Path Agent",
+  "description": "Source-grounded coaching and sequential mastery challenges across five LEAAID modules.",
+  "url": "https://leaaid-mastery-path.nexus-8198.chatgpt.site/api/agent",
+  "version": "1.0.0",
+  "authentication": {"schemes": ["apiKey", "bearer"], "note": "A privately shared invitation key is required for state-changing tools."},
+  "capabilities": {"streaming": false, "pushNotifications": false, "stateTransitionHistory": true},
+  "defaultInputModes": ["application/json", "text/plain"],
+  "defaultOutputModes": ["application/json", "text/plain"],
+  "skills": [{"id": "coach", "name": "Source-grounded coaching"}, {"id": "training", "name": "Sequential training challenge"}, {"id": "mastery", "name": "Recovery and badge progression"}]
+}

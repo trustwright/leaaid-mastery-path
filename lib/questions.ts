@@ -1,5 +1,5 @@
 export type ModuleId=1|2|3|4|5;
-export type Question={id:string;moduleId:ModuleId;prompt:string;options:string[];correct:number;hint:string;rationale:string;sourceRefs:{sourceId:string;locator:string;claim:string}[];semanticKey:string;difficulty:1|2|3};
+export type Question={id:string;moduleId:ModuleId;prompt:string;options:string[];correct:number;hint:string;tipContext:string;rationale:string;sourceRefs:{sourceId:string;locator:string;claim:string}[];semanticKey:string;difficulty:1|2|3};
 export const MODULES=[
  {id:1 as ModuleId,code:'M1',title:'Agentic AI Foundations',short:'Foundations',source:'Module1.pdf'},
  {id:2 as ModuleId,code:'M2',title:'Data Foundations & Architecture',short:'Architecture',source:'Module2.pdf'},
@@ -120,17 +120,41 @@ const distractors=(moduleId:ModuleId,index:number,answer:string)=>S[moduleId]
  .slice(0,3)
  .map(item=>item.text);
 
+const promptFor=(topic:string)=>{
+ if(topic==='why trusted data matters more for agents')return 'Why does trusted data matter more for agents?';
+ if(topic==='where strategy begins')return 'Where should an enterprise AI strategy begin?';
+ if(topic==='who sets the goal')return 'Who should set an agent’s goal?';
+ if(topic==='what creates an agentic workflow')return 'What creates an agentic workflow?';
+ if(topic==='reaching an authority boundary')return 'What should happen when an agent reaches an authority boundary?';
+ if(topic==='adding an architecture pattern')return 'What should a team define before adding an architecture pattern?';
+ if(topic==='choosing agency')return 'How should a team choose the appropriate level of agency?';
+ if(topic==='justifying multiple agents')return 'What justifies using multiple agents?';
+ if(topic==='closing an LLM knowledge gap')return 'How should a system close an LLM knowledge gap?';
+ if(/^ASI\d+/i.test(topic))return `Which risk name corresponds to ${topic}?`;
+ if(/^(adding|choosing|justifying|closing)\b/i.test(topic))return `What does the course recommend when ${topic}?`;
+ if(/^(a|an|the)\b/i.test(topic))return `Which statement best explains ${topic}?`;
+ const patterns=[`Which statement most accurately describes ${topic}?`,`How does the course characterize ${topic}?`,`Which option best represents ${topic} in practice?`];
+ return patterns[(topic.length+topic.charCodeAt(0))%patterns.length];
+};
+const hintFor=(topic:string,answer:string,locator:string)=>{
+ const section=locator.split(',').slice(1).join(',').trim()||locator;
+ const lower=answer.toLowerCase();
+ const lens=/authority|permission|boundary|scope|credential/.test(lower)?'authority and enforceable limits':/evidence|retriev|data|ground|source|context/.test(lower)?'evidence quality and grounding':/cost|latency|coordination|overhead|consumption/.test(lower)?'operational trade-offs':/human|approval|owner|accountab|decision right/.test(lower)?'decision rights at the point of consequence':/security|identity|kill|contain|revoke|guardrail|policy/.test(lower)?'control placement and containment':/test|evaluat|measure|trace|observ/.test(lower)?'observable evidence rather than appearance':/agent|speciali|multi-agent|workflow/.test(lower)?'whether added agency has a distinct responsibility':'the specific role this concept plays in the system';
+ const cue=/^use\b/i.test(answer)?'Test the conditions under which the source recommends this choice.':/^add\b/i.test(answer)?'Identify the missing system capability before selecting an option.':/^place\b/i.test(answer)?'Focus on where the control sits relative to the consequence.':/^specify\b/i.test(answer)?'Look for the option that turns intent into an explicit operating rule.':/^start\b/i.test(answer)?'Find the required starting point before considering implementation.':/^track\b|^measure\b|^assess\b/i.test(answer)?'Choose the option that produces evidence across the full workflow.':/^require\b/i.test(answer)?'Look for the condition the source treats as necessary, not merely helpful.':'Separate this concept from nearby ideas and select the option that directly resolves it.';
+ return{context:`The “${section}” material frames ${topic} through ${lens}.`,cue};
+};
+
 export const QUESTIONS:Question[]=([1,2,3,4,5] as ModuleId[]).flatMap(moduleId=>S[moduleId].map(([topic,answer,locator],i)=>{
- const correct=(i*3+moduleId)%4;const options=distractors(moduleId,i,answer);options.splice(correct,0,answer);
- return{id:`m${moduleId}-q${String(i+1).padStart(2,'0')}`,moduleId,prompt:`Which decision best addresses ${topic}?`,options,correct,hint:'Look for the choice that defines a boundary, evidence requirement, or accountable operating action.',rationale:answer,sourceRefs:[{sourceId:`module-${moduleId}`,locator,claim:answer}],semanticKey:`m${moduleId}|${i+1}|${topic}`,difficulty:(i<7?1:i<14?2:3) as 1|2|3};
+ const correct=(i*3+moduleId)%4;const options=distractors(moduleId,i,answer);options.splice(correct,0,answer);const tip=hintFor(topic,answer,locator);
+ const relationship=/^(use|add|place|specify|start|track|measure|assess|require|keep|update|change|test|inspect|choose|coordinate|repeat|estimate|give|translate|bound|prevent|retrieve|retain|classify|support|contain|revoke|screen|advance|decide|match|communicate|govern|increase|combine|move|provide|produce|inventory|build|stop|narrow|name|tie|ask)\b/i.test(answer)?'recommended action or control':'definition or operating principle';
+ return{id:`m${moduleId}-q${String(i+1).padStart(2,'0')}`,moduleId,prompt:promptFor(topic),options,correct,hint:tip.cue,tipContext:tip.context,rationale:`In ${locator}, the course treats this as the ${relationship} for ${topic}: ${answer} The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.`,sourceRefs:[{sourceId:`module-${moduleId}`,locator,claim:answer}],semanticKey:`m${moduleId}|${i+1}|${topic}`,difficulty:(i<7?1:i<14?2:3) as 1|2|3};
 }));
 
 export type RuntimeQuestion=Question&{baseId:string;variant:number};
 const hash=(value:string)=>{let h=2166136261;for(const ch of value){h^=ch.charCodeAt(0);h=Math.imul(h,16777619)}return h>>>0};
 const rotate=<T,>(items:T[],amount:number)=>items.map((_,i)=>items[(i+amount)%items.length]);
 export function materializeQuestion(question:Question,nonce=0):RuntimeQuestion{
- const topic=question.semanticKey.split('|').slice(2).join('|');
- const stems=[`Which decision best addresses ${topic}?`,`A team is reviewing ${topic}. Which action is most consistent with the program guidance?`,`Which approach provides the strongest response to ${topic}?`];
+ const lowerPrompt=question.prompt[0].toLowerCase()+question.prompt.slice(1);const stems=[question.prompt,`According to the course material, ${lowerPrompt}`,`In an enterprise review, ${lowerPrompt}`];
  const variant=(hash(question.id)+nonce)%stems.length;const shift=(hash(`${question.id}:${nonce}`)%3)+1;
  const paired=question.options.map((text,i)=>({text,correct:i===question.correct}));const options=rotate(paired,shift);
  return{...question,id:`${question.id}-v${variant}-${nonce%97}`,baseId:question.id,variant,prompt:stems[variant],options:options.map(item=>item.text),correct:options.findIndex(item=>item.correct)};
