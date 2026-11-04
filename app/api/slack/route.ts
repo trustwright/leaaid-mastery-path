@@ -1,5 +1,5 @@
 import {env} from 'cloudflare:workers';
-import {channelSession,coach,launchChallenge,launchPremierChallenge,submitAnswer,getSession} from '../../../lib/agent-service';
+import {channelSession,coach,launchChallenge,launchAppliedLab,submitLabChoice,launchPremierChallenge,submitAnswer,getSession} from '../../../lib/agent-service';
 
 export const runtime='edge';
 type SlackEnv={DB?:D1Database;SLACK_SIGNING_SECRET?:string};
@@ -17,9 +17,11 @@ export async function POST(request:Request){
  const form=new URLSearchParams(raw);const routeKey=await hmac(config.SLACK_SIGNING_SECRET,`${form.get('team_id')}:${form.get('channel_id')}:${form.get('user_id')}`);const sessionId=await channelSession(config.DB,routeKey);
  const [command='help',first,second]=String(form.get('text')||'help').trim().toLowerCase().split(/\s+/);
  try{
-  if(command==='help')return slack('*LEAAID Agent commands*\n`/leaaid coach 2 apply` · `/leaaid start 1` · `/leaaid answer B` · `/leaaid final` · `/leaaid status`');
+  if(command==='help')return slack('*LEAAID Agent commands*\n`/leaaid coach 2 apply` · `/leaaid start 1` · `/leaaid answer B` · `/leaaid lab` · `/leaaid choose B` · `/leaaid final` · `/leaaid status`');
   if(command==='coach'){const result=await coach(config.DB,{session_id:sessionId,module_id:Number(first||1),goal:second||'understand'});return slack(`*${result.module} · ${result.goal}*\n${result.reasoning_chain.map(step=>`${step.step}. *${step.stage}* — ${step.content}`).join('\n')}\n_Next: /leaaid start ${result.module_id}_`)}
   if(command==='start'){const result=await launchChallenge(config.DB,{session_id:sessionId,module_id:Number(first||1)});return slack(`*${result.module} · ${result.mastery_target}*\n${formatQuestion(result.question)}`)}
+  if(command==='lab'){const result=await launchAppliedLab(config.DB,{session_id:sessionId});return slack(`*${result.lab}*\n${result.objective}\n${formatLabStep(result.step)}`)}
+  if(command==='choose'){const option='abcd'.indexOf(String(first||'').charAt(0));const result=await submitLabChoice(config.DB,{session_id:sessionId,option_index:option});if(result.state==='applied_lab_mastered')return slack(`✓ *Applied Agent Builder achieved.*\n${result.feedback}\n_Next: /leaaid final_`);if(!result.correct)return slack(`*Lab recovery branch*\n${result.recovery}\n_${result.source}_\n${formatLabStep(result.step)}`);return slack(`✓ ${result.feedback}\n\n${formatLabStep(result.step)}`)}
   if(command==='final'){const result=await launchPremierChallenge(config.DB,{session_id:sessionId});return slack(`*${result.module} · ${result.mastery_target}*\n${formatQuestion(result.question)}`)}
   if(command==='answer'){const option='abcd'.indexOf(String(first||'').charAt(0));const result=await submitAnswer(config.DB,{session_id:sessionId,option_index:option});if(result.state==='module_mastered')return slack(`✓ *Module mastered — badge achieved.*\n${result.feedback}`);if(!result.correct)return slack(`*Focused recovery*\n${result.source_coaching.context}\n${result.source_coaching.cue}\n_${result.source_coaching.source} · ${result.source_coaching.locator}_\n${formatQuestion(result.question)}`);return slack(`✓ Correct. ${result.feedback}\n\n${formatQuestion(result.question)}`)}
   if(command==='status'){const result=await getSession(config.DB,{session_id:sessionId});return slack(`*LEAAID status* · completed modules: ${result.completed_modules.join(', ')||'none'}\n${result.question?formatQuestion(result.question):'Ready for `/leaaid start 1`.'}`)}
@@ -28,3 +30,4 @@ export async function POST(request:Request){
 }
 
 function formatQuestion(question:{index:number;total:number;prompt:string;options:string[];difficulty:number}){return `*Decision ${question.index}/${question.total} · Level ${question.difficulty}*\n${question.prompt}\n${question.options.map((option,index)=>`${String.fromCharCode(65+index)}. ${option}`).join('\n')}\n_Reply with /leaaid answer A, B, C, or D._`}
+function formatLabStep(step:{index:number;total:number;stage:string;title:string;prompt:string;options:string[]}){return `*Build ${step.index}/${step.total} · ${step.stage} · ${step.title}*\n${step.prompt}\n${step.options.map((option,index)=>`${String.fromCharCode(65+index)}. ${option}`).join('\n')}\n_Reply with /leaaid choose A, B, C, or D._`}

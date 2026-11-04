@@ -5,7 +5,7 @@ export const MODULES=[
  {id:2 as ModuleId,code:'M2',title:'Data Foundations & Architecture',short:'Architecture',source:'Module2.pdf'},
  {id:3 as ModuleId,code:'M3',title:'Agentic AI Assurance',short:'Assurance',source:'Module3.pdf'},
  {id:4 as ModuleId,code:'M4',title:'AI Strategy & Transformation',short:'Strategy',source:'Module4.pdf'},
- {id:5 as ModuleId,code:'M5',title:'Agentic AI Lab',short:'Applied Lab',source:'Module5.pptx'},
+ {id:5 as ModuleId,code:'M5',title:'Applied Agentic Systems',short:'Applied Concepts',source:'Module5.pptx'},
 ] as const;
 type Seed=[topic:string,answer:string,locator:string];
 const S:Record<ModuleId,Seed[]>={

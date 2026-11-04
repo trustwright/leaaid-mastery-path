@@ -76,6 +76,8 @@ CREATE TABLE IF NOT EXISTS agent_sessions (
   goal TEXT NOT NULL DEFAULT 'understand',
   current_module INTEGER NOT NULL DEFAULT 1,
   question_index INTEGER NOT NULL DEFAULT 0,
+  lab_step INTEGER NOT NULL DEFAULT -1,
+  lab_complete INTEGER NOT NULL DEFAULT 0,
   premier INTEGER NOT NULL DEFAULT 0,
   completed_json TEXT NOT NULL DEFAULT '[]',
   history_json TEXT NOT NULL DEFAULT '{}',

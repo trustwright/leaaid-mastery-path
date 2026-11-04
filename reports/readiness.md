@@ -7,6 +7,7 @@
 - Rotation QA: two sequential 10-question rounds per module with zero repeated base questions
 - Cue-bias QA: the correct answer is the longest option in 23% of items
 - Tip QA: question-specific source context and recovery cue checked across all 100 items
+- Applied lab QA: seven ordered build decisions, varied correct-choice positions, explicit recovery branches, and baseline/refinement/operation milestones
 - Mastery QA: 100% comprehension remains required before sequential unlock
 - Scale simulation: 10,000 isolated learner sessions, 1,000,000 generated decisions, zero repeat violations
 - HTTP production-preview load: 500 sessions, 25 concurrent, 500 accepted, 0 rejected; p95 748 ms on the local preview host
@@ -21,6 +22,7 @@
 - Per-question module, round, position, timer, and three-level difficulty signals
 - Study Coach produces a goal-based orient → reason → check chain and launches unlocked rounds
 - REST/OpenAPI, remote MCP, and Slack command surfaces operate the same question bank and sequential mastery rules
+- M5 uses two gates: a 10-question Applied Concepts knowledge round, then a Northstar agent-build simulation grounded in the Lab 1, Lab 2, and Regional Expansion materials
 
 ## Operational notes
 

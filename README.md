@@ -8,6 +8,7 @@ Interactive, source-grounded training based exclusively on the five LEAAID found
 - 45-second timer, tips, immediate rationale, and page/slide evidence
 - Focused recovery until every round reaches 100% mastery
 - Five module badges plus a 10-question cross-module final challenge
+- M5 Applied Concepts knowledge validation followed by a seven-decision Applied Agent Builder simulation
 - Premier LEAAID Knowledge as an in-product achievement
 - Local browser recovery plus anonymous, seven-day agent sessions with no learner profile
 - Two complete non-repeating 10-question rotations per module before recycling
