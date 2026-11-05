@@ -11,6 +11,7 @@
   "software_sbom": "https://leaaid-mastery-path.nexus-8198.chatgpt.site/sbom.spdx.json",
   "operating_sbom": "https://leaaid-mastery-path.nexus-8198.chatgpt.site/operating-sbom.json",
   "context_sbom": "https://leaaid-mastery-path.nexus-8198.chatgpt.site/context-sbom.json",
+  "learning_pack": {"group": "LEAAID", "id": "leaaid-foundations", "contract_version": 1, "schema": "https://leaaid-mastery-path.nexus-8198.chatgpt.site/learning-pack.schema.json"},
   "access": {"type": "anonymous_session", "identity_required": false, "session_expiry_days": 7},
   "starter_instruction": "Create an anonymous session. Launch the requested unlocked module through the learning orchestrator. Present one decision at a time through the testing agent. Submit the learner response to the validator agent before advancing. Never reveal the answer before submission or bypass a mastery gate.",
   "workflow": ["learning_orchestrator", "testing_agent", "validator_agent"],

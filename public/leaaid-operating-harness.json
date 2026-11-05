@@ -5,6 +5,8 @@
   "endpoint": "https://leaaid-mastery-path.nexus-8198.chatgpt.site/api/agent",
   "access": {"type": "anonymous_session", "identity_required": false, "session_expiry_days": 7},
   "purpose": "Execute source-grounded LEAAID learning through controlled orchestration, testing, and deterministic validation.",
+  "learningPack": {"group": "LEAAID", "id": "leaaid-foundations", "contractVersion": 1, "curriculumVersion": "2026.10", "contract": "/learning-pack.schema.json"},
+  "interoperabilityTarget": {"mode": "versioned course-pack manifests", "dynamicLoadingEnabled": false, "isolation": ["sources", "questions", "scoring", "achievements"], "shared": ["session envelope", "guardrails", "agent roles", "verification interface"]},
   "roles": [
     {"id": "learning_orchestrator", "responsibility": "Sequence, delegation, recovery routing, and gate unlocks", "prohibited": ["override mastery", "reveal answers", "invent claims"]},
     {"id": "testing_agent", "responsibility": "Select and present one authored non-repeating item", "prohibited": ["score responses", "change evidence", "repeat recent item"]},

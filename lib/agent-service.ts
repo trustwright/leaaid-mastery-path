@@ -23,6 +23,7 @@ export async function ensureAgentTables(db:D1Database){
 
 export function describeProgram(){return{
  name:'LEAAID Mastery Path Agent',version:'1.0.0',source_grounding:'Five supplied LEAAID foundation modules',
+ harness_group:'LEAAID',learning_pack:{id:'leaaid-foundations',contract_version:1,curriculum_version:'2026.10'},
  session_model:'Anonymous, expiring server session; no name, email, prompt transcript, or profile is requested.',
  mastery_rule:'Answer all 10 decisions correctly in a module round. Missed concepts remain in recovery until mastered.',
  modules:MODULES.map(m=>({id:m.id,code:m.code,title:m.title,source:m.source})),
