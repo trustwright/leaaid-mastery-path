@@ -2,8 +2,8 @@ import {env} from 'cloudflare:workers';
 import {AgentError,dispatchHarnessAction} from '../../../lib/agent-service';
 
 export const runtime='edge';
-type McpEnv={DB?:D1Database;LEAAID_AGENT_ACCESS_KEY?:string};
-const headers={'Access-Control-Allow-Origin':'*','Access-Control-Allow-Headers':'Content-Type, Authorization, X-LEAAID-Access-Key, Mcp-Session-Id','Access-Control-Allow-Methods':'POST, OPTIONS','Cache-Control':'no-store'};
+type McpEnv={DB?:D1Database};
+const headers={'Access-Control-Allow-Origin':'*','Access-Control-Allow-Headers':'Content-Type, Mcp-Session-Id','Access-Control-Allow-Methods':'POST, OPTIONS','Cache-Control':'no-store'};
 const bindings=()=>env as unknown as McpEnv;
 const tools=[
  {name:'leaaid_program',description:'Describe the source-grounded LEAAID curriculum and available training actions.',inputSchema:{type:'object',properties:{}}},
@@ -25,8 +25,8 @@ const failure=(id:unknown,code:number,message:string,status=200)=>Response.json(
 export function OPTIONS(){return new Response(null,{status:204,headers})}
 
 export async function POST(request:Request){
- const config=bindings();const supplied=request.headers.get('X-LEAAID-Access-Key')||request.headers.get('Authorization')?.replace(/^Bearer\s+/i,'');
- if(!config.LEAAID_AGENT_ACCESS_KEY||supplied!==config.LEAAID_AGENT_ACCESS_KEY)return failure(null,-32001,'A valid LEAAID invitation key is required.',401);
+ const config=bindings();
+ if(Number(request.headers.get('content-length')||0)>16384)return failure(null,-32003,'Request is too large.',413);
  let body:{jsonrpc?:string;id?:unknown;method?:string;params?:{name?:string;arguments?:Record<string,unknown>}};
  try{body=await request.json()}catch{return failure(null,-32700,'Parse error',400)}
  if(body.method==='initialize')return response(body.id,{protocolVersion:'2025-03-26',capabilities:{tools:{listChanged:false}},serverInfo:{name:'leaaid-mastery-agent',version:'1.1.0'}});

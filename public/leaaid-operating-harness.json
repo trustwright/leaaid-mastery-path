@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "id": "leaaid-cohort-pathway-harness",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "endpoint": "https://leaaid-mastery-path.nexus-8198.chatgpt.site/api/agent",
-  "authentication": {"type": "api_key", "header": "X-LEAAID-Access-Key", "value": "<INVITATION_KEY>"},
+  "access": {"type": "anonymous_session", "identity_required": false, "session_expiry_days": 7},
   "purpose": "Execute source-grounded LEAAID learning through controlled orchestration, testing, and deterministic validation.",
   "roles": [
     {"id": "learning_orchestrator", "responsibility": "Sequence, delegation, recovery routing, and gate unlocks", "prohibited": ["override mastery", "reveal answers", "invent claims"]},

@@ -30,13 +30,13 @@
 - Per-question module, round, position, timer, and three-level difficulty signals
 - Study Coach produces a goal-based orient → reason → check chain and launches unlocked rounds
 - REST/OpenAPI, remote MCP, and Slack command surfaces operate the same question bank and sequential mastery rules
-- Consent-based connection suite generates copy-ready client configuration in-browser without storing the invitation key
+- Platform-specific connection suite verifies the live service and copies the exact Action URL, MCP URL, function declaration, or Slack manifest required by the selected platform
 - M5 uses two gates: a 10-question Applied Concepts knowledge round, then a Northstar agent-build simulation grounded in the Lab 1, Lab 2, and Regional Expansion materials
 
 ## Operational notes
 
 - Browser learners do not share progress. Agent clients receive isolated, expiring server sessions so a challenge can continue across calls.
-- The agent gateway is public-addressable but requires a privately shared invitation key; Slack uses request-signature verification.
+- The agent gateway uses anonymous, opaque seven-day learning sessions and requests no learner identity. Slack separately uses Slack request-signature verification and workspace-owner installation approval.
 - Study Coach is a deterministic source-grounded reasoning chain, not a simulated free-form chatbot.
 - Consumer AI products vary: OpenAPI action clients and remote-MCP clients can call the agent directly; Gemini requires a function-calling or extension-capable environment, because a plain consumer Gem cannot independently call arbitrary remote tools.
 - Browser-only markers remain device-local. Agent-path receipts verify completion within this harness, but do not verify identity, licensure, employment suitability, or independent professional certification.
