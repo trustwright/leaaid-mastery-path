@@ -1,54 +1,40 @@
 'use client';
-import {useCallback,useEffect,useState} from 'react';
+import {useCallback,useEffect,useMemo,useState} from 'react';
 
 const origin='https://leaaid-mastery-path.nexus-8198.chatgpt.site';
-type Probe={state:'checking'|'live'|'error';rest:boolean;mcp:boolean;input:number;output:number;latency:number;checked:string};
-const initial:Probe={state:'checking',rest:false,mcp:false,input:0,output:0,latency:0,checked:''};
-const approxTokens=(value:string)=>Math.max(1,Math.ceil(new TextEncoder().encode(value).length/4));
+type Stage={id:string;label:string;input:number;output:number;latency:number;ok:boolean};
+type Probe={state:'checking'|'live'|'running'|'error';rest:boolean;mcp:boolean;stages:Stage[];checked:string};
+const initial:Probe={state:'checking',rest:false,mcp:false,stages:[],checked:''};
+const tokens=(value:string)=>Math.max(1,Math.ceil(new TextEncoder().encode(value).length/4));
+const post=async(url:string,body:Record<string,unknown>)=>{const raw=JSON.stringify(body);const started=performance.now();const response=await fetch(url,{method:'POST',headers:{'content-type':'application/json'},body:raw,cache:'no-store'});const text=await response.text();return{response,text,raw,latency:Math.round(performance.now()-started)}};
 
 export default function HarnessMonitor(){
- const[probe,setProbe]=useState<Probe>(initial);
- const run=useCallback(async()=>{
-  setProbe(current=>({...current,state:'checking'}));
-  const started=performance.now();
-  const restBody=JSON.stringify({action:'describe_program'});
-  const mcpBody=JSON.stringify({jsonrpc:'2.0',id:1,method:'initialize',params:{}});
-  try{
-   const[rest,mcp]=await Promise.all([
-    fetch('/api/agent',{method:'POST',headers:{'content-type':'application/json'},body:restBody,cache:'no-store'}),
-    fetch('/api/mcp',{method:'POST',headers:{'content-type':'application/json'},body:mcpBody,cache:'no-store'}),
-   ]);
-   const[restText,mcpText]=await Promise.all([rest.text(),mcp.text()]);
-   const restOK=rest.ok;const mcpOK=mcp.ok;
-   setProbe({state:restOK&&mcpOK?'live':'error',rest:restOK,mcp:mcpOK,input:approxTokens(restBody)+approxTokens(mcpBody),output:approxTokens(restText)+approxTokens(mcpText),latency:Math.round(performance.now()-started),checked:new Date().toLocaleTimeString([],{hour:'numeric',minute:'2-digit',second:'2-digit'})});
-  }catch{setProbe(current=>({...current,state:'error',latency:Math.round(performance.now()-started),checked:new Date().toLocaleTimeString([],{hour:'numeric',minute:'2-digit',second:'2-digit'})}))}
- },[]);
- useEffect(()=>{const timer=window.setTimeout(()=>{void run()},0);return()=>window.clearTimeout(timer)},[run]);
- const live=probe.state==='live';
+ const[probe,setProbe]=useState<Probe>(initial);const[inputRate,setInputRate]=useState(2.5);const[outputRate,setOutputRate]=useState(10);const[shared,setShared]=useState(false);
+ const health=useCallback(async()=>{try{const[rest,mcp]=await Promise.all([post('/api/agent',{action:'describe_program'}),post('/api/mcp',{jsonrpc:'2.0',id:1,method:'initialize',params:{}})]);setProbe({state:rest.response.ok&&mcp.response.ok?'live':'error',rest:rest.response.ok,mcp:mcp.response.ok,stages:[],checked:new Date().toLocaleTimeString([],{hour:'numeric',minute:'2-digit',second:'2-digit'})})}catch{setProbe(current=>({...current,state:'error',checked:new Date().toLocaleTimeString([],{hour:'numeric',minute:'2-digit',second:'2-digit'})}))}},[]);
+ useEffect(()=>{const timer=window.setTimeout(()=>{void health()},0);return()=>window.clearTimeout(timer)},[health]);
+ const run=async()=>{setProbe(current=>({...current,state:'running',stages:[]}));try{
+  const create=await post('/api/agent',{action:'create_session'});const created=JSON.parse(create.text) as {session_id?:string};if(!create.response.ok||!created.session_id)throw new Error();
+  const launch=await post('/api/agent',{action:'launch_multi_agent_training',session_id:created.session_id,module_id:1});if(!launch.response.ok)throw new Error();
+  const validate=await post('/api/agent',{action:'validate_training_response',session_id:created.session_id,option_index:0});if(!validate.response.ok)throw new Error();
+  const mcp=await post('/api/mcp',{jsonrpc:'2.0',id:1,method:'initialize',params:{}});if(!mcp.response.ok)throw new Error();
+  const stages=[['session','Gateway',create],['orchestrator','Orchestrator + test',launch],['validator','Validator',validate],['connector','MCP handshake',mcp]].map(([id,label,result])=>{const item=result as Awaited<ReturnType<typeof post>>;return{id:id as string,label:label as string,input:tokens(item.raw),output:tokens(item.text),latency:item.latency,ok:item.response.ok}});
+  setProbe({state:'live',rest:true,mcp:true,stages,checked:new Date().toLocaleTimeString([],{hour:'numeric',minute:'2-digit',second:'2-digit'})});
+ }catch{setProbe(current=>({...current,state:'error',checked:new Date().toLocaleTimeString([],{hour:'numeric',minute:'2-digit',second:'2-digit'})}))}};
+ const totals=useMemo(()=>probe.stages.reduce((sum,stage)=>({input:sum.input+stage.input,output:sum.output+stage.output,latency:sum.latency+stage.latency}),{input:0,output:0,latency:0}),[probe.stages]);
+ const validator=probe.stages.find(stage=>stage.id==='validator');const base=probe.stages.filter(stage=>stage.id!=='validator'&&stage.id!=='connector').reduce((sum,stage)=>({input:sum.input+stage.input,output:sum.output+stage.output}),{input:0,output:0});
+ const roundInput=base.input+(validator?.input||0)*10;const roundOutput=base.output+(validator?.output||0)*10;const roundCost=(roundInput/1_000_000*inputRate)+(roundOutput/1_000_000*outputRate);const live=probe.state==='live';
+ const share=async()=>{const message=`LEAAID harness · ${probe.stages.length} live tool calls · ≈${totals.input} input tokens · ≈${totals.output} output tokens · ${totals.latency} ms · 0 model-scoring calls · 10-decision projection $${roundCost.toFixed(4)} at $${inputRate}/$${outputRate} per 1M tokens\n${origin}/agent`;try{await navigator.clipboard.writeText(message);setShared(true);window.setTimeout(()=>setShared(false),1800)}catch{setShared(false)}};
  return <details className="harness-console">
-  <summary><span>Learning harness</span><b className={probe.state}><i/>{probe.state==='checking'?'Checking':live?'Live':'Check failed'}</b></summary>
+  <summary><span>Learning harness</span><b className={probe.state}><i/>{probe.state==='checking'?'Checking':probe.state==='running'?'Running':live?'Live':'Check failed'}</b></summary>
   <div className="console-body">
-   <div className="console-top"><div><p>LIVE EXECUTION PATH</p><h2>Request → controlled result</h2></div><button onClick={()=>void run()} disabled={probe.state==='checking'}>{probe.state==='checking'?'Checking…':'Run live check'}</button></div>
-   <div className="agent-flow" aria-label="Gateway, orchestrator, testing agent, validator, and achievement register">
-    <div className="flow-unit gateway"><i>↳</i><b>Gateway</b><small>Typed input</small></div><span/>
-    <div className="flow-unit"><i>O</i><b>Orchestrator</b><small>Sequence</small></div><span/>
-    <div className="flow-unit"><i>T</i><b>Test agent</b><small>Authored item</small></div><span/>
-    <div className="flow-unit"><i>V</i><b>Validator</b><small>Exact key</small></div><span/>
-    <div className="flow-unit receipt"><i>◆</i><b>Receipt</b><small>Mastery gate</small></div>
-   </div>
-   <div className="telemetry" aria-label="Live harness telemetry">
-    <div><span>INPUT</span><strong>{probe.input}</strong><small>≈ tokens</small></div>
-    <div><span>OUTPUT</span><strong>{probe.output}</strong><small>≈ tokens</small></div>
-    <div><span>MODEL SCORING</span><strong>0</strong><small>inference calls</small></div>
-    <div><span>ROUNDTRIP</span><strong>{probe.latency||'—'}</strong><small>ms</small></div>
-   </div>
-   <div className="control-grid">
-    <section><p>GUARDRAIL GATEWAY</p><ul><li><i/>Action allowlist</li><li><i/>Typed input</li><li><i/>Source boundary</li><li><i/>Answer sealed</li><li><i/>Deterministic gate</li></ul></section>
-    <section><p>OPERATING POLICY</p><dl><div><dt>Manifest</dt><dd>v1.2</dd></div><div><dt>Mastery</dt><dd>100%</dd></div><div><dt>Identity</dt><dd>Off</dd></div><div><dt>Transcript</dt><dd>Off</dd></div><div><dt>Session</dt><dd>7 days</dd></div></dl></section>
-    <section><p>ENDPOINT STATUS</p><dl><div><dt>REST / OpenAPI</dt><dd className={probe.rest?'ok':'bad'}>{probe.rest?'Live':'Down'}</dd></div><div><dt>MCP connector</dt><dd className={probe.mcp?'ok':'bad'}>{probe.mcp?'Live':'Down'}</dd></div><div><dt>Validator</dt><dd className="ok">Authored</dd></div><div><dt>Checked</dt><dd>{probe.checked||'—'}</dd></div></dl></section>
-   </div>
+   <div className="console-top"><div><p>LIVE EXECUTION PATH</p><h2>Measure one complete interaction</h2></div><div><button onClick={()=>void run()} disabled={probe.state==='checking'||probe.state==='running'}>{probe.state==='running'?'Running…':'Run end-to-end'}</button><button onClick={()=>void share()} disabled={!probe.stages.length}>{shared?'Copied':'Share snapshot'}</button></div></div>
+   <div className="agent-flow" aria-label="Gateway, orchestrator, testing agent, validator, and achievement register"><div className="flow-unit gateway"><i>↳</i><b>Gateway</b><small>Typed input</small></div><span/><div className="flow-unit"><i>O</i><b>Orchestrator</b><small>Sequence</small></div><span/><div className="flow-unit"><i>T</i><b>Test agent</b><small>Authored item</small></div><span/><div className="flow-unit"><i>V</i><b>Validator</b><small>Exact key</small></div><span/><div className="flow-unit receipt"><i>◆</i><b>Receipt</b><small>Mastery gate</small></div></div>
+   <div className="telemetry six" aria-label="Measured harness telemetry"><div><span>INPUT</span><strong>{totals.input||'—'}</strong><small>≈ tokens</small></div><div><span>OUTPUT</span><strong>{totals.output||'—'}</strong><small>≈ tokens</small></div><div><span>TOOL CALLS</span><strong>{probe.stages.length||'—'}</strong><small>measured</small></div><div><span>MODEL SCORING</span><strong>0</strong><small>inference calls</small></div><div><span>ROUNDTRIP</span><strong>{totals.latency||'—'}</strong><small>ms</small></div><div><span>ROUND EST.</span><strong>{probe.stages.length?`$${roundCost.toFixed(4)}`:'—'}</strong><small>10 decisions</small></div></div>
+   {probe.stages.length>0&&<div className="stage-ledger" aria-label="Per-stage request and response tokens">{probe.stages.map(stage=><div key={stage.id}><b>{stage.label}</b><span><i style={{width:`${Math.min(100,Math.max(8,(stage.input+stage.output)/(Math.max(...probe.stages.map(item=>item.input+item.output)))*100))}%`}}/></span><small>↓ {stage.input} · ↑ {stage.output} · {stage.latency} ms</small></div>)}</div>}
+   <div className="rate-strip"><span>EDITABLE RATE</span><label>Input $ / 1M<input type="number" min="0" step="0.1" value={inputRate} onChange={event=>setInputRate(Math.max(0,Number(event.target.value)||0))}/></label><label>Output $ / 1M<input type="number" min="0" step="0.1" value={outputRate} onChange={event=>setOutputRate(Math.max(0,Number(event.target.value)||0))}/></label><b>{probe.stages.length?`${roundInput+roundOutput} projected tokens`:'Run to project a round'}</b></div>
+   <div className="control-grid"><section><p>GUARDRAIL GATEWAY</p><ul><li><i/>Action allowlist</li><li><i/>Typed input</li><li><i/>Source boundary</li><li><i/>Answer sealed</li><li><i/>Deterministic gate</li></ul></section><section><p>OPERATING POLICY</p><dl><div><dt>Manifest</dt><dd>v1.2</dd></div><div><dt>Mastery</dt><dd>100%</dd></div><div><dt>Identity</dt><dd>Off</dd></div><div><dt>Transcript</dt><dd>Off</dd></div><div><dt>Session</dt><dd>7 days</dd></div></dl></section><section><p>ENDPOINT STATUS</p><dl><div><dt>REST / OpenAPI</dt><dd className={probe.rest?'ok':'bad'}>{probe.rest?'Live':'Down'}</dd></div><div><dt>MCP connector</dt><dd className={probe.mcp?'ok':'bad'}>{probe.mcp?'Live':'Down'}</dd></div><div><dt>Validator</dt><dd className="ok">Authored</dd></div><div><dt>Checked</dt><dd>{probe.checked||'—'}</dd></div></dl></section></div>
    <details className="endpoint-drawer"><summary>Connection details</summary><div><p><b>ChatGPT</b><code>{origin}/openapi.json</code></p><p><b>Claude</b><code>{origin}/api/mcp</code></p><p><b>Gemini</b><code>{origin}/api/agent</code></p><p><b>Slack</b><code>{origin}/api/slack</code></p></div></details>
-   <p className="meter-note">Token counts estimate this live probe from UTF-8 bytes. Connected AI platforms report their own model usage separately.</p>
+   <p className="meter-note">Measured from live harness traffic; token counts use UTF-8 bytes ÷ 4. Rate fields are editable examples. External AI context, inference, and platform charges are not visible to this harness.</p>
   </div>
  </details>
 }
