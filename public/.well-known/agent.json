@@ -2,10 +2,10 @@
   "name": "LEAAID Mastery Path Agent",
   "description": "Source-grounded coaching and sequential mastery challenges across five LEAAID modules.",
   "url": "https://leaaid-mastery-path.nexus-8198.chatgpt.site/api/agent",
-  "version": "1.1.0",
+  "version": "1.3.0",
   "authentication": {"schemes": ["apiKey", "bearer"], "note": "A privately shared invitation key is required for state-changing tools."},
   "capabilities": {"streaming": false, "pushNotifications": false, "stateTransitionHistory": true},
   "defaultInputModes": ["application/json", "text/plain"],
   "defaultOutputModes": ["application/json", "text/plain"],
-  "skills": [{"id": "coach", "name": "Source-grounded coaching"}, {"id": "multi-agent-training", "name": "Orchestrated testing and deterministic validation"}, {"id": "training", "name": "Sequential training challenge"}, {"id": "applied-agent-build", "name": "Northstar agent build simulation"}, {"id": "mastery", "name": "Recovery and badge progression"}]
+  "skills": [{"id": "coach", "name": "Source-grounded coaching"}, {"id": "multi-agent-training", "name": "Orchestrated testing and deterministic validation"}, {"id": "training", "name": "Sequential training challenge"}, {"id": "applied-agent-build", "name": "Northstar agent build simulation"}, {"id": "mastery", "name": "Recovery and achievement progression"}, {"id": "achievement-verification", "name": "Pseudonymous durable mastery receipts"}]
 }

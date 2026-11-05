@@ -7,6 +7,7 @@ For an executable, platform-neutral package, download `leaaid-operating-harness.
 ```bash
 node harness-runner.mjs create_session
 node harness-runner.mjs launch_multi_agent_training '{"session_id":"<SESSION_ID>","module_id":1}'
+node harness-runner.mjs list_achievements '{"session_id":"<SESSION_ID>"}'
 ```
 
 The hosted boundary validates the same manifest again; local modification cannot bypass the server-side controls.
@@ -16,6 +17,9 @@ The hosted boundary validates the same manifest again; local modification cannot
 1. The **Learning Orchestrator** checks progression and assigns the current assessment.
 2. The **Testing Agent** selects and presents one source-grounded, non-repeating question without its answer.
 3. The **Validator Agent** compares the submitted option to the authored answer key. Advancement is allowed only when `advance_allowed` is `true`.
+4. The **Achievement Register** issues a pseudonymous verification link only after the deterministic mastery gate is complete.
+
+Validation never uses identity, demographics, response time, number of attempts, writing style, or inferred ability. Recovery is unlimited and carries no award penalty.
 
 Recommended starter instruction:
 
@@ -55,5 +59,13 @@ Recommended starter instruction:
 - No learner name, email, profile, or transcript is requested.
 - Browser progress remains on the learner device.
 - Agent sessions use an opaque ID and expire after seven days.
+- Earned receipts persist under a random learner-held code. They disclose achievement evidence, not identity, attempts, timing, or rank.
 - Slack routing identifiers are HMAC-hashed before storage.
 - Disconnect or remove the client integration in the destination platform to revoke its access; facilitators can rotate the invitation key.
+
+## Verification and implementation inventories
+
+- Verify a receipt: `https://leaaid-mastery-path.nexus-8198.chatgpt.site/verify`
+- Software SBOM: `https://leaaid-mastery-path.nexus-8198.chatgpt.site/sbom.spdx.json`
+- Harness operating SBOM: `https://leaaid-mastery-path.nexus-8198.chatgpt.site/operating-sbom.json`
+- Learning-context SBOM: `https://leaaid-mastery-path.nexus-8198.chatgpt.site/context-sbom.json`

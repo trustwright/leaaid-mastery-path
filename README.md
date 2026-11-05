@@ -9,7 +9,7 @@ Interactive, source-grounded training based exclusively on the five LEAAID found
 - Focused recovery until every round reaches 100% mastery
 - Five module badges plus a 10-question cross-module final challenge
 - M5 Applied Concepts knowledge validation followed by a seven-decision Applied Agent Builder simulation
-- Premier LEAAID Knowledge as an in-product achievement
+- Premier LEAAID Knowledge with a durable pseudonymous verification receipt in the agent pathway
 - Local browser recovery plus anonymous, seven-day agent sessions with no learner profile
 - Two complete non-repeating 10-question rotations per module before recycling
 - Balanced, parallel answer choices and three runtime stem variants
@@ -21,6 +21,9 @@ Interactive, source-grounded training based exclusively on the five LEAAID found
 - Copy-ready OpenAI, Claude, Gemini, and Slack setup packages with explicit user/admin consent
 - Portable operating harness manifest and runnable connector with allowlisted inputs, role boundaries, deterministic validation, and fail-closed controls
 - Scenario-led assessment items with module-specific misconception distractors instead of unrelated answer borrowing
+- Refractor-style achievement system with learner-held verification codes and share links
+- Software, operating, and learning-context SBOMs for rapid enterprise review
+- Bias-neutral validation that excludes identity, demographics, timing, attempts, writing style, and inferred ability
 
 ## Agent launch surfaces
 
@@ -30,6 +33,7 @@ Interactive, source-grounded training based exclusively on the five LEAAID found
 - Slack command request URL: `https://leaaid-mastery-path.nexus-8198.chatgpt.site/api/slack`
 - Cohort agent package: `https://leaaid-mastery-path.nexus-8198.chatgpt.site/leaaid-cohort-pathway-agent.json`
 - Slack app manifest: `https://leaaid-mastery-path.nexus-8198.chatgpt.site/slack-app-manifest.json`
+- Achievement verifier: `https://leaaid-mastery-path.nexus-8198.chatgpt.site/verify`
 
 Set `LEAAID_AGENT_ACCESS_KEY` for invited GPT, Claude, or Gemini-compatible clients. Set `SLACK_SIGNING_SECRET` for the Slack adapter. The REST and MCP surfaces fail closed when the invitation key is missing. The Slack route validates the Slack request signature and stores only an HMAC-derived channel mapping.
 
@@ -43,6 +47,6 @@ npm run build
 npm run dev
 ```
 
-Question content lives in `lib/questions.ts`; `npm run content:export` refreshes `content/questions.json`. The badges are learning achievements, not independently verified credentials or certification claims.
+Question content lives in `lib/questions.ts`; `npm run content:export` refreshes `content/questions.json`. Agent-path receipts independently verify completion within this harness, but are not identity credentials, licenses, or professional certifications.
 
 See `reports/readiness.md` for the latest release gates and performance evidence.

@@ -12,7 +12,6 @@
     "content:export": "node --experimental-strip-types scripts/export-content.mjs",
     "qa": "npm run content:export && node --experimental-strip-types scripts/qa-training.mjs",
     "qa:scale": "node --experimental-strip-types scripts/scale-swarm.mjs",
-    "qa:load": "node scripts/load-pulse.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
   },
   "dependencies": {

@@ -1,12 +1,12 @@
-import {agentChannelsSchema,agentSessionsExpiryIndexSchema,agentSessionsSchema} from '../db/schema';
+import {achievementLookupIndexSchema,achievementReceiptsSchema,agentChannelsSchema,agentSessionsExpiryIndexSchema,agentSessionsSchema} from '../db/schema';
 import {COACH,CoachGoal,coachChain} from './coach';
 import {MODULES,ModuleId,RuntimeQuestion,selectQuestionSet} from './questions';
 import {APPLIED_LAB,labStepFor} from './applied-lab';
 import {harnessControl,prepareHarnessInput} from './harness';
 
-type StoredSession={id:string;goal:CoachGoal;current_module:number;question_index:number;lab_step:number;lab_complete:number;premier:number;completed_json:string;history_json:string;queue_json:string;created_at:string;updated_at:string;expires_at:string};
+type StoredSession={id:string;learner_code:string;goal:CoachGoal;current_module:number;question_index:number;lab_step:number;lab_complete:number;premier:number;completed_json:string;history_json:string;queue_json:string;created_at:string;updated_at:string;expires_at:string};
 type History=Partial<Record<ModuleId,string[]>>;
-export type AgentAction='describe_program'|'create_session'|'coach'|'launch_training_challenge'|'submit_answer'|'launch_multi_agent_training'|'validate_training_response'|'launch_applied_lab'|'submit_lab_choice'|'launch_premier_challenge'|'get_session';
+export type AgentAction='describe_program'|'create_session'|'coach'|'launch_training_challenge'|'submit_answer'|'launch_multi_agent_training'|'validate_training_response'|'launch_applied_lab'|'submit_lab_choice'|'launch_premier_challenge'|'get_session'|'list_achievements';
 
 export class AgentError extends Error{constructor(public status:number,message:string){super(message)}}
 let agentReady:Promise<void>|undefined;
@@ -17,7 +17,7 @@ const validGoal=(value:unknown):CoachGoal=>value==='apply'||value==='prepare'?va
 
 export async function ensureAgentTables(db:D1Database){
  if(agentReady)return agentReady;
- agentReady=(async()=>{await db.batch([db.prepare(agentSessionsSchema),db.prepare(agentSessionsExpiryIndexSchema),db.prepare(agentChannelsSchema),db.prepare("DELETE FROM agent_sessions WHERE expires_at < datetime('now')")]);for(const statement of ['ALTER TABLE agent_sessions ADD COLUMN premier INTEGER NOT NULL DEFAULT 0','ALTER TABLE agent_sessions ADD COLUMN lab_step INTEGER NOT NULL DEFAULT -1','ALTER TABLE agent_sessions ADD COLUMN lab_complete INTEGER NOT NULL DEFAULT 0'])try{await db.prepare(statement).run()}catch{}})().catch(error=>{agentReady=undefined;throw error});
+ agentReady=(async()=>{await db.batch([db.prepare(agentSessionsSchema),db.prepare(agentSessionsExpiryIndexSchema),db.prepare(agentChannelsSchema),db.prepare(achievementReceiptsSchema),db.prepare(achievementLookupIndexSchema),db.prepare("DELETE FROM agent_sessions WHERE expires_at < datetime('now')")]);for(const statement of ['ALTER TABLE agent_sessions ADD COLUMN premier INTEGER NOT NULL DEFAULT 0','ALTER TABLE agent_sessions ADD COLUMN lab_step INTEGER NOT NULL DEFAULT -1','ALTER TABLE agent_sessions ADD COLUMN lab_complete INTEGER NOT NULL DEFAULT 0',"ALTER TABLE agent_sessions ADD COLUMN learner_code TEXT NOT NULL DEFAULT ''"])try{await db.prepare(statement).run()}catch{}})().catch(error=>{agentReady=undefined;throw error});
  return agentReady;
 }
 
@@ -27,14 +27,15 @@ export function describeProgram(){return{
  mastery_rule:'Answer all 10 decisions correctly in a module round. Missed concepts remain in recovery until mastered.',
  modules:MODULES.map(m=>({id:m.id,code:m.code,title:m.title,source:m.source})),
  agent_team:[{id:'learning_orchestrator',role:'Enforces sequence and delegates the active assessment task.'},{id:'testing_agent',role:'Selects a non-repeating source-grounded decision and presents it without the answer.'},{id:'validator_agent',role:'Deterministically validates the submitted option against the authored answer key and returns evidence or recovery.'}],
- actions:['create_session','coach','launch_multi_agent_training','validate_training_response','launch_training_challenge','submit_answer','launch_applied_lab','submit_lab_choice','launch_premier_challenge','get_session'],
+ actions:['create_session','coach','launch_multi_agent_training','validate_training_response','launch_training_challenge','submit_answer','launch_applied_lab','submit_lab_choice','launch_premier_challenge','get_session','list_achievements'],
+ achievement_model:'Durable, pseudonymous verification receipts disclose achievement evidence but no identity, attempts, response time, or ranking.',
  suggested_prompt:'Launch training challenge for Module 1.',
 };}
 
 export async function createSession(db:D1Database){
- await ensureAgentTables(db);const id=crypto.randomUUID();
- await db.prepare("INSERT INTO agent_sessions (id,expires_at) VALUES (?,datetime('now','+7 days'))").bind(id).run();
- return{session_id:id,expires_in:'7 days',next_actions:['coach','launch_training_challenge'],suggested_prompt:'Launch training challenge for Module 1.'};
+ await ensureAgentTables(db);const id=crypto.randomUUID();const learnerCode=`LRN-${crypto.randomUUID().replaceAll('-','').slice(0,12).toUpperCase()}`;
+ await db.prepare("INSERT INTO agent_sessions (id,learner_code,expires_at) VALUES (?,?,datetime('now','+7 days'))").bind(id,learnerCode).run();
+ return{session_id:id,learner_code:learnerCode,expires_in:'7 days',next_actions:['coach','launch_training_challenge'],suggested_prompt:'Launch training challenge for Module 1.'};
 }
 
 async function session(db:D1Database,id:unknown){
@@ -42,6 +43,24 @@ async function session(db:D1Database,id:unknown){
  await ensureAgentTables(db);const row=await db.prepare("SELECT * FROM agent_sessions WHERE id=? AND expires_at >= datetime('now')").bind(id).first<StoredSession>();
  if(!row)throw new AgentError(404,'Training session not found or expired. Create a new session.');return row;
 }
+
+const VERIFY_ORIGIN='https://leaaid-mastery-path.nexus-8198.chatgpt.site';
+type AchievementRow={verification_code:string;learner_code:string;achievement_id:string;title:string;module_id:number|null;issued_at:string;harness_version:string;curriculum_version:string;evidence_json:string;revoked_at:string|null};
+const publicAchievement=(row:AchievementRow)=>({
+ verification_code:row.verification_code,learner_code:row.learner_code,achievement_id:row.achievement_id,title:row.title,module_id:row.module_id,issued_at:row.issued_at,
+ status:row.revoked_at?'revoked':'verified',verification_url:`${VERIFY_ORIGIN}/verify?code=${encodeURIComponent(row.verification_code)}`,
+ assurance:{harness_version:row.harness_version,curriculum_version:row.curriculum_version,validation:'Deterministic authored-key validation',evidence:parse<Record<string,unknown>>(row.evidence_json,{})},
+ privacy:'Pseudonymous receipt; no name, email, attempts, response time, or ranking is stored.',
+});
+async function learnerCode(db:D1Database,row:StoredSession){if(row.learner_code)return row.learner_code;const code=`LRN-${crypto.randomUUID().replaceAll('-','').slice(0,12).toUpperCase()}`;await db.prepare('UPDATE agent_sessions SET learner_code=? WHERE id=?').bind(code,row.id).run();return code}
+async function issueAchievement(db:D1Database,row:StoredSession,input:{id:string;title:string;moduleId?:number;evidence:Record<string,unknown>}){
+ await ensureAgentTables(db);const digest=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(row.id));const sessionRef=Array.from(new Uint8Array(digest),value=>value.toString(16).padStart(2,'0')).join('');const existing=await db.prepare('SELECT * FROM achievement_receipts WHERE session_ref=? AND achievement_id=?').bind(sessionRef,input.id).first<AchievementRow>();if(existing)return publicAchievement(existing);
+ const code=`LEAAID-${crypto.randomUUID().replaceAll('-','').slice(0,20).toUpperCase()}`;const learner=await learnerCode(db,row);const issuedAt=new Date().toISOString();
+ await db.prepare('INSERT INTO achievement_receipts (verification_code,session_ref,learner_code,achievement_id,title,module_id,issued_at,harness_version,curriculum_version,evidence_json) VALUES (?,?,?,?,?,?,?,?,?,?)').bind(code,sessionRef,learner,input.id,input.title,input.moduleId||null,issuedAt,'1.1.0','2026.10',JSON.stringify(input.evidence)).run();
+ return publicAchievement({verification_code:code,learner_code:learner,achievement_id:input.id,title:input.title,module_id:input.moduleId||null,issued_at:issuedAt,harness_version:'1.1.0',curriculum_version:'2026.10',evidence_json:JSON.stringify(input.evidence),revoked_at:null});
+}
+export async function verifyAchievement(db:D1Database,code:unknown){await ensureAgentTables(db);if(typeof code!=='string'||!/^LEAAID-[A-F0-9]{20}$/.test(code))throw new AgentError(400,'A valid LEAAID verification code is required.');const row=await db.prepare('SELECT * FROM achievement_receipts WHERE verification_code=?').bind(code).first<AchievementRow>();if(!row)throw new AgentError(404,'Achievement receipt not found.');return publicAchievement(row)}
+export async function listAchievements(db:D1Database,input:Record<string,unknown>){const row=await session(db,input.session_id);const learner=await learnerCode(db,row);const result=await db.prepare('SELECT * FROM achievement_receipts WHERE learner_code=? ORDER BY issued_at').bind(learner).all<AchievementRow>();return{learner_code:learner,achievements:(result.results||[]).map(publicAchievement)}}
 
 function publicQuestion(question:RuntimeQuestion,index:number,total:number){return{
  id:question.id,index:index+1,total,scenario:question.scenario,prompt:question.prompt,options:question.options,
@@ -100,7 +119,7 @@ export async function submitLabChoice(db:D1Database,input:Record<string,unknown>
  const row=await session(db,input.session_id);if(row.lab_step<0||!APPLIED_LAB[row.lab_step])throw new AgentError(409,'No applied lab is active. Launch the applied lab first.');const selected=Number(input.option_index);if(!Number.isInteger(selected)||selected<0||selected>3)throw new AgentError(400,'option_index must be 0, 1, 2, or 3.');
  const step=labStepFor(row.lab_step);if(selected!==step.correct)return{session_id:row.id,correct:false,state:'lab_recovery',recovery:step.recovery,source:step.source,step:publicLabStep(row.lab_step)};
  const next=row.lab_step+1;if(next<APPLIED_LAB.length){await db.prepare("UPDATE agent_sessions SET lab_step=?,updated_at=CURRENT_TIMESTAMP,expires_at=datetime('now','+7 days') WHERE id=?").bind(next,row.id).run();return{session_id:row.id,correct:true,state:'applied_lab_active',feedback:step.success,milestone:step.milestone||null,step:publicLabStep(next)}}
- await db.prepare("UPDATE agent_sessions SET lab_step=-1,lab_complete=1,updated_at=CURRENT_TIMESTAMP,expires_at=datetime('now','+7 days') WHERE id=?").bind(row.id).run();return{session_id:row.id,correct:true,state:'applied_lab_mastered',feedback:step.success,badge:{type:'applied',title:'Applied Agent Builder'},next_action:{action:'launch_premier_challenge'}};
+ await db.prepare("UPDATE agent_sessions SET lab_step=-1,lab_complete=1,updated_at=CURRENT_TIMESTAMP,expires_at=datetime('now','+7 days') WHERE id=?").bind(row.id).run();const achievement=await issueAchievement(db,row,{id:'applied-agent-builder',title:'Applied Agent Builder',moduleId:5,evidence:{mastery_percent:100,required_decisions:APPLIED_LAB.length,scope:'baseline, refinement, and governed operation',timing_affects_award:false,hints_affect_award:false}});return{session_id:row.id,correct:true,state:'applied_lab_mastered',feedback:step.success,badge:{type:'applied',title:'Applied Agent Builder'},achievement,next_action:{action:'launch_premier_challenge'}};
 }
 
 export async function submitAnswer(db:D1Database,input:Record<string,unknown>){
@@ -114,8 +133,8 @@ export async function submitAnswer(db:D1Database,input:Record<string,unknown>){
  const completed=parse<ModuleId[]>(row.completed_json,[]);const moduleId=current.moduleId;const premier=new Set(queue.map(q=>q.moduleId)).size>1;
  if(!premier&&!completed.includes(moduleId))completed.push(moduleId);
  await db.prepare("UPDATE agent_sessions SET question_index=?,completed_json=?,premier=?,queue_json='[]',updated_at=CURRENT_TIMESTAMP,expires_at=datetime('now','+7 days') WHERE id=?").bind(nextIndex,JSON.stringify(completed),premier?1:row.premier,row.id).run();
- if(premier)return{session_id:row.id,correct:true,state:'premier_mastered',feedback:current.rationale,badge:{type:'premier',title:'Premier LEAAID Knowledge'},completed_modules:completed};
- return{session_id:row.id,correct:true,state:'module_mastered',feedback:current.rationale,badge:{type:'module_round',module_id:moduleId,title:`${MODULES[moduleId-1].title} Mastery`},completed_modules:completed,next_action:moduleId<5?{action:'launch_training_challenge',module_id:moduleId+1}:{action:'launch_applied_lab'}};
+ if(premier){const achievement=await issueAchievement(db,row,{id:'premier-knowledge',title:'Premier LEAAID Knowledge',evidence:{mastery_percent:100,required_modules:5,required_applied_lab:true,required_final_decisions:10,timing_affects_award:false,hints_affect_award:false}});return{session_id:row.id,correct:true,state:'premier_mastered',feedback:current.rationale,badge:{type:'premier',title:'Premier LEAAID Knowledge'},achievement,completed_modules:completed}}
+ const achievement=await issueAchievement(db,row,{id:`module-${moduleId}-mastery`,title:`${MODULES[moduleId-1].title} Mastery`,moduleId,evidence:{mastery_percent:100,required_decisions:10,source:MODULES[moduleId-1].source,timing_affects_award:false,hints_affect_award:false}});return{session_id:row.id,correct:true,state:'module_mastered',feedback:current.rationale,badge:{type:'module_round',module_id:moduleId,title:`${MODULES[moduleId-1].title} Mastery`},achievement,completed_modules:completed,next_action:moduleId<5?{action:'launch_training_challenge',module_id:moduleId+1}:{action:'launch_applied_lab'}};
 }
 
 export async function getSession(db:D1Database,input:Record<string,unknown>){
@@ -124,7 +143,7 @@ export async function getSession(db:D1Database,input:Record<string,unknown>){
 }
 
 export async function dispatchAgentAction(db:D1Database,input:Record<string,unknown>){
- switch(input.action as AgentAction){case'describe_program':return describeProgram();case'create_session':return createSession(db);case'coach':return coach(db,input);case'launch_multi_agent_training':return launchMultiAgentTraining(db,input);case'validate_training_response':return validateTrainingResponse(db,input);case'launch_training_challenge':return launchChallenge(db,input);case'submit_answer':return submitAnswer(db,input);case'launch_applied_lab':return launchAppliedLab(db,input);case'submit_lab_choice':return submitLabChoice(db,input);case'launch_premier_challenge':return launchPremierChallenge(db,input);case'get_session':return getSession(db,input);default:throw new AgentError(400,'Unknown action. Use describe_program to inspect the supported training actions.');}
+ switch(input.action as AgentAction){case'describe_program':return describeProgram();case'create_session':return createSession(db);case'coach':return coach(db,input);case'launch_multi_agent_training':return launchMultiAgentTraining(db,input);case'validate_training_response':return validateTrainingResponse(db,input);case'launch_training_challenge':return launchChallenge(db,input);case'submit_answer':return submitAnswer(db,input);case'launch_applied_lab':return launchAppliedLab(db,input);case'submit_lab_choice':return submitLabChoice(db,input);case'launch_premier_challenge':return launchPremierChallenge(db,input);case'get_session':return getSession(db,input);case'list_achievements':return listAchievements(db,input);default:throw new AgentError(400,'Unknown action. Use describe_program to inspect the supported training actions.');}
 }
 
 export async function dispatchHarnessAction(db:D1Database,input:Record<string,unknown>){

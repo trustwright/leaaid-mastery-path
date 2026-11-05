@@ -1,13 +1,13 @@
 {
   "openapi": "3.1.0",
-  "info": {"title": "LEAAID Cohort Pathway", "version": "1.2.0", "description": "Invitation-controlled LEAAID operating harness with orchestration, source-grounded testing, deterministic validation, and sequential mastery."},
+  "info": {"title": "LEAAID Cohort Pathway", "version": "1.3.0", "description": "Invitation-controlled LEAAID operating harness with deterministic validation, sequential mastery, and pseudonymous verifiable achievements."},
   "servers": [{"url": "https://leaaid-mastery-path.nexus-8198.chatgpt.site"}],
   "paths": {"/api/agent": {
     "get": {"operationId": "describeLEAAIDProgram", "summary": "Describe the curriculum and agent capabilities", "responses": {"200": {"description": "Program description"}}},
     "post": {"operationId": "operateLEAAIDAgent", "summary": "Coach, launch, answer, or resume a LEAAID training session", "security": [{"InvitationKey": []}], "requestBody": {"required": true, "content": {"application/json": {"schema": {"$ref": "#/components/schemas/AgentRequest"}}}}, "responses": {"200": {"description": "Agent action result"}, "400": {"description": "Invalid action"}, "401": {"description": "Invitation key required"}, "409": {"description": "Sequential mastery gate not satisfied"}}}
-  }},
+  }, "/api/verify": {"get": {"operationId": "verifyLEAAIDAchievement", "summary": "Verify a pseudonymous LEAAID achievement receipt", "parameters": [{"name": "code", "in": "query", "required": true, "schema": {"type": "string"}}], "responses": {"200": {"description": "Verified achievement evidence"}, "404": {"description": "Receipt not found"}}}}},
   "components": {
     "securitySchemes": {"InvitationKey": {"type": "apiKey", "in": "header", "name": "X-LEAAID-Access-Key"}},
-    "schemas": {"AgentRequest": {"type": "object", "required": ["action"], "properties": {"action": {"type": "string", "enum": ["describe_program", "create_session", "coach", "launch_multi_agent_training", "validate_training_response", "launch_training_challenge", "submit_answer", "launch_applied_lab", "submit_lab_choice", "launch_premier_challenge", "get_session"]}, "session_id": {"type": "string"}, "module_id": {"type": "integer", "minimum": 1, "maximum": 5}, "goal": {"type": "string", "enum": ["understand", "apply", "prepare"]}, "option_index": {"type": "integer", "minimum": 0, "maximum": 3}}}}
+    "schemas": {"AgentRequest": {"type": "object", "required": ["action"], "properties": {"action": {"type": "string", "enum": ["describe_program", "create_session", "coach", "launch_multi_agent_training", "validate_training_response", "launch_training_challenge", "submit_answer", "launch_applied_lab", "submit_lab_choice", "launch_premier_challenge", "get_session", "list_achievements"]}, "session_id": {"type": "string"}, "module_id": {"type": "integer", "minimum": 1, "maximum": 5}, "goal": {"type": "string", "enum": ["understand", "apply", "prepare"]}, "option_index": {"type": "integer", "minimum": 0, "maximum": 3}}}}
   }
 }

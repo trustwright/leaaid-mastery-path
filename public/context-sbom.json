@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "name": "LEAAID Learning Context SBOM",
+  "curriculum_version": "2026.10",
+  "authority": "User-supplied LEAAID foundation and Module 5 applied-lab materials",
+  "modules": [
+    {"id":1,"title":"Agentic AI Foundations","source":"Module1.pdf"},
+    {"id":2,"title":"Data Foundations & Architecture","source":"Module2.pdf"},
+    {"id":3,"title":"Agentic AI Assurance","source":"Module3.pdf"},
+    {"id":4,"title":"AI Strategy & Transformation","source":"Module4.pdf"},
+    {"id":5,"title":"Applied Agentic Systems","source":"Module5.pdf and supplied lab worksheets"}
+  ],
+  "assessment_contract": {"candidate_questions":100,"questions_per_module_round":10,"mastery_percent":100,"final_questions":10,"answer_key":"authored, deterministic, withheld until submission","source_reference_required":true},
+  "learner_signals_used": ["submitted option","active module","mastered authored items"],
+  "learner_signals_excluded": ["name","email","demographics","writing style","response time","attempt count","inferred ability","comparative rank"],
+  "retention": {"agent_session_days":7,"chat_transcripts":false,"achievement_receipt":"durable until revoked; pseudonymous and learner-held"},
+  "known_limitations": ["Achievement verifies completion of this learning harness, not identity, licensure, employment suitability, or independent professional certification.","Formal curricular use still requires institutional subject-matter and assessment review."]
+}

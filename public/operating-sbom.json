@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "name": "LEAAID Learning Harness Operating SBOM",
+  "version": "1.1.0",
+  "components": [
+    {"id":"learning_orchestrator","purpose":"Enforce sequence, delegate one learning decision, route recovery, and unlock deterministic gates","inputs":["session state","module request","validator result"],"outputs":["delegation","recovery route","gate decision"],"prohibited":["author course claims","change answer keys","infer learner traits","override mastery"]},
+    {"id":"testing_agent","purpose":"Select and present one authored non-repeating decision","inputs":["module id","authored question bank","recent item history"],"outputs":["scenario","prompt","four rotated options"],"prohibited":["score","reveal key","create source claims","profile learner"]},
+    {"id":"validator_agent","purpose":"Compare one submitted option with the authored key","inputs":["question id","option index","authored key"],"outputs":["validated or recovery","source evidence","advance permission"],"prohibited":["model self-grading","use response time","use attempts","use identity or demographic signals"]},
+    {"id":"achievement_register","purpose":"Issue and verify pseudonymous mastery receipts","inputs":["deterministic mastery event","learner-held random code"],"outputs":["verification code","public evidence link"],"prohibited":["store name or email","publish attempts or timing","rank learners"]}
+  ],
+  "interfaces": ["/api/agent","/api/mcp","/api/slack","/api/verify","/verify"],
+  "state": {"session":"D1, anonymous, rolling seven-day expiry","achievements":"D1, durable pseudonymous receipts","browser":"device-local progress and theme"},
+  "controls": ["action allowlist","typed bounds","source boundary","answer non-disclosure","sequential 100% mastery","fail closed","deterministic validation","pseudonymous verification"],
+  "human_oversight": {"source_or_key_dispute":"facilitator reviews the cited source and authored key","automated_override":false,"comparative_ranking":false}
+}
