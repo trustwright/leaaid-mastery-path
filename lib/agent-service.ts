@@ -5,7 +5,7 @@ import {APPLIED_LAB,labStepFor} from './applied-lab';
 
 type StoredSession={id:string;goal:CoachGoal;current_module:number;question_index:number;lab_step:number;lab_complete:number;premier:number;completed_json:string;history_json:string;queue_json:string;created_at:string;updated_at:string;expires_at:string};
 type History=Partial<Record<ModuleId,string[]>>;
-export type AgentAction='describe_program'|'create_session'|'coach'|'launch_training_challenge'|'submit_answer'|'launch_applied_lab'|'submit_lab_choice'|'launch_premier_challenge'|'get_session';
+export type AgentAction='describe_program'|'create_session'|'coach'|'launch_training_challenge'|'submit_answer'|'launch_multi_agent_training'|'validate_training_response'|'launch_applied_lab'|'submit_lab_choice'|'launch_premier_challenge'|'get_session';
 
 export class AgentError extends Error{constructor(public status:number,message:string){super(message)}}
 let agentReady:Promise<void>|undefined;
@@ -25,7 +25,8 @@ export function describeProgram(){return{
  session_model:'Anonymous, expiring server session; no name, email, prompt transcript, or profile is requested.',
  mastery_rule:'Answer all 10 decisions correctly in a module round. Missed concepts remain in recovery until mastered.',
  modules:MODULES.map(m=>({id:m.id,code:m.code,title:m.title,source:m.source})),
- actions:['create_session','coach','launch_training_challenge','submit_answer','launch_applied_lab','submit_lab_choice','launch_premier_challenge','get_session'],
+ agent_team:[{id:'learning_orchestrator',role:'Enforces sequence and delegates the active assessment task.'},{id:'testing_agent',role:'Selects a non-repeating source-grounded decision and presents it without the answer.'},{id:'validator_agent',role:'Deterministically validates the submitted option against the authored answer key and returns evidence or recovery.'}],
+ actions:['create_session','coach','launch_multi_agent_training','validate_training_response','launch_training_challenge','submit_answer','launch_applied_lab','submit_lab_choice','launch_premier_challenge','get_session'],
  suggested_prompt:'Launch training challenge for Module 1.',
 };}
 
@@ -61,6 +62,23 @@ export async function launchChallenge(db:D1Database,input:Record<string,unknown>
  history[moduleId]=[...(history[moduleId]||[]),...queue.map(q=>q.baseId)].slice(-20);
  await db.prepare("UPDATE agent_sessions SET current_module=?,question_index=0,lab_step=-1,queue_json=?,history_json=?,updated_at=CURRENT_TIMESTAMP,expires_at=datetime('now','+7 days') WHERE id=?").bind(moduleId,JSON.stringify(queue),JSON.stringify(history),row.id).run();
  return{session_id:row.id,state:'challenge_active',module_id:moduleId,module:MODULES[moduleId-1].title,mastery_target:'10 of 10 correct',question:publicQuestion(queue[0],0,queue.length)};
+}
+
+const workflow=(status:'awaiting_response'|'validated'|'recovery')=>({
+ pattern:'orchestrated_multi_agent',
+ agents:[
+  {id:'learning_orchestrator',state:'delegated',evidence:'Sequential module gate and anonymous session state checked.'},
+  {id:'testing_agent',state:status==='awaiting_response'?'active':'completed',evidence:'Question selected from the authored module bank with answer order rotated.'},
+  {id:'validator_agent',state:status==='awaiting_response'?'waiting':status,evidence:status==='awaiting_response'?'No validation occurs before learner submission.':'Submitted option compared deterministically with the authored answer key.'},
+ ],
+});
+
+export async function launchMultiAgentTraining(db:D1Database,input:Record<string,unknown>){
+ const result=await launchChallenge(db,input);return{...result,agent_workflow:workflow('awaiting_response')};
+}
+
+export async function validateTrainingResponse(db:D1Database,input:Record<string,unknown>){
+ const result=await submitAnswer(db,input);const valid=Boolean((result as {correct?:boolean}).correct);return{...result,validation:{valid,response_rule:'Exact authored answer-key match; no model self-grading.',advance_allowed:valid,checked_at:new Date().toISOString()},agent_workflow:workflow(valid?'validated':'recovery')};
 }
 
 export async function launchPremierChallenge(db:D1Database,input:Record<string,unknown>){
@@ -105,7 +123,7 @@ export async function getSession(db:D1Database,input:Record<string,unknown>){
 }
 
 export async function dispatchAgentAction(db:D1Database,input:Record<string,unknown>){
- switch(input.action as AgentAction){case'describe_program':return describeProgram();case'create_session':return createSession(db);case'coach':return coach(db,input);case'launch_training_challenge':return launchChallenge(db,input);case'submit_answer':return submitAnswer(db,input);case'launch_applied_lab':return launchAppliedLab(db,input);case'submit_lab_choice':return submitLabChoice(db,input);case'launch_premier_challenge':return launchPremierChallenge(db,input);case'get_session':return getSession(db,input);default:throw new AgentError(400,'Unknown action. Use describe_program to inspect the supported training actions.');}
+ switch(input.action as AgentAction){case'describe_program':return describeProgram();case'create_session':return createSession(db);case'coach':return coach(db,input);case'launch_multi_agent_training':return launchMultiAgentTraining(db,input);case'validate_training_response':return validateTrainingResponse(db,input);case'launch_training_challenge':return launchChallenge(db,input);case'submit_answer':return submitAnswer(db,input);case'launch_applied_lab':return launchAppliedLab(db,input);case'submit_lab_choice':return submitLabChoice(db,input);case'launch_premier_challenge':return launchPremierChallenge(db,input);case'get_session':return getSession(db,input);default:throw new AgentError(400,'Unknown action. Use describe_program to inspect the supported training actions.');}
 }
 
 export async function channelSession(db:D1Database,channelHash:string){

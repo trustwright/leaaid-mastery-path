@@ -1,0 +1,6 @@
+{
+  "display_information": {"name": "LEAAID Cohort Pathway", "description": "Launch source-grounded LEAAID training from Slack", "background_color": "#C41230"},
+  "features": {"bot_user": {"display_name": "LEAAID Pathway", "always_online": false}, "slash_commands": [{"command": "/leaaid", "url": "https://leaaid-mastery-path.nexus-8198.chatgpt.site/api/slack", "description": "Coach, launch, answer, validate, or resume LEAAID training", "usage_hint": "help | start 1 | answer B | lab | choose C | final | status", "should_escape": false}]},
+  "oauth_config": {"scopes": {"bot": ["commands"]}},
+  "settings": {"org_deploy_enabled": false, "socket_mode_enabled": false, "token_rotation_enabled": false}
+}

@@ -1,0 +1,7 @@
+{
+  "endpoint": "https://leaaid-mastery-path.nexus-8198.chatgpt.site/api/agent",
+  "authentication_header": "X-LEAAID-Access-Key",
+  "function_declarations": [
+    {"name": "operate_leaaid_agent", "description": "Operate the LEAAID multi-agent training pathway.", "parameters": {"type": "OBJECT", "properties": {"action": {"type": "STRING", "enum": ["describe_program", "create_session", "coach", "launch_multi_agent_training", "validate_training_response", "launch_applied_lab", "submit_lab_choice", "launch_premier_challenge", "get_session"]}, "session_id": {"type": "STRING"}, "module_id": {"type": "INTEGER"}, "option_index": {"type": "INTEGER"}, "goal": {"type": "STRING"}}, "required": ["action"]}}
+  ]
+}

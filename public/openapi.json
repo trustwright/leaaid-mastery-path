@@ -8,6 +8,6 @@
   }},
   "components": {
     "securitySchemes": {"InvitationKey": {"type": "apiKey", "in": "header", "name": "X-LEAAID-Access-Key"}},
-    "schemas": {"AgentRequest": {"type": "object", "required": ["action"], "properties": {"action": {"type": "string", "enum": ["describe_program", "create_session", "coach", "launch_training_challenge", "submit_answer", "launch_applied_lab", "submit_lab_choice", "launch_premier_challenge", "get_session"]}, "session_id": {"type": "string"}, "module_id": {"type": "integer", "minimum": 1, "maximum": 5}, "goal": {"type": "string", "enum": ["understand", "apply", "prepare"]}, "option_index": {"type": "integer", "minimum": 0, "maximum": 3}}}}
+    "schemas": {"AgentRequest": {"type": "object", "required": ["action"], "properties": {"action": {"type": "string", "enum": ["describe_program", "create_session", "coach", "launch_multi_agent_training", "validate_training_response", "launch_training_challenge", "submit_answer", "launch_applied_lab", "submit_lab_choice", "launch_premier_challenge", "get_session"]}, "session_id": {"type": "string"}, "module_id": {"type": "integer", "minimum": 1, "maximum": 5}, "goal": {"type": "string", "enum": ["understand", "apply", "prepare"]}, "option_index": {"type": "integer", "minimum": 0, "maximum": 3}}}}
   }
 }

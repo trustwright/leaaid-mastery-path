@@ -17,6 +17,8 @@ Interactive, source-grounded training based exclusively on the five LEAAID found
 - Light/dark modes, large touch targets, number-key selection, and responsive layouts
 - Invitation-controlled REST/OpenAPI and remote MCP agent surfaces
 - Signature-verified Slack slash-command adapter with ephemeral responses
+- Visible learning-orchestrator → testing-agent → deterministic-validator workflow
+- Copy-ready OpenAI, Claude, Gemini, and Slack setup packages with explicit user/admin consent
 
 ## Agent launch surfaces
 
@@ -24,6 +26,8 @@ Interactive, source-grounded training based exclusively on the five LEAAID found
 - Remote MCP: `https://leaaid-mastery-path.nexus-8198.chatgpt.site/api/mcp`
 - REST: `https://leaaid-mastery-path.nexus-8198.chatgpt.site/api/agent`
 - Slack command request URL: `https://leaaid-mastery-path.nexus-8198.chatgpt.site/api/slack`
+- Cohort agent package: `https://leaaid-mastery-path.nexus-8198.chatgpt.site/leaaid-cohort-pathway-agent.json`
+- Slack app manifest: `https://leaaid-mastery-path.nexus-8198.chatgpt.site/slack-app-manifest.json`
 
 Set `LEAAID_AGENT_ACCESS_KEY` for invited GPT, Claude, or Gemini-compatible clients. Set `SLACK_SIGNING_SECRET` for the Slack adapter. The REST and MCP surfaces fail closed when the invitation key is missing. The Slack route validates the Slack request signature and stores only an HMAC-derived channel mapping.
 

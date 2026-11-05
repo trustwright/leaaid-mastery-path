@@ -1,0 +1,12 @@
+{
+  "name": "LEAAID Cohort Pathway",
+  "version": "1.1.0",
+  "description": "Source-grounded sequential mastery training with an orchestrator, testing agent, deterministic validator, and applied agent-builder lab.",
+  "openapi": "https://leaaid-mastery-path.nexus-8198.chatgpt.site/openapi.json",
+  "mcp": "https://leaaid-mastery-path.nexus-8198.chatgpt.site/api/mcp",
+  "rest": "https://leaaid-mastery-path.nexus-8198.chatgpt.site/api/agent",
+  "authentication": {"type": "api_key", "header": "X-LEAAID-Access-Key", "value": "<INVITATION_KEY>"},
+  "starter_instruction": "Create an anonymous session. Launch the requested unlocked module through the learning orchestrator. Present one decision at a time through the testing agent. Submit the learner response to the validator agent before advancing. Never reveal the answer before submission or bypass a mastery gate.",
+  "workflow": ["learning_orchestrator", "testing_agent", "validator_agent"],
+  "data": {"identity_required": false, "session_expiry_days": 7, "transcripts_stored": false}
+}
