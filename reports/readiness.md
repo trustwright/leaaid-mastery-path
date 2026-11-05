@@ -10,6 +10,8 @@
 - Applied lab QA: seven ordered build decisions, varied correct-choice positions, explicit recovery branches, and baseline/refinement/operation milestones
 - Agent workflow QA: learning orchestrator delegates to a testing agent; a separate deterministic validator blocks advancement until the authored key confirms the response
 - Client-kit QA: OpenAI/OpenAPI, Claude/MCP, Gemini function declarations, and Slack manifest are present without embedded credentials
+- Operating harness QA: allowlisted actions, typed inputs, source authority, non-disclosure, deterministic progression, role prohibitions, seven-day expiry, and fail-closed behavior are declared and enforced at the REST/MCP boundary
+- Linguistic QA: every item now includes a distinct enterprise scenario; action and definition distractors use module-specific misconception models rather than answer-length matching
 - Mastery QA: 100% comprehension remains required before sequential unlock
 - Scale simulation: 10,000 isolated learner sessions, 1,000,000 generated decisions, zero repeat violations
 - HTTP production-preview load: 500 sessions, 25 concurrent, 500 accepted, 0 rejected; p95 748 ms on the local preview host

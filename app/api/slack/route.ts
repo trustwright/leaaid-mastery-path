@@ -29,5 +29,5 @@ export async function POST(request:Request){
  }catch(error){return slack(error instanceof Error?error.message:'The LEAAID agent could not complete that command.')}
 }
 
-function formatQuestion(question:{index:number;total:number;prompt:string;options:string[];difficulty:number}){return `*Decision ${question.index}/${question.total} · Level ${question.difficulty}*\n${question.prompt}\n${question.options.map((option,index)=>`${String.fromCharCode(65+index)}. ${option}`).join('\n')}\n_Reply with /leaaid answer A, B, C, or D._`}
+function formatQuestion(question:{index:number;total:number;scenario:string;prompt:string;options:string[];difficulty:number}){return `*Decision ${question.index}/${question.total} · Level ${question.difficulty}*\n_${question.scenario}_\n${question.prompt}\n${question.options.map((option,index)=>`${String.fromCharCode(65+index)}. ${option}`).join('\n')}\n_Reply with /leaaid answer A, B, C, or D._`}
 function formatLabStep(step:{index:number;total:number;stage:string;title:string;prompt:string;options:string[]}){return `*Build ${step.index}/${step.total} · ${step.stage} · ${step.title}*\n${step.prompt}\n${step.options.map((option,index)=>`${String.fromCharCode(65+index)}. ${option}`).join('\n')}\n_Reply with /leaaid choose A, B, C, or D._`}

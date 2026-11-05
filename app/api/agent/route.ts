@@ -1,5 +1,5 @@
 import {env} from 'cloudflare:workers';
-import {AgentError,describeProgram,dispatchAgentAction} from '../../../lib/agent-service';
+import {AgentError,describeProgram,dispatchHarnessAction} from '../../../lib/agent-service';
 
 export const runtime='edge';
 type AgentEnv={DB?:D1Database;LEAAID_AGENT_ACCESS_KEY?:string};
@@ -15,6 +15,6 @@ export function GET(){return json({...describeProgram(),access:'Invitation key r
 export async function POST(request:Request){
  if(!authorized(request))return json({error:'A valid LEAAID invitation key is required.'},401);
  const db=bindings().DB;if(!db)return json({error:'Agent session storage is not configured.'},503);
- try{const input=await request.json() as Record<string,unknown>;return json(await dispatchAgentAction(db,input))}
+ try{const input=await request.json() as Record<string,unknown>;return json(await dispatchHarnessAction(db,input))}
  catch(error){if(error instanceof AgentError)return json({error:error.message},error.status);return json({error:'The agent could not complete this action.'},500)}
 }

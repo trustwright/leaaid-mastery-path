@@ -1,5 +1,5 @@
 import {env} from 'cloudflare:workers';
-import {AgentError,dispatchAgentAction} from '../../../lib/agent-service';
+import {AgentError,dispatchHarnessAction} from '../../../lib/agent-service';
 
 export const runtime='edge';
 type McpEnv={DB?:D1Database;LEAAID_AGENT_ACCESS_KEY?:string};
@@ -33,6 +33,6 @@ export async function POST(request:Request){
  if(body.method==='tools/list')return response(body.id,{tools});
  if(body.method!=='tools/call'||!body.params?.name)return failure(body.id,-32601,'Method not found');
  const action=actionFor[body.params.name];if(!action)return failure(body.id,-32602,'Unknown tool');if(!config.DB)return failure(body.id,-32002,'Agent session storage is not configured.',503);
- try{const result=await dispatchAgentAction(config.DB,{...(body.params.arguments||{}),action});return response(body.id,{content:[{type:'text',text:JSON.stringify(result)}],structuredContent:result})}
+ try{const result=await dispatchHarnessAction(config.DB,{...(body.params.arguments||{}),action});return response(body.id,{content:[{type:'text',text:JSON.stringify(result)}],structuredContent:result})}
  catch(error){return failure(body.id,error instanceof AgentError?-32010:-32603,error instanceof Error?error.message:'Agent action failed')}
 }

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "leaaid-cohort-pathway-harness",
+  "version": "1.0.0",
+  "endpoint": "https://leaaid-mastery-path.nexus-8198.chatgpt.site/api/agent",
+  "authentication": {"type": "api_key", "header": "X-LEAAID-Access-Key", "value": "<INVITATION_KEY>"},
+  "purpose": "Execute source-grounded LEAAID learning through controlled orchestration, testing, and deterministic validation.",
+  "roles": [
+    {"id": "learning_orchestrator", "responsibility": "Sequence, delegation, recovery routing, and gate unlocks", "prohibited": ["override mastery", "reveal answers", "invent claims"]},
+    {"id": "testing_agent", "responsibility": "Select and present one authored non-repeating item", "prohibited": ["score responses", "change evidence", "repeat recent item"]},
+    {"id": "validator_agent", "responsibility": "Deterministically compare the submitted option with the authored key", "prohibited": ["model self-grading", "rewrite attempts", "advance invalid responses"]}
+  ],
+  "controls": {"sourceAuthority": "supplied foundation material only", "masteryPercent": 100, "answerDisclosure": "after submission only", "failMode": "closed", "sessionTtlDays": 7, "identityRequired": false, "transcriptRetention": false},
+  "input": {"action": "allowlisted string", "session_id": "opaque UUID", "module_id": "integer 1-5", "option_index": "integer 0-3", "goal": "understand | apply | prepare"},
+  "starter": {"action": "create_session"},
+  "next": {"action": "launch_multi_agent_training", "session_id": "<SESSION_ID>", "module_id": 1}
+}

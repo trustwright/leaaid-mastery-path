@@ -4,17 +4,18 @@
     {
       "id": "m1-q01",
       "moduleId": 1,
+      "scenario": "During an executive steering review, the team is reviewing the workflow-agent dividing line before an agent receives authority to act without continuous supervision.",
       "prompt": "Which statement best explains the workflow-agent dividing line?",
       "options": [
-        "The organization defines the boundary; the agent has discretion only inside it.",
+        "Any workflow that calls an LLM is an agent, regardless of how the next step is selected.",
         "A workflow has a predetermined path; an agent chooses part of the next-step path.",
-        "The task is not ready until permitted and forbidden actions are explicit.",
-        "It buys continuity but adds privacy, governance, and stale-belief risk."
+        "A policy envelope is a prompt that asks the model to behave cautiously.",
+        "Reflection means repeating the same action until the result changes."
       ],
       "correct": 1,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Workflow vs. Agent” material frames the workflow-agent dividing line through whether added agency has a distinct responsibility.",
-      "rationale": "In p. 13, Workflow vs. Agent, the course treats this as the definition or operating principle for the workflow-agent dividing line: A workflow has a predetermined path; an agent chooses part of the next-step path. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 13, Workflow vs. Agent, the course treats this as the definition or operating principle for the workflow-agent dividing line: A workflow has a predetermined path; an agent chooses part of the next-step path. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -28,17 +29,18 @@
     {
       "id": "m1-q02",
       "moduleId": 1,
+      "scenario": "During an architecture checkpoint, the team is reviewing closing an LLM knowledge gap before an agent receives authority to act without continuous supervision.",
       "prompt": "How should a system close an LLM knowledge gap?",
       "options": [
         "Add retrieval and memory to provide grounding.",
-        "Narrow and clarify the task before building.",
-        "A person or the organization always sets the goal.",
-        "Name the failure mode, test, owner, and boundary first."
+        "Expand the prompt while leaving permissions, checkpoints, and stop conditions implicit.",
+        "Use a fixed workflow even when the next step depends on evidence discovered at runtime.",
+        "Adopt the architecture pattern before naming the failure mode it must address."
       ],
       "correct": 0,
       "hint": "Identify the missing system capability before selecting an option.",
       "tipContext": "The “Model vs. System” material frames closing an LLM knowledge gap through evidence quality and grounding.",
-      "rationale": "In pp. 10-11, Model vs. System, the course treats this as the recommended action or control for closing an LLM knowledge gap: Add retrieval and memory to provide grounding. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In pp. 10-11, Model vs. System, the course treats this as the recommended action or control for closing an LLM knowledge gap: Add retrieval and memory to provide grounding. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -52,17 +54,18 @@
     {
       "id": "m1-q03",
       "moduleId": 1,
+      "scenario": "During a production-readiness review, the team is reviewing the agent control loop before an agent receives authority to act without continuous supervision.",
       "prompt": "Which statement best explains the agent control loop?",
       "options": [
-        "Use rule-based automation.",
-        "Narrow and clarify the task before building.",
-        "Add retrieval and memory to provide grounding.",
+        "Persistent memory is an unqualified benefit because additional context cannot create new governance risk.",
+        "Human approval and human ownership are interchangeable controls.",
+        "The agent may set its own enterprise objective if the objective is measurable.",
         "Perceive, think, act, and reflect."
       ],
       "correct": 3,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Agent Cycle” material frames the agent control loop through the specific role this concept plays in the system.",
-      "rationale": "In p. 15, Agent Cycle, the course treats this as the definition or operating principle for the agent control loop: Perceive, think, act, and reflect. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 15, Agent Cycle, the course treats this as the definition or operating principle for the agent control loop: Perceive, think, act, and reflect. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -76,17 +79,18 @@
     {
       "id": "m1-q04",
       "moduleId": 1,
+      "scenario": "During a risk committee session, the team is reviewing a task solvable entirely by fixed rules before an agent receives authority to act without continuous supervision.",
       "prompt": "Which statement best explains a task solvable entirely by fixed rules?",
       "options": [
-        "Perceive, think, act, and reflect.",
-        "Narrow and clarify the task before building.",
+        "Give the agent broad tool access so it can resolve exceptions without escalation.",
+        "Place approval after execution so reviewers can assess a concrete outcome.",
         "Use rule-based automation.",
-        "Add retrieval and memory to provide grounding."
+        "Increase autonomy first and use post-hoc review as the primary control."
       ],
       "correct": 2,
       "hint": "Test the conditions under which the source recommends this choice.",
       "tipContext": "The “Least Sufficient Agency Test” material frames a task solvable entirely by fixed rules through the specific role this concept plays in the system.",
-      "rationale": "In p. 17, Least Sufficient Agency Test, the course treats this as the recommended action or control for a task solvable entirely by fixed rules: Use rule-based automation. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 17, Least Sufficient Agency Test, the course treats this as the recommended action or control for a task solvable entirely by fixed rules: Use rule-based automation. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -100,17 +104,18 @@
     {
       "id": "m1-q05",
       "moduleId": 1,
+      "scenario": "During an operating-model workshop, the team is reviewing a vague, untestable goal before an agent receives authority to act without continuous supervision.",
       "prompt": "Which statement best explains a vague, untestable goal?",
       "options": [
-        "Add retrieval and memory to provide grounding.",
+        "Use a fixed workflow even when the next step depends on evidence discovered at runtime.",
         "Narrow and clarify the task before building.",
-        "A person or the organization always sets the goal.",
-        "Perceive, think, act, and reflect."
+        "Treat model confidence as sufficient authority for a consequential action.",
+        "Expand the prompt while leaving permissions, checkpoints, and stop conditions implicit."
       ],
       "correct": 1,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Task Readiness” material frames a vague, untestable goal through the specific role this concept plays in the system.",
-      "rationale": "In p. 24, Task Readiness, the course treats this as the recommended action or control for a vague, untestable goal: Narrow and clarify the task before building. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 24, Task Readiness, the course treats this as the recommended action or control for a vague, untestable goal: Narrow and clarify the task before building. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -124,17 +129,18 @@
     {
       "id": "m1-q06",
       "moduleId": 1,
-      "prompt": "Which statement most accurately describes approval for an irreversible action?",
+      "scenario": "During an executive steering review, the team is reviewing approval for an irreversible action before an agent receives authority to act without continuous supervision.",
+      "prompt": "What is the most defensible next step?",
       "options": [
         "Place approval before the consequence at the policy-envelope boundary.",
-        "It buys continuity but adds privacy, governance, and stale-belief risk.",
-        "Grounded answers add latency and a pipeline that must be maintained.",
-        "The task is not ready until permitted and forbidden actions are explicit."
+        "Persist every interaction indefinitely so the model never loses context.",
+        "Adopt the architecture pattern before naming the failure mode it must address.",
+        "Add a second agent and treat agreement between models as approval."
       ],
       "correct": 0,
       "hint": "Focus on where the control sits relative to the consequence.",
       "tipContext": "The “Policy Envelope” material frames approval for an irreversible action through authority and enforceable limits.",
-      "rationale": "In p. 25, Policy Envelope, the course treats this as the recommended action or control for approval for an irreversible action: Place approval before the consequence at the policy-envelope boundary. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 25, Policy Envelope, the course treats this as the recommended action or control for approval for an irreversible action: Place approval before the consequence at the policy-envelope boundary. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -148,17 +154,18 @@
     {
       "id": "m1-q07",
       "moduleId": 1,
-      "prompt": "How does the course characterize authority when nobody is watching?",
+      "scenario": "During an architecture checkpoint, the team is reviewing authority when nobody is watching before an agent receives authority to act without continuous supervision.",
+      "prompt": "Which operating rule resolves the issue?",
       "options": [
-        "Tie claims to evidence and define what low confidence triggers.",
-        "Separation of duties gives it a distinct control responsibility.",
-        "Use one agent and avoid unnecessary coordination overhead.",
+        "Place approval after execution so reviewers can assess a concrete outcome.",
+        "Delegate goal setting to the agent once its operating instructions are complete.",
+        "Give the agent broad tool access so it can resolve exceptions without escalation.",
         "Specify tools, permissions, checkpoints, and operating rules."
       ],
       "correct": 3,
       "hint": "Look for the option that turns intent into an explicit operating rule.",
       "tipContext": "The “Specification Canvas” material frames authority when nobody is watching through authority and enforceable limits.",
-      "rationale": "In p. 26, Specification Canvas, the course treats this as the recommended action or control for authority when nobody is watching: Specify tools, permissions, checkpoints, and operating rules. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 26, Specification Canvas, the course treats this as the recommended action or control for authority when nobody is watching: Specify tools, permissions, checkpoints, and operating rules. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -172,17 +179,18 @@
     {
       "id": "m1-q08",
       "moduleId": 1,
+      "scenario": "During a production-readiness review, the team is reviewing adding an architecture pattern before an agent receives authority to act without continuous supervision.",
       "prompt": "What should a team define before adding an architecture pattern?",
       "options": [
-        "Use one agent and avoid unnecessary coordination overhead.",
-        "A person or the organization always sets the goal.",
+        "Treat model confidence as sufficient authority for a consequential action.",
+        "Increase autonomy first and use post-hoc review as the primary control.",
         "Name the failure mode, test, owner, and boundary first.",
-        "Specify tools, permissions, checkpoints, and operating rules."
+        "Use a fixed workflow even when the next step depends on evidence discovered at runtime."
       ],
       "correct": 2,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Architecture Canvas” material frames adding an architecture pattern through authority and enforceable limits.",
-      "rationale": "In p. 27, Architecture Canvas, the course treats this as the recommended action or control for adding an architecture pattern: Name the failure mode, test, owner, and boundary first. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 27, Architecture Canvas, the course treats this as the recommended action or control for adding an architecture pattern: Name the failure mode, test, owner, and boundary first. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -196,17 +204,18 @@
     {
       "id": "m1-q09",
       "moduleId": 1,
-      "prompt": "Which statement most accurately describes persistent memory?",
+      "scenario": "During a risk committee session, the team is reviewing persistent memory before an agent receives authority to act without continuous supervision.",
+      "prompt": "Which distinction should guide the design?",
       "options": [
-        "Place approval before the consequence at the policy-envelope boundary.",
+        "A fixed rule becomes agentic when its execution is fast enough.",
         "It buys continuity but adds privacy, governance, and stale-belief risk.",
-        "The task is not ready until permitted and forbidden actions are explicit.",
-        "Grounded answers add latency and a pipeline that must be maintained."
+        "Agency is a property of the model rather than the surrounding goals, tools, permissions, and feedback.",
+        "Human approval and human ownership are interchangeable controls."
       ],
       "correct": 1,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Design Trade-offs” material frames persistent memory through the specific role this concept plays in the system.",
-      "rationale": "In p. 28, Design Trade-offs, the course treats this as the definition or operating principle for persistent memory: It buys continuity but adds privacy, governance, and stale-belief risk. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 28, Design Trade-offs, the course treats this as the definition or operating principle for persistent memory: It buys continuity but adds privacy, governance, and stale-belief risk. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -220,17 +229,18 @@
     {
       "id": "m1-q10",
       "moduleId": 1,
+      "scenario": "During an operating-model workshop, the team is reviewing justifying multiple agents before an agent receives authority to act without continuous supervision.",
       "prompt": "What justifies using multiple agents?",
       "options": [
         "Use them for enforced separation, independent review, true parallel work, or valuable specialization.",
-        "Goals, context, tools, permissions, feedback, and stopping rules create agency around the model.",
-        "A workflow has a predetermined path; an agent chooses part of the next-step path.",
-        "The organization defines the boundary; the agent has discretion only inside it."
+        "Delegate goal setting to the agent once its operating instructions are complete.",
+        "Add a second agent and treat agreement between models as approval.",
+        "Place approval after execution so reviewers can assess a concrete outcome."
       ],
       "correct": 0,
       "hint": "Test the conditions under which the source recommends this choice.",
       "tipContext": "The “One Agent to a Team” material frames justifying multiple agents through whether added agency has a distinct responsibility.",
-      "rationale": "In p. 29, One Agent to a Team, the course treats this as the recommended action or control for justifying multiple agents: Use them for enforced separation, independent review, true parallel work, or valuable specialization. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 29, One Agent to a Team, the course treats this as the recommended action or control for justifying multiple agents: Use them for enforced separation, independent review, true parallel work, or valuable specialization. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -244,17 +254,18 @@
     {
       "id": "m1-q11",
       "moduleId": 1,
+      "scenario": "During an executive steering review, the team is reviewing who sets the goal before an agent receives authority to act without continuous supervision.",
       "prompt": "Who should set an agent’s goal?",
       "options": [
-        "Add retrieval and memory to provide grounding.",
-        "Name the failure mode, test, owner, and boundary first.",
-        "Narrow and clarify the task before building.",
+        "Any workflow that calls an LLM is an agent, regardless of how the next step is selected.",
+        "A policy envelope is a prompt that asks the model to behave cautiously.",
+        "Reflection means repeating the same action until the result changes.",
         "A person or the organization always sets the goal."
       ],
       "correct": 3,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Specification Questions” material frames who sets the goal through the specific role this concept plays in the system.",
-      "rationale": "In p. 23, Specification Questions, the course treats this as the definition or operating principle for who sets the goal: A person or the organization always sets the goal. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 23, Specification Questions, the course treats this as the definition or operating principle for who sets the goal: A person or the organization always sets the goal. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -268,17 +279,18 @@
     {
       "id": "m1-q12",
       "moduleId": 1,
-      "prompt": "How does the course characterize agency as a system property?",
+      "scenario": "During an architecture checkpoint, the team is reviewing agency as a system property before an agent receives authority to act without continuous supervision.",
+      "prompt": "Which interpretation should the review accept?",
       "options": [
-        "Use them for enforced separation, independent review, true parallel work, or valuable specialization.",
-        "A workflow has a predetermined path; an agent chooses part of the next-step path.",
+        "Agency is a property of the model rather than the surrounding goals, tools, permissions, and feedback.",
+        "Multiple agents are justified whenever a task contains more than one activity.",
         "Goals, context, tools, permissions, feedback, and stopping rules create agency around the model.",
-        "The organization defines the boundary; the agent has discretion only inside it."
+        "A fixed rule becomes agentic when its execution is fast enough."
       ],
       "correct": 2,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Leadership Takeaways” material frames agency as a system property through authority and enforceable limits.",
-      "rationale": "In p. 20, Leadership Takeaways, the course treats this as the definition or operating principle for agency as a system property: Goals, context, tools, permissions, feedback, and stopping rules create agency around the model. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 20, Leadership Takeaways, the course treats this as the definition or operating principle for agency as a system property: Goals, context, tools, permissions, feedback, and stopping rules create agency around the model. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -292,17 +304,18 @@
     {
       "id": "m1-q13",
       "moduleId": 1,
+      "scenario": "During a production-readiness review, the team is reviewing the policy envelope before an agent receives authority to act without continuous supervision.",
       "prompt": "Which statement best explains the policy envelope?",
       "options": [
-        "A workflow has a predetermined path; an agent chooses part of the next-step path.",
+        "Persistent memory is an unqualified benefit because additional context cannot create new governance risk.",
         "The organization defines the boundary; the agent has discretion only inside it.",
-        "The task is not ready until permitted and forbidden actions are explicit.",
-        "It buys continuity but adds privacy, governance, and stale-belief risk."
+        "Human approval and human ownership are interchangeable controls.",
+        "The agent may set its own enterprise objective if the objective is measurable."
       ],
       "correct": 1,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Policy Envelope” material frames the policy envelope through authority and enforceable limits.",
-      "rationale": "In p. 25, Policy Envelope, the course treats this as the definition or operating principle for the policy envelope: The organization defines the boundary; the agent has discretion only inside it. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 25, Policy Envelope, the course treats this as the definition or operating principle for the policy envelope: The organization defines the boundary; the agent has discretion only inside it. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -316,17 +329,18 @@
     {
       "id": "m1-q14",
       "moduleId": 1,
-      "prompt": "Which option best represents verification in an architecture in practice?",
+      "scenario": "During a risk committee session, the team is reviewing verification in an architecture before an agent receives authority to act without continuous supervision.",
+      "prompt": "What is the most defensible next step?",
       "options": [
         "Tie claims to evidence and define what low confidence triggers.",
-        "Separation of duties gives it a distinct control responsibility.",
-        "Ask who decides, who acts, and what happens next without a human.",
-        "Specify tools, permissions, checkpoints, and operating rules."
+        "Give the agent broad tool access so it can resolve exceptions without escalation.",
+        "Place approval after execution so reviewers can assess a concrete outcome.",
+        "Increase autonomy first and use post-hoc review as the primary control."
       ],
       "correct": 0,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Architecture Canvas” material frames verification in an architecture through evidence quality and grounding.",
-      "rationale": "In p. 27, Architecture Canvas, the course treats this as the recommended action or control for verification in an architecture: Tie claims to evidence and define what low confidence triggers. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 27, Architecture Canvas, the course treats this as the recommended action or control for verification in an architecture: Tie claims to evidence and define what low confidence triggers. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -340,17 +354,18 @@
     {
       "id": "m1-q15",
       "moduleId": 1,
+      "scenario": "During an operating-model workshop, the team is reviewing the cost of retrieval before an agent receives authority to act without continuous supervision.",
       "prompt": "Which statement best explains the cost of retrieval?",
       "options": [
-        "Stop, wait for approval, or escalate according to the written rule.",
-        "Place approval before the consequence at the policy-envelope boundary.",
-        "Ask who decides, who acts, and what happens next without a human.",
+        "Multiple agents are justified whenever a task contains more than one activity.",
+        "Reflection means repeating the same action until the result changes.",
+        "Agency is a property of the model rather than the surrounding goals, tools, permissions, and feedback.",
         "Grounded answers add latency and a pipeline that must be maintained."
       ],
       "correct": 3,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Design Trade-offs” material frames the cost of retrieval through evidence quality and grounding.",
-      "rationale": "In p. 28, Design Trade-offs, the course treats this as the definition or operating principle for the cost of retrieval: Grounded answers add latency and a pipeline that must be maintained. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 28, Design Trade-offs, the course treats this as the definition or operating principle for the cost of retrieval: Grounded answers add latency and a pipeline that must be maintained. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -364,17 +379,18 @@
     {
       "id": "m1-q16",
       "moduleId": 1,
-      "prompt": "Which option best represents undefined actions in practice?",
+      "scenario": "During an executive steering review, the team is reviewing undefined actions before an agent receives authority to act without continuous supervision.",
+      "prompt": "Which interpretation should the review accept?",
       "options": [
-        "It buys continuity but adds privacy, governance, and stale-belief risk.",
-        "Place approval before the consequence at the policy-envelope boundary.",
+        "Human approval and human ownership are interchangeable controls.",
+        "A fixed rule becomes agentic when its execution is fast enough.",
         "The task is not ready until permitted and forbidden actions are explicit.",
-        "Grounded answers add latency and a pipeline that must be maintained."
+        "Persistent memory is an unqualified benefit because additional context cannot create new governance risk."
       ],
       "correct": 2,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Task Readiness” material frames undefined actions through the specific role this concept plays in the system.",
-      "rationale": "In p. 24, Task Readiness, the course treats this as the definition or operating principle for undefined actions: The task is not ready until permitted and forbidden actions are explicit. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 24, Task Readiness, the course treats this as the definition or operating principle for undefined actions: The task is not ready until permitted and forbidden actions are explicit. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -388,17 +404,18 @@
     {
       "id": "m1-q17",
       "moduleId": 1,
+      "scenario": "During an architecture checkpoint, the team is reviewing reaching an authority boundary before an agent receives authority to act without continuous supervision.",
       "prompt": "What should happen when an agent reaches an authority boundary?",
       "options": [
-        "Grounded answers add latency and a pipeline that must be maintained.",
+        "Place approval after execution so reviewers can assess a concrete outcome.",
         "Stop, wait for approval, or escalate according to the written rule.",
-        "Ask who decides, who acts, and what happens next without a human.",
-        "Separation of duties gives it a distinct control responsibility."
+        "Delegate goal setting to the agent once its operating instructions are complete.",
+        "Give the agent broad tool access so it can resolve exceptions without escalation."
       ],
       "correct": 1,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Policy Envelope” material frames reaching an authority boundary through decision rights at the point of consequence.",
-      "rationale": "In p. 25, Policy Envelope, the course treats this as the recommended action or control for reaching an authority boundary: Stop, wait for approval, or escalate according to the written rule. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 25, Policy Envelope, the course treats this as the recommended action or control for reaching an authority boundary: Stop, wait for approval, or escalate according to the written rule. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -412,17 +429,18 @@
     {
       "id": "m1-q18",
       "moduleId": 1,
+      "scenario": "During a production-readiness review, the team is reviewing an independent reviewer agent before an agent receives authority to act without continuous supervision.",
       "prompt": "Which statement best explains an independent reviewer agent?",
       "options": [
         "Separation of duties gives it a distinct control responsibility.",
-        "Ask who decides, who acts, and what happens next without a human.",
-        "Tie claims to evidence and define what low confidence triggers.",
-        "Stop, wait for approval, or escalate according to the written rule."
+        "Reflection means repeating the same action until the result changes.",
+        "Any workflow that calls an LLM is an agent, regardless of how the next step is selected.",
+        "Multiple agents are justified whenever a task contains more than one activity."
       ],
       "correct": 0,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “One Agent to a Team” material frames an independent reviewer agent through the specific role this concept plays in the system.",
-      "rationale": "In p. 29, One Agent to a Team, the course treats this as the definition or operating principle for an independent reviewer agent: Separation of duties gives it a distinct control responsibility. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 29, One Agent to a Team, the course treats this as the definition or operating principle for an independent reviewer agent: Separation of duties gives it a distinct control responsibility. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -436,17 +454,18 @@
     {
       "id": "m1-q19",
       "moduleId": 1,
+      "scenario": "During a risk committee session, the team is reviewing the leadership authority test before an agent receives authority to act without continuous supervision.",
       "prompt": "Which statement best explains the leadership authority test?",
       "options": [
-        "Separation of duties gives it a distinct control responsibility.",
-        "Stop, wait for approval, or escalate according to the written rule.",
-        "Tie claims to evidence and define what low confidence triggers.",
+        "Adopt the architecture pattern before naming the failure mode it must address.",
+        "Expand the prompt while leaving permissions, checkpoints, and stop conditions implicit.",
+        "Persist every interaction indefinitely so the model never loses context.",
         "Ask who decides, who acts, and what happens next without a human."
       ],
       "correct": 3,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Leadership Takeaways” material frames the leadership authority test through decision rights at the point of consequence.",
-      "rationale": "In p. 20, Leadership Takeaways, the course treats this as the recommended action or control for the leadership authority test: Ask who decides, who acts, and what happens next without a human. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 20, Leadership Takeaways, the course treats this as the recommended action or control for the leadership authority test: Ask who decides, who acts, and what happens next without a human. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -460,17 +479,18 @@
     {
       "id": "m1-q20",
       "moduleId": 1,
-      "prompt": "Which statement most accurately describes one agent completing work within limits?",
+      "scenario": "During an operating-model workshop, the team is reviewing one agent completing work within limits before an agent receives authority to act without continuous supervision.",
+      "prompt": "What must be explicit before approval?",
       "options": [
-        "Name the failure mode, test, owner, and boundary first.",
-        "Specify tools, permissions, checkpoints, and operating rules.",
+        "Delegate goal setting to the agent once its operating instructions are complete.",
+        "Add a second agent and treat agreement between models as approval.",
         "Use one agent and avoid unnecessary coordination overhead.",
-        "Tie claims to evidence and define what low confidence triggers."
+        "Place approval after execution so reviewers can assess a concrete outcome."
       ],
       "correct": 2,
       "hint": "Test the conditions under which the source recommends this choice.",
       "tipContext": "The “One Agent to a Team” material frames one agent completing work within limits through operational trade-offs.",
-      "rationale": "In p. 29, One Agent to a Team, the course treats this as the recommended action or control for one agent completing work within limits: Use one agent and avoid unnecessary coordination overhead. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 29, One Agent to a Team, the course treats this as the recommended action or control for one agent completing work within limits: Use one agent and avoid unnecessary coordination overhead. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-1",
@@ -484,17 +504,18 @@
     {
       "id": "m2-q01",
       "moduleId": 2,
+      "scenario": "During an executive steering review, the team is reviewing why trusted data matters more for agents after a pilot exposed a reliability, data, cost, or latency weakness.",
       "prompt": "Why does trusted data matter more for agents?",
       "options": [
-        "It standardizes how AI applications access tools and data.",
-        "Version, test, control, monitor, and make it reversible.",
+        "A trusted data foundation is a larger prompt containing every available enterprise record.",
+        "Memory is the permanent retention of every interaction regardless of task relevance.",
         "Data errors can propagate into actions, not only reports.",
-        "It is the trusted knowledge layer for agent decisions."
+        "Reliability is established when the same prompt succeeds once in a demonstration."
       ],
       "correct": 2,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Agentic AI Raises the Bar” material frames why trusted data matters more for agents through evidence quality and grounding.",
-      "rationale": "In p. 19, Agentic AI Raises the Bar, the course treats this as the definition or operating principle for why trusted data matters more for agents: Data errors can propagate into actions, not only reports. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 19, Agentic AI Raises the Bar, the course treats this as the definition or operating principle for why trusted data matters more for agents: Data errors can propagate into actions, not only reports. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -508,17 +529,18 @@
     {
       "id": "m2-q02",
       "moduleId": 2,
+      "scenario": "During an architecture checkpoint, the team is reviewing the data foundation after a pilot exposed a reliability, data, cost, or latency weakness.",
       "prompt": "Which statement best explains the data foundation?",
       "options": [
-        "Version, test, control, monitor, and make it reversible.",
+        "Observability is a final-response log without retrieval, tool, or handoff evidence.",
         "It is the trusted knowledge layer for agent decisions.",
-        "Data errors can propagate into actions, not only reports.",
-        "They define what enterprise data means in context."
+        "A tool is any text the model cites, even when no external capability is invoked.",
+        "Latency is the duration of the model call and excludes retrievals, tools, and retries."
       ],
       "correct": 1,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Trusted Knowledge” material frames the data foundation through whether added agency has a distinct responsibility.",
-      "rationale": "In pp. 18-20, Trusted Knowledge, the course treats this as the definition or operating principle for the data foundation: It is the trusted knowledge layer for agent decisions. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In pp. 18-20, Trusted Knowledge, the course treats this as the definition or operating principle for the data foundation: It is the trusted knowledge layer for agent decisions. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -532,17 +554,18 @@
     {
       "id": "m2-q03",
       "moduleId": 2,
-      "prompt": "Which option best represents LLM work versus deterministic code in practice?",
+      "scenario": "During a production-readiness review, the team is reviewing LLM work versus deterministic code after a pilot exposed a reliability, data, cost, or latency weakness.",
+      "prompt": "Which control produces reliable operating evidence?",
       "options": [
         "Use AI for judgment and code for rules, calculation, and repeatability.",
-        "Translate policy into explicit checks at the relevant execution step.",
-        "Bound retries, provide safe fallback, and escalate before harm compounds.",
-        "Prevent inaccurate or incomplete data from driving decisions and actions."
+        "Retry without a limit and rely on eventual model convergence.",
+        "Add specialist agents before estimating coordination cost and critical-path latency.",
+        "Deploy irreversible changes without versioning, rollback, or staged evaluation."
       ],
       "correct": 0,
       "hint": "Test the conditions under which the source recommends this choice.",
       "tipContext": "The “LLM vs. Code” material frames LLM work versus deterministic code through the specific role this concept plays in the system.",
-      "rationale": "In p. 54, LLM vs. Code, the course treats this as the recommended action or control for LLM work versus deterministic code: Use AI for judgment and code for rules, calculation, and repeatability. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 54, LLM vs. Code, the course treats this as the recommended action or control for LLM work versus deterministic code: Use AI for judgment and code for rules, calculation, and repeatability. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -556,17 +579,18 @@
     {
       "id": "m2-q04",
       "moduleId": 2,
-      "prompt": "Which option best represents retrieval at runtime in practice?",
+      "scenario": "During a risk committee session, the team is reviewing retrieval at runtime after a pilot exposed a reliability, data, cost, or latency weakness.",
+      "prompt": "What design choice protects the end-to-end workflow?",
       "options": [
-        "Tools bridge model reasoning to external capabilities and actions.",
-        "Use it only when specialization benefits exceed coordination cost.",
-        "Every model call, retrieval, tool call, and retry adds consumption.",
+        "Measure only the final answer and omit retrieval, tool, and handoff traces.",
+        "Treat a successful demonstration as sufficient reliability evidence for production.",
+        "Send the entire enterprise corpus on every turn instead of retrieving task-relevant context.",
         "Retrieve only the enterprise context relevant to the current task."
       ],
       "correct": 3,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Retrieval Context” material frames retrieval at runtime through evidence quality and grounding.",
-      "rationale": "In p. 59, Retrieval Context, the course treats this as the recommended action or control for retrieval at runtime: Retrieve only the enterprise context relevant to the current task. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 59, Retrieval Context, the course treats this as the recommended action or control for retrieval at runtime: Retrieve only the enterprise context relevant to the current task. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -580,17 +604,18 @@
     {
       "id": "m2-q05",
       "moduleId": 2,
-      "prompt": "How does the course characterize agent memory?",
+      "scenario": "During an operating-model workshop, the team is reviewing agent memory after a pilot exposed a reliability, data, cost, or latency weakness.",
+      "prompt": "Which architecture decision best addresses the failure?",
       "options": [
-        "It is the control-plane discipline for safe, reliable, efficient autonomy.",
-        "They reveal retrievals, reasoning steps, and tool calls behind an outcome.",
+        "Grant a shared service identity to every agent to simplify integration.",
+        "Encode policy only in natural-language instructions and omit enforcement at execution.",
         "Retain task state and relevant prior information across steps or sessions.",
-        "Bound retries, provide safe fallback, and escalate before harm compounds."
+        "Use the model for deterministic calculations so all logic remains in one component."
       ],
       "correct": 2,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Memory” material frames agent memory through the specific role this concept plays in the system.",
-      "rationale": "In p. 60, Memory, the course treats this as the recommended action or control for agent memory: Retain task state and relevant prior information across steps or sessions. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 60, Memory, the course treats this as the recommended action or control for agent memory: Retain task state and relevant prior information across steps or sessions. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -604,17 +629,18 @@
     {
       "id": "m2-q06",
       "moduleId": 2,
+      "scenario": "During an executive steering review, the team is reviewing the ReAct loop after a pilot exposed a reliability, data, cost, or latency weakness.",
       "prompt": "Which statement best explains the ReAct loop?",
       "options": [
-        "Assess both the outcome and the execution path.",
+        "AgenticOps is conventional model hosting without workflow-level controls.",
         "Reason, act, observe, and adjust iteratively.",
-        "Measure the full workflow across repeated runs.",
-        "They define what enterprise data means in context."
+        "Latency is the duration of the model call and excludes retrievals, tools, and retries.",
+        "Agent evaluation is equivalent to measuring linguistic quality on one successful run."
       ],
       "correct": 1,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “ReAct Loop” material frames the ReAct loop through observable evidence rather than appearance.",
-      "rationale": "In p. 61, ReAct Loop, the course treats this as the definition or operating principle for the ReAct loop: Reason, act, observe, and adjust iteratively. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 61, ReAct Loop, the course treats this as the definition or operating principle for the ReAct loop: Reason, act, observe, and adjust iteratively. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -628,17 +654,18 @@
     {
       "id": "m2-q07",
       "moduleId": 2,
-      "prompt": "How does the course characterize tools?",
+      "scenario": "During an architecture checkpoint, the team is reviewing tools after a pilot exposed a reliability, data, cost, or latency weakness.",
+      "prompt": "Which operating characteristic should be recorded?",
       "options": [
         "Tools bridge model reasoning to external capabilities and actions.",
-        "Use it only when specialization benefits exceed coordination cost.",
-        "Retrieve only the enterprise context relevant to the current task.",
-        "Every model call, retrieval, tool call, and retry adds consumption."
+        "MCP determines which business decision an agent is authorized to make.",
+        "A multi-agent design removes coordination cost by distributing responsibility.",
+        "Memory is the permanent retention of every interaction regardless of task relevance."
       ],
       "correct": 0,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Tools” material frames tools through the specific role this concept plays in the system.",
-      "rationale": "In pp. 62-63, Tools, the course treats this as the definition or operating principle for tools: Tools bridge model reasoning to external capabilities and actions. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In pp. 62-63, Tools, the course treats this as the definition or operating principle for tools: Tools bridge model reasoning to external capabilities and actions. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -652,17 +679,18 @@
     {
       "id": "m2-q08",
       "moduleId": 2,
-      "prompt": "How does the course characterize multi-agent architecture?",
+      "scenario": "During a production-readiness review, the team is reviewing multi-agent architecture after a pilot exposed a reliability, data, cost, or latency weakness.",
+      "prompt": "What design choice protects the end-to-end workflow?",
       "options": [
-        "Tools bridge model reasoning to external capabilities and actions.",
-        "Retrieve only the enterprise context relevant to the current task.",
-        "Every model call, retrieval, tool call, and retry adds consumption.",
+        "Encode policy only in natural-language instructions and omit enforcement at execution.",
+        "Send the entire enterprise corpus on every turn instead of retrieving task-relevant context.",
+        "Grant a shared service identity to every agent to simplify integration.",
         "Use it only when specialization benefits exceed coordination cost."
       ],
       "correct": 3,
       "hint": "Test the conditions under which the source recommends this choice.",
       "tipContext": "The “Multi-agent Systems” material frames multi-agent architecture through operational trade-offs.",
-      "rationale": "In pp. 66-69, Multi-agent Systems, the course treats this as the recommended action or control for multi-agent architecture: Use it only when specialization benefits exceed coordination cost. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In pp. 66-69, Multi-agent Systems, the course treats this as the recommended action or control for multi-agent architecture: Use it only when specialization benefits exceed coordination cost. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -676,17 +704,18 @@
     {
       "id": "m2-q09",
       "moduleId": 2,
-      "prompt": "Which statement most accurately describes AgenticOps?",
+      "scenario": "During a risk committee session, the team is reviewing AgenticOps after a pilot exposed a reliability, data, cost, or latency weakness.",
+      "prompt": "Which architecture principle is accurate?",
       "options": [
-        "They reveal retrievals, reasoning steps, and tool calls behind an outcome.",
-        "Retain task state and relevant prior information across steps or sessions.",
+        "Latency is the duration of the model call and excludes retrievals, tools, and retries.",
+        "Observability is a final-response log without retrieval, tool, or handoff evidence.",
         "It is the control-plane discipline for safe, reliable, efficient autonomy.",
-        "Bound retries, provide safe fallback, and escalate before harm compounds."
+        "AgenticOps is conventional model hosting without workflow-level controls."
       ],
       "correct": 2,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “AgenticOps” material frames AgenticOps through the specific role this concept plays in the system.",
-      "rationale": "In pp. 74-76, AgenticOps, the course treats this as the definition or operating principle for AgenticOps: It is the control-plane discipline for safe, reliable, efficient autonomy. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In pp. 74-76, AgenticOps, the course treats this as the definition or operating principle for AgenticOps: It is the control-plane discipline for safe, reliable, efficient autonomy. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -700,17 +729,18 @@
     {
       "id": "m2-q10",
       "moduleId": 2,
-      "prompt": "Which option best represents observability traces in practice?",
+      "scenario": "During an operating-model workshop, the team is reviewing observability traces after a pilot exposed a reliability, data, cost, or latency weakness.",
+      "prompt": "Which description matches the component’s role?",
       "options": [
-        "It is the control-plane discipline for safe, reliable, efficient autonomy.",
+        "A multi-agent design removes coordination cost by distributing responsibility.",
         "They reveal retrievals, reasoning steps, and tool calls behind an outcome.",
-        "Retain task state and relevant prior information across steps or sessions.",
-        "Bound retries, provide safe fallback, and escalate before harm compounds."
+        "Agent evaluation is equivalent to measuring linguistic quality on one successful run.",
+        "MCP determines which business decision an agent is authorized to make."
       ],
       "correct": 1,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Observability” material frames observability traces through evidence quality and grounding.",
-      "rationale": "In pp. 77-78, Observability, the course treats this as the definition or operating principle for observability traces: They reveal retrievals, reasoning steps, and tool calls behind an outcome. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In pp. 77-78, Observability, the course treats this as the definition or operating principle for observability traces: They reveal retrievals, reasoning steps, and tool calls behind an outcome. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -724,17 +754,18 @@
     {
       "id": "m2-q11",
       "moduleId": 2,
-      "prompt": "Which option best represents agent evaluation in practice?",
+      "scenario": "During an executive steering review, the team is reviewing agent evaluation after a pilot exposed a reliability, data, cost, or latency weakness.",
+      "prompt": "Which control produces reliable operating evidence?",
       "options": [
         "Assess both the outcome and the execution path.",
-        "Measure the full workflow across repeated runs.",
-        "Reason, act, observe, and adjust iteratively.",
-        "They define what enterprise data means in context."
+        "Send the entire enterprise corpus on every turn instead of retrieving task-relevant context.",
+        "Measure only the final answer and omit retrieval, tool, and handoff traces.",
+        "Encode policy only in natural-language instructions and omit enforcement at execution."
       ],
       "correct": 0,
       "hint": "Choose the option that produces evidence across the full workflow.",
       "tipContext": "The “Evaluation” material frames agent evaluation through the specific role this concept plays in the system.",
-      "rationale": "In pp. 79-81, Evaluation, the course treats this as the recommended action or control for agent evaluation: Assess both the outcome and the execution path. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In pp. 79-81, Evaluation, the course treats this as the recommended action or control for agent evaluation: Assess both the outcome and the execution path. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -748,17 +779,18 @@
     {
       "id": "m2-q12",
       "moduleId": 2,
-      "prompt": "Which statement most accurately describes enforceable guardrails?",
+      "scenario": "During an architecture checkpoint, the team is reviewing enforceable guardrails after a pilot exposed a reliability, data, cost, or latency weakness.",
+      "prompt": "What design choice protects the end-to-end workflow?",
       "options": [
-        "Every model call, retrieval, tool call, and retry adds consumption.",
-        "Use AI for judgment and code for rules, calculation, and repeatability.",
-        "Use it only when specialization benefits exceed coordination cost.",
+        "Use the model for deterministic calculations so all logic remains in one component.",
+        "Grant a shared service identity to every agent to simplify integration.",
+        "Allow data definitions to vary by workflow so each agent can optimize locally.",
         "Translate policy into explicit checks at the relevant execution step."
       ],
       "correct": 3,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Guardrails” material frames enforceable guardrails through control placement and containment.",
-      "rationale": "In pp. 87-89, Guardrails, the course treats this as the recommended action or control for enforceable guardrails: Translate policy into explicit checks at the relevant execution step. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In pp. 87-89, Guardrails, the course treats this as the recommended action or control for enforceable guardrails: Translate policy into explicit checks at the relevant execution step. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -772,17 +804,18 @@
     {
       "id": "m2-q13",
       "moduleId": 2,
-      "prompt": "How does the course characterize fail-safe design?",
+      "scenario": "During a production-readiness review, the team is reviewing fail-safe design after a pilot exposed a reliability, data, cost, or latency weakness.",
+      "prompt": "Which architecture decision best addresses the failure?",
       "options": [
-        "Prevent inaccurate or incomplete data from driving decisions and actions.",
-        "They reveal retrievals, reasoning steps, and tool calls behind an outcome.",
+        "Retry without a limit and rely on eventual model convergence.",
+        "Add specialist agents before estimating coordination cost and critical-path latency.",
         "Bound retries, provide safe fallback, and escalate before harm compounds.",
-        "It is the control-plane discipline for safe, reliable, efficient autonomy."
+        "Deploy irreversible changes without versioning, rollback, or staged evaluation."
       ],
       "correct": 2,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Fail Safely” material frames fail-safe design through the specific role this concept plays in the system.",
-      "rationale": "In p. 92, Fail Safely, the course treats this as the recommended action or control for fail-safe design: Bound retries, provide safe fallback, and escalate before harm compounds. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 92, Fail Safely, the course treats this as the recommended action or control for fail-safe design: Bound retries, provide safe fallback, and escalate before harm compounds. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -796,17 +829,18 @@
     {
       "id": "m2-q14",
       "moduleId": 2,
-      "prompt": "Which option best represents reliability evidence in practice?",
+      "scenario": "During a risk committee session, the team is reviewing reliability evidence after a pilot exposed a reliability, data, cost, or latency weakness.",
+      "prompt": "What should the platform team implement?",
       "options": [
-        "Assess both the outcome and the execution path.",
+        "Measure only the final answer and omit retrieval, tool, and handoff traces.",
         "Measure the full workflow across repeated runs.",
-        "Reason, act, observe, and adjust iteratively.",
-        "They define what enterprise data means in context."
+        "Treat a successful demonstration as sufficient reliability evidence for production.",
+        "Send the entire enterprise corpus on every turn instead of retrieving task-relevant context."
       ],
       "correct": 1,
       "hint": "Choose the option that produces evidence across the full workflow.",
       "tipContext": "The “Reliability” material frames reliability evidence through observable evidence rather than appearance.",
-      "rationale": "In p. 93, Reliability, the course treats this as the recommended action or control for reliability evidence: Measure the full workflow across repeated runs. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 93, Reliability, the course treats this as the recommended action or control for reliability evidence: Measure the full workflow across repeated runs. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -820,17 +854,18 @@
     {
       "id": "m2-q15",
       "moduleId": 2,
-      "prompt": "Which statement most accurately describes agent cost growth?",
+      "scenario": "During an operating-model workshop, the team is reviewing agent cost growth after a pilot exposed a reliability, data, cost, or latency weakness.",
+      "prompt": "Which operating characteristic should be recorded?",
       "options": [
         "Every model call, retrieval, tool call, and retry adds consumption.",
-        "Use it only when specialization benefits exceed coordination cost.",
-        "Tools bridge model reasoning to external capabilities and actions.",
-        "Retrieve only the enterprise context relevant to the current task."
+        "A tool is any text the model cites, even when no external capability is invoked.",
+        "Reliability is established when the same prompt succeeds once in a demonstration.",
+        "Observability is a final-response log without retrieval, tool, or handoff evidence."
       ],
       "correct": 0,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Cost” material frames agent cost growth through evidence quality and grounding.",
-      "rationale": "In pp. 94-96, Cost, the course treats this as the definition or operating principle for agent cost growth: Every model call, retrieval, tool call, and retry adds consumption. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In pp. 94-96, Cost, the course treats this as the definition or operating principle for agent cost growth: Every model call, retrieval, tool call, and retry adds consumption. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -844,17 +879,18 @@
     {
       "id": "m2-q16",
       "moduleId": 2,
-      "prompt": "How does the course characterize latency?",
+      "scenario": "During an executive steering review, the team is reviewing latency after a pilot exposed a reliability, data, cost, or latency weakness.",
+      "prompt": "Which interpretation fits the end-to-end system?",
       "options": [
-        "They reveal retrievals, reasoning steps, and tool calls behind an outcome.",
-        "It is the control-plane discipline for safe, reliable, efficient autonomy.",
-        "Retain task state and relevant prior information across steps or sessions.",
+        "AgenticOps is conventional model hosting without workflow-level controls.",
+        "Latency is the duration of the model call and excludes retrievals, tools, and retries.",
+        "Agent evaluation is equivalent to measuring linguistic quality on one successful run.",
         "It accumulates across serial reasoning, retrieval, tools, handoffs, and retries."
       ],
       "correct": 3,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Latency” material frames latency through evidence quality and grounding.",
-      "rationale": "In pp. 97-99, Latency, the course treats this as the definition or operating principle for latency: It accumulates across serial reasoning, retrieval, tools, handoffs, and retries. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In pp. 97-99, Latency, the course treats this as the definition or operating principle for latency: It accumulates across serial reasoning, retrieval, tools, handoffs, and retries. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -868,17 +904,18 @@
     {
       "id": "m2-q17",
       "moduleId": 2,
-      "prompt": "Which statement most accurately describes data quality validation?",
+      "scenario": "During an architecture checkpoint, the team is reviewing data quality validation after a pilot exposed a reliability, data, cost, or latency weakness.",
+      "prompt": "Which architecture decision best addresses the failure?",
       "options": [
-        "Bound retries, provide safe fallback, and escalate before harm compounds.",
-        "They reveal retrievals, reasoning steps, and tool calls behind an outcome.",
+        "Treat a successful demonstration as sufficient reliability evidence for production.",
+        "Deploy irreversible changes without versioning, rollback, or staged evaluation.",
         "Prevent inaccurate or incomplete data from driving decisions and actions.",
-        "It is the control-plane discipline for safe, reliable, efficient autonomy."
+        "Measure only the final answer and omit retrieval, tool, and handoff traces."
       ],
       "correct": 2,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Data Quality Control” material frames data quality validation through evidence quality and grounding.",
-      "rationale": "In p. 38, Data Quality Control, the course treats this as the recommended action or control for data quality validation: Prevent inaccurate or incomplete data from driving decisions and actions. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 38, Data Quality Control, the course treats this as the recommended action or control for data quality validation: Prevent inaccurate or incomplete data from driving decisions and actions. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -892,17 +929,18 @@
     {
       "id": "m2-q18",
       "moduleId": 2,
-      "prompt": "Which option best represents business semantics in practice?",
+      "scenario": "During a production-readiness review, the team is reviewing business semantics after a pilot exposed a reliability, data, cost, or latency weakness.",
+      "prompt": "Which description matches the component’s role?",
       "options": [
-        "Measure the full workflow across repeated runs.",
+        "Reliability is established when the same prompt succeeds once in a demonstration.",
         "They define what enterprise data means in context.",
-        "Assess both the outcome and the execution path.",
-        "It is the trusted knowledge layer for agent decisions."
+        "A trusted data foundation is a larger prompt containing every available enterprise record.",
+        "A tool is any text the model cites, even when no external capability is invoked."
       ],
       "correct": 1,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Semantics and Catalog” material frames business semantics through evidence quality and grounding.",
-      "rationale": "In pp. 39-42, Semantics and Catalog, the course treats this as the definition or operating principle for business semantics: They define what enterprise data means in context. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In pp. 39-42, Semantics and Catalog, the course treats this as the definition or operating principle for business semantics: They define what enterprise data means in context. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -916,17 +954,18 @@
     {
       "id": "m2-q19",
       "moduleId": 2,
-      "prompt": "Which option best represents MCP in practice?",
+      "scenario": "During a risk committee session, the team is reviewing MCP after a pilot exposed a reliability, data, cost, or latency weakness.",
+      "prompt": "Which operating characteristic should be recorded?",
       "options": [
         "It standardizes how AI applications access tools and data.",
-        "Data errors can propagate into actions, not only reports.",
-        "Version, test, control, monitor, and make it reversible.",
-        "It is the trusted knowledge layer for agent decisions."
+        "Latency is the duration of the model call and excludes retrievals, tools, and retries.",
+        "Observability is a final-response log without retrieval, tool, or handoff evidence.",
+        "AgenticOps is conventional model hosting without workflow-level controls."
       ],
       "correct": 0,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Standardizing Agent Access” material frames MCP through evidence quality and grounding.",
-      "rationale": "In p. 64, Standardizing Agent Access, the course treats this as the definition or operating principle for MCP: It standardizes how AI applications access tools and data. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 64, Standardizing Agent Access, the course treats this as the definition or operating principle for MCP: It standardizes how AI applications access tools and data. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -940,17 +979,18 @@
     {
       "id": "m2-q20",
       "moduleId": 2,
+      "scenario": "During an operating-model workshop, the team is reviewing a deployed-agent change after a pilot exposed a reliability, data, cost, or latency weakness.",
       "prompt": "Which statement best explains a deployed-agent change?",
       "options": [
-        "Data errors can propagate into actions, not only reports.",
-        "It standardizes how AI applications access tools and data.",
-        "It is the trusted knowledge layer for agent decisions.",
+        "A multi-agent design removes coordination cost by distributing responsibility.",
+        "Agent evaluation is equivalent to measuring linguistic quality on one successful run.",
+        "MCP determines which business decision an agent is authorized to make.",
         "Version, test, control, monitor, and make it reversible."
       ],
       "correct": 3,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Deployment Lifecycle” material frames a deployed-agent change through observable evidence rather than appearance.",
-      "rationale": "In p. 100, Deployment Lifecycle, the course treats this as the definition or operating principle for a deployed-agent change: Version, test, control, monitor, and make it reversible. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 100, Deployment Lifecycle, the course treats this as the definition or operating principle for a deployed-agent change: Version, test, control, monitor, and make it reversible. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-2",
@@ -964,17 +1004,18 @@
     {
       "id": "m3-q01",
       "moduleId": 3,
-      "prompt": "Which statement most accurately describes security controls under agentic coding?",
+      "scenario": "During an executive steering review, the team is reviewing security controls under agentic coding after assurance testing identified a control gap with potential enterprise impact.",
+      "prompt": "Which security finding is technically accurate?",
       "options": [
-        "Give the agent scoped permissions, auditability, and revocation.",
-        "A hard guardrail is structurally enforced outside model choice.",
-        "Place it at the hook or enforcement point where the agent acts.",
+        "A hard guardrail is a strongly worded instruction that the model is expected to follow.",
+        "Red teaming is satisfied when the model critiques its own response.",
+        "Secure inter-agent communication can rely on shared context as proof of origin.",
         "Machine-speed code volume can outpace human review and remediation."
       ],
       "correct": 3,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Security Landscape” material frames security controls under agentic coding through decision rights at the point of consequence.",
-      "rationale": "In pp. 8-14, Security Landscape, the course treats this as the definition or operating principle for security controls under agentic coding: Machine-speed code volume can outpace human review and remediation. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In pp. 8-14, Security Landscape, the course treats this as the definition or operating principle for security controls under agentic coding: Machine-speed code volume can outpace human review and remediation. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -988,17 +1029,18 @@
     {
       "id": "m3-q02",
       "moduleId": 3,
+      "scenario": "During an architecture checkpoint, the team is reviewing the lethal trifecta after assurance testing identified a control gap with potential enterprise impact.",
       "prompt": "Which statement best explains the lethal trifecta?",
       "options": [
-        "A hard guardrail is structurally enforced outside model choice.",
-        "Place it at the hook or enforcement point where the agent acts.",
+        "Agent identity is the display name shown to users in the interface.",
+        "The lethal trifecta is high autonomy, high cost, and long latency.",
         "Private data, untrusted content, and a path to send data out.",
-        "Give the agent scoped permissions, auditability, and revocation."
+        "Memory poisoning affects answer quality but cannot influence future actions."
       ],
       "correct": 2,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Lethal Trifecta” material frames the lethal trifecta through evidence quality and grounding.",
-      "rationale": "In p. 18, Lethal Trifecta, the course treats this as the definition or operating principle for the lethal trifecta: Private data, untrusted content, and a path to send data out. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 18, Lethal Trifecta, the course treats this as the definition or operating principle for the lethal trifecta: Private data, untrusted content, and a path to send data out. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1012,17 +1054,18 @@
     {
       "id": "m3-q03",
       "moduleId": 3,
-      "prompt": "Which option best represents hard versus soft guardrails in practice?",
+      "scenario": "During a production-readiness review, the team is reviewing hard versus soft guardrails after assurance testing identified a control gap with potential enterprise impact.",
+      "prompt": "Which assurance interpretation should be recorded?",
       "options": [
-        "Place it at the hook or enforcement point where the agent acts.",
+        "A kill switch is a message asking the agent to stop at its next convenient checkpoint.",
         "A hard guardrail is structurally enforced outside model choice.",
-        "Give the agent scoped permissions, auditability, and revocation.",
-        "Private data, untrusted content, and a path to send data out."
+        "Rogue-agent containment begins after service restoration and root-cause analysis.",
+        "Machine-speed execution reduces security exposure by shortening the review window."
       ],
       "correct": 1,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Soft vs. Hard” material frames hard versus soft guardrails through control placement and containment.",
-      "rationale": "In p. 19, Soft vs. Hard, the course treats this as the definition or operating principle for hard versus soft guardrails: A hard guardrail is structurally enforced outside model choice. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 19, Soft vs. Hard, the course treats this as the definition or operating principle for hard versus soft guardrails: A hard guardrail is structurally enforced outside model choice. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1036,17 +1079,18 @@
     {
       "id": "m3-q04",
       "moduleId": 3,
-      "prompt": "Which statement most accurately describes deterministic policy?",
+      "scenario": "During a risk committee session, the team is reviewing deterministic policy after assurance testing identified a control gap with potential enterprise impact.",
+      "prompt": "What evidence would satisfy the security review?",
       "options": [
         "Place it at the hook or enforcement point where the agent acts.",
-        "A hard guardrail is structurally enforced outside model choice.",
-        "Give the agent scoped permissions, auditability, and revocation.",
-        "Private data, untrusted content, and a path to send data out."
+        "Allow untrusted retrieved content to invoke tools without an isolation boundary.",
+        "Permit agents to accept unsigned inter-agent messages as authoritative context.",
+        "Rely on a policy reminder inside the prompt as the sole enforcement mechanism."
       ],
       "correct": 0,
       "hint": "Focus on where the control sits relative to the consequence.",
       "tipContext": "The “Hooks” material frames deterministic policy through whether added agency has a distinct responsibility.",
-      "rationale": "In p. 20, Hooks, the course treats this as the recommended action or control for deterministic policy: Place it at the hook or enforcement point where the agent acts. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 20, Hooks, the course treats this as the recommended action or control for deterministic policy: Place it at the hook or enforcement point where the agent acts. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1060,17 +1104,18 @@
     {
       "id": "m3-q05",
       "moduleId": 3,
-      "prompt": "Which statement most accurately describes agent identity?",
+      "scenario": "During an operating-model workshop, the team is reviewing agent identity after assurance testing identified a control gap with potential enterprise impact.",
+      "prompt": "Which assurance response should be required?",
       "options": [
-        "Place it at the hook or enforcement point where the agent acts.",
-        "A hard guardrail is structurally enforced outside model choice.",
-        "Private data, untrusted content, and a path to send data out.",
+        "Log only the final response and discard the action path needed for investigation.",
+        "Restore service before containing delegated access and preserving evidence.",
+        "Use one shared privileged identity so every agent can recover from access failures.",
         "Give the agent scoped permissions, auditability, and revocation."
       ],
       "correct": 3,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Identity and Protocols” material frames agent identity through authority and enforceable limits.",
-      "rationale": "In p. 22, Identity and Protocols, the course treats this as the recommended action or control for agent identity: Give the agent scoped permissions, auditability, and revocation. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 22, Identity and Protocols, the course treats this as the recommended action or control for agent identity: Give the agent scoped permissions, auditability, and revocation. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1084,17 +1129,18 @@
     {
       "id": "m3-q06",
       "moduleId": 3,
+      "scenario": "During an executive steering review, the team is reviewing ASI01 after assurance testing identified a control gap with potential enterprise impact.",
       "prompt": "Which risk name corresponds to ASI01?",
       "options": [
-        "Cascading failures.",
+        "Insecure inter-agent communication.",
         "Rogue agents.",
         "Agent goal hijack.",
-        "Unexpected code execution."
+        "Agentic supply-chain vulnerabilities."
       ],
       "correct": 2,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “ASI01” material frames ASI01 through whether added agency has a distinct responsibility.",
-      "rationale": "In p. 28, ASI01, the course treats this as the definition or operating principle for ASI01: Agent goal hijack. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 28, ASI01, the course treats this as the definition or operating principle for ASI01: Agent goal hijack. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1108,17 +1154,18 @@
     {
       "id": "m3-q07",
       "moduleId": 3,
+      "scenario": "During an architecture checkpoint, the team is reviewing ASI02 after assurance testing identified a control gap with potential enterprise impact.",
       "prompt": "Which risk name corresponds to ASI02?",
       "options": [
-        "Identity and privilege abuse.",
+        "Cascading failures.",
         "Tool misuse and exploitation.",
-        "Memory and context poisoning.",
-        "Human-agent trust exploitation."
+        "Agent goal hijack.",
+        "Unexpected code execution."
       ],
       "correct": 1,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “ASI02” material frames ASI02 through the specific role this concept plays in the system.",
-      "rationale": "In p. 29, ASI02, the course treats this as the definition or operating principle for ASI02: Tool misuse and exploitation. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 29, ASI02, the course treats this as the definition or operating principle for ASI02: Tool misuse and exploitation. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1132,17 +1179,18 @@
     {
       "id": "m3-q08",
       "moduleId": 3,
+      "scenario": "During a production-readiness review, the team is reviewing ASI03 after assurance testing identified a control gap with potential enterprise impact.",
       "prompt": "Which risk name corresponds to ASI03?",
       "options": [
         "Identity and privilege abuse.",
+        "Human-agent trust exploitation.",
         "Tool misuse and exploitation.",
-        "Memory and context poisoning.",
-        "Human-agent trust exploitation."
+        "Memory and context poisoning."
       ],
       "correct": 0,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “ASI03” material frames ASI03 through control placement and containment.",
-      "rationale": "In p. 30, ASI03, the course treats this as the definition or operating principle for ASI03: Identity and privilege abuse. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 30, ASI03, the course treats this as the definition or operating principle for ASI03: Identity and privilege abuse. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1156,17 +1204,18 @@
     {
       "id": "m3-q09",
       "moduleId": 3,
+      "scenario": "During a risk committee session, the team is reviewing ASI04 after assurance testing identified a control gap with potential enterprise impact.",
       "prompt": "Which risk name corresponds to ASI04?",
       "options": [
-        "Insecure inter-agent communication.",
-        "Human-agent trust exploitation.",
+        "Rogue agents.",
         "Identity and privilege abuse.",
+        "Insecure inter-agent communication.",
         "Agentic supply-chain vulnerabilities."
       ],
       "correct": 3,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “ASI04” material frames ASI04 through whether added agency has a distinct responsibility.",
-      "rationale": "In p. 31, ASI04, the course treats this as the definition or operating principle for ASI04: Agentic supply-chain vulnerabilities. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 31, ASI04, the course treats this as the definition or operating principle for ASI04: Agentic supply-chain vulnerabilities. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1180,17 +1229,18 @@
     {
       "id": "m3-q10",
       "moduleId": 3,
+      "scenario": "During an operating-model workshop, the team is reviewing ASI05 after assurance testing identified a control gap with potential enterprise impact.",
       "prompt": "Which risk name corresponds to ASI05?",
       "options": [
-        "Memory and context poisoning.",
-        "Identity and privilege abuse.",
+        "Agent goal hijack.",
+        "Agentic supply-chain vulnerabilities.",
         "Unexpected code execution.",
-        "Tool misuse and exploitation."
+        "Cascading failures."
       ],
       "correct": 2,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “ASI05” material frames ASI05 through the specific role this concept plays in the system.",
-      "rationale": "In p. 32, ASI05, the course treats this as the definition or operating principle for ASI05: Unexpected code execution. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 32, ASI05, the course treats this as the definition or operating principle for ASI05: Unexpected code execution. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1204,17 +1254,18 @@
     {
       "id": "m3-q11",
       "moduleId": 3,
+      "scenario": "During an executive steering review, the team is reviewing ASI06 after assurance testing identified a control gap with potential enterprise impact.",
       "prompt": "Which risk name corresponds to ASI06?",
       "options": [
-        "Identity and privilege abuse.",
-        "Memory and context poisoning.",
         "Tool misuse and exploitation.",
+        "Memory and context poisoning.",
+        "Unexpected code execution.",
         "Human-agent trust exploitation."
       ],
       "correct": 1,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “ASI06” material frames ASI06 through evidence quality and grounding.",
-      "rationale": "In p. 33, ASI06, the course treats this as the definition or operating principle for ASI06: Memory and context poisoning. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 33, ASI06, the course treats this as the definition or operating principle for ASI06: Memory and context poisoning. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1228,17 +1279,18 @@
     {
       "id": "m3-q12",
       "moduleId": 3,
+      "scenario": "During an architecture checkpoint, the team is reviewing ASI07 after assurance testing identified a control gap with potential enterprise impact.",
       "prompt": "Which risk name corresponds to ASI07?",
       "options": [
         "Insecure inter-agent communication.",
-        "Agentic supply-chain vulnerabilities.",
-        "Human-agent trust exploitation.",
-        "Memory and context poisoning."
+        "Identity and privilege abuse.",
+        "Memory and context poisoning.",
+        "Rogue agents."
       ],
       "correct": 0,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “ASI07” material frames ASI07 through whether added agency has a distinct responsibility.",
-      "rationale": "In p. 34, ASI07, the course treats this as the definition or operating principle for ASI07: Insecure inter-agent communication. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 34, ASI07, the course treats this as the definition or operating principle for ASI07: Insecure inter-agent communication. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1252,17 +1304,18 @@
     {
       "id": "m3-q13",
       "moduleId": 3,
+      "scenario": "During a production-readiness review, the team is reviewing ASI08 after assurance testing identified a control gap with potential enterprise impact.",
       "prompt": "Which risk name corresponds to ASI08?",
       "options": [
+        "Agentic supply-chain vulnerabilities.",
+        "Insecure inter-agent communication.",
         "Agent goal hijack.",
-        "Rogue agents.",
-        "Unexpected code execution.",
         "Cascading failures."
       ],
       "correct": 3,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “ASI08” material frames ASI08 through the specific role this concept plays in the system.",
-      "rationale": "In p. 35, ASI08, the course treats this as the definition or operating principle for ASI08: Cascading failures. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 35, ASI08, the course treats this as the definition or operating principle for ASI08: Cascading failures. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1276,17 +1329,18 @@
     {
       "id": "m3-q14",
       "moduleId": 3,
+      "scenario": "During a risk committee session, the team is reviewing ASI09 after assurance testing identified a control gap with potential enterprise impact.",
       "prompt": "Which risk name corresponds to ASI09?",
       "options": [
-        "Memory and context poisoning.",
-        "Identity and privilege abuse.",
+        "Unexpected code execution.",
+        "Cascading failures.",
         "Human-agent trust exploitation.",
         "Tool misuse and exploitation."
       ],
       "correct": 2,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “ASI09” material frames ASI09 through decision rights at the point of consequence.",
-      "rationale": "In p. 36, ASI09, the course treats this as the definition or operating principle for ASI09: Human-agent trust exploitation. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 36, ASI09, the course treats this as the definition or operating principle for ASI09: Human-agent trust exploitation. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1300,17 +1354,18 @@
     {
       "id": "m3-q15",
       "moduleId": 3,
+      "scenario": "During an operating-model workshop, the team is reviewing ASI10 after assurance testing identified a control gap with potential enterprise impact.",
       "prompt": "Which risk name corresponds to ASI10?",
       "options": [
-        "Agent goal hijack.",
+        "Memory and context poisoning.",
         "Rogue agents.",
-        "Cascading failures.",
-        "Unexpected code execution."
+        "Human-agent trust exploitation.",
+        "Identity and privilege abuse."
       ],
       "correct": 1,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “ASI10” material frames ASI10 through whether added agency has a distinct responsibility.",
-      "rationale": "In p. 37, ASI10, the course treats this as the definition or operating principle for ASI10: Rogue agents. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 37, ASI10, the course treats this as the definition or operating principle for ASI10: Rogue agents. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1324,17 +1379,18 @@
     {
       "id": "m3-q16",
       "moduleId": 3,
+      "scenario": "During an executive steering review, the team is reviewing a valid mitigation claim after assurance testing identified a control gap with potential enterprise impact.",
       "prompt": "Which statement best explains a valid mitigation claim?",
       "options": [
         "Support it with adversarial testing evidence.",
-        "Classify by consequence, authority, and autonomy.",
-        "Agentic supply-chain vulnerabilities.",
-        "Insecure inter-agent communication."
+        "Make the kill switch another natural-language instruction interpreted by the agent.",
+        "Classify risk by model size instead of authority, autonomy, and consequence.",
+        "Treat model self-critique as adversarial testing evidence."
       ],
       "correct": 0,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Red Teaming” material frames a valid mitigation claim through evidence quality and grounding.",
-      "rationale": "In p. 38, Red Teaming, the course treats this as the recommended action or control for a valid mitigation claim: Support it with adversarial testing evidence. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 38, Red Teaming, the course treats this as the recommended action or control for a valid mitigation claim: Support it with adversarial testing evidence. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1348,17 +1404,18 @@
     {
       "id": "m3-q17",
       "moduleId": 3,
-      "prompt": "Which option best represents rogue-agent response in practice?",
+      "scenario": "During an architecture checkpoint, the team is reviewing rogue-agent response after assurance testing identified a control gap with potential enterprise impact.",
+      "prompt": "Which assurance response should be required?",
       "options": [
-        "Revoke identity, tools, execution, and delegated paths at enforced points.",
-        "Most agent security failures are ordinary security failures at machine speed.",
-        "Machine-speed code volume can outpace human review and remediation.",
+        "Permit agents to accept unsigned inter-agent messages as authoritative context.",
+        "Assume conventional controls operate at sufficient speed without agent-specific testing.",
+        "Allow untrusted retrieved content to invoke tools without an isolation boundary.",
         "Contain access and actions, preserve evidence, investigate, and recover."
       ],
       "correct": 3,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Incident Response” material frames rogue-agent response through evidence quality and grounding.",
-      "rationale": "In p. 47, Incident Response, the course treats this as the recommended action or control for rogue-agent response: Contain access and actions, preserve evidence, investigate, and recover. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 47, Incident Response, the course treats this as the recommended action or control for rogue-agent response: Contain access and actions, preserve evidence, investigate, and recover. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1372,17 +1429,18 @@
     {
       "id": "m3-q18",
       "moduleId": 3,
+      "scenario": "During a production-readiness review, the team is reviewing an effective kill switch after assurance testing identified a control gap with potential enterprise impact.",
       "prompt": "Which statement best explains an effective kill switch?",
       "options": [
-        "Contain access and actions, preserve evidence, investigate, and recover.",
-        "Most agent security failures are ordinary security failures at machine speed.",
+        "Restore service before containing delegated access and preserving evidence.",
+        "Rely on a policy reminder inside the prompt as the sole enforcement mechanism.",
         "Revoke identity, tools, execution, and delegated paths at enforced points.",
-        "Machine-speed code volume can outpace human review and remediation."
+        "Log only the final response and discard the action path needed for investigation."
       ],
       "correct": 2,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Kill Switch” material frames an effective kill switch through control placement and containment.",
-      "rationale": "In p. 48, Kill Switch, the course treats this as the recommended action or control for an effective kill switch: Revoke identity, tools, execution, and delegated paths at enforced points. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 48, Kill Switch, the course treats this as the recommended action or control for an effective kill switch: Revoke identity, tools, execution, and delegated paths at enforced points. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1396,17 +1454,18 @@
     {
       "id": "m3-q19",
       "moduleId": 3,
-      "prompt": "Which statement most accurately describes agent classification?",
+      "scenario": "During a risk committee session, the team is reviewing agent classification after assurance testing identified a control gap with potential enterprise impact.",
+      "prompt": "Which response contains the risk at machine speed?",
       "options": [
-        "Support it with adversarial testing evidence.",
+        "Classify risk by model size instead of authority, autonomy, and consequence.",
         "Classify by consequence, authority, and autonomy.",
-        "Agentic supply-chain vulnerabilities.",
-        "Private data, untrusted content, and a path to send data out."
+        "Use one shared privileged identity so every agent can recover from access failures.",
+        "Make the kill switch another natural-language instruction interpreted by the agent."
       ],
       "correct": 1,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Classification Levels” material frames agent classification through authority and enforceable limits.",
-      "rationale": "In p. 51, Classification Levels, the course treats this as the recommended action or control for agent classification: Classify by consequence, authority, and autonomy. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 51, Classification Levels, the course treats this as the recommended action or control for agent classification: Classify by consequence, authority, and autonomy. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1420,17 +1479,18 @@
     {
       "id": "m3-q20",
       "moduleId": 3,
+      "scenario": "During an operating-model workshop, the team is reviewing the module security summary after assurance testing identified a control gap with potential enterprise impact.",
       "prompt": "Which statement best explains the module security summary?",
       "options": [
         "Most agent security failures are ordinary security failures at machine speed.",
-        "Revoke identity, tools, execution, and delegated paths at enforced points.",
-        "Contain access and actions, preserve evidence, investigate, and recover.",
-        "Machine-speed code volume can outpace human review and remediation."
+        "Machine-speed execution reduces security exposure by shortening the review window.",
+        "A kill switch is a message asking the agent to stop at its next convenient checkpoint.",
+        "Agent classification is determined primarily by model parameter count."
       ],
       "correct": 0,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Module Close” material frames the module security summary through control placement and containment.",
-      "rationale": "In p. 59, Module Close, the course treats this as the definition or operating principle for the module security summary: Most agent security failures are ordinary security failures at machine speed. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 59, Module Close, the course treats this as the definition or operating principle for the module security summary: Most agent security failures are ordinary security failures at machine speed. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-3",
@@ -1444,17 +1504,18 @@
     {
       "id": "m4-q01",
       "moduleId": 4,
+      "scenario": "During an executive steering review, the team is reviewing where strategy begins while deciding whether and how the initiative should advance in the portfolio.",
       "prompt": "Where should an enterprise AI strategy begin?",
       "options": [
         "Start with business outcomes and strategic priorities, not agents.",
-        "Require ownership, classification, quality standards, and lineage.",
-        "Give every agent a defined job, human owner, and escalation path.",
-        "Track business outcomes, adoption, agent performance, and economics."
+        "Begin with an agent platform selection and search afterward for business value.",
+        "Assign production accountability to the model provider rather than an internal owner.",
+        "Permit unregistered write-enabled agents during the portfolio discovery phase."
       ],
       "correct": 0,
       "hint": "Find the required starting point before considering implementation.",
       "tipContext": "The “Business Strategy” material frames where strategy begins through whether added agency has a distinct responsibility.",
-      "rationale": "In pp. 12-13, Business Strategy, the course treats this as the recommended action or control for where strategy begins: Start with business outcomes and strategic priorities, not agents. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In pp. 12-13, Business Strategy, the course treats this as the recommended action or control for where strategy begins: Start with business outcomes and strategic priorities, not agents. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1468,17 +1529,18 @@
     {
       "id": "m4-q02",
       "moduleId": 4,
-      "prompt": "Which option best represents golden use cases in practice?",
+      "scenario": "During an architecture checkpoint, the team is reviewing golden use cases while deciding whether and how the initiative should advance in the portfolio.",
+      "prompt": "What should the executive team require next?",
       "options": [
-        "Provide common identity, registry, authority, policy, observability, and lifecycle.",
-        "Decide from proprietary data, domain expertise, integration, and strategic advantage.",
-        "Govern planning, persistence, connections, identity, and action at machine speed.",
+        "Fund every promising prototype equally until adoption data becomes available.",
+        "Track model accuracy alone as the executive measure of program value.",
+        "Measure shared infrastructure cost without allocating it to workflows and outcomes.",
         "Screen value, decision density, data readiness, bounded action, friction, and risk."
       ],
       "correct": 3,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Golden Use Cases” material frames golden use cases through evidence quality and grounding.",
-      "rationale": "In p. 14, Golden Use Cases, the course treats this as the recommended action or control for golden use cases: Screen value, decision density, data readiness, bounded action, friction, and risk. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 14, Golden Use Cases, the course treats this as the recommended action or control for golden use cases: Screen value, decision density, data readiness, bounded action, friction, and risk. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1492,17 +1554,18 @@
     {
       "id": "m4-q03",
       "moduleId": 4,
+      "scenario": "During a production-readiness review, the team is reviewing choosing agency while deciding whether and how the initiative should advance in the portfolio.",
       "prompt": "How should a team choose the appropriate level of agency?",
       "options": [
-        "Track cost and value per workflow with budgets and limits.",
-        "Advance, reshape, pause, or stop based on evidence.",
+        "Use the highest available autonomy to maximize strategic optionality.",
+        "Centralize every decision regardless of consequence, reversibility, or confidence.",
         "Use the least sufficient agency that captures the value.",
-        "Match authority to consequence, reversibility, and confidence."
+        "Delay workforce communication until the future operating model is final."
       ],
       "correct": 2,
       "hint": "Test the conditions under which the source recommends this choice.",
       "tipContext": "The “Agency Level” material frames choosing agency through the specific role this concept plays in the system.",
-      "rationale": "In p. 8, Agency Level, the course treats this as the recommended action or control for choosing agency: Use the least sufficient agency that captures the value. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 8, Agency Level, the course treats this as the recommended action or control for choosing agency: Use the least sufficient agency that captures the value. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1516,17 +1579,18 @@
     {
       "id": "m4-q04",
       "moduleId": 4,
-      "prompt": "How does the course characterize buy, boost, or build?",
+      "scenario": "During a risk committee session, the team is reviewing buy, boost, or build while deciding whether and how the initiative should advance in the portfolio.",
+      "prompt": "What governance action is proportionate to the consequence?",
       "options": [
-        "Inventory agents, assign owners, risk-tier them, and block unregistered write access.",
+        "Assign production accountability to the model provider rather than an internal owner.",
         "Decide from proprietary data, domain expertise, integration, and strategic advantage.",
-        "Screen value, decision density, data readiness, bounded action, friction, and risk.",
-        "Provide common identity, registry, authority, policy, observability, and lifecycle."
+        "Treat governance as a one-time approval before deployment.",
+        "Begin with an agent platform selection and search afterward for business value."
       ],
       "correct": 1,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Buy Boost Build” material frames buy, boost, or build through evidence quality and grounding.",
-      "rationale": "In p. 16, Buy Boost Build, the course treats this as the recommended action or control for buy, boost, or build: Decide from proprietary data, domain expertise, integration, and strategic advantage. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 16, Buy Boost Build, the course treats this as the recommended action or control for buy, boost, or build: Decide from proprietary data, domain expertise, integration, and strategic advantage. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1540,17 +1604,18 @@
     {
       "id": "m4-q05",
       "moduleId": 4,
-      "prompt": "How does the course characterize portfolio stage gates?",
+      "scenario": "During an operating-model workshop, the team is reviewing portfolio stage gates while deciding whether and how the initiative should advance in the portfolio.",
+      "prompt": "Which portfolio decision aligns value, authority, and risk?",
       "options": [
         "Advance, reshape, pause, or stop based on evidence.",
-        "Use the least sufficient agency that captures the value.",
-        "Track cost and value per workflow with budgets and limits.",
-        "Match authority to consequence, reversibility, and confidence."
+        "Track model accuracy alone as the executive measure of program value.",
+        "Permit unregistered write-enabled agents during the portfolio discovery phase.",
+        "Fund every promising prototype equally until adoption data becomes available."
       ],
       "correct": 0,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Portfolio Gates” material frames portfolio stage gates through evidence quality and grounding.",
-      "rationale": "In p. 17, Portfolio Gates, the course treats this as the recommended action or control for portfolio stage gates: Advance, reshape, pause, or stop based on evidence. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 17, Portfolio Gates, the course treats this as the recommended action or control for portfolio stage gates: Advance, reshape, pause, or stop based on evidence. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1564,17 +1629,18 @@
     {
       "id": "m4-q06",
       "moduleId": 4,
-      "prompt": "Which option best represents executive measures in practice?",
+      "scenario": "During an executive steering review, the team is reviewing executive measures while deciding whether and how the initiative should advance in the portfolio.",
+      "prompt": "What should the executive team require next?",
       "options": [
-        "Start with business outcomes and strategic priorities, not agents.",
-        "Require ownership, classification, quality standards, and lineage.",
-        "Give every agent a defined job, human owner, and escalation path.",
+        "Centralize every decision regardless of consequence, reversibility, or confidence.",
+        "Measure shared infrastructure cost without allocating it to workflows and outcomes.",
+        "Use the highest available autonomy to maximize strategic optionality.",
         "Track business outcomes, adoption, agent performance, and economics."
       ],
       "correct": 3,
       "hint": "Choose the option that produces evidence across the full workflow.",
       "tipContext": "The “Executive Measures” material frames executive measures through whether added agency has a distinct responsibility.",
-      "rationale": "In p. 22, Executive Measures, the course treats this as the recommended action or control for executive measures: Track business outcomes, adoption, agent performance, and economics. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 22, Executive Measures, the course treats this as the recommended action or control for executive measures: Track business outcomes, adoption, agent performance, and economics. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1588,17 +1654,18 @@
     {
       "id": "m4-q07",
       "moduleId": 4,
-      "prompt": "How does the course characterize decision rights?",
+      "scenario": "During an architecture checkpoint, the team is reviewing decision rights while deciding whether and how the initiative should advance in the portfolio.",
+      "prompt": "Which operating-model choice supports controlled scale?",
       "options": [
-        "Use unique, scoped, revocable credentials with least privilege.",
-        "Give every agent a defined job, human owner, and escalation path.",
+        "Treat governance as a one-time approval before deployment.",
+        "Delay workforce communication until the future operating model is final.",
         "Match authority to consequence, reversibility, and confidence.",
-        "Start with business outcomes and strategic priorities, not agents."
+        "Assign production accountability to the model provider rather than an internal owner."
       ],
       "correct": 2,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Decision Rights” material frames decision rights through authority and enforceable limits.",
-      "rationale": "In p. 31, Decision Rights, the course treats this as the recommended action or control for decision rights: Match authority to consequence, reversibility, and confidence. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 31, Decision Rights, the course treats this as the recommended action or control for decision rights: Match authority to consequence, reversibility, and confidence. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1612,17 +1679,18 @@
     {
       "id": "m4-q08",
       "moduleId": 4,
-      "prompt": "Which option best represents production-agent accountability in practice?",
+      "scenario": "During a production-readiness review, the team is reviewing production-agent accountability while deciding whether and how the initiative should advance in the portfolio.",
+      "prompt": "What governance action is proportionate to the consequence?",
       "options": [
-        "Require ownership, classification, quality standards, and lineage.",
+        "Permit unregistered write-enabled agents during the portfolio discovery phase.",
         "Give every agent a defined job, human owner, and escalation path.",
-        "Start with business outcomes and strategic priorities, not agents.",
-        "Use unique, scoped, revocable credentials with least privilege."
+        "Begin with an agent platform selection and search afterward for business value.",
+        "Track model accuracy alone as the executive measure of program value."
       ],
       "correct": 1,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Managing Digital Employees” material frames production-agent accountability through decision rights at the point of consequence.",
-      "rationale": "In p. 32, Managing Digital Employees, the course treats this as the recommended action or control for production-agent accountability: Give every agent a defined job, human owner, and escalation path. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 32, Managing Digital Employees, the course treats this as the recommended action or control for production-agent accountability: Give every agent a defined job, human owner, and escalation path. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1636,17 +1704,18 @@
     {
       "id": "m4-q09",
       "moduleId": 4,
-      "prompt": "Which option best represents workforce uncertainty in practice?",
+      "scenario": "During a risk committee session, the team is reviewing workforce uncertainty while deciding whether and how the initiative should advance in the portfolio.",
+      "prompt": "Which portfolio decision aligns value, authority, and risk?",
       "options": [
         "Communicate honestly, build fluency, redesign work, and keep choices reversible.",
-        "Govern planning, persistence, connections, identity, and action at machine speed.",
-        "Increase assurance, approval, monitoring, and oversight with impact and autonomy.",
-        "Produce logs, observability, kill-switch tests, red teams, and board reporting."
+        "Measure shared infrastructure cost without allocating it to workflows and outcomes.",
+        "Fund every promising prototype equally until adoption data becomes available.",
+        "Centralize every decision regardless of consequence, reversibility, or confidence."
       ],
       "correct": 0,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Workforce Actions” material frames workforce uncertainty through the specific role this concept plays in the system.",
-      "rationale": "In pp. 37-45, Workforce Actions, the course treats this as the recommended action or control for workforce uncertainty: Communicate honestly, build fluency, redesign work, and keep choices reversible. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In pp. 37-45, Workforce Actions, the course treats this as the recommended action or control for workforce uncertainty: Communicate honestly, build fluency, redesign work, and keep choices reversible. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1660,17 +1729,18 @@
     {
       "id": "m4-q10",
       "moduleId": 4,
+      "scenario": "During an operating-model workshop, the team is reviewing the governance shift while deciding whether and how the initiative should advance in the portfolio.",
       "prompt": "Which statement best explains the governance shift?",
       "options": [
-        "Increase assurance, approval, monitoring, and oversight with impact and autonomy.",
-        "Communicate honestly, build fluency, redesign work, and keep choices reversible.",
-        "Provide common identity, registry, authority, policy, observability, and lifecycle.",
+        "Delay workforce communication until the future operating model is final.",
+        "Use the highest available autonomy to maximize strategic optionality.",
+        "Treat governance as a one-time approval before deployment.",
         "Govern planning, persistence, connections, identity, and action at machine speed."
       ],
       "correct": 3,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Governance Equation” material frames the governance shift through control placement and containment.",
-      "rationale": "In p. 47, Governance Equation, the course treats this as the recommended action or control for the governance shift: Govern planning, persistence, connections, identity, and action at machine speed. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 47, Governance Equation, the course treats this as the recommended action or control for the governance shift: Govern planning, persistence, connections, identity, and action at machine speed. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1684,17 +1754,18 @@
     {
       "id": "m4-q11",
       "moduleId": 4,
-      "prompt": "Which statement most accurately describes proportional governance?",
+      "scenario": "During an executive steering review, the team is reviewing proportional governance while deciding whether and how the initiative should advance in the portfolio.",
+      "prompt": "Which operating-model choice supports controlled scale?",
       "options": [
-        "Govern planning, persistence, connections, identity, and action at machine speed.",
-        "Communicate honestly, build fluency, redesign work, and keep choices reversible.",
+        "Begin with an agent platform selection and search afterward for business value.",
+        "Assign production accountability to the model provider rather than an internal owner.",
         "Increase assurance, approval, monitoring, and oversight with impact and autonomy.",
-        "Provide common identity, registry, authority, policy, observability, and lifecycle."
+        "Permit unregistered write-enabled agents during the portfolio discovery phase."
       ],
       "correct": 2,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Proportional Governance” material frames proportional governance through decision rights at the point of consequence.",
-      "rationale": "In p. 52, Proportional Governance, the course treats this as the recommended action or control for proportional governance: Increase assurance, approval, monitoring, and oversight with impact and autonomy. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 52, Proportional Governance, the course treats this as the recommended action or control for proportional governance: Increase assurance, approval, monitoring, and oversight with impact and autonomy. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1708,17 +1779,18 @@
     {
       "id": "m4-q12",
       "moduleId": 4,
-      "prompt": "Which statement most accurately describes layered governance?",
+      "scenario": "During an architecture checkpoint, the team is reviewing layered governance while deciding whether and how the initiative should advance in the portfolio.",
+      "prompt": "What governance action is proportionate to the consequence?",
       "options": [
-        "Strategy chooses value, the operating model defines work, and governance enables scale.",
+        "Fund every promising prototype equally until adoption data becomes available.",
         "Combine senior accountability, process ownership, standards, data governance, and technical controls.",
-        "Inventory agents, assign owners, risk-tier them, and block unregistered write access.",
-        "Decide from proprietary data, domain expertise, integration, and strategic advantage."
+        "Track model accuracy alone as the executive measure of program value.",
+        "Measure shared infrastructure cost without allocating it to workflows and outcomes."
       ],
       "correct": 1,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Layered Governance” material frames layered governance through evidence quality and grounding.",
-      "rationale": "In p. 53, Layered Governance, the course treats this as the recommended action or control for layered governance: Combine senior accountability, process ownership, standards, data governance, and technical controls. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 53, Layered Governance, the course treats this as the recommended action or control for layered governance: Combine senior accountability, process ownership, standards, data governance, and technical controls. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1732,17 +1804,18 @@
     {
       "id": "m4-q13",
       "moduleId": 4,
-      "prompt": "How does the course characterize agent-ready data governance?",
+      "scenario": "During a production-readiness review, the team is reviewing agent-ready data governance while deciding whether and how the initiative should advance in the portfolio.",
+      "prompt": "Which portfolio decision aligns value, authority, and risk?",
       "options": [
         "Require ownership, classification, quality standards, and lineage.",
-        "Start with business outcomes and strategic priorities, not agents.",
-        "Give every agent a defined job, human owner, and escalation path.",
-        "Track business outcomes, adoption, agent performance, and economics."
+        "Use the highest available autonomy to maximize strategic optionality.",
+        "Centralize every decision regardless of consequence, reversibility, or confidence.",
+        "Delay workforce communication until the future operating model is final."
       ],
       "correct": 0,
       "hint": "Look for the condition the source treats as necessary, not merely helpful.",
       "tipContext": "The “Data Governance” material frames agent-ready data governance through decision rights at the point of consequence.",
-      "rationale": "In p. 54, Data Governance, the course treats this as the recommended action or control for agent-ready data governance: Require ownership, classification, quality standards, and lineage. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 54, Data Governance, the course treats this as the recommended action or control for agent-ready data governance: Require ownership, classification, quality standards, and lineage. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1756,17 +1829,18 @@
     {
       "id": "m4-q14",
       "moduleId": 4,
-      "prompt": "How does the course characterize ecosystem-scale governance?",
+      "scenario": "During a risk committee session, the team is reviewing ecosystem-scale governance while deciding whether and how the initiative should advance in the portfolio.",
+      "prompt": "What should the executive team require next?",
       "options": [
-        "Produce logs, observability, kill-switch tests, red teams, and board reporting.",
-        "Communicate honestly, build fluency, redesign work, and keep choices reversible.",
-        "Increase assurance, approval, monitoring, and oversight with impact and autonomy.",
+        "Assign production accountability to the model provider rather than an internal owner.",
+        "Treat governance as a one-time approval before deployment.",
+        "Begin with an agent platform selection and search afterward for business value.",
         "Move from individual approvals to automated portfolio and ecosystem controls."
       ],
       "correct": 3,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Agent Ecosystem” material frames ecosystem-scale governance through decision rights at the point of consequence.",
-      "rationale": "In p. 55, Agent Ecosystem, the course treats this as the recommended action or control for ecosystem-scale governance: Move from individual approvals to automated portfolio and ecosystem controls. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 55, Agent Ecosystem, the course treats this as the recommended action or control for ecosystem-scale governance: Move from individual approvals to automated portfolio and ecosystem controls. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1780,17 +1854,18 @@
     {
       "id": "m4-q15",
       "moduleId": 4,
+      "scenario": "During an operating-model workshop, the team is reviewing the enterprise agent control plane while deciding whether and how the initiative should advance in the portfolio.",
       "prompt": "Which statement best explains the enterprise agent control plane?",
       "options": [
-        "Screen value, decision density, data readiness, bounded action, friction, and risk.",
-        "Inventory agents, assign owners, risk-tier them, and block unregistered write access.",
+        "Track model accuracy alone as the executive measure of program value.",
+        "Permit unregistered write-enabled agents during the portfolio discovery phase.",
         "Provide common identity, registry, authority, policy, observability, and lifecycle.",
-        "Increase assurance, approval, monitoring, and oversight with impact and autonomy."
+        "Fund every promising prototype equally until adoption data becomes available."
       ],
       "correct": 2,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Control Plane” material frames the enterprise agent control plane through authority and enforceable limits.",
-      "rationale": "In p. 56, Control Plane, the course treats this as the recommended action or control for the enterprise agent control plane: Provide common identity, registry, authority, policy, observability, and lifecycle. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 56, Control Plane, the course treats this as the recommended action or control for the enterprise agent control plane: Provide common identity, registry, authority, policy, observability, and lifecycle. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1804,17 +1879,18 @@
     {
       "id": "m4-q16",
       "moduleId": 4,
-      "prompt": "Which option best represents financial management in practice?",
+      "scenario": "During an executive steering review, the team is reviewing financial management while deciding whether and how the initiative should advance in the portfolio.",
+      "prompt": "What governance action is proportionate to the consequence?",
       "options": [
-        "Use the least sufficient agency that captures the value.",
+        "Centralize every decision regardless of consequence, reversibility, or confidence.",
         "Track cost and value per workflow with budgets and limits.",
-        "Match authority to consequence, reversibility, and confidence.",
-        "Use unique, scoped, revocable credentials with least privilege."
+        "Measure shared infrastructure cost without allocating it to workflows and outcomes.",
+        "Use the highest available autonomy to maximize strategic optionality."
       ],
       "correct": 1,
       "hint": "Choose the option that produces evidence across the full workflow.",
       "tipContext": "The “Financial Management” material frames financial management through operational trade-offs.",
-      "rationale": "In p. 58, Financial Management, the course treats this as the recommended action or control for financial management: Track cost and value per workflow with budgets and limits. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 58, Financial Management, the course treats this as the recommended action or control for financial management: Track cost and value per workflow with budgets and limits. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1828,17 +1904,18 @@
     {
       "id": "m4-q17",
       "moduleId": 4,
-      "prompt": "Which statement most accurately describes days 0-30 of governance?",
+      "scenario": "During an architecture checkpoint, the team is reviewing days 0-30 of governance while deciding whether and how the initiative should advance in the portfolio.",
+      "prompt": "Which portfolio decision aligns value, authority, and risk?",
       "options": [
         "Inventory agents, assign owners, risk-tier them, and block unregistered write access.",
-        "Decide from proprietary data, domain expertise, integration, and strategic advantage.",
-        "Provide common identity, registry, authority, policy, observability, and lifecycle.",
-        "Strategy chooses value, the operating model defines work, and governance enables scale."
+        "Treat governance as a one-time approval before deployment.",
+        "Delay workforce communication until the future operating model is final.",
+        "Assign production accountability to the model provider rather than an internal owner."
       ],
       "correct": 0,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “90-Day Playbook” material frames days 0-30 of governance through decision rights at the point of consequence.",
-      "rationale": "In p. 60, 90-Day Playbook, the course treats this as the recommended action or control for days 0-30 of governance: Inventory agents, assign owners, risk-tier them, and block unregistered write access. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 60, 90-Day Playbook, the course treats this as the recommended action or control for days 0-30 of governance: Inventory agents, assign owners, risk-tier them, and block unregistered write access. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1852,17 +1929,18 @@
     {
       "id": "m4-q18",
       "moduleId": 4,
-      "prompt": "How does the course characterize days 61-90 of governance?",
+      "scenario": "During a production-readiness review, the team is reviewing days 61-90 of governance while deciding whether and how the initiative should advance in the portfolio.",
+      "prompt": "What should the executive team require next?",
       "options": [
-        "Communicate honestly, build fluency, redesign work, and keep choices reversible.",
-        "Move from individual approvals to automated portfolio and ecosystem controls.",
-        "Increase assurance, approval, monitoring, and oversight with impact and autonomy.",
+        "Permit unregistered write-enabled agents during the portfolio discovery phase.",
+        "Begin with an agent platform selection and search afterward for business value.",
+        "Track model accuracy alone as the executive measure of program value.",
         "Produce logs, observability, kill-switch tests, red teams, and board reporting."
       ],
       "correct": 3,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “90-Day Playbook” material frames days 61-90 of governance through control placement and containment.",
-      "rationale": "In p. 60, 90-Day Playbook, the course treats this as the recommended action or control for days 61-90 of governance: Produce logs, observability, kill-switch tests, red teams, and board reporting. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 60, 90-Day Playbook, the course treats this as the recommended action or control for days 61-90 of governance: Produce logs, observability, kill-switch tests, red teams, and board reporting. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1876,17 +1954,18 @@
     {
       "id": "m4-q19",
       "moduleId": 4,
-      "prompt": "Which statement most accurately describes trusted agent identity?",
+      "scenario": "During a risk committee session, the team is reviewing trusted agent identity while deciding whether and how the initiative should advance in the portfolio.",
+      "prompt": "Which operating-model choice supports controlled scale?",
       "options": [
-        "Match authority to consequence, reversibility, and confidence.",
-        "Give every agent a defined job, human owner, and escalation path.",
+        "Measure shared infrastructure cost without allocating it to workflows and outcomes.",
+        "Fund every promising prototype equally until adoption data becomes available.",
         "Use unique, scoped, revocable credentials with least privilege.",
-        "Require ownership, classification, quality standards, and lineage."
+        "Centralize every decision regardless of consequence, reversibility, or confidence."
       ],
       "correct": 2,
       "hint": "Test the conditions under which the source recommends this choice.",
       "tipContext": "The “Scale With Control” material frames trusted agent identity through authority and enforceable limits.",
-      "rationale": "In p. 62, Scale With Control, the course treats this as the recommended action or control for trusted agent identity: Use unique, scoped, revocable credentials with least privilege. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 62, Scale With Control, the course treats this as the recommended action or control for trusted agent identity: Use unique, scoped, revocable credentials with least privilege. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1900,17 +1979,18 @@
     {
       "id": "m4-q20",
       "moduleId": 4,
-      "prompt": "Which statement most accurately describes strategy, operating model, and governance?",
+      "scenario": "During an operating-model workshop, the team is reviewing strategy, operating model, and governance while deciding whether and how the initiative should advance in the portfolio.",
+      "prompt": "Which statement reflects the intended operating model?",
       "options": [
-        "Inventory agents, assign owners, risk-tier them, and block unregistered write access.",
+        "Workforce transparency should wait until every operating-model decision is irreversible.",
         "Strategy chooses value, the operating model defines work, and governance enables scale.",
-        "Decide from proprietary data, domain expertise, integration, and strategic advantage.",
-        "Provide common identity, registry, authority, policy, observability, and lifecycle."
+        "Proportional governance applies the same control set to every agent for consistency.",
+        "Portfolio governance means approving all pilots before evidence is available."
       ],
       "correct": 1,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Key Takeaways” material frames strategy, operating model, and governance through the specific role this concept plays in the system.",
-      "rationale": "In p. 63, Key Takeaways, the course treats this as the definition or operating principle for strategy, operating model, and governance: Strategy chooses value, the operating model defines work, and governance enables scale. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In p. 63, Key Takeaways, the course treats this as the definition or operating principle for strategy, operating model, and governance: Strategy chooses value, the operating model defines work, and governance enables scale. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-4",
@@ -1924,17 +2004,18 @@
     {
       "id": "m5-q01",
       "moduleId": 5,
+      "scenario": "During an executive steering review, the team is reviewing what creates an agentic workflow while comparing baseline, refinement, and agentic-build evidence.",
       "prompt": "What creates an agentic workflow?",
       "options": [
-        "Require a distinct task, data, tools, permissions, evaluation, or owner.",
+        "A controlled retest changes the prompt and evaluation case together to test adaptability.",
         "Data and tool use, orchestration, bounded action, and human checkpoints.",
-        "It adds latency, coordination, cost, governance, and a failure surface.",
-        "Estimate critical-path latency, cost, complexity, and operating burden."
+        "A specialist agent is justified whenever a separate role label can be written.",
+        "Orchestration is the use of multiple prompts in the same conversation."
       ],
       "correct": 1,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Learning Progression” material frames what creates an agentic workflow through evidence quality and grounding.",
-      "rationale": "In slides 4-7, Learning Progression, the course treats this as the definition or operating principle for what creates an agentic workflow: Data and tool use, orchestration, bounded action, and human checkpoints. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In slides 4-7, Learning Progression, the course treats this as the definition or operating principle for what creates an agentic workflow: Data and tool use, orchestration, bounded action, and human checkpoints. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -1948,17 +2029,18 @@
     {
       "id": "m5-q02",
       "moduleId": 5,
+      "scenario": "During an architecture checkpoint, the team is reviewing the first lab baseline while comparing baseline, refinement, and agentic-build evidence.",
       "prompt": "Which statement best explains the first lab baseline?",
       "options": [
         "Keep it unchanged for a valid comparison.",
-        "Usefulness does not establish correctness.",
-        "Update Knowledge and replace the stale uploaded file.",
-        "Change one variable and rerun the same case and prompt."
+        "Read the known-answer key before recording the baseline result.",
+        "Let the parent and specialist independently alter assumptions during recalculation.",
+        "Present a financial ranking as the final enterprise expansion decision."
       ],
       "correct": 0,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Lab 1 Baseline” material frames the first lab baseline through the specific role this concept plays in the system.",
-      "rationale": "In slides 10 and 19, Lab 1 Baseline, the course treats this as the recommended action or control for the first lab baseline: Keep it unchanged for a valid comparison. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In slides 10 and 19, Lab 1 Baseline, the course treats this as the recommended action or control for the first lab baseline: Keep it unchanged for a valid comparison. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -1972,17 +2054,18 @@
     {
       "id": "m5-q03",
       "moduleId": 5,
-      "prompt": "Which option best represents changed policy facts in practice?",
+      "scenario": "During a production-readiness review, the team is reviewing changed policy facts while comparing baseline, refinement, and agentic-build evidence.",
+      "prompt": "Which design choice produces defensible evidence?",
       "options": [
-        "Change one variable and rerun the same case and prompt.",
-        "Usefulness does not establish correctness.",
-        "Coordinate steps, tools, state, and agents toward a larger goal.",
+        "Treat a useful response as proof that the underlying decision is correct.",
+        "Continue to recommendation when a low-confidence assumption materially drives the ranking.",
+        "Treat a conversational checkpoint as equivalent to an enforced production approval gate.",
         "Update Knowledge and replace the stale uploaded file."
       ],
       "correct": 3,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Maintenance Test” material frames changed policy facts through the specific role this concept plays in the system.",
-      "rationale": "In slide 17, Maintenance Test, the course treats this as the recommended action or control for changed policy facts: Update Knowledge and replace the stale uploaded file. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In slide 17, Maintenance Test, the course treats this as the recommended action or control for changed policy facts: Update Knowledge and replace the stale uploaded file. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -1996,17 +2079,18 @@
     {
       "id": "m5-q04",
       "moduleId": 5,
+      "scenario": "During a risk committee session, the team is reviewing the Lab 1 limitation while comparing baseline, refinement, and agentic-build evidence.",
       "prompt": "Which statement best explains the Lab 1 limitation?",
       "options": [
-        "Keep it unchanged for a valid comparison.",
-        "Update Knowledge and replace the stale uploaded file.",
+        "A specialist agent is justified whenever a separate role label can be written.",
+        "Agent identity is the persona and tone assigned in system instructions.",
         "Usefulness does not establish correctness.",
-        "Change one variable and rerun the same case and prompt."
+        "A controlled retest changes the prompt and evaluation case together to test adaptability."
       ],
       "correct": 2,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Lab 1 Debrief” material frames the Lab 1 limitation through the specific role this concept plays in the system.",
-      "rationale": "In slide 23, Lab 1 Debrief, the course treats this as the definition or operating principle for the Lab 1 limitation: Usefulness does not establish correctness. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In slide 23, Lab 1 Debrief, the course treats this as the definition or operating principle for the Lab 1 limitation: Usefulness does not establish correctness. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2020,17 +2104,18 @@
     {
       "id": "m5-q05",
       "moduleId": 5,
-      "prompt": "Which option best represents Lab 2 evaluation in practice?",
+      "scenario": "During an operating-model workshop, the team is reviewing Lab 2 evaluation while comparing baseline, refinement, and agentic-build evidence.",
+      "prompt": "Which lab decision preserves a valid evaluation?",
       "options": [
-        "It is conversationally instructed, not a deterministic approval node.",
+        "Let the parent and specialist independently alter assumptions during recalculation.",
         "Test whether both the decision and supporting evidence are grounded.",
-        "Choose where to build, run, integrate, govern, and observe agents.",
-        "Credentials, permissions, and audit history assigned to the agent."
+        "Compare rewritten test cases after refinement instead of rerunning the same inputs.",
+        "Read the known-answer key before recording the baseline result."
       ],
       "correct": 1,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Lab 2” material frames Lab 2 evaluation through evidence quality and grounding.",
-      "rationale": "In slides 25-32, Lab 2, the course treats this as the recommended action or control for Lab 2 evaluation: Test whether both the decision and supporting evidence are grounded. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In slides 25-32, Lab 2, the course treats this as the recommended action or control for Lab 2 evaluation: Test whether both the decision and supporting evidence are grounded. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2044,17 +2129,18 @@
     {
       "id": "m5-q06",
       "moduleId": 5,
+      "scenario": "During an executive steering review, the team is reviewing a controlled retest while comparing baseline, refinement, and agentic-build evidence.",
       "prompt": "Which statement best explains a controlled retest?",
       "options": [
         "Change one variable and rerun the same case and prompt.",
-        "Update Knowledge and replace the stale uploaded file.",
-        "Coordinate steps, tools, state, and agents toward a larger goal.",
-        "Choose where to build, run, integrate, govern, and observe agents."
+        "Continue to recommendation when a low-confidence assumption materially drives the ranking.",
+        "Present a financial ranking as the final enterprise expansion decision.",
+        "Treat a useful response as proof that the underlying decision is correct."
       ],
       "correct": 0,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Controlled Retest” material frames a controlled retest through the specific role this concept plays in the system.",
-      "rationale": "In slides 26 and 31, Controlled Retest, the course treats this as the recommended action or control for a controlled retest: Change one variable and rerun the same case and prompt. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In slides 26 and 31, Controlled Retest, the course treats this as the recommended action or control for a controlled retest: Change one variable and rerun the same case and prompt. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2068,17 +2154,18 @@
     {
       "id": "m5-q07",
       "moduleId": 5,
-      "prompt": "How does the course characterize prompt improvement?",
+      "scenario": "During an architecture checkpoint, the team is reviewing prompt improvement while comparing baseline, refinement, and agentic-build evidence.",
+      "prompt": "Which statement correctly distinguishes the concept?",
       "options": [
-        "Inspect data, calculations, tools, orchestration, human decisions, and traces.",
-        "Repeat a test to detect whether a later change breaks acceptable behavior.",
-        "Agentic systems are more than prompts, and more agents are not automatically better.",
+        "Agent identity is the persona and tone assigned in system instructions.",
+        "A financial recommendation resolves commercial, regulatory, geopolitical, and operational readiness.",
+        "A specialist agent is justified whenever a separate role label can be written.",
         "It is one lever among data, tools, orchestration, instructions, and evaluation."
       ],
       "correct": 3,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Failure Surfaces” material frames prompt improvement through evidence quality and grounding.",
-      "rationale": "In slide 33, Failure Surfaces, the course treats this as the definition or operating principle for prompt improvement: It is one lever among data, tools, orchestration, instructions, and evaluation. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In slide 33, Failure Surfaces, the course treats this as the definition or operating principle for prompt improvement: It is one lever among data, tools, orchestration, instructions, and evaluation. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2092,17 +2179,18 @@
     {
       "id": "m5-q08",
       "moduleId": 5,
+      "scenario": "During a production-readiness review, the team is reviewing the regional workflow while comparing baseline, refinement, and agentic-build evidence.",
       "prompt": "Which statement best explains the regional workflow?",
       "options": [
-        "Build, runtime, identity, policy, evaluation, registry, and observability are converging.",
-        "Agentic systems are more than prompts, and more agents are not automatically better.",
+        "Orchestration is the use of multiple prompts in the same conversation.",
+        "A controlled retest changes the prompt and evaluation case together to test adaptability.",
         "Decomposition, tools, orchestration, and a human decision point created agentic behavior.",
-        "It is one lever among data, tools, orchestration, instructions, and evaluation."
+        "A conversational checkpoint is an enforced approval boundary in production."
       ],
       "correct": 2,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Workflow Debrief” material frames the regional workflow through decision rights at the point of consequence.",
-      "rationale": "In slide 50, Workflow Debrief, the course treats this as the definition or operating principle for the regional workflow: Decomposition, tools, orchestration, and a human decision point created agentic behavior. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In slide 50, Workflow Debrief, the course treats this as the definition or operating principle for the regional workflow: Decomposition, tools, orchestration, and a human decision point created agentic behavior. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2116,17 +2204,18 @@
     {
       "id": "m5-q09",
       "moduleId": 5,
+      "scenario": "During a risk committee session, the team is reviewing the demo checkpoint caveat while comparing baseline, refinement, and agentic-build evidence.",
       "prompt": "Which statement best explains the demo checkpoint caveat?",
       "options": [
-        "Test whether both the decision and supporting evidence are grounded.",
+        "Platform selection is only a model-quality decision.",
         "It is conversationally instructed, not a deterministic approval node.",
-        "It adds latency, coordination, cost, governance, and a failure surface.",
-        "Estimate critical-path latency, cost, complexity, and operating burden."
+        "A useful answer is sufficient evidence that the underlying reasoning and data are correct.",
+        "Regression testing compares different cases to maximize coverage after each change."
       ],
       "correct": 1,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Implementation Caveat” material frames the demo checkpoint caveat through decision rights at the point of consequence.",
-      "rationale": "In slide 50, Implementation Caveat, the course treats this as the definition or operating principle for the demo checkpoint caveat: It is conversationally instructed, not a deterministic approval node. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In slide 50, Implementation Caveat, the course treats this as the definition or operating principle for the demo checkpoint caveat: It is conversationally instructed, not a deterministic approval node. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2140,17 +2229,18 @@
     {
       "id": "m5-q10",
       "moduleId": 5,
-      "prompt": "How does the course characterize production evaluation?",
+      "scenario": "During an operating-model workshop, the team is reviewing production evaluation while comparing baseline, refinement, and agentic-build evidence.",
+      "prompt": "What should the learner do at this checkpoint?",
       "options": [
         "Inspect data, calculations, tools, orchestration, human decisions, and traces.",
-        "It is one lever among data, tools, orchestration, instructions, and evaluation.",
-        "Repeat a test to detect whether a later change breaks acceptable behavior.",
-        "Use a tool or workflow step when it can do the job without another agent."
+        "Treat a conversational checkpoint as equivalent to an enforced production approval gate.",
+        "Treat a useful response as proof that the underlying decision is correct.",
+        "Use external search to fill workbook gaps even when the lab defines one authoritative source."
       ],
       "correct": 0,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Evaluation Surfaces” material frames production evaluation through evidence quality and grounding.",
-      "rationale": "In slide 51, Evaluation Surfaces, the course treats this as the recommended action or control for production evaluation: Inspect data, calculations, tools, orchestration, human decisions, and traces. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In slide 51, Evaluation Surfaces, the course treats this as the recommended action or control for production evaluation: Inspect data, calculations, tools, orchestration, human decisions, and traces. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2164,17 +2254,18 @@
     {
       "id": "m5-q11",
       "moduleId": 5,
+      "scenario": "During an executive steering review, the team is reviewing a justified specialist agent while comparing baseline, refinement, and agentic-build evidence.",
       "prompt": "Which statement best explains a justified specialist agent?",
       "options": [
-        "Data and tool use, orchestration, bounded action, and human checkpoints.",
-        "It adds latency, coordination, cost, governance, and a failure surface.",
-        "Estimate critical-path latency, cost, complexity, and operating burden.",
+        "Change the prompt, source data, and evaluation case together to accelerate improvement.",
+        "Add a specialist agent whenever a workflow contains more than one step.",
+        "Compare rewritten test cases after refinement instead of rerunning the same inputs.",
         "Require a distinct task, data, tools, permissions, evaluation, or owner."
       ],
       "correct": 3,
       "hint": "Look for the condition the source treats as necessary, not merely helpful.",
       "tipContext": "The “Specialization” material frames a justified specialist agent through authority and enforceable limits.",
-      "rationale": "In slides 54-58, Specialization, the course treats this as the recommended action or control for a justified specialist agent: Require a distinct task, data, tools, permissions, evaluation, or owner. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In slides 54-58, Specialization, the course treats this as the recommended action or control for a justified specialist agent: Require a distinct task, data, tools, permissions, evaluation, or owner. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2188,17 +2279,18 @@
     {
       "id": "m5-q12",
       "moduleId": 5,
+      "scenario": "During an architecture checkpoint, the team is reviewing the cost of another agent while comparing baseline, refinement, and agentic-build evidence.",
       "prompt": "Which statement best explains the cost of another agent?",
       "options": [
-        "Estimate critical-path latency, cost, complexity, and operating burden.",
-        "Require a distinct task, data, tools, permissions, evaluation, or owner.",
+        "A useful answer is sufficient evidence that the underlying reasoning and data are correct.",
+        "A conversational checkpoint is an enforced approval boundary in production.",
         "It adds latency, coordination, cost, governance, and a failure surface.",
-        "Data and tool use, orchestration, bounded action, and human checkpoints."
+        "Platform selection is only a model-quality decision."
       ],
       "correct": 2,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Coordination Cost” material frames the cost of another agent through operational trade-offs.",
-      "rationale": "In slides 58-60, Coordination Cost, the course treats this as the definition or operating principle for the cost of another agent: It adds latency, coordination, cost, governance, and a failure surface. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In slides 58-60, Coordination Cost, the course treats this as the definition or operating principle for the cost of another agent: It adds latency, coordination, cost, governance, and a failure surface. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2212,17 +2304,18 @@
     {
       "id": "m5-q13",
       "moduleId": 5,
-      "prompt": "Which option best represents pre-build multi-agent estimates in practice?",
+      "scenario": "During a production-readiness review, the team is reviewing pre-build multi-agent estimates while comparing baseline, refinement, and agentic-build evidence.",
+      "prompt": "Which lab decision preserves a valid evaluation?",
       "options": [
-        "It adds latency, coordination, cost, governance, and a failure surface.",
+        "Treat a useful response as proof that the underlying decision is correct.",
         "Estimate critical-path latency, cost, complexity, and operating burden.",
-        "Require a distinct task, data, tools, permissions, evaluation, or owner.",
-        "Data and tool use, orchestration, bounded action, and human checkpoints."
+        "Continue to recommendation when a low-confidence assumption materially drives the ranking.",
+        "Treat a conversational checkpoint as equivalent to an enforced production approval gate."
       ],
       "correct": 1,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Coordination Cost” material frames pre-build multi-agent estimates through operational trade-offs.",
-      "rationale": "In slide 60, Coordination Cost, the course treats this as the recommended action or control for pre-build multi-agent estimates: Estimate critical-path latency, cost, complexity, and operating burden. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In slide 60, Coordination Cost, the course treats this as the recommended action or control for pre-build multi-agent estimates: Estimate critical-path latency, cost, complexity, and operating burden. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2236,17 +2329,18 @@
     {
       "id": "m5-q14",
       "moduleId": 5,
-      "prompt": "How does the course characterize platform selection?",
+      "scenario": "During a risk committee session, the team is reviewing platform selection while comparing baseline, refinement, and agentic-build evidence.",
+      "prompt": "What should the learner do at this checkpoint?",
       "options": [
         "Choose where to build, run, integrate, govern, and observe agents.",
-        "Credentials, permissions, and audit history assigned to the agent.",
-        "Coordinate steps, tools, state, and agents toward a larger goal.",
-        "Test whether both the decision and supporting evidence are grounded."
+        "Add a specialist agent whenever a workflow contains more than one step.",
+        "Use external search to fill workbook gaps even when the lab defines one authoritative source.",
+        "Change the prompt, source data, and evaluation case together to accelerate improvement."
       ],
       "correct": 0,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Agent Platforms” material frames platform selection through observable evidence rather than appearance.",
-      "rationale": "In slide 62, Agent Platforms, the course treats this as the recommended action or control for platform selection: Choose where to build, run, integrate, govern, and observe agents. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In slide 62, Agent Platforms, the course treats this as the recommended action or control for platform selection: Choose where to build, run, integrate, govern, and observe agents. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2260,17 +2354,18 @@
     {
       "id": "m5-q15",
       "moduleId": 5,
-      "prompt": "How does the course characterize platform direction?",
+      "scenario": "During an operating-model workshop, the team is reviewing platform direction while comparing baseline, refinement, and agentic-build evidence.",
+      "prompt": "Which design choice produces defensible evidence?",
       "options": [
-        "Decomposition, tools, orchestration, and a human decision point created agentic behavior.",
-        "Agentic systems are more than prompts, and more agents are not automatically better.",
-        "It is one lever among data, tools, orchestration, instructions, and evaluation.",
+        "Let the parent and specialist independently alter assumptions during recalculation.",
+        "Compare rewritten test cases after refinement instead of rerunning the same inputs.",
+        "Read the known-answer key before recording the baseline result.",
         "Build, runtime, identity, policy, evaluation, registry, and observability are converging."
       ],
       "correct": 3,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Platform Direction” material frames platform direction through control placement and containment.",
-      "rationale": "In slide 63, Platform Direction, the course treats this as the recommended action or control for platform direction: Build, runtime, identity, policy, evaluation, registry, and observability are converging. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In slide 63, Platform Direction, the course treats this as the recommended action or control for platform direction: Build, runtime, identity, policy, evaluation, registry, and observability are converging. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2284,17 +2379,18 @@
     {
       "id": "m5-q16",
       "moduleId": 5,
-      "prompt": "Which statement most accurately describes agent identity?",
+      "scenario": "During an executive steering review, the team is reviewing agent identity while comparing baseline, refinement, and agentic-build evidence.",
+      "prompt": "Which conclusion stays within the exercise evidence?",
       "options": [
-        "Choose where to build, run, integrate, govern, and observe agents.",
-        "Coordinate steps, tools, state, and agents toward a larger goal.",
+        "Regression testing compares different cases to maximize coverage after each change.",
+        "Platform selection is only a model-quality decision.",
         "Credentials, permissions, and audit history assigned to the agent.",
-        "Test whether both the decision and supporting evidence are grounded."
+        "An agentic workflow is any prompt that requests a multi-step response."
       ],
       "correct": 2,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Glossary” material frames agent identity through authority and enforceable limits.",
-      "rationale": "In slide 67, Glossary, the course treats this as the definition or operating principle for agent identity: Credentials, permissions, and audit history assigned to the agent. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In slide 67, Glossary, the course treats this as the definition or operating principle for agent identity: Credentials, permissions, and audit history assigned to the agent. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2308,17 +2404,18 @@
     {
       "id": "m5-q17",
       "moduleId": 5,
-      "prompt": "How does the course characterize orchestration?",
+      "scenario": "During an architecture checkpoint, the team is reviewing orchestration while comparing baseline, refinement, and agentic-build evidence.",
+      "prompt": "Which lab decision preserves a valid evaluation?",
       "options": [
-        "Credentials, permissions, and audit history assigned to the agent.",
+        "Use external search to fill workbook gaps even when the lab defines one authoritative source.",
         "Coordinate steps, tools, state, and agents toward a larger goal.",
-        "Choose where to build, run, integrate, govern, and observe agents.",
-        "Test whether both the decision and supporting evidence are grounded."
+        "Treat a conversational checkpoint as equivalent to an enforced production approval gate.",
+        "Add a specialist agent whenever a workflow contains more than one step."
       ],
       "correct": 1,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Glossary” material frames orchestration through whether added agency has a distinct responsibility.",
-      "rationale": "In slide 69, Glossary, the course treats this as the recommended action or control for orchestration: Coordinate steps, tools, state, and agents toward a larger goal. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In slide 69, Glossary, the course treats this as the recommended action or control for orchestration: Coordinate steps, tools, state, and agents toward a larger goal. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2332,17 +2429,18 @@
     {
       "id": "m5-q18",
       "moduleId": 5,
-      "prompt": "Which statement most accurately describes regression testing?",
+      "scenario": "During a production-readiness review, the team is reviewing regression testing while comparing baseline, refinement, and agentic-build evidence.",
+      "prompt": "What should the learner do at this checkpoint?",
       "options": [
         "Repeat a test to detect whether a later change breaks acceptable behavior.",
-        "Use a tool or workflow step when it can do the job without another agent.",
-        "Require a distinct task, data, tools, permissions, evaluation, or owner.",
-        "Data and tool use, orchestration, bounded action, and human checkpoints."
+        "Compare rewritten test cases after refinement instead of rerunning the same inputs.",
+        "Change the prompt, source data, and evaluation case together to accelerate improvement.",
+        "Let the parent and specialist independently alter assumptions during recalculation."
       ],
       "correct": 0,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Glossary” material frames regression testing through observable evidence rather than appearance.",
-      "rationale": "In slide 70, Glossary, the course treats this as the recommended action or control for regression testing: Repeat a test to detect whether a later change breaks acceptable behavior. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In slide 70, Glossary, the course treats this as the recommended action or control for regression testing: Repeat a test to detect whether a later change breaks acceptable behavior. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2356,17 +2454,18 @@
     {
       "id": "m5-q19",
       "moduleId": 5,
+      "scenario": "During a risk committee session, the team is reviewing an unnecessary specialist while comparing baseline, refinement, and agentic-build evidence.",
       "prompt": "Which statement best explains an unnecessary specialist?",
       "options": [
-        "Repeat a test to detect whether a later change breaks acceptable behavior.",
-        "Require a distinct task, data, tools, permissions, evaluation, or owner.",
-        "Data and tool use, orchestration, bounded action, and human checkpoints.",
+        "Present a financial ranking as the final enterprise expansion decision.",
+        "Read the known-answer key before recording the baseline result.",
+        "Continue to recommendation when a low-confidence assumption materially drives the ranking.",
         "Use a tool or workflow step when it can do the job without another agent."
       ],
       "correct": 3,
       "hint": "Test the conditions under which the source recommends this choice.",
       "tipContext": "The “Justifying Agents” material frames an unnecessary specialist through whether added agency has a distinct responsibility.",
-      "rationale": "In slide 58, Justifying Agents, the course treats this as the recommended action or control for an unnecessary specialist: Use a tool or workflow step when it can do the job without another agent. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In slide 58, Justifying Agents, the course treats this as the recommended action or control for an unnecessary specialist: Use a tool or workflow step when it can do the job without another agent. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-5",
@@ -2380,17 +2479,18 @@
     {
       "id": "m5-q20",
       "moduleId": 5,
+      "scenario": "During an operating-model workshop, the team is reviewing the module design message while comparing baseline, refinement, and agentic-build evidence.",
       "prompt": "Which statement best explains the module design message?",
       "options": [
-        "Build, runtime, identity, policy, evaluation, registry, and observability are converging.",
-        "Decomposition, tools, orchestration, and a human decision point created agentic behavior.",
+        "A financial recommendation resolves commercial, regulatory, geopolitical, and operational readiness.",
+        "An agentic workflow is any prompt that requests a multi-step response.",
         "Agentic systems are more than prompts, and more agents are not automatically better.",
-        "It is one lever among data, tools, orchestration, instructions, and evaluation."
+        "Agent identity is the persona and tone assigned in system instructions."
       ],
       "correct": 2,
       "hint": "Separate this concept from nearby ideas and select the option that directly resolves it.",
       "tipContext": "The “Module Takeaways” material frames the module design message through whether added agency has a distinct responsibility.",
-      "rationale": "In slide 65, Module Takeaways, the course treats this as the definition or operating principle for the module design message: Agentic systems are more than prompts, and more agents are not automatically better. The alternatives address adjacent ideas but not the condition, mechanism, or decision requested here.",
+      "rationale": "In slide 65, Module Takeaways, the course treats this as the definition or operating principle for the module design message: Agentic systems are more than prompts, and more agents are not automatically better. The nearest alternatives either move the control outside the required decision point, substitute appearance for evidence, or introduce authority the scenario does not justify.",
       "sourceRefs": [
         {
           "sourceId": "module-5",

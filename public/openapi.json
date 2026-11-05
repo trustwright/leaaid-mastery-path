@@ -1,6 +1,6 @@
 {
   "openapi": "3.1.0",
-  "info": {"title": "LEAAID Mastery Path Agent", "version": "1.0.0", "description": "Invitation-controlled, source-grounded LEAAID coaching and sequential training challenges."},
+  "info": {"title": "LEAAID Cohort Pathway", "version": "1.2.0", "description": "Invitation-controlled LEAAID operating harness with orchestration, source-grounded testing, deterministic validation, and sequential mastery."},
   "servers": [{"url": "https://leaaid-mastery-path.nexus-8198.chatgpt.site"}],
   "paths": {"/api/agent": {
     "get": {"operationId": "describeLEAAIDProgram", "summary": "Describe the curriculum and agent capabilities", "responses": {"200": {"description": "Program description"}}},

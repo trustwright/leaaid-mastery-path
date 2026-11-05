@@ -2,6 +2,7 @@ import {agentChannelsSchema,agentSessionsExpiryIndexSchema,agentSessionsSchema} 
 import {COACH,CoachGoal,coachChain} from './coach';
 import {MODULES,ModuleId,RuntimeQuestion,selectQuestionSet} from './questions';
 import {APPLIED_LAB,labStepFor} from './applied-lab';
+import {harnessControl,prepareHarnessInput} from './harness';
 
 type StoredSession={id:string;goal:CoachGoal;current_module:number;question_index:number;lab_step:number;lab_complete:number;premier:number;completed_json:string;history_json:string;queue_json:string;created_at:string;updated_at:string;expires_at:string};
 type History=Partial<Record<ModuleId,string[]>>;
@@ -43,7 +44,7 @@ async function session(db:D1Database,id:unknown){
 }
 
 function publicQuestion(question:RuntimeQuestion,index:number,total:number){return{
- id:question.id,index:index+1,total,prompt:question.prompt,options:question.options,
+ id:question.id,index:index+1,total,scenario:question.scenario,prompt:question.prompt,options:question.options,
  difficulty:question.difficulty,module_id:question.moduleId,module_code:MODULES[question.moduleId-1].code,
  response_format:'Submit the zero-based option_index, or map A/B/C/D to 0/1/2/3.',
 };}
@@ -124,6 +125,11 @@ export async function getSession(db:D1Database,input:Record<string,unknown>){
 
 export async function dispatchAgentAction(db:D1Database,input:Record<string,unknown>){
  switch(input.action as AgentAction){case'describe_program':return describeProgram();case'create_session':return createSession(db);case'coach':return coach(db,input);case'launch_multi_agent_training':return launchMultiAgentTraining(db,input);case'validate_training_response':return validateTrainingResponse(db,input);case'launch_training_challenge':return launchChallenge(db,input);case'submit_answer':return submitAnswer(db,input);case'launch_applied_lab':return launchAppliedLab(db,input);case'submit_lab_choice':return submitLabChoice(db,input);case'launch_premier_challenge':return launchPremierChallenge(db,input);case'get_session':return getSession(db,input);default:throw new AgentError(400,'Unknown action. Use describe_program to inspect the supported training actions.');}
+}
+
+export async function dispatchHarnessAction(db:D1Database,input:Record<string,unknown>){
+ try{const prepared=prepareHarnessInput(input);const result=await dispatchAgentAction(db,prepared);return{...result,control:harnessControl(prepared.action)}}
+ catch(error){if(error instanceof AgentError)throw error;throw new AgentError(400,error instanceof Error?error.message:'Harness rejected the request.');}
 }
 
 export async function channelSession(db:D1Database,channelHash:string){

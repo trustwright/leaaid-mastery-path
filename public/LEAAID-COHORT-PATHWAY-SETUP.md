@@ -2,6 +2,15 @@
 
 This package connects an AI client to the hosted LEAAID training engine. Obtain the invitation key from your facilitator and keep it private.
 
+For an executable, platform-neutral package, download `leaaid-operating-harness.json` and `client-kits/harness-runner.mjs`. Set `LEAAID_AGENT_ACCESS_KEY`, then run:
+
+```bash
+node harness-runner.mjs create_session
+node harness-runner.mjs launch_multi_agent_training '{"session_id":"<SESSION_ID>","module_id":1}'
+```
+
+The hosted boundary validates the same manifest again; local modification cannot bypass the server-side controls.
+
 ## Agent workflow
 
 1. The **Learning Orchestrator** checks progression and assigns the current assessment.

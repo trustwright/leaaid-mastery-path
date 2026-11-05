@@ -19,6 +19,8 @@ Interactive, source-grounded training based exclusively on the five LEAAID found
 - Signature-verified Slack slash-command adapter with ephemeral responses
 - Visible learning-orchestrator → testing-agent → deterministic-validator workflow
 - Copy-ready OpenAI, Claude, Gemini, and Slack setup packages with explicit user/admin consent
+- Portable operating harness manifest and runnable connector with allowlisted inputs, role boundaries, deterministic validation, and fail-closed controls
+- Scenario-led assessment items with module-specific misconception distractors instead of unrelated answer borrowing
 
 ## Agent launch surfaces
 
