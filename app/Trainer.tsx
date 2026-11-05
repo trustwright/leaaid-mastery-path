@@ -11,12 +11,14 @@ const STORE='leaaid-mastery-v1';const THEME_STORE='leaaid-theme-v1';const EMPTY:
 
 function Badge({moduleId,earned,compact=false}:{moduleId:ModuleId;earned:boolean;compact?:boolean}){const item=MODULES[moduleId-1];return <div className={`badge ${earned?'earned':''} ${compact?'compact':''}`} aria-label={`${item.title} badge ${earned?'earned':'locked'}`}><span>{earned?'✓':item.code}</span>{!compact&&<><b>{item.short}</b><small>{earned?'MASTERED':'LOCKED'}</small></>}</div>}
 
-function OperatingFlow({answered,correct,index,total,moduleId}:{answered:boolean;correct:boolean;index:number;total:number;moduleId:ModuleId}){
+function OperatingFlow({answered,correct,index,total,moduleId,selected,tip}:{answered:boolean;correct:boolean;index:number;total:number;moduleId:ModuleId;selected:boolean;tip:boolean}){
  const validator=answered?(correct?'verified':'risk'):'standby';
  const state=answered?(correct?'verified':'recovery'):'active';
- return <div className="harness-hud" role="img" aria-label={`Module ${moduleId} of 5, decision ${index+1} of ${total}. Orchestrator delegated, testing agent ${answered?'complete':'active'}, validator ${validator}.`}>
+ const position=answered?(correct?'ADVANCE':'RECOVERY'):tip?'SOURCE':selected?'RESPONSE':'DECISION';
+ return <div className="harness-hud" role="img" aria-label={`Module ${moduleId} of 5, decision ${index+1} of ${total}. Current harness position: ${position}. Validator ${validator}.`}>
   <div className="evolution-flow" aria-hidden="true">{['○','◫','◇','△','✦'].map((glyph,i)=><span className={i+1<moduleId?'complete':i+1===moduleId?'active':''} key={glyph}>{glyph}</span>)}</div>
-  <div className="operating-flow" aria-hidden="true"><div className="flow-node orchestrator delegated"><span>◇</span></div><i className="flow-link live"><b/></i><div className={`flow-node tester ${answered?'verified':'active'}`}><span>⌁</span></div><i className={`flow-link ${answered?'live':''}`}><b/></i><div className={`flow-node validator ${validator}`}><span>◆</span></div><div className={`risk-beacon ${validator}`}><i/><i/><i/></div></div>
+  <div className="harness-position"><b>M{moduleId}</b><span>{String(index+1).padStart(2,'0')}/{total}</span><em>{position}</em></div>
+  <div className="operating-flow" aria-hidden="true"><div className={`flow-node source ${tip?'active':answered||selected?'verified':'standby'}`}><span>◫</span></div><i className={`flow-link ${tip||selected||answered?'live':''}`}><b/></i><div className={`flow-node tester ${!tip&&!selected&&!answered?'active':selected||answered?'verified':'standby'}`}><span>⌁</span></div><i className={`flow-link ${selected||answered?'live':''}`}><b/></i><div className={`flow-node input ${selected&&!answered?'active':answered?'verified':'standby'}`}><span>↳</span></div><i className={`flow-link ${answered?'live':''}`}><b/></i><div className={`flow-node validator ${answered?'active':'standby'}`}><span>◇</span></div><i className={`flow-link ${answered?'live':''}`}><b/></i><div className={`flow-node gate ${validator}`}><span>◆</span></div></div>
   <div className="decision-flow" aria-hidden="true">{Array.from({length:total},(_,i)=><i className={i<index?'complete':i===index?state:''} key={i}><b/></i>)}</div>
  </div>
 }
@@ -68,7 +70,7 @@ export default function Trainer(){
    <aside className="quiz-rail"><button className="back" onClick={()=>setPhase('home')}>← Save & exit</button><p className="eyebrow">{phase==='final'?'FINAL CHALLENGE':`${MODULES[moduleId-1].code} ROUND`}</p><h2>{phase==='final'?'Premier Knowledge':MODULES[moduleId-1].title}</h2><div className="round-stat"><span>DECISION</span><strong>{index+1}<em>/{queue.length}</em></strong></div><div className="rail-steps">{MODULES.map(m=><div className={`${m.id===moduleId&&phase==='quiz'?'current':''}`} key={m.id}><Badge moduleId={m.id} earned={progress.completed.includes(m.id)} compact/><span>{m.short}</span></div>)}</div></aside>
    <div className="question-area">
     <div className="quiz-progress"><span><b>{completion}%</b> complete</span><i><em style={{width:`${completion}%`}}/></i><span className={seconds<=10?'urgent':''}><b>{seconds}</b> SEC</span></div>
-    <OperatingFlow answered={answered} correct={Boolean(isCorrect)} index={index} total={queue.length} moduleId={current.moduleId}/>
+    <OperatingFlow answered={answered} correct={Boolean(isCorrect)} selected={selected!==null} tip={tip} index={index} total={queue.length} moduleId={current.moduleId}/>
     <div className="question-card">
      <div className="qmeta"><span className="module-chip">{MODULES[current.moduleId-1].code} · {MODULES[current.moduleId-1].short}</span><span>ROUND {phase==='final'?'FINAL':'MASTERY'} · {index+1}/{queue.length}</span><span className="difficulty" aria-label={`Difficulty ${current.difficulty} of 3`}>LEVEL {current.difficulty} <i>{[1,2,3].map(dot=><b className={dot<=current.difficulty?'on':''} key={dot}/>)}</i></span></div>
      <p className="question-scenario">{current.scenario}</p><h1>{current.prompt}</h1>
