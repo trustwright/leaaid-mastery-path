@@ -1,5 +1,5 @@
 export const HARNESS_MANIFEST={
- schemaVersion:1,id:'leaaid-cohort-pathway-harness',version:'1.1.0',
+ schemaVersion:1,id:'leaaid-cohort-pathway-harness',version:'1.2.0',
  purpose:'Execute source-grounded LEAAID learning through controlled orchestration, testing, and deterministic validation.',
  roles:[
   {id:'learning_orchestrator',may:['check_sequence','delegate_assessment','route_recovery','unlock_next_gate'],mayNot:['author_new_course_claims','override_mastery','reveal_answer_key']},
