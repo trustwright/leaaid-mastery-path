@@ -1,16 +1,26 @@
 import Link from 'next/link';
 import ClientLauncher from '../ClientLauncher';
 
-export const metadata={title:'LEAAID Agent Gateway',robots:{index:false,follow:false}};
+export const metadata={title:'Start LEAAID anywhere',robots:{index:false,follow:false}};
 const origin='https://leaaid-mastery-path.nexus-8198.chatgpt.site';
 
-export default function AgentGuide(){return <main className="gateway-page">
- <nav><Link href="/">← Mastery Path</Link><span>LEAAID AGENT GATEWAY</span></nav>
- <header><p>LEAAID COHORT PATHWAY</p><h1>Choose your AI.<br/><em>Launch the learning path.</em></h1><p>Use the same source-grounded training in ChatGPT, Claude, Gemini, Slack, or the visual experience. Your facilitator supplies one private access code.</p><div><a href="#connect">Connect an AI assistant</a><a href="/LEAAID-COHORT-PATHWAY-SETUP.md" download>Download the student guide</a></div></header>
- <section className="gateway-flow"><article><b>01</b><h2>Choose</h2><p>Select the AI assistant or team workspace you already use.</p></article><article><b>02</b><h2>Connect</h2><p>Enter the private access code, copy the prepared connection, and approve it in that service.</p></article><article><b>03</b><h2>Learn</h2><p>Say “Launch Module 1.” The pathway presents one decision at a time and validates it before moving forward.</p></article></section>
+export default function AgentGuide(){return <main className="gateway-page connect-page">
+ <nav aria-label="Gateway navigation"><Link href="/">← Learning path</Link><span>LEAAID · START ANYWHERE</span></nav>
+ <header className="connect-hero">
+  <p>LEAAID COHORT PATHWAY</p>
+  <h1>Start where you<br/><em>already work.</em></h1>
+  <p>Bring the same source-grounded learning path into your preferred AI assistant or team channel.</p>
+  <a href="#connect">Choose a platform <span aria-hidden="true">↓</span></a>
+ </header>
  <ClientLauncher/>
- <section className="agent-team"><div><p className="gateway-kicker">LIVE MULTI-AGENT WORKFLOW</p><h2>Three roles. One auditable decision path.</h2></div><article><b>01 · LEARNING ORCHESTRATOR</b><p>Checks the sequence gate, maintains anonymous session state, and delegates the current assessment task.</p></article><article><b>02 · TESTING AGENT</b><p>Selects a non-repeating question from the authored module bank, rotates answer order, and withholds the answer.</p></article><article><b>03 · VALIDATOR AGENT</b><p>Checks only the submitted option against the authored key. Identity, timing, attempts, writing style, and inferred ability never affect the outcome.</p></article></section>
- <details className="technical-reference"><summary>Technical reference for administrators and computer-use agents</summary><section className="gateway-grid"><article><p className="gateway-kicker">CHATGPT CONNECTION</p><h2>Action definition</h2><code>{origin}/openapi.json</code><p>Authentication header: <b>X-LEAAID-Access-Key</b>.</p></article><article><p className="gateway-kicker">CLAUDE CONNECTION</p><h2>Remote connector</h2><code>{origin}/api/mcp</code><p>Streamable HTTP with the private access code as bearer or custom-header authentication.</p></article><article><p className="gateway-kicker">GEMINI CONNECTION</p><h2>Function endpoint</h2><code>{origin}/api/agent</code><p>Function declarations are included in the downloadable connector package.</p></article><article><p className="gateway-kicker">SLACK CONNECTION</p><h2>Command endpoint</h2><code>{origin}/api/slack</code><p>Import the supplied Slack configuration and set the workspace-generated signing secret.</p></article></section></details>
- <section className="gateway-prompt"><p className="gateway-kicker">CLIENT INSTRUCTION</p><h2>Recommended agent behavior</h2><pre>{`You are the LEAAID Cohort Pathway facilitator. First call leaaid_program, then create a session. When the learner says “launch training challenge,” call launch_multi_agent_training for the requested unlocked module. Present the Testing Agent’s question without revealing the answer. Submit the learner’s option exactly to validate_training_response. Advance only when the Validator Agent returns advance_allowed=true. If validation enters recovery, explain only the returned source coaching and ask the decision again. Never use identity, demographics, timing, attempts, writing style, or inferred ability in validation. After M5 Applied Concepts is mastered, launch the Applied Agent Builder Lab one decision at a time. Return the achievement verification link after each mastery event. Never invent course claims or bypass sequential mastery.`}</pre></section>
- <footer><b>Minimal session data</b><p>The service does not request names, email addresses, chat transcripts, or learner profiles. Agent sessions expire after seven days. Earned achievement receipts persist under a random learner-held code and expose no attempts, timing, or rank.</p></footer>
+ <section className="trust-line" aria-label="Learning assurance">
+  <span><i aria-hidden="true"/>Source grounded</span><span><i aria-hidden="true"/>Authored validation</span><span><i aria-hidden="true"/>Verifiable achievements</span>
+ </section>
+ <details className="harness-explainer">
+  <summary>How the learning harness works</summary>
+  <div className="harness-roles"><article><b>01</b><span>Orchestrator</span><p>Maintains the module sequence and delegates each decision.</p></article><article><b>02</b><span>Testing agent</span><p>Selects a non-repeating authored question without exposing its answer.</p></article><article><b>03</b><span>Validator</span><p>Checks the submitted option against the authored key and returns source coaching.</p></article></div>
+  <p className="ethics-line">Validation excludes identity, demographics, timing, attempts, writing style, and inferred ability.</p>
+  <details className="technical-reference"><summary>Administrator endpoints</summary><div className="endpoint-list"><p><b>ChatGPT</b><code>{origin}/openapi.json</code></p><p><b>Claude</b><code>{origin}/api/mcp</code></p><p><b>Gemini</b><code>{origin}/api/agent</code></p><p><b>Slack</b><code>{origin}/api/slack</code></p></div></details>
+ </details>
+ <footer><b>Minimal session data</b><p>No name, email, transcript, or learner profile is requested. Sessions expire after seven days. Achievement receipts use a random learner-held verification code.</p></footer>
  </main>}
