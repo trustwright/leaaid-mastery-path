@@ -95,7 +95,7 @@ ON agent_sessions(expires_at)
 export const agentChannelsSchema = `
 CREATE TABLE IF NOT EXISTS agent_channel_sessions (
   channel_hash TEXT PRIMARY KEY,
-  session_ref TEXT NOT NULL,
+  session_id TEXT NOT NULL,
   updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
 )`;
 
@@ -112,7 +112,7 @@ CREATE TABLE IF NOT EXISTS achievement_receipts (
   curriculum_version TEXT NOT NULL,
   evidence_json TEXT NOT NULL,
   revoked_at TEXT,
-  UNIQUE (session_ref, achievement_id)
+  UNIQUE (session_id, achievement_id)
 )`;
 
 export const achievementLookupIndexSchema = `
