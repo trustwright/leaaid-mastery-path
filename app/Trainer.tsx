@@ -11,16 +11,27 @@ const STORE='leaaid-mastery-v1';const THEME_STORE='leaaid-theme-v1';const EMPTY:
 
 function Badge({moduleId,earned,compact=false}:{moduleId:ModuleId;earned:boolean;compact?:boolean}){const item=MODULES[moduleId-1];return <div className={`badge ${earned?'earned':''} ${compact?'compact':''}`} aria-label={`${item.title} badge ${earned?'earned':'locked'}`}><span>{earned?'✓':item.code}</span>{!compact&&<><b>{item.short}</b><small>{earned?'MASTERED':'LOCKED'}</small></>}</div>}
 
-function OperatingFlow({answered,correct,index,total,moduleId,selected,tip}:{answered:boolean;correct:boolean;index:number;total:number;moduleId:ModuleId;selected:boolean;tip:boolean}){
+function OperatingFlow({answered,correct,index,total,moduleId,selected,tip,open,onToggle}:{answered:boolean;correct:boolean;index:number;total:number;moduleId:ModuleId;selected:boolean;tip:boolean;open:boolean;onToggle:()=>void}){
  const validator=answered?(correct?'verified':'risk'):'standby';
  const state=answered?(correct?'verified':'recovery'):'active';
  const position=answered?(correct?'ADVANCE':'RECOVERY'):tip?'SOURCE':selected?'RESPONSE':'DECISION';
- return <div className="harness-hud" role="img" aria-label={`Module ${moduleId} of 5, decision ${index+1} of ${total}. Current harness position: ${position}. Validator ${validator}.`}>
-  <div className="evolution-flow" aria-hidden="true">{['○','◫','◇','△','✦'].map((glyph,i)=><span className={i+1<moduleId?'complete':i+1===moduleId?'active':''} key={glyph}>{glyph}</span>)}</div>
-  <div className="harness-position"><b>M{moduleId}</b><span>{String(index+1).padStart(2,'0')}/{total}</span><em>{position}</em></div>
-  <div className="operating-flow" aria-hidden="true"><div className={`flow-node source ${tip?'active':answered||selected?'verified':'standby'}`}><span>◫</span></div><i className={`flow-link ${tip||selected||answered?'live':''}`}><b/></i><div className={`flow-node tester ${!tip&&!selected&&!answered?'active':selected||answered?'verified':'standby'}`}><span>⌁</span></div><i className={`flow-link ${selected||answered?'live':''}`}><b/></i><div className={`flow-node input ${selected&&!answered?'active':answered?'verified':'standby'}`}><span>↳</span></div><i className={`flow-link ${answered?'live':''}`}><b/></i><div className={`flow-node validator ${answered?'active':'standby'}`}><span>◇</span></div><i className={`flow-link ${answered?'live':''}`}><b/></i><div className={`flow-node gate ${validator}`}><span>◆</span></div></div>
-  <div className="decision-flow" aria-hidden="true">{Array.from({length:total},(_,i)=><i className={i<index?'complete':i===index?state:''} key={i}><b/></i>)}</div>
- </div>
+ return <aside className={`harness-context ${open?'is-open':''}`} aria-label="Live learning harness context">
+  <button className="harness-context-trigger" type="button" aria-expanded={open} aria-controls="live-harness-flow" onClick={onToggle}>
+   <span className="harness-live-mark" aria-hidden="true"><i/><i/><i/></span><span>Harness</span><b>{position}</b><em aria-hidden="true">{open?'−':'+'}</em>
+  </button>
+  {open&&<div className="harness-context-layer" id="live-harness-flow" role="status" aria-label={`Module ${moduleId} of 5, decision ${index+1} of ${total}. Current harness position: ${position}. Validator ${validator}.`}>
+   <div className="harness-position"><b>M{moduleId}</b><span>{String(index+1).padStart(2,'0')}/{total}</span><em>{position}</em></div>
+   <div className="operating-flow" aria-hidden="true">
+    <div className={`flow-node source ${tip?'active':answered||selected?'verified':'standby'}`} title="Source boundary"><span>◫</span></div><i className={`flow-link ${tip||selected||answered?'live':''}`}><b/></i>
+    <div className={`flow-node tester ${!tip&&!selected&&!answered?'active':selected||answered?'verified':'standby'}`} title="Testing agent"><span>⌁</span></div><i className={`flow-link ${selected||answered?'live':''}`}><b/></i>
+    <div className={`flow-node input ${selected&&!answered?'active':answered?'verified':'standby'}`} title="Learner decision"><span>↳</span></div><i className={`flow-link ${answered?'live':''}`}><b/></i>
+    <div className={`flow-node validator ${answered?'active':'standby'}`} title="Validator agent"><span>◇</span></div><i className={`flow-link ${answered?'live':''}`}><b/></i>
+    <div className={`flow-node gate ${validator}`} title="Mastery gate"><span>◆</span></div>
+   </div>
+   <div className="harness-stage-key" aria-hidden="true"><span>SOURCE</span><span>TEST</span><span>DECIDE</span><span>VERIFY</span><span>GATE</span></div>
+   <div className="decision-flow" aria-hidden="true">{Array.from({length:total},(_,i)=><i className={i<index?'complete':i===index?state:''} key={i}><b/></i>)}</div>
+  </div>}
+ </aside>
 }
 
 function Header({theme,setTheme,onHome,onAgent,rounds}:{theme:Theme;setTheme:(theme:Theme)=>void;onHome:()=>void;onAgent:()=>void;rounds:number}){return <header className="topbar"><button className="brand-button" onClick={onHome} aria-label="LEAAID Mastery Path home"><span>CMU</span><div><b>LEAAID</b><small>Mastery Path</small></div></button><nav aria-label="Application"><button className="nav-link" onClick={onHome}>Learning path</button><button className="agent-nav" onClick={onAgent}><span aria-hidden="true">◎</span> Study Coach</button><button className="theme-toggle" onClick={()=>setTheme(theme==='dark'?'light':'dark')} aria-label={`Switch to ${theme==='dark'?'light':'dark'} mode`}><span aria-hidden="true">{theme==='dark'?'☀':'◐'}</span>{theme==='dark'?'Light':'Dark'}</button><div className="round-counter"><b>{rounds}</b><span>/ 5 modules</span></div></nav></header>}
@@ -36,7 +47,7 @@ function Journey({progress,onStart}:{progress:Progress;onStart:(id:ModuleId)=>vo
 
 export default function Trainer(){
  const[progress,setProgress]=useState<Progress>(EMPTY);const[loaded,setLoaded]=useState(false);const[phase,setPhase]=useState<Phase>('home');const[theme,setTheme]=useState<Theme>('light');
- const[moduleId,setModuleId]=useState<ModuleId>(1);const[queue,setQueue]=useState<RuntimeQuestion[]>([]);const[index,setIndex]=useState(0);const[selected,setSelected]=useState<number|null>(null);const[answered,setAnswered]=useState(false);const[mastered,setMastered]=useState<string[]>([]);const[tip,setTip]=useState(false);const[seconds,setSeconds]=useState(LIMIT);const[toast,setToast]=useState('');const[agentOpen,setAgentOpen]=useState(false);
+ const[moduleId,setModuleId]=useState<ModuleId>(1);const[queue,setQueue]=useState<RuntimeQuestion[]>([]);const[index,setIndex]=useState(0);const[selected,setSelected]=useState<number|null>(null);const[answered,setAnswered]=useState(false);const[mastered,setMastered]=useState<string[]>([]);const[tip,setTip]=useState(false);const[harnessOpen,setHarnessOpen]=useState(false);const[seconds,setSeconds]=useState(LIMIT);const[toast,setToast]=useState('');const[agentOpen,setAgentOpen]=useState(false);
  useEffect(()=>{queueMicrotask(()=>{try{const raw=localStorage.getItem(STORE);if(raw){const saved=JSON.parse(raw);setProgress({...EMPTY,...saved,history:saved.history||{}})}const savedTheme=localStorage.getItem(THEME_STORE) as Theme|null;const preferred=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';setTheme(savedTheme||preferred)}catch{}setLoaded(true)})},[]);
  useEffect(()=>{document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme;try{localStorage.setItem(THEME_STORE,theme)}catch{}},[theme]);
  useEffect(()=>{if(loaded)localStorage.setItem(STORE,JSON.stringify(progress))},[loaded,progress]);
@@ -70,9 +81,9 @@ export default function Trainer(){
    <aside className="quiz-rail"><button className="back" onClick={()=>setPhase('home')}>← Save & exit</button><p className="eyebrow">{phase==='final'?'FINAL CHALLENGE':`${MODULES[moduleId-1].code} ROUND`}</p><h2>{phase==='final'?'Premier Knowledge':MODULES[moduleId-1].title}</h2><div className="round-stat"><span>DECISION</span><strong>{index+1}<em>/{queue.length}</em></strong></div><div className="rail-steps">{MODULES.map(m=><div className={`${m.id===moduleId&&phase==='quiz'?'current':''}`} key={m.id}><Badge moduleId={m.id} earned={progress.completed.includes(m.id)} compact/><span>{m.short}</span></div>)}</div></aside>
    <div className="question-area">
     <div className="quiz-progress"><span><b>{completion}%</b> complete</span><i><em style={{width:`${completion}%`}}/></i><span className={seconds<=10?'urgent':''}><b>{seconds}</b> SEC</span></div>
-    <OperatingFlow answered={answered} correct={Boolean(isCorrect)} selected={selected!==null} tip={tip} index={index} total={queue.length} moduleId={current.moduleId}/>
-    <div className="question-card">
+    <div className={`question-card ${harnessOpen?'harness-visible':''}`}>
      <div className="qmeta"><span className="module-chip">{MODULES[current.moduleId-1].code} · {MODULES[current.moduleId-1].short}</span><span>ROUND {phase==='final'?'FINAL':'MASTERY'} · {index+1}/{queue.length}</span><span className="difficulty" aria-label={`Difficulty ${current.difficulty} of 3`}>LEVEL {current.difficulty} <i>{[1,2,3].map(dot=><b className={dot<=current.difficulty?'on':''} key={dot}/>)}</i></span></div>
+     <OperatingFlow answered={answered} correct={Boolean(isCorrect)} selected={selected!==null} tip={tip} index={index} total={queue.length} moduleId={current.moduleId} open={harnessOpen} onToggle={()=>setHarnessOpen(value=>!value)}/>
      <p className="question-scenario">{current.scenario}</p><h1>{current.prompt}</h1>
      <div className="answers">{current.options.map((o,i)=><button disabled={answered} onClick={()=>setSelected(i)} className={`${selected===i?'selected':''} ${answered&&i===current.correct?'correct':''} ${answered&&selected===i&&i!==current.correct?'wrong':''}`} key={o}><span>{String.fromCharCode(65+i)}<small>{i+1}</small></span>{o}</button>)}</div>{!answered&&<div className="question-actions"><button className="tip" aria-expanded={tip} onClick={()=>setTip(t=>!t)}>{tip?'Close guidance':'Need a source cue?'}</button><button className="primary" disabled={selected===null} onClick={submit}>Validate <span>→</span></button></div>}{tip&&!answered&&<aside className="hint" aria-label="Source coaching tip"><div><span>◫</span><strong>DECISION CUE</strong></div><p>{current.tipContext}</p><b>{current.hint}</b><small>{MODULES[current.moduleId-1].source} · {current.sourceRefs[0].locator}</small></aside>}{answered&&<div className={`feedback ${isCorrect?'good':'retry'}`} role="status"><div><strong>{isCorrect?'Verified':'Recovery required'}</strong><p className="feedback-claim">{selected===null?'Time expired. ':''}{current.sourceRefs[0].claim}</p><details><summary>Evidence and reasoning</summary><p>{current.rationale}</p><small>{MODULES[current.moduleId-1].source} · {current.sourceRefs[0].locator}</small></details></div><button onClick={advance}>{index===queue.length-1?'Complete checkpoint':'Continue'} →</button></div>}
     </div>
