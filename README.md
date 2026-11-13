@@ -1,5 +1,7 @@
 # LEAAID Mastery Path
 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/trustwright/leaaid-mastery-path?quickstart=1)
+
 Interactive, source-grounded training based exclusively on the five LEAAID foundation modules supplied with this project.
 
 ## Learning model
@@ -35,6 +37,9 @@ Interactive, source-grounded training based exclusively on the five LEAAID found
 - Downloadable operating package: `https://leaaid-mastery-path.nexus-8198.chatgpt.site/leaaid-agent-package.zip`
 - Slack app manifest: `https://leaaid-mastery-path.nexus-8198.chatgpt.site/slack-app-manifest.json`
 - Achievement verifier: `https://leaaid-mastery-path.nexus-8198.chatgpt.site/verify`
+- Visual setup and learner guide: `https://leaaid-mastery-path.nexus-8198.chatgpt.site/guide`
+
+The [Codespaces workshop](docs/CODESPACES-WORKSHOP.md) opens an isolated environment for demonstrating platform setup, the live multi-agent harness, module objectives, and achievement verification.
 
 Learner sessions are anonymous, require no access code, and expire after seven days. Set `SLACK_SIGNING_SECRET` only when installing the optional Slack adapter. The Slack route validates the Slack request signature and stores only an HMAC-derived channel mapping.
 

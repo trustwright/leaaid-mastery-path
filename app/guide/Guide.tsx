@@ -1,0 +1,63 @@
+'use client';
+import {useMemo,useState} from 'react';
+import Link from 'next/link';
+
+type Platform='openai'|'gemini'|'claude'|'slack';
+type Question={prompt:string;scenario:string;options:string[];index:number;total:number;difficulty:number;module_code:string};
+type HarnessResult={session_id?:string;state?:string;correct?:boolean;message?:string;feedback?:string;question?:Question;agent_workflow?:{agents:{id:string;state:string}[]}};
+
+const PLATFORMS:Record<Platform,{label:string;mark:string;mode:string;summary:string;steps:string[];asset:string;action:string}>={
+ openai:{label:'OpenAI',mark:'O',mode:'GPT Action',summary:'Import the harness as an OpenAPI action and apply the operating instruction.',steps:['Open the GPT builder and add a new Action.','Import the hosted openapi.json URL.','Set authentication to None and add the system instruction.','Test create_session, then say “Launch Module 1.”'],asset:'https://leaaid-mastery-path.nexus-8198.chatgpt.site/openapi.json',action:'Open schema'},
+ gemini:{label:'Gemini',mark:'G',mode:'Function tool',summary:'Register one function declaration in AI Studio or a function-enabled Gemini application.',steps:['Open Google AI Studio or your Gemini application.','Register operate_leaaid_agent from the function declaration.','Forward emitted arguments to the hosted /api/agent endpoint.','Return the JSON result and say “Launch Module 1.”'],asset:'https://leaaid-mastery-path.nexus-8198.chatgpt.site/client-kits/gemini-function-tool.json',action:'Open function'},
+ claude:{label:'Claude',mark:'C',mode:'MCP connector',summary:'Connect Claude directly to the harness through its hosted MCP endpoint.',steps:['Open Settings → Connectors in a supported Claude workspace.','Add the hosted /api/mcp URL as a custom connector.','Approve it under your workspace policy.','Say “Launch Module 1.”'],asset:'https://leaaid-mastery-path.nexus-8198.chatgpt.site/api/mcp',action:'Copy MCP URL'},
+ slack:{label:'Slack',mark:'S',mode:'Slash command',summary:'Install a minimal workspace app that routes /leaaid commands to the harness.',steps:['Create a Slack app from an app manifest.','Import slack-app-manifest.json and review the commands scope.','Install the app and configure its signing secret in the deployment.','Run “/leaaid start 1” in the workspace.'],asset:'https://leaaid-mastery-path.nexus-8198.chatgpt.site/slack-app-manifest.json',action:'Open manifest'},
+};
+
+const MODULES=[
+ {code:'M1',title:'Agentic AI Foundations',objective:'Distinguish workflows from agents; define goals, authority, policy envelopes, and stopping rules.'},
+ {code:'M2',title:'Data Foundations & Architecture',objective:'Design trusted knowledge, retrieval, memory, tools, evaluation, observability, cost, and latency controls.'},
+ {code:'M3',title:'Agentic AI Assurance',objective:'Apply scoped identity, enforced guardrails, threat analysis, containment, and evidence-led assurance.'},
+ {code:'M4',title:'AI Strategy & Transformation',objective:'Connect business outcomes to agency, governance, decision rights, control planes, and workflow economics.'},
+ {code:'M5',title:'Applied Agentic Systems',objective:'Build, test, refine, and govern a multi-agent outcome using the supplied applied labs.'},
+];
+
+const BADGES=[
+ {code:'M1–M5',title:'Module mastery',rule:'10 of 10 source-grounded decisions per module'},
+ {code:'LAB',title:'Applied Agent Builder',rule:'Seven governed build, refinement, and operating decisions'},
+ {code:'◆',title:'Premier LEAAID Knowledge',rule:'Five module badges + applied lab + 10 of 10 final decisions'},
+];
+
+export default function Guide(){
+ const[platform,setPlatform]=useState<Platform>('openai');
+ const[copied,setCopied]=useState('');
+ const[demo,setDemo]=useState<HarnessResult|null>(null);
+ const[loading,setLoading]=useState(false);
+ const[error,setError]=useState('');
+ const active=PLATFORMS[platform];
+ const agents=useMemo(()=>demo?.agent_workflow?.agents||[
+  {id:'learning_orchestrator',state:demo?'delegated':'ready'},
+  {id:'testing_agent',state:demo?.question?'active':'ready'},
+  {id:'validator_agent',state:'waiting'},
+ ],[demo]);
+ const call=async(body:Record<string,unknown>)=>{const response=await fetch('/api/agent',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});const result=await response.json();if(!response.ok)throw new Error(result.error||'The harness could not complete the action.');return result as HarnessResult};
+ const launch=async()=>{setLoading(true);setError('');try{const session=await call({action:'create_session'});const result=await call({action:'launch_multi_agent_training',session_id:session.session_id,module_id:1});setDemo(result)}catch(reason){setError(reason instanceof Error?reason.message:'Unable to launch the demonstration.')}finally{setLoading(false)}};
+ const answer=async(option_index:number)=>{if(!demo?.session_id)return;setLoading(true);setError('');try{setDemo(await call({action:'validate_training_response',session_id:demo.session_id,option_index}))}catch(reason){setError(reason instanceof Error?reason.message:'Unable to validate the response.')}finally{setLoading(false)}};
+ const copy=async(text:string,label:string)=>{await navigator.clipboard.writeText(text);setCopied(label);setTimeout(()=>setCopied(''),1400)};
+ return <main className="guide-shell">
+  <nav className="guide-nav"><Link href="/" className="guide-brand"><span>CMU</span><b>LEAAID</b><small>Learning Harness Guide</small></Link><div><a href="#platforms">Set up</a><a href="#proof">Live proof</a><a href="#learn">Learner guide</a><Link className="guide-launch" href="/">Launch training <i>→</i></Link></div></nav>
+  <header className="guide-hero"><div><p className="eyebrow">LEAAID LEARNING HARNESS · FIELD GUIDE</p><h1>Connect once.<br/><em>Learn anywhere.</em></h1><p>Build the same governed learning agent in your preferred AI platform, prove the live orchestration, then follow the five-module mastery path.</p><div><a href="#platforms">Choose a platform <span>↓</span></a><a href="https://codespaces.new/trustwright/leaaid-mastery-path?quickstart=1" target="_blank" rel="noreferrer">Open workshop <span>↗</span></a></div></div><div className="guide-orbit" aria-label="Portable harness sequence"><span>HOST</span><i/><b>HARNESS</b><i/><span>LEARN</span><i/><span>VERIFY</span></div></header>
+
+  <section className="platform-section" id="platforms"><div className="guide-heading"><div><p className="eyebrow">PLATFORM SETUP</p><h2>One harness. Four entry points.</h2></div><p>Select a platform. Each path reaches the same authored curriculum, deterministic validation, and sequential mastery controls.</p></div>
+   <div className="platform-tabs" role="tablist" aria-label="Agent platforms">{(Object.keys(PLATFORMS) as Platform[]).map(key=><button key={key} role="tab" aria-selected={platform===key} onClick={()=>setPlatform(key)}><span>{PLATFORMS[key].mark}</span><b>{PLATFORMS[key].label}</b><small>{PLATFORMS[key].mode}</small></button>)}</div>
+   <article className="platform-walkthrough"><div className="walkthrough-intro"><span className="platform-mark">{active.mark}</span><p>{active.mode}</p><h3>{active.label}</h3><span>{active.summary}</span></div><ol>{active.steps.map((step,index)=><li key={step}><i>{String(index+1).padStart(2,'0')}</i><span>{step}</span></li>)}</ol><div className="walkthrough-actions">{platform==='claude'?<button onClick={()=>void copy(active.asset,'MCP')}>{copied==='MCP'?'Copied':'Copy MCP URL'} <i>↗</i></button>:<a href={active.asset} target="_blank" rel="noreferrer">{active.action} <i>↗</i></a>}<button onClick={()=>void copy('Launch Module 1.','prompt')}>{copied==='prompt'?'Copied':'Copy launch prompt'} <i>+</i></button></div></article>
+  </section>
+
+  <section className="proof-section" id="proof"><div className="proof-copy"><p className="eyebrow">LIVE HARNESS PROOF</p><h2>Watch the real learning team operate.</h2><p>The host model routes the request. The harness selects the authored decision, preserves sequence, and validates the learner response without model self-grading.</p><button onClick={()=>void launch()} disabled={loading}>{loading?'Starting…':demo?'Restart proof':'Run live proof'} <span>→</span></button>{error&&<p className="proof-error" role="alert">{error}</p>}</div><div className="proof-console"><div className="proof-flow" aria-label="Agent states">{agents.map((agent,index)=><div key={agent.id}><span className={agent.state}>{index===0?'◎':index===1?'◫':'◇'}</span><b>{agent.id==='learning_orchestrator'?'ORCH':agent.id==='testing_agent'?'TEACH':'REVIEW'}</b><small>{agent.state}</small>{index<agents.length-1&&<i/>}</div>)}</div>{!demo?.question?<div className="proof-empty"><b>Ready</b><span>Launch an anonymous seven-day session. No account or learner profile is requested.</span></div>:<div className="proof-question"><small>{demo.question.module_code} · DECISION {demo.question.index}/{demo.question.total} · LEVEL {demo.question.difficulty}</small><p>{demo.question.scenario}</p><h3>{demo.question.prompt}</h3><div>{demo.question.options.map((option,index)=><button key={option} disabled={loading} onClick={()=>void answer(index)}><i>{String.fromCharCode(65+index)}</i>{option}</button>)}</div>{demo.correct!==undefined&&<strong className={demo.correct?'pass':'retry'}>{demo.correct?'Validated · next decision loaded':'Recovery branch · try this concept again'}</strong>}</div>}</div></section>
+
+  <section className="learner-section" id="learn"><div className="guide-heading"><div><p className="eyebrow">LEARNER GUIDE</p><h2>Five gates. One applied outcome.</h2></div><p>Each module requires complete comprehension before the next opens. Time and retries never reduce an achievement.</p></div><div className="module-map">{MODULES.map((module,index)=><article key={module.code}><span>{module.code}</span><i>{index<4?'→':'◆'}</i><h3>{module.title}</h3><p>{module.objective}</p><small>10 decisions · 100% mastery</small></article>)}</div>
+   <div className="achievement-guide"><div><p className="eyebrow">ACHIEVEMENT PATH</p><h2>Evidence earned in sequence.</h2><p>Receipts are pseudonymous learning evidence. They prove the stated harness outcome—not identity, professional licensure, rank, or employment suitability.</p><a href="/verify">Verify an achievement <span>→</span></a></div><div className="badge-guide">{BADGES.map((badge,index)=><article key={badge.title}><span className={`badge-prism badge-prism-${index}`}>{badge.code}</span><div><b>{badge.title}</b><p>{badge.rule}</p></div></article>)}</div></div>
+  </section>
+
+  <footer className="guide-footer"><div><b>LEAAID</b><span>Source-grounded agentic AI mastery</span></div><nav><a href="https://github.com/trustwright/leaaid-mastery-path" target="_blank" rel="noreferrer">GitHub ↗</a><a href="/leaaid-agent-package.zip">Agent package ↓</a><Link href="/">Learning path →</Link></nav></footer>
+ </main>
+}
