@@ -7,7 +7,7 @@ const cors={'Access-Control-Allow-Origin':'*','Access-Control-Allow-Headers':'Co
 const json=(body:unknown,status=200)=>Response.json(body,{status,headers:cors});
 const bindings=()=>env as unknown as AgentEnv;
 export function OPTIONS(){return new Response(null,{status:204,headers:cors})}
-export function GET(){return json({...describeProgram(),access:'Anonymous learning sessions; no learner account or access code required.',openapi:'/openapi.json',mcp:'/api/mcp',guide:'/agent'})}
+export function GET(){return json({...describeProgram(),access:'Anonymous learning sessions; no learner account or access code required.',openapi:'/openapi.json',mcp:'/api/mcp',guide:'/'})}
 
 export async function POST(request:Request){
  if(Number(request.headers.get('content-length')||0)>16384)return json({error:'Request is too large.'},413);

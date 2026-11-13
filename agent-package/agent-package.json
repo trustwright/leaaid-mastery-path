@@ -1,0 +1,15 @@
+{
+  "name": "LEAAID Portable Learning Agent",
+  "version": "1.5.0",
+  "instruction": "SYSTEM_INSTRUCTIONS.md",
+  "files": {
+    "agent_card": "leaaid-cohort-pathway-agent.json",
+    "operating_harness": "leaaid-operating-harness.json",
+    "openapi": "openapi.json",
+    "gemini_function": "gemini-function-tool.json",
+    "slack_manifest": "slack-app-manifest.json",
+    "runner": "harness-runner.mjs"
+  },
+  "hosted_origin": "https://leaaid-mastery-path.nexus-8198.chatgpt.site",
+  "authentication": "none; anonymous sessions expire after seven days"
+}

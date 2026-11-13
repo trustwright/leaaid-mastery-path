@@ -9,13 +9,13 @@ Interactive, source-grounded training based exclusively on the five LEAAID found
 - Focused recovery until every round reaches 100% mastery
 - Five module badges plus a 10-question cross-module final challenge
 - M5 Applied Concepts knowledge validation followed by a seven-decision Applied Agent Builder simulation
-- Premier LEAAID Knowledge with a durable pseudonymous verification receipt in the agent pathway
+- Premier LEAAID Knowledge with durable pseudonymous verification receipts from the hosted harness
 - Local browser recovery plus anonymous, seven-day agent sessions with no learner profile
 - Two complete non-repeating 10-question rotations per module before recycling
 - Balanced, parallel answer choices and three runtime stem variants
 - Source-grounded three-step Study Coach for topic inquiry and module launching
 - Light/dark modes, large touch targets, number-key selection, and responsive layouts
-- Invitation-controlled REST/OpenAPI and remote MCP agent surfaces
+- Anonymous, expiring REST/OpenAPI and remote MCP agent surfaces
 - Signature-verified Slack slash-command adapter with ephemeral responses
 - Visible learning-orchestrator → testing-agent → deterministic-validator workflow
 - Copy-ready OpenAI, Claude, Gemini, and Slack setup packages with explicit user/admin consent
@@ -32,10 +32,13 @@ Interactive, source-grounded training based exclusively on the five LEAAID found
 - REST: `https://leaaid-mastery-path.nexus-8198.chatgpt.site/api/agent`
 - Slack command request URL: `https://leaaid-mastery-path.nexus-8198.chatgpt.site/api/slack`
 - Cohort agent package: `https://leaaid-mastery-path.nexus-8198.chatgpt.site/leaaid-cohort-pathway-agent.json`
+- Downloadable operating package: `https://leaaid-mastery-path.nexus-8198.chatgpt.site/leaaid-agent-package.zip`
 - Slack app manifest: `https://leaaid-mastery-path.nexus-8198.chatgpt.site/slack-app-manifest.json`
 - Achievement verifier: `https://leaaid-mastery-path.nexus-8198.chatgpt.site/verify`
 
-Set `LEAAID_AGENT_ACCESS_KEY` for invited GPT, Claude, or Gemini-compatible clients. Set `SLACK_SIGNING_SECRET` for the Slack adapter. The REST and MCP surfaces fail closed when the invitation key is missing. The Slack route validates the Slack request signature and stores only an HMAC-derived channel mapping.
+Learner sessions are anonymous, require no access code, and expire after seven days. Set `SLACK_SIGNING_SECRET` only when installing the optional Slack adapter. The Slack route validates the Slack request signature and stores only an HMAC-derived channel mapping.
+
+The repository's [`agent-package`](agent-package/) directory is the portable build handoff. It contains platform-neutral operating instructions and points to the same manifest, OpenAPI contract, Gemini function declaration, Slack manifest, guardrails, and runnable connector shipped by the hosted experience.
 
 ## Run
 

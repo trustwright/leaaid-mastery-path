@@ -2,6 +2,8 @@
 
 The hosted LEAAID learning harness creates anonymous seven-day sessions. Learners do not need an account, facilitator code, API key, or profile.
 
+Download the complete portable package from `https://leaaid-mastery-path.nexus-8198.chatgpt.site/leaaid-agent-package.zip`. It includes the operating instruction, platform contracts, guardrails, and executable connector described below.
+
 ## Start immediately
 
 Open `https://leaaid-mastery-path.nexus-8198.chatgpt.site/` to run the complete visual learning experience without connecting another service.
