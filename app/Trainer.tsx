@@ -3,6 +3,7 @@ import {useEffect,useState} from 'react';
 import {MODULES,ModuleId,RuntimeQuestion,materializeQuestion,questionsFor,selectQuestionSet} from '../lib/questions';
 import {COACH,CoachGoal,coachChain} from '../lib/coach';
 import AppliedLab from './AppliedLab';
+import MasteryLandscape from './MasteryLandscape';
 
 type Progress={completed:ModuleId[];best:Partial<Record<ModuleId,number>>;labComplete:boolean;premier:boolean;history:Partial<Record<ModuleId,string[]>>};
 type Phase='home'|'quiz'|'module-result'|'lab'|'lab-result'|'final'|'premier';
@@ -27,7 +28,7 @@ function InlineVerifier(){
 
 function AgentPackage(){return <section className="agent-package-strip" aria-labelledby="agent-package-title"><div className="package-orbit" aria-hidden="true"><i/><i/><i/><b>◇</b></div><div><p className="eyebrow">PORTABLE HARNESS</p><h2 id="agent-package-title">Run it anywhere.</h2><span>Setup, prove, and connect.</span></div><nav aria-label="Agent package downloads"><a className="package-primary" href="/guide">Setup guide <i>→</i></a><a href="/leaaid-agent-package.zip" download>Download <i>↓</i></a><a href="https://github.com/trustwright/leaaid-mastery-path/tree/main/agent-package" target="_blank" rel="noreferrer">Repository <i>↗</i></a></nav></section>}
 
-function OperatingFlow({answered,correct,index,total,moduleId,selected,tip,open,onToggle}:{answered:boolean;correct:boolean;index:number;total:number;moduleId:ModuleId;selected:boolean;tip:boolean;open:boolean;onToggle:()=>void}){
+function OperatingFlow({answered,correct,index,total,moduleId,difficulty,selected,tip,mastered,completed,open,onToggle}:{answered:boolean;correct:boolean;index:number;total:number;moduleId:ModuleId;difficulty:number;selected:boolean;tip:boolean;mastered:number;completed:number;open:boolean;onToggle:()=>void}){
  const validator=answered?(correct?'verified':'risk'):'standby';
  const state=answered?(correct?'verified':'recovery'):'active';
  const position=answered?(correct?'ADVANCE':'RECOVERY'):tip?'SOURCE':selected?'RESPONSE':'DECISION';
@@ -37,14 +38,7 @@ function OperatingFlow({answered,correct,index,total,moduleId,selected,tip,open,
   </button>
   {open&&<div className="harness-context-layer" id="live-harness-flow" role="status" aria-label={`Module ${moduleId} of 5, decision ${index+1} of ${total}. Current harness position: ${position}. Validator ${validator}.`}>
    <div className="harness-position"><b>M{moduleId}</b><span>{String(index+1).padStart(2,'0')}/{total}</span><em>{position}</em></div>
-   <div className="operating-flow" aria-hidden="true">
-    <div className={`flow-node source ${answered?'verified':'active'}`} title="Learning orchestrator"><span>◎</span></div><i className={`flow-link ${tip||selected||answered?'live':''}`}><b/></i>
-    <div className={`flow-node tester ${answered?'verified':'active'}`} title="Teaching agent"><span>◫</span></div><i className={`flow-link ${selected||answered?'live':''}`}><b/></i>
-    <div className={`flow-node input ${selected&&!answered?'active':answered?'verified':'standby'}`} title="Learner decision"><span>↳</span></div><i className={`flow-link ${answered?'live':''}`}><b/></i>
-    <div className={`flow-node validator ${answered?'active':'standby'}`} title="Reviewing agent"><span>◇</span></div><i className={`flow-link ${answered?'live':''}`}><b/></i>
-    <div className={`flow-node gate ${validator}`} title="Mastery gate"><span>◆</span></div>
-   </div>
-   <div className="harness-stage-key" aria-hidden="true"><span>ORCH</span><span>TEACH</span><span>YOU</span><span>REVIEW</span><span>GATE</span></div>
+   <MasteryLandscape compact completed={completed} moduleId={moduleId} mastered={mastered} total={total} difficulty={difficulty} answered={answered} correct={correct}/>
    <div className="agent-pulse-line" aria-hidden="true"><span className={answered?'sleep':'live'}>ORCHESTRATOR</span><span className={answered?'sleep':'live'}>TEACHING</span><span className={answered?'live':'sleep'}>REVIEWING</span></div>
    <div className="decision-flow" aria-hidden="true">{Array.from({length:total},(_,i)=><i className={i<index?'complete':i===index?state:''} key={i}><b/></i>)}</div>
   </div>}
@@ -101,7 +95,7 @@ export default function Trainer(){
     <div className="quiz-progress"><span><b>{completion}%</b> complete</span><i><em style={{width:`${completion}%`}}/></i><span className={seconds<=10?'urgent':''}><b>{seconds}</b> SEC</span></div>
     <div className={`question-card ${harnessOpen?'harness-visible':''}`}>
      <div className="qmeta"><span className="module-chip">{MODULES[current.moduleId-1].code} · {MODULES[current.moduleId-1].short}</span><span>ROUND {phase==='final'?'FINAL':'MASTERY'} · {index+1}/{queue.length}</span><span className="difficulty" aria-label={`Difficulty ${current.difficulty} of 3`}>LEVEL {current.difficulty} <i>{[1,2,3].map(dot=><b className={dot<=current.difficulty?'on':''} key={dot}/>)}</i></span></div>
-     <OperatingFlow answered={answered} correct={Boolean(isCorrect)} selected={selected!==null} tip={tip} index={index} total={queue.length} moduleId={current.moduleId} open={harnessOpen} onToggle={()=>setHarnessOpen(value=>!value)}/>
+     <OperatingFlow answered={answered} correct={Boolean(isCorrect)} selected={selected!==null} tip={tip} index={index} total={queue.length} moduleId={current.moduleId} difficulty={current.difficulty} mastered={mastered.length} completed={progress.completed.length} open={harnessOpen} onToggle={()=>setHarnessOpen(value=>!value)}/>
      <p className="question-scenario">{current.scenario}</p><h1>{current.prompt}</h1>
      <div className="answers">{current.options.map((o,i)=><button disabled={answered} onClick={()=>setSelected(i)} className={`${selected===i?'selected':''} ${answered&&i===current.correct?'correct':''} ${answered&&selected===i&&i!==current.correct?'wrong':''}`} key={o}><span>{String.fromCharCode(65+i)}<small>{i+1}</small></span>{o}</button>)}</div>{!answered&&<div className="question-actions"><button className="tip" aria-expanded={tip} onClick={()=>setTip(t=>!t)}>{tip?'Close guidance':'Need a source cue?'}</button><button className="primary" disabled={selected===null} onClick={submit}>Validate <span>→</span></button></div>}{tip&&!answered&&<aside className="hint" aria-label="Source coaching tip"><div><span>◫</span><strong>DECISION CUE</strong></div><p>{current.tipContext}</p><b>{current.hint}</b><small>{MODULES[current.moduleId-1].source} · {current.sourceRefs[0].locator}</small></aside>}{answered&&<div className={`feedback ${isCorrect?'good':'retry'}`} role="status"><div><strong>{isCorrect?'Verified':'Recovery required'}</strong><p className="feedback-claim">{selected===null?'Time expired. ':''}{current.sourceRefs[0].claim}</p><details><summary>Evidence and reasoning</summary><p>{current.rationale}</p><small>{MODULES[current.moduleId-1].source} · {current.sourceRefs[0].locator}</small></details></div><button onClick={advance}>{index===queue.length-1?'Complete checkpoint':'Continue'} →</button></div>}
     </div>

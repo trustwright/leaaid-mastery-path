@@ -6,12 +6,15 @@
 - Source-grounded content QA: 100 questions, 20 per module, all with page or slide locators
 - Rotation QA: two sequential 10-question rounds per module with zero repeated base questions
 - Cue-bias QA: the correct answer is the longest option in 14% of items
+- Explanation QA: 100 distinct source-specific rationales, each carrying its exact page or slide locator; generic answer-key prose is blocked
 - Tip QA: question-specific source context and recovery cue checked across all 100 items
 - Applied lab QA: seven ordered build decisions, varied correct-choice positions, explicit recovery branches, and baseline/refinement/operation milestones
 - Agent workflow QA: learning orchestrator delegates to a testing agent; a separate deterministic validator blocks advancement until the authored key confirms the response
 - Client-kit QA: OpenAI/OpenAPI, Claude/MCP, Gemini function declarations, and Slack manifest are present without embedded credentials
 - Operating harness QA: allowlisted actions, typed inputs, source authority, non-disclosure, deterministic progression, role prohibitions, seven-day expiry, and fail-closed behavior are declared and enforced at the REST/MCP boundary
 - Linguistic QA: every item now includes a distinct enterprise scenario; action and definition distractors use module-specific misconception models rather than answer-length matching
+- Source audit: all five supplied files were extracted and visually reviewed; all 100 scored claims and locators were rechecked against their cited page or slide
+- Visual semantics: the five-stage mastery landscape reports deterministic path, gap, item influence, gap change, and state; it explicitly does not claim that learner activity retrains a neural network
 - Mastery QA: 100% comprehension remains required before sequential unlock
 - Scale simulation: 10,000 isolated learner sessions, 1,000,000 generated decisions, zero repeat violations
 - HTTP production-preview load: 500 sessions, 25 concurrent, 500 accepted, 0 rejected; p95 748 ms on the local preview host
@@ -23,6 +26,7 @@
 ## Experience coverage
 
 - Desktop and mobile responsive layouts
+- The live five-stage mastery landscape appears in the guide and as a compact assessment HUD, using current module, answered/correct counts, mastery gap, and authored difficulty
 - Achievement verification checked at large-display and 390 px mobile viewports with no horizontal overflow and 54 px form targets
 - Light and dark themes
 - Minimum 44 px primary interactive targets, touch-action optimization, sticky mobile submission action
