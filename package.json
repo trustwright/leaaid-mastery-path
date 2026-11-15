@@ -12,6 +12,8 @@
     "content:export": "node --experimental-strip-types scripts/export-content.mjs",
     "qa": "npm run content:export && node --experimental-strip-types scripts/qa-training.mjs",
     "qa:scale": "node --experimental-strip-types scripts/scale-swarm.mjs",
+    "qa:live-achievements": "node --experimental-strip-types scripts/qa-live-achievements.mjs",
+    "qa:connectors": "node --experimental-strip-types scripts/qa-platform-connectors.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
   },
   "dependencies": {

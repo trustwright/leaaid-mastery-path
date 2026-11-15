@@ -6,7 +6,7 @@ type LandscapeProps={
  moduleId?:number;
  mastered?:number;
  total?:number;
- difficulty?:number;
+ questionIndex?:number;
  answered?:boolean;
  correct?:boolean;
  compact?:boolean;
@@ -14,14 +14,15 @@ type LandscapeProps={
 
 const STAGES=['FOUND','ARCH','ASSURE','STRATEGY','APPLY'];
 
-export default function MasteryLandscape({completed,moduleId=Math.min(5,completed+1),mastered=0,total=10,difficulty=1,answered=false,correct=false,compact=false}:LandscapeProps){
+export default function MasteryLandscape({completed,moduleId=Math.min(5,completed+1),mastered=0,total=10,questionIndex=1,answered=false,correct=false,compact=false}:LandscapeProps){
  const canvas=useRef<HTMLCanvasElement>(null);
- const resolved=Math.min(total,mastered+(answered&&correct?1:0));
+ const resolved=Math.min(total,mastered);
  const gap=Math.max(0,total-resolved);
- const influence=Math.max(1,Math.min(3,difficulty));
  const path=completed+Math.min(1,resolved/Math.max(1,total));
- const state=answered?(correct?'CONVERGING':'RECOVERY'):resolved?'IN MOTION':'READY';
- const label=useMemo(()=>`Five-stage mastery landscape. ${completed} modules complete. Module ${moduleId}, ${resolved} of ${total} concepts mastered. ${gap} concepts remain. Current challenge level ${influence} of 3. State ${state}.`,[completed,moduleId,resolved,total,gap,influence,state]);
+ const programPercent=Math.min(100,Math.round(path/5*100));
+ const state=answered?(correct?'VERIFIED':'RETRY'):'DECIDE';
+ const decision=Math.min(total,Math.max(1,questionIndex));
+ const label=useMemo(()=>`${completed} of 5 modules complete. Module ${moduleId}: ${resolved} of ${total} decisions mastered, ${gap} remaining. Decision ${decision} of ${total}. ${state}.`,[completed,moduleId,resolved,total,gap,decision,state]);
 
  useEffect(()=>{
   const node=canvas.current;if(!node)return;
@@ -42,8 +43,7 @@ export default function MasteryLandscape({completed,moduleId=Math.min(5,complete
  },[completed,moduleId,resolved,total,answered,correct,compact]);
 
  return <section className={`mastery-landscape ${compact?'compact':''}`} aria-label={label}>
-  <div className="landscape-canvas"><canvas ref={canvas} aria-hidden="true"/><div className="landscape-title"><small>MASTERY LANDSCAPE</small><b>{STAGES[moduleId-1]||'PREMIER'}</b></div></div>
-  <div className="landscape-metrics" aria-hidden="true"><span><small>PATH</small><b>{path.toFixed(1)}<i>/5</i></b></span><span><small>GAP</small><b>{gap}<i>/{total}</i></b></span><span><small>INFLUENCE</small><b>L{influence}</b></span><span><small>Δ GAP</small><b>{answered&&correct?'−1':'0'}</b></span><span><small>STATE</small><b>{state}</b></span></div>
-  <p className="sr-only">This is a visual metaphor for deterministic mastery progression. It does not represent neural-network training.</p>
+  <div className="landscape-canvas"><canvas ref={canvas} aria-hidden="true"/><div className="landscape-title"><small>M{moduleId} · {programPercent}% PROGRAM</small><b>{STAGES[moduleId-1]||'PREMIER'}</b></div></div>
+  <div className="landscape-metrics" aria-hidden="true"><span><small>PROGRAM</small><b>{completed}<i>/5</i></b></span><span><small>ROUND</small><b>{resolved}<i>/{total}</i></b></span><span><small>REMAINING</small><b>{gap}</b></span><span><small>DECISION</small><b>{decision}<i>/{total}</i></b></span><span><small>STATE</small><b>{state}</b></span></div>
  </section>
 }

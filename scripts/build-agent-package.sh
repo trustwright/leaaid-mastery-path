@@ -14,6 +14,7 @@ zip -j -9 "$archive" \
   public/leaaid-operating-harness.json \
   public/openapi.json \
   public/client-kits/gemini-function-tool.json \
+  public/client-kits/gemini-function-executor.mjs \
   public/slack-app-manifest.json \
   public/client-kits/harness-runner.mjs
 

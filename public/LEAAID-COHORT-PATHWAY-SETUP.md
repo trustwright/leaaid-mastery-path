@@ -27,7 +27,7 @@ Open `https://leaaid-mastery-path.nexus-8198.chatgpt.site/` to run the complete 
 
 1. Use Google AI Studio or a function-enabled enterprise workflow.
 2. Copy the function declaration from `https://leaaid-mastery-path.nexus-8198.chatgpt.site/client-kits/gemini-function-tool.json`.
-3. Register it as a function and send function arguments to `https://leaaid-mastery-path.nexus-8198.chatgpt.site/api/agent`.
+3. Register it as a function and use `https://leaaid-mastery-path.nexus-8198.chatgpt.site/client-kits/gemini-function-executor.mjs` as the function executor.
 
 A consumer Gem cannot call arbitrary external tools by itself. The gateway does not imply otherwise.
 
