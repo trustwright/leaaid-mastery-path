@@ -10,6 +10,7 @@
 - Tip QA: question-specific source context and recovery cue checked across all 100 items
 - Applied lab QA: seven ordered build decisions, varied correct-choice positions, explicit recovery branches, and baseline/refinement/operation milestones
 - Agent workflow QA: learning orchestrator delegates to a testing agent; a separate deterministic validator blocks advancement until the authored key confirms the response
+- HUD handoff QA: O/T/L/V states explicitly distinguish orchestrator completion, testing-agent completion, active/submitted learner state, and validator standby/verified/recovery
 - Client-kit QA: OpenAI/OpenAPI, Claude/MCP, Gemini function declaration plus executable adapter, and Slack manifest are present without embedded credentials
 - Operating harness QA: allowlisted actions, typed inputs, source authority, non-disclosure, deterministic progression, role prohibitions, seven-day expiry, and fail-closed behavior are declared and enforced at the REST/MCP boundary
 - Linguistic QA: every item now includes a distinct enterprise scenario; action and definition distractors use module-specific misconception models rather than answer-length matching
@@ -27,6 +28,7 @@
 
 - Desktop and mobile responsive layouts
 - The five-stage mastery path reads the same device-local session record in the guide and assessment HUD, updates after each verified response, and synchronizes across same-origin tabs
+- A shared derivation function was checked across 55 module states from 0% to 100%; verified progress never moved backward and recovery never increased mastery
 - Achievement verification checked at large-display and 390 px mobile viewports with no horizontal overflow and 54 px form targets
 - Light and dark themes
 - Minimum 44 px primary interactive targets, touch-action optimization, sticky mobile submission action

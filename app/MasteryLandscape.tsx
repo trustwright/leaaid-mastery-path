@@ -1,5 +1,6 @@
 'use client';
 import {useEffect,useMemo,useRef} from 'react';
+import {deriveMasteryHud} from '../lib/mastery-hud';
 
 type LandscapeProps={
  completed:number;
@@ -15,18 +16,11 @@ type LandscapeProps={
  active?:boolean;
 };
 
-const clamp=(value:number,min=0,max=100)=>Math.min(max,Math.max(min,value));
-
 export default function MasteryLandscape({completed,moduleId=Math.min(5,completed+1),mastered=0,total=10,questionIndex=1,answered=false,correct=false,compact=false,moduleScores,secondsRemaining=45,active=false}:LandscapeProps){
  const canvas=useRef<HTMLCanvasElement>(null);
- const resolved=Math.min(total,mastered);
- const gap=Math.max(0,total-resolved);
- const scores=useMemo(()=>Array.from({length:5},(_,index)=>clamp(moduleScores?.[index]??(index<completed?100:index===moduleId-1?Math.round(resolved/Math.max(1,total)*100):0))),[moduleScores,completed,moduleId,resolved,total]);
- const overall=Math.round(scores.reduce((sum,value)=>sum+value,0)/5);
- const state=answered?(correct?'VERIFIED':'RETRY'):active?'DECIDE':'READY';
- const decision=Math.min(total,Math.max(1,questionIndex));
- const seconds=Math.max(0,Math.round(secondsRemaining));
- const label=useMemo(()=>`Five-module mastery ${overall} percent. Current module ${moduleId}: ${resolved} of ${total} decisions correct, ${gap} remaining. Decision ${decision} of ${total}. ${seconds} seconds. ${state}.`,[overall,moduleId,resolved,total,gap,decision,seconds,state]);
+ const hud=useMemo(()=>deriveMasteryHud({completed,moduleId,mastered,total,questionIndex,answered,correct,active,secondsRemaining,moduleScores}),[completed,moduleId,mastered,total,questionIndex,answered,correct,active,secondsRemaining,moduleScores]);
+ const{scores,overall,resolved,gap,decision,seconds,state}=hud;
+ const label=useMemo(()=>`Five-module mastery ${overall} percent. Current module ${hud.moduleId}: ${resolved} of ${hud.total} decisions correct, ${gap} remaining. Decision ${decision} of ${hud.total}. ${seconds} seconds. ${state}.`,[overall,hud.moduleId,hud.total,resolved,gap,decision,seconds,state]);
 
  useEffect(()=>{
   const node=canvas.current;if(!node)return;
@@ -41,15 +35,15 @@ export default function MasteryLandscape({completed,moduleId=Math.min(5,complete
    for(let index=0;index<5;index++){const x=left+(right-left)*(index/4);c.beginPath();c.moveTo(x-depth,top-depth*.35);c.lineTo(x,bottom);c.strokeStyle='rgba(255,82,107,.12)';c.lineWidth=.7;c.stroke()}
    const points=scores.map((score,index)=>point(index,score));
    c.beginPath();points.forEach((p,index)=>index?c.lineTo(p.x,p.y):c.moveTo(p.x,p.y));c.setLineDash([4,7]);c.strokeStyle='rgba(255,255,255,.18)';c.lineWidth=1;c.stroke();c.setLineDash([]);
-   const currentIndex=clamp(moduleId-1,0,4);c.beginPath();points.slice(0,currentIndex+1).forEach((p,index)=>index?c.lineTo(p.x,p.y):c.moveTo(p.x,p.y));const route=c.createLinearGradient(left,0,right,0);route.addColorStop(0,'#ff526b');route.addColorStop(.55,'#6ee7ff');route.addColorStop(1,'#66e3a4');c.strokeStyle=route;c.lineWidth=2.5;c.shadowColor='#6ee7ff';c.shadowBlur=10;c.stroke();c.shadowBlur=0;
+   const currentIndex=hud.moduleId-1;c.beginPath();points.slice(0,currentIndex+1).forEach((p,index)=>index?c.lineTo(p.x,p.y):c.moveTo(p.x,p.y));const route=c.createLinearGradient(left,0,right,0);route.addColorStop(0,'#ff526b');route.addColorStop(.55,'#6ee7ff');route.addColorStop(1,'#66e3a4');c.strokeStyle=route;c.lineWidth=2.5;c.shadowColor='#6ee7ff';c.shadowBlur=10;c.stroke();c.shadowBlur=0;
    points.forEach((p,index)=>{const done=scores[index]===100;const current=index===currentIndex;c.beginPath();c.arc(p.x,p.y,current?7:5,0,Math.PI*2);c.fillStyle=done?'#66e3a4':current?(answered&&!correct?'#ffb14a':'#fff'):'#46414c';c.fill();c.lineWidth=current?2:1;c.strokeStyle=current?'#ff526b':'rgba(255,255,255,.42)';c.stroke();c.textAlign='center';c.fillStyle=current?'#fff':'rgba(255,255,255,.68)';c.font=`800 ${compact?7:9}px system-ui`;c.fillText(`M${index+1}  ${scores[index]}%`,p.x,p.y+(p.y>bottom-22?-16:21))});
    const cursor=points[currentIndex];const radius=active?3.5+Math.min(2,(45-seconds)%4):3.5;c.beginPath();c.arc(cursor.x,cursor.y,radius,0,Math.PI*2);c.fillStyle=answered&&!correct?'#ffb14a':'#67e8f9';c.shadowColor=c.fillStyle;c.shadowBlur=14;c.fill();c.shadowBlur=0;
   };
   draw();const observer=new ResizeObserver(draw);observer.observe(node);addEventListener('resize',draw);return()=>{observer.disconnect();removeEventListener('resize',draw)};
- },[scores,moduleId,answered,correct,compact,active,seconds]);
+ },[scores,hud.moduleId,answered,correct,compact,active,seconds]);
 
  return <section className={`mastery-landscape ${compact?'compact':''}`} aria-label={label}>
-  <div className="landscape-canvas"><canvas ref={canvas} aria-hidden="true"/><div className="landscape-title"><small>MODULE {moduleId} · DECISION {decision}/{total}</small><b>{overall}% MASTERY</b></div></div>
-  <div className="landscape-metrics" aria-hidden="true"><span><small>OVERALL</small><b>{overall}<i>%</i></b></span><span><small>MODULE</small><b>M{moduleId}</b></span><span><small>CORRECT</small><b>{resolved}<i>/{total}</i></b></span><span><small>LEFT</small><b>{gap}</b></span><span><small>TIME</small><b>{active?seconds:'—'}<i>{active?'s':''}</i></b></span></div>
+  <div className="landscape-canvas"><canvas ref={canvas} aria-hidden="true"/><div className="landscape-title"><small>MODULE {hud.moduleId} · DECISION {decision}/{hud.total}</small><b>{overall}% MASTERY</b></div></div>
+  <div className="landscape-metrics" aria-hidden="true"><span><small>OVERALL</small><b>{overall}<i>%</i></b></span><span><small>MODULE</small><b>M{hud.moduleId}</b></span><span><small>CORRECT</small><b>{resolved}<i>/{hud.total}</i></b></span><span><small>LEFT</small><b>{gap}</b></span><span><small>TIME</small><b>{active?seconds:'—'}<i>{active?'s':''}</i></b></span></div>
  </section>
 }

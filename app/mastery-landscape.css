@@ -3,3 +3,5 @@
 .mastery-landscape.compact .landscape-canvas{height:145px}
 @media(max-width:720px){.mastery-landscape.compact .landscape-canvas{height:124px}.mastery-landscape.compact .landscape-metrics span:nth-child(3){display:block}.mastery-landscape.compact .landscape-metrics span:nth-child(4){display:none}}
 @media(prefers-reduced-motion:reduce){.mastery-landscape *{animation:none!important;transition:none!important}}
+.landscape-title small{font-size:12px;letter-spacing:.12em}.landscape-metrics small{color:#aaa4b1;font-size:11px;letter-spacing:.1em}.landscape-metrics i{color:#9d97a2;font-size:12px}.mastery-landscape.compact .landscape-title small{font-size:10px}.mastery-landscape.compact .landscape-metrics small{font-size:9px}.mastery-landscape.compact .landscape-metrics b{font-size:12px}
+@media(max-width:720px){.landscape-metrics small{font-size:9px;letter-spacing:.04em}.landscape-metrics b{font-size:12px}}

@@ -4,6 +4,7 @@ import {MODULES,ModuleId,RuntimeQuestion,materializeQuestion,questionsFor,select
 import {COACH,CoachGoal,coachChain} from '../lib/coach';
 import AppliedLab from './AppliedLab';
 import MasteryLandscape from './MasteryLandscape';
+import {deriveHarnessAgents} from '../lib/mastery-hud';
 
 type Progress={completed:ModuleId[];best:Partial<Record<ModuleId,number>>;labComplete:boolean;premier:boolean;history:Partial<Record<ModuleId,string[]>>};
 type Phase='home'|'quiz'|'module-result'|'lab'|'lab-result'|'final'|'premier';
@@ -32,6 +33,7 @@ function OperatingFlow({answered,correct,index,total,moduleId,selected,tip,maste
  const validator=answered?(correct?'verified':'risk'):'standby';
  const state=answered?(correct?'verified':'recovery'):'active';
  const position=answered?(correct?'ADVANCE':'RECOVERY'):tip?'SOURCE':selected?'RESPONSE':'DECISION';
+ const agents=deriveHarnessAgents({answered,correct});
  return <aside className={`harness-context ${open?'is-open':''}`} aria-label="Live learning harness context">
   <button className="harness-context-trigger" type="button" aria-expanded={open} aria-controls="live-harness-flow" onClick={onToggle}>
    <span className="harness-live-mark" aria-hidden="true"><i/><i/><i/></span><span>Harness</span><b>{position}</b><em aria-hidden="true">{open?'−':'+'}</em>
@@ -39,7 +41,7 @@ function OperatingFlow({answered,correct,index,total,moduleId,selected,tip,maste
   {open&&<div className="harness-context-layer" id="live-harness-flow" role="status" aria-label={`Module ${moduleId} of 5, decision ${index+1} of ${total}. Current harness position: ${position}. Validator ${validator}.`}>
    <div className="harness-position"><b>M{moduleId}</b><span>{String(index+1).padStart(2,'0')}/{total}</span><em>{position}</em></div>
    <MasteryLandscape compact completed={completed} moduleId={moduleId} mastered={mastered} total={total} questionIndex={index+1} answered={answered} correct={correct} moduleScores={moduleScores} secondsRemaining={seconds} active/>
-   <div className="agent-pulse-line" aria-label="Agent activity"><span className={answered?'sleep':'live'} title="Orchestrator">O</span><span className={answered?'sleep':'live'} title="Teaching agent">T</span><span className={answered?'live':'sleep'} title="Reviewing agent">R</span></div>
+   <div className="agent-pulse-line" aria-label={`Orchestrator ${agents.orchestrator.state}; Testing agent ${agents.tester.state}; Learner ${agents.learner.state}; Validator ${agents.validator.state}.`}><span className={agents.orchestrator.className} title="Orchestrator">O</span><span className={agents.tester.className} title="Testing agent">T</span><span className={agents.learner.className} title="Learner">L</span><span className={agents.validator.className} title="Validator">V</span></div>
    <div className="decision-flow" aria-hidden="true">{Array.from({length:total},(_,i)=><i className={i<index?'complete':i===index?state:''} key={i}><b/></i>)}</div>
   </div>}
  </aside>
