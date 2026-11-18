@@ -5,6 +5,7 @@ This folder defines the platform-neutral handoff for operating the LEAAID learni
 ## What the downloadable package contains
 
 - `SYSTEM_INSTRUCTIONS.md` — the instruction contract for the host agent.
+- `LEAAID-COHORT-PATHWAY-SETUP.md` — plain-language setup for learners and administrators.
 - `leaaid-cohort-pathway-agent.json` — discovery, endpoints, session model, and starter instruction.
 - `leaaid-operating-harness.json` — roles, guardrails, mastery rules, ethics controls, and interoperability target.
 - `openapi.json` — importable REST action contract for GPT and OpenAPI-capable platforms.

@@ -14,7 +14,7 @@
 - Operating harness QA: allowlisted actions, typed inputs, source authority, non-disclosure, deterministic progression, role prohibitions, seven-day expiry, and fail-closed behavior are declared and enforced at the REST/MCP boundary
 - Linguistic QA: every item now includes a distinct enterprise scenario; action and definition distractors use module-specific misconception models rather than answer-length matching
 - Source audit: all five supplied files were extracted and visually reviewed; all 100 scored claims and locators were rechecked against their cited page or slide
-- Visual semantics: the five-stage mastery landscape reports only session-backed program, round, remaining-decision, current-decision, and validation-state data
+- Visual semantics: every route point is derived from the learner's five module scores; the header and assessment HUD report only overall mastery, current module, correct decisions, decisions left, and live question time
 - Mastery QA: 100% comprehension remains required before sequential unlock
 - Scale simulation: 10,000 isolated learner sessions, 1,000,000 generated decisions, zero repeat violations
 - HTTP production-preview load: 500 sessions, 25 concurrent, 500 accepted, 0 rejected; p95 748 ms on the local preview host
@@ -26,7 +26,7 @@
 ## Experience coverage
 
 - Desktop and mobile responsive layouts
-- The live five-stage mastery landscape appears in the guide and as a compact assessment HUD, using current module, completed modules, answered decisions, remaining decisions, and validator state
+- The five-stage mastery path reads the same device-local session record in the guide and assessment HUD, updates after each verified response, and synchronizes across same-origin tabs
 - Achievement verification checked at large-display and 390 px mobile viewports with no horizontal overflow and 54 px form targets
 - Light and dark themes
 - Minimum 44 px primary interactive targets, touch-action optimization, sticky mobile submission action
@@ -34,7 +34,7 @@
 - Per-question module, round, position, timer, and three-level difficulty signals
 - Study Coach produces a goal-based orient → reason → check chain and launches unlocked rounds
 - REST/OpenAPI, remote MCP, and Slack command surfaces operate the same question bank and sequential mastery rules
-- Platform-specific connection suite verifies the live service and copies the exact Action URL, MCP URL, function declaration plus executor, or Slack manifest required by the selected platform
+- Platform setup distinguishes the zero-setup hosted experience from ChatGPT GPT Actions, Gemini AI Studio with an API key, and administrator-approved Slack installation; a service check never claims that an external account was configured
 - M5 uses two gates: a 10-question Applied Concepts knowledge round, then a Northstar agent-build simulation grounded in the Lab 1, Lab 2, and Regional Expansion materials
 
 ## Operational notes

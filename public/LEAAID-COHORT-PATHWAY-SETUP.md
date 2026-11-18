@@ -1,53 +1,40 @@
-# LEAAID Cohort Pathway — connection guide
+# LEAAID — start or add to your AI
 
-The hosted LEAAID learning harness creates anonymous seven-day sessions. Learners do not need an account, facilitator code, API key, or profile.
+## Easiest: use it now
 
-Download the complete portable package from `https://leaaid-mastery-path.nexus-8198.chatgpt.site/leaaid-agent-package.zip`. It includes the operating instruction, platform contracts, guardrails, and executable connector described below.
+Open `https://leaaid-mastery-path.nexus-8198.chatgpt.site/` and choose **Start or continue**. No setup, access code, API key, or profile is required.
 
-## Start immediately
+## Add it to ChatGPT
 
-Open `https://leaaid-mastery-path.nexus-8198.chatgpt.site/` to run the complete visual learning experience without connecting another service.
+You need access to create a GPT.
 
-## ChatGPT
+1. Open the GPT builder. Choose **Configure → Actions → Import from URL**.
+2. Paste `https://leaaid-mastery-path.nexus-8198.chatgpt.site/openapi.json`. Authentication is **None**.
+3. Save. Type **Launch Module 1**.
 
-1. Open the GPT builder and select **Configure**.
-2. Under Actions, select **Create new action** and **Import from URL**.
-3. Paste `https://leaaid-mastery-path.nexus-8198.chatgpt.site/openapi.json`.
-4. Keep authentication set to **None**.
-5. Ask the GPT to create a session and launch Module 1.
+## Add it to Gemini
 
-## Claude
+This requires **Google AI Studio and an API key**. A standard consumer Gem cannot call the remote training service by itself.
 
-1. Open **Settings → Connectors → Add custom connector**.
-2. Paste `https://leaaid-mastery-path.nexus-8198.chatgpt.site/api/mcp`.
-3. Confirm the connector. Team or Enterprise workspaces may require owner approval under their own policies.
-4. Say “Launch Module 1.”
+1. Open Google AI Studio. Select an API key and enable **Function calling**.
+2. Add `https://leaaid-mastery-path.nexus-8198.chatgpt.site/client-kits/gemini-function-tool.json`.
+3. Use `https://leaaid-mastery-path.nexus-8198.chatgpt.site/client-kits/gemini-function-executor.mjs` to run the function. Type **Launch Module 1**.
 
-## Gemini
+## Add it to Slack
 
-1. Use Google AI Studio or a function-enabled enterprise workflow.
-2. Copy the function declaration from `https://leaaid-mastery-path.nexus-8198.chatgpt.site/client-kits/gemini-function-tool.json`.
-3. Register it as a function and use `https://leaaid-mastery-path.nexus-8198.chatgpt.site/client-kits/gemini-function-executor.mjs` as the function executor.
-
-A consumer Gem cannot call arbitrary external tools by itself. The gateway does not imply otherwise.
-
-## Slack workspace installation
-
-Slack requires a workspace owner to install and approve apps.
+You need permission to install a Slack app.
 
 1. Choose **Create New App → From an app manifest**.
-2. Paste the content of `https://leaaid-mastery-path.nexus-8198.chatgpt.site/slack-app-manifest.json`.
-3. Review the single `commands` scope and install the app.
-4. A deployment administrator must configure the Slack signing secret before `/leaaid` commands can operate.
+2. Paste `https://leaaid-mastery-path.nexus-8198.chatgpt.site/slack-app-manifest.json` and install it.
+3. Configure the Slack signing secret. Type **/leaaid start**.
 
-## Agent workflow
+## Claude or another MCP host
 
-1. The **Learning Orchestrator** checks progression and assigns the current assessment.
-2. The **Testing Agent** presents one source-grounded, non-repeating question without its answer.
-3. The **Validator Agent** compares the submitted option to the authored answer key.
-4. The **Achievement Register** issues a pseudonymous verification link only after mastery.
+Add `https://leaaid-mastery-path.nexus-8198.chatgpt.site/api/mcp` as a custom MCP connector. Approve it, then type **Launch Module 1**.
 
-Validation never uses identity, demographics, response time, attempts, writing style, or inferred ability. Recovery is unlimited and carries no award penalty.
+## Download everything
+
+Download `https://leaaid-mastery-path.nexus-8198.chatgpt.site/leaaid-agent-package.zip`.
 
 ## Data behavior
 

@@ -10,6 +10,7 @@ zip -j -9 "$archive" \
   agent-package/README.md \
   agent-package/SYSTEM_INSTRUCTIONS.md \
   agent-package/agent-package.json \
+  public/LEAAID-COHORT-PATHWAY-SETUP.md \
   public/leaaid-cohort-pathway-agent.json \
   public/leaaid-operating-harness.json \
   public/openapi.json \

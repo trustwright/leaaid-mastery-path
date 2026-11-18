@@ -3,14 +3,14 @@ import {useEffect,useState} from 'react';
 import Link from 'next/link';
 import MasteryLandscape from '../MasteryLandscape';
 
-type Platform='openai'|'gemini'|'claude'|'slack';
-type ConnectState='idle'|'approval'|'testing'|'ready';
+type Platform='openai'|'gemini'|'slack';
+type ConnectState='idle'|'checking'|'ready'|'error';
+type HudState={moduleId:number;moduleScores:number[];mastered:number;total:number;questionIndex:number;answered:boolean;correct:boolean;secondsRemaining:number;active:boolean};
 
-const PLATFORMS:Record<Platform,{label:string;mark:string;mode:string;asset:string;destination:string;copy:'url'|'body';approval:string}>={
- openai:{label:'OpenAI',mark:'O',mode:'GPT Action',asset:'https://leaaid-mastery-path.nexus-8198.chatgpt.site/openapi.json',destination:'https://chatgpt.com/gpts/editor',copy:'url',approval:'Import the copied URL. Choose None for authentication.'},
- gemini:{label:'Gemini',mark:'G',mode:'Function tool',asset:'/client-kits/gemini-function-tool.json',destination:'https://aistudio.google.com/',copy:'body',approval:'Paste the copied function declaration into a function-enabled project.'},
- claude:{label:'Claude',mark:'C',mode:'MCP connector',asset:'https://leaaid-mastery-path.nexus-8198.chatgpt.site/api/mcp',destination:'https://claude.ai/settings/connectors',copy:'url',approval:'Add the copied MCP URL and approve the connector.'},
- slack:{label:'Slack',mark:'S',mode:'Slash command',asset:'/slack-app-manifest.json',destination:'https://api.slack.com/apps',copy:'body',approval:'Create an app from a manifest. Paste, review, and install.'},
+const PLATFORMS:Record<Platform,{label:string;mark:string;mode:string;asset:string;destination:string;copy:'url'|'body';requirement:string;steps:string[]}>={
+ openai:{label:'ChatGPT',mark:'O',mode:'PASTE ONE LINK',asset:'https://leaaid-mastery-path.nexus-8198.chatgpt.site/openapi.json',destination:'https://chatgpt.com/gpts/editor',copy:'url',requirement:'Requires access to create a GPT.',steps:['Click Add to ChatGPT','In Configure → Actions, choose Import from URL and paste','Save, then type “Launch Module 1”']},
+ gemini:{label:'Gemini AI Studio',mark:'G',mode:'API KEY REQUIRED',asset:'/client-kits/gemini-function-tool.json',destination:'https://aistudio.google.com/',copy:'body',requirement:'Requires Google AI Studio and an API key. A standard consumer Gem cannot call this training service.',steps:['Click Add to Gemini','Select an API key, enable Function calling, and paste','Use the executor, then type “Launch Module 1”']},
+ slack:{label:'Slack',mark:'S',mode:'WORKSPACE ADMIN',asset:'/slack-app-manifest.json',destination:'https://api.slack.com/apps',copy:'body',requirement:'Requires permission to install a Slack app.',steps:['Click Add to Slack','Create an app from a manifest and paste','Install, then type /leaaid start']},
 };
 
 const MODULES=[
@@ -27,12 +27,7 @@ const BADGES=[
  {code:'◆',title:'Premier LEAAID Knowledge',rule:'Five module badges + applied lab + 10 of 10 final decisions'},
 ];
 
-const SETUP_STEPS:Record<Platform,string[]>={
- openai:['Open GPT builder','Import OpenAPI URL','Test “Launch Module 1”'],
- gemini:['Open AI Studio','Add function declaration','Use the executor'],
- claude:['Open Connectors','Add MCP URL','Test “Launch Module 1”'],
- slack:['Create from manifest','Approve commands scope','Test /leaaid start'],
-};
+const EMPTY_HUD:HudState={moduleId:1,moduleScores:[0,0,0,0,0],mastered:0,total:10,questionIndex:1,answered:false,correct:false,secondsRemaining:45,active:false};
 
 export default function Guide(){
  const[platform,setPlatform]=useState<Platform>('openai');
@@ -42,20 +37,22 @@ export default function Guide(){
  const[connectState,setConnectState]=useState<ConnectState>('idle');
  const[connectionNote,setConnectionNote]=useState('');
  const[completed,setCompleted]=useState(0);
+ const[hud,setHud]=useState<HudState>(EMPTY_HUD);
  const active=PLATFORMS[platform];
- useEffect(()=>{queueMicrotask(()=>{try{const saved=JSON.parse(localStorage.getItem('leaaid-mastery-v1')||'{}');setCompleted(Array.isArray(saved.completed)?saved.completed.length:0)}catch{}})},[]);
+ useEffect(()=>{const read=()=>{try{const saved=JSON.parse(localStorage.getItem('leaaid-mastery-v1')||'{}');const count=Array.isArray(saved.completed)?saved.completed.length:0;setCompleted(count);const live=JSON.parse(localStorage.getItem('leaaid-live-hud-v1')||'null');if(live&&Array.isArray(live.moduleScores))setHud({...EMPTY_HUD,...live});else setHud({...EMPTY_HUD,moduleId:Math.min(5,count+1),moduleScores:Array.from({length:5},(_,index)=>index<count?100:0)})}catch{setHud(EMPTY_HUD)}};queueMicrotask(read);addEventListener('storage',read);addEventListener('focus',read);return()=>{removeEventListener('storage',read);removeEventListener('focus',read)}},[]);
  const call=async(body:Record<string,unknown>)=>{const response=await fetch('/api/agent',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});const result=await response.json();if(!response.ok)throw new Error(result.error||'The harness could not complete the action.');return result};
  const copy=async(text:string,label:string)=>{await navigator.clipboard.writeText(text);setCopied(label);setTimeout(()=>setCopied(''),1400)};
- const connect=async(key:Platform)=>{const item=PLATFORMS[key];setPlatform(key);setError('');setConnectState('approval');setConnectionNote('Opening…');window.open(item.destination,'_blank','noopener,noreferrer');try{const payload=item.copy==='body'?await fetch(item.asset).then(response=>{if(!response.ok)throw new Error('Setup file unavailable.');return response.text()}):item.asset;await navigator.clipboard.writeText(payload);setConnectionNote(item.approval)}catch(reason){setConnectState('idle');setConnectionNote('');setError(reason instanceof Error?reason.message:'Setup could not be copied.')}};
- const testConnection=async()=>{setConnectState('testing');setLoading(true);setError('');try{const session=await call({action:'create_session'}) as {session_id:string};await call({action:'launch_multi_agent_training',session_id:session.session_id,module_id:1});setConnectState('ready');setConnectionNote('Harness online. Module 1 is ready.')}catch(reason){setConnectState('approval');setError(reason instanceof Error?reason.message:'Harness test failed.')}finally{setLoading(false)}};
+ const testService=async()=>{setConnectState('checking');setLoading(true);try{const session=await call({action:'create_session'}) as {session_id:string};await call({action:'launch_multi_agent_training',session_id:session.session_id,module_id:1});setConnectState('ready')}catch(reason){setConnectState('error');setError(reason instanceof Error?reason.message:'Training service unavailable.')}finally{setLoading(false)}};
+ const connect=async(key:Platform)=>{const item=PLATFORMS[key];setPlatform(key);setError('');setConnectionNote('Setup copied. Complete steps 2 and 3 in the opened service.');window.open(item.destination,'_blank','noopener,noreferrer');try{const payload=item.copy==='body'?await fetch(item.asset).then(response=>{if(!response.ok)throw new Error('Setup file unavailable.');return response.text()}):item.asset;await navigator.clipboard.writeText(payload);void testService()}catch(reason){setConnectState('error');setConnectionNote('Open the setup file below and copy it manually.');setError(reason instanceof Error?reason.message:'Setup could not be copied.')}};
  return <main className="guide-shell">
   <nav className="guide-nav"><Link href="/" className="guide-brand"><span>CMU</span><b>LEAAID</b><small>Learning Harness Guide</small></Link><div><a href="#platforms">Set up</a><a href="#learn">Learning path</a><Link className="guide-launch" href="/">Launch training <i>→</i></Link></div></nav>
-  <header className="guide-hero"><div><p className="eyebrow">LEAAID LEARNING HARNESS</p><h1>Connect once.<br/><em>Learn anywhere.</em></h1><p>5 modules · 10 decisions each · 100% to advance</p><div><a href="#platforms">Connect your AI <span>↓</span></a><Link href="/">Launch training <span>→</span></Link></div></div><MasteryLandscape completed={completed} moduleId={Math.min(5,completed+1)} mastered={0} total={10}/></header>
+  <header className="guide-hero"><div><p className="eyebrow">CURRENT LEARNER</p><h1>Your mastery.<br/><em>Module by module.</em></h1><p>Progress saved on this device.</p><div><Link href="/">Start or continue <span>→</span></Link><a href="#platforms">Add to your AI <span>↓</span></a></div></div><MasteryLandscape completed={completed} moduleId={hud.moduleId} mastered={hud.mastered} total={hud.total} questionIndex={hud.questionIndex} answered={hud.answered} correct={hud.correct} moduleScores={hud.moduleScores} secondsRemaining={hud.secondsRemaining} active={hud.active}/></header>
 
-  <section className="platform-section" id="platforms"><div className="guide-heading"><div><p className="eyebrow">SETUP</p><h2>Choose your AI.</h2></div><p>Open · approve · test</p></div>
-   <div className="one-click-grid" aria-label="Connect an AI platform">{(Object.keys(PLATFORMS) as Platform[]).map(key=><button key={key} className={platform===key&&connectState!=='idle'?'active':''} onClick={()=>void connect(key)}><span>{PLATFORMS[key].mark}</span><small>{PLATFORMS[key].mode}</small><b>Connect {PLATFORMS[key].label}</b><i>↗</i></button>)}</div>
-   <ol className="setup-flow" aria-label={`${active.label} setup steps`}>{SETUP_STEPS[platform].map((step,index)=><li key={step}><span>{index+1}</span><b>{step}</b>{index<2&&<i>→</i>}</li>)}</ol>
-   {connectState!=='idle'&&<article className={`connection-dock ${connectState}`} aria-live="polite"><div className="connection-rail" aria-label="Setup progress"><span className="done"><i>✓</i> COPY</span><b/><span className={connectState==='approval'?'current':'done'}><i>{connectState==='approval'?'2':'✓'}</i> APPROVE</span><b/><span className={connectState==='testing'?'current':connectState==='ready'?'done':''}><i>{connectState==='ready'?'✓':'3'}</i> TEST</span><b/><span className={connectState==='ready'?'current':''}><i>4</i> LAUNCH</span></div><div className="connection-message"><span className="platform-mark">{active.mark}</span><div><small>{active.label.toUpperCase()} · {active.mode.toUpperCase()}</small><h3>{connectionNote}</h3></div></div><div className="connection-actions"><a href={active.destination} target="_blank" rel="noreferrer">Open again <i>↗</i></a>{connectState!=='ready'?<button onClick={()=>void testConnection()} disabled={loading}>{connectState==='testing'?'Testing…':'Test harness'} <i>→</i></button>:<button onClick={()=>void copy('Launch Module 1.','prompt')}>{copied==='prompt'?'Copied':'Copy “Launch Module 1”'} <i>+</i></button>}</div>{error&&<p className="connection-error" role="alert">{error}</p>}</article>}
+  <section className="platform-section" id="platforms"><div className="guide-heading"><div><p className="eyebrow">RUN LEAAID</p><h2>Use it here—or add it.</h2></div><Link className="instant-launch" href="/">Use now · no setup <span>→</span></Link></div>
+   <div className="one-click-grid three" aria-label="Add LEAAID to another platform">{(Object.keys(PLATFORMS) as Platform[]).map(key=><button key={key} className={platform===key&&connectState!=='idle'?'active':''} onClick={()=>void connect(key)}><span>{PLATFORMS[key].mark}</span><small>{PLATFORMS[key].mode}</small><b>Add to {PLATFORMS[key].label}</b><i>↗</i></button>)}</div>
+   <p className="setup-requirement"><b>{active.label}:</b> {active.requirement}</p>
+   <ol className="setup-flow" aria-label={`${active.label} setup steps`}>{active.steps.map((step,index)=><li key={step}><span>{index+1}</span><b>{step}</b>{index<2&&<i>→</i>}</li>)}</ol>
+   {connectState!=='idle'&&<article className={`connection-dock ${connectState}`} aria-live="polite"><div className="connection-message"><span className="platform-mark">{active.mark}</span><div><small>{active.label.toUpperCase()}</small><h3>{connectionNote}</h3><p className="service-state">{loading?'Checking LEAAID service…':connectState==='ready'?'✓ LEAAID service ready':connectState==='error'?'Service check failed':'Ready'}</p></div></div><div className="connection-actions"><a href={active.destination} target="_blank" rel="noreferrer">Open {active.label} <i>↗</i></a><button onClick={()=>void copy('Launch Module 1.','prompt')}>{copied==='prompt'?'Copied':'Copy “Launch Module 1”'} <i>+</i></button></div>{error&&<p className="connection-error" role="alert">{error}</p>}</article>}
    <details className="developer-details"><summary>Developer details</summary><div><a href="/openapi.json">OpenAPI</a><a href="/client-kits/gemini-function-tool.json">Gemini function</a><a href="/client-kits/gemini-function-executor.mjs">Gemini executor</a><a href="/api/mcp">MCP</a><a href="/slack-app-manifest.json">Slack manifest</a><a href="/leaaid-agent-package.zip">Full package</a></div></details>
   </section>
 

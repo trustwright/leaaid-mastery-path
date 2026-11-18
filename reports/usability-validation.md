@@ -22,9 +22,12 @@
 
 - Removed explanatory metaphor copy from the mastery landscape.
 - Replaced influence and gap-change abstractions with program, round, remaining, decision, and state data.
+- Replaced the decorative landscape surface with a five-point route whose vertical position is calculated from each module's actual mastery percentage.
+- Added a shared device-local HUD record so the guide header reflects the active module, verified decisions, remaining decisions, and question timer.
 - Reduced the orchestration display to three live O/T/R signals with accessible labels.
 - Replaced setup prose with a three-step platform path.
 - Added an executable Gemini function adapter rather than leaving learners with a declaration alone.
+- Renamed setup actions from “connect” to “add,” surfaced platform prerequisites before the click, and removed any implication that checking the LEAAID service configures an external account.
 - Kept verification inline at achievement completion while preserving the public receipt link.
 
 ## Platform proof
