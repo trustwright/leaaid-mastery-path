@@ -15,6 +15,7 @@
     "qa:live-achievements": "node --experimental-strip-types scripts/qa-live-achievements.mjs",
     "qa:connectors": "node --experimental-strip-types scripts/qa-platform-connectors.mjs",
     "qa:hud": "node --experimental-strip-types scripts/qa-hud-journey.mjs",
+    "qa:a11y": "node scripts/qa-accessibility.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
   },
   "dependencies": {
