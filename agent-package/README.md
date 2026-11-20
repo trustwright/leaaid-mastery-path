@@ -41,6 +41,8 @@ Import `openapi.json`, keep authentication set to none, and apply `SYSTEM_INSTRU
 
 Register the declaration in `gemini-function-tool.json` in Google AI Studio or a function-enabled Gemini application. When Gemini emits `operate_leaaid_agent`, POST its arguments as JSON to the package endpoint and return the JSON response to Gemini. Consumer Gems do not execute arbitrary external functions without an enabled tool runtime.
 
+The verified AI Studio sequence is documented in `docs/GEMINI-VERIFIED-WALKTHROUGH.md`. Temporary AI Studio chats do not retain the function declaration, so paste it again for each new temporary chat. The manual proof does not require Google Drive access or paid billing; an automated deployment may require an API key and billing for the selected Gemini model.
+
 ### Slack
 
 Create an app from `slack-app-manifest.json`, install the single `commands` scope, and configure the hosted deployment with Slack's signing secret. Run `/leaaid start 1` in the installed workspace.
