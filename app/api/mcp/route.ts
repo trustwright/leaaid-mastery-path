@@ -29,7 +29,8 @@ export async function POST(request:Request){
  if(Number(request.headers.get('content-length')||0)>16384)return failure(null,-32003,'Request is too large.',413);
  let body:{jsonrpc?:string;id?:unknown;method?:string;params?:{name?:string;arguments?:Record<string,unknown>}};
  try{body=await request.json()}catch{return failure(null,-32700,'Parse error',400)}
- if(body.method==='initialize')return response(body.id,{protocolVersion:'2025-03-26',capabilities:{tools:{listChanged:false}},serverInfo:{name:'leaaid-mastery-agent',version:'1.1.0'}});
+ if(body.method==='server/discover')return response(body.id,{supportedVersions:['2026-07-28'],capabilities:{tools:{}}});
+ if(body.method==='initialize')return response(body.id,{protocolVersion:'2026-07-28',capabilities:{tools:{listChanged:false}},serverInfo:{name:'leaaid-mastery-agent',version:'1.2.0'}});
  if(body.method==='notifications/initialized')return new Response(null,{status:202,headers});
  if(body.method==='tools/list')return response(body.id,{tools});
  if(body.method!=='tools/call'||!body.params?.name)return failure(body.id,-32601,'Method not found');

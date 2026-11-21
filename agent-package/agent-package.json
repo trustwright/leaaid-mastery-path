@@ -1,11 +1,13 @@
 {
   "name": "LEAAID Portable Learning Agent",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "instruction": "SYSTEM_INSTRUCTIONS.md",
   "files": {
     "agent_card": "leaaid-cohort-pathway-agent.json",
+    "skill": "SKILL.md",
     "operating_harness": "leaaid-operating-harness.json",
     "openapi": "openapi.json",
+    "mcp": "https://leaaid-mastery-path.nexus-8198.chatgpt.site/mcp",
     "gemini_function": "gemini-function-tool.json",
     "slack_manifest": "slack-app-manifest.json",
     "runner": "harness-runner.mjs"

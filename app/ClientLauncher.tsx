@@ -5,10 +5,10 @@ import Link from 'next/link';
 const origin='https://leaaid-mastery-path.nexus-8198.chatgpt.site';
 type Client={id:string;label:string;short:string;endpoint:string;open:string;openLabel:string;copyLabel:string;instruction:string;copyDocument?:boolean;note?:string};
 const clients:Client[]=[
- {id:'openai',label:'ChatGPT',short:'C',endpoint:`${origin}/openapi.json`,open:'https://chatgpt.com/gpts/editor',openLabel:'Open ChatGPT builder',copyLabel:'Copy Action URL',instruction:'In Configure, select Create new action, choose Import from URL, then paste.'},
+ {id:'openai',label:'ChatGPT',short:'C',endpoint:'Launch Module 1.',open:'https://chatgpt.com/space?artifact=plugins',openLabel:'Open ChatGPT Plugins',copyLabel:'Copy launch prompt',instruction:'Plugins → Personal → install LEAAID. Then ask “Launch Module 1.”',note:'The Site-created MCP plugin is private and is not a custom GPT or public listing.'},
  {id:'claude',label:'Claude',short:'A',endpoint:`${origin}/api/mcp`,open:'https://claude.ai/settings/connectors',openLabel:'Open Claude connectors',copyLabel:'Copy connector URL',instruction:'Choose Add custom connector, paste the copied URL, and confirm.'},
  {id:'gemini',label:'Gemini',short:'G',endpoint:`${origin}/client-kits/gemini-function-tool.json`,open:'https://aistudio.google.com/',openLabel:'Open Google AI Studio',copyLabel:'Copy function setup',instruction:'Use the copied function declaration in AI Studio or your Gemini application.',copyDocument:true,note:'Consumer Gems cannot call external tools; use AI Studio or a function-enabled enterprise workflow.'},
- {id:'slack',label:'Slack',short:'S',endpoint:`${origin}/slack-app-manifest.json`,open:'https://api.slack.com/apps',openLabel:'Open Slack app setup',copyLabel:'Copy Slack manifest',instruction:'Choose Create New App, select From a manifest, then paste.',copyDocument:true,note:'A Slack workspace owner must approve installation. Slack—not LEAAID—requires this permission.'},
+ {id:'slack',label:'Slack',short:'S',endpoint:`${origin}/slack-app-manifest.json`,open:'https://api.slack.com/apps',openLabel:'Open Slack app setup',copyLabel:'Copy Slack manifest',instruction:'Create an App → Paste a manifest. Select all sample JSON, then paste.',copyDocument:true,note:'A workspace owner approves one permission: slash commands.'},
 ];
 
 export default function ClientLauncher(){

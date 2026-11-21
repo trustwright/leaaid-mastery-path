@@ -1,9 +1,9 @@
 {
   "name": "LEAAID Cohort Pathway",
-  "version": "1.4.0",
+  "version": "1.6.0",
   "description": "Source-grounded sequential mastery training with an orchestrator, testing agent, deterministic validator, and applied agent-builder lab.",
   "openapi": "https://leaaid-mastery-path.nexus-8198.chatgpt.site/openapi.json",
-  "mcp": "https://leaaid-mastery-path.nexus-8198.chatgpt.site/api/mcp",
+  "mcp": "https://leaaid-mastery-path.nexus-8198.chatgpt.site/mcp",
   "rest": "https://leaaid-mastery-path.nexus-8198.chatgpt.site/api/agent",
   "operating_harness": "https://leaaid-mastery-path.nexus-8198.chatgpt.site/leaaid-operating-harness.json",
   "runnable_connector": "https://leaaid-mastery-path.nexus-8198.chatgpt.site/client-kits/harness-runner.mjs",

@@ -2,7 +2,7 @@
   "name": "LEAAID Mastery Path Agent",
   "description": "Source-grounded coaching and sequential mastery challenges across five LEAAID modules.",
   "url": "https://leaaid-mastery-path.nexus-8198.chatgpt.site/api/agent",
-  "version": "1.4.0",
+  "version": "1.6.0",
   "authentication": {"schemes": [], "note": "No learner account or access code is required. Sessions use opaque IDs and expire after seven days."},
   "capabilities": {"streaming": false, "pushNotifications": false, "stateTransitionHistory": true},
   "defaultInputModes": ["application/json", "text/plain"],

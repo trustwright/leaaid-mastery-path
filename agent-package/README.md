@@ -5,6 +5,7 @@ This folder defines the platform-neutral handoff for operating the LEAAID learni
 ## What the downloadable package contains
 
 - `SYSTEM_INSTRUCTIONS.md` — the instruction contract for the host agent.
+- `SKILL.md` — a portable agent-skill operating contract.
 - `LEAAID-COHORT-PATHWAY-SETUP.md` — plain-language setup for learners and administrators.
 - `leaaid-cohort-pathway-agent.json` — discovery, endpoints, session model, and starter instruction.
 - `leaaid-operating-harness.json` — roles, guardrails, mastery rules, ethics controls, and interoperability target.
@@ -33,9 +34,11 @@ This invokes the same learning orchestrator, teaching/testing role, deterministi
 
 ## Platform installation
 
-### ChatGPT or another OpenAPI action host
+### ChatGPT
 
-Import `openapi.json`, keep authentication set to none, and apply `SYSTEM_INSTRUCTIONS.md` as the agent instruction. Ask: `Launch Module 1.`
+Install the Site-created LEAAID MCP plugin under **Plugins → Personal → Created by you**, approve its tools, and ask `Launch Module 1.` The plugin is private and is not a custom GPT or GPT Store listing.
+
+OpenAPI-capable enterprise hosts can still import `openapi.json` and apply `SYSTEM_INSTRUCTIONS.md`.
 
 ### Gemini
 
@@ -46,6 +49,8 @@ The verified AI Studio sequence is documented in `docs/GEMINI-VERIFIED-WALKTHROU
 ### Slack
 
 Create an app from `slack-app-manifest.json`, install the single `commands` scope, and configure the hosted deployment with Slack's signing secret. Run `/leaaid start 1` in the installed workspace.
+
+The ChatGPT MCP plugin, Gemini function executor, and Slack slash command are clients of the same hosted harness. None of them score independently.
 
 ### Any other agent runtime
 

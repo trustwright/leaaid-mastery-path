@@ -24,5 +24,11 @@ assert.equal(launched.question.options.length,4);
 assert.equal('answer' in launched.question,false,'Question response must not disclose the answer key.');
 const wrapped=geminiFunctionResponse(launched);
 assert.equal(wrapped.functionResponse.name,'operate_leaaid_agent');
+const mcp=async(method,params)=>{const response=await fetch(`${origin}/mcp`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({jsonrpc:'2.0',id:1,method,...(params?{params}:{})})});assert.equal(response.ok,true,`MCP ${method} must return HTTP success.`);return response.json()};
+const discovered=await mcp('server/discover');
+assert.deepEqual(discovered.result.supportedVersions,['2026-07-28']);
+const listed=await mcp('tools/list');
+assert.ok(listed.result.tools.some(tool=>tool.name==='launch_multi_agent_training'));
+assert.ok(listed.result.tools.some(tool=>tool.name==='validate_training_response'));
 
-console.log(JSON.stringify({status:'passed',origin,openai:{schema:'3.1.0',operation:operation.operationId,authentication:'none'},gemini:{declaration:declaration.name,executor:'live',module:launched.question.module_id,question:launched.question.index,answer_key_exposed:false}},null,2));
+console.log(JSON.stringify({status:'passed',origin,openai:{schema:'3.1.0',operation:operation.operationId,authentication:'none'},gemini:{declaration:declaration.name,executor:'live',module:launched.question.module_id,question:launched.question.index,answer_key_exposed:false},mcp:{protocol:discovered.result.supportedVersions[0],tools:listed.result.tools.length,launch:true,validate:true}},null,2));

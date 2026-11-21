@@ -4,13 +4,13 @@
 
 Open `https://leaaid-mastery-path.nexus-8198.chatgpt.site/` and choose **Start or continue**. No setup, access code, API key, or profile is required.
 
-## Add it to ChatGPT
+## Use it with ChatGPT
 
-You need access to create a GPT.
+1. Open **Plugins → Personal → Created by you**.
+2. Install and connect **LEAAID Mastery Path**.
+3. Ask **Launch Module 1**.
 
-1. Open the GPT builder. Choose **Configure → Actions → Import from URL**.
-2. Paste `https://leaaid-mastery-path.nexus-8198.chatgpt.site/openapi.json`. Authentication is **None**.
-3. Save. Type **Launch Module 1**.
+The Site-created MCP plugin exposes the LEAAID tools privately in ChatGPT. It is not a custom GPT and is not published to the GPT Store.
 
 ## Add it to Gemini
 
@@ -24,9 +24,9 @@ This requires **Google AI Studio and an API key**. A standard consumer Gem canno
 
 You need permission to install a Slack app.
 
-1. Choose **Create New App → From an app manifest**.
-2. Paste `https://leaaid-mastery-path.nexus-8198.chatgpt.site/slack-app-manifest.json` and install it.
-3. Configure the Slack signing secret. Type **/leaaid start**.
+1. Open **Your Apps → Create an App → Paste a manifest**, then choose the workspace.
+2. Select all of Slack's sample JSON and replace it with the contents of `https://leaaid-mastery-path.nexus-8198.chatgpt.site/slack-app-manifest.json`.
+3. Choose **Create and Install**. Approve the single `commands` permission, configure the Slack signing secret in the LEAAID deployment, then type **/leaaid start 1**.
 
 ## Claude or another MCP host
 
